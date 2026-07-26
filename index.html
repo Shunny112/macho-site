@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MACHO RECRUIT｜筋肉採用 - 株式会社アクタル（ACT-R）</title>
+<meta name="description" content="筋肉が、稼ぐ力になる。科学的根拠に基づく、新しい採用革命。営業成績に応じてウェア・サプリ・ギアが支給される、日本一マッチョが多い営業会社。株式会社アクタル MACHO RECRUIT。">
+<!-- OGP / Twitter（SNSシェア時の見栄え） -->
+<meta property="og:title" content="MACHO RECRUIT｜筋肉採用 - 株式会社ACT-R">
+<meta property="og:description" content="筋肉が、稼ぐ力になる。未経験OK・ジム代サポート・ウェア&サプリ支給。鍛えながら稼ぐ、新しい働き方。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://macho-recruit-actr-32019.netlify.app/">
+<meta property="og:image" content="https://macho-recruit-actr-32019.netlify.app/assets/img/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MACHO RECRUIT｜筋肉採用">
+<meta name="twitter:description" content="筋肉が、稼ぐ力になる。未経験OK・ジム代サポート。鍛えながら稼ぐ、新しい働き方。">
+<meta name="twitter:image" content="https://macho-recruit-actr-32019.netlify.app/assets/img/ogp.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0a0a;
+    --ink:#121212;
+    --panel:#171717;
+    --panel2:#1e1e1e;
+    --red:#e10600;
+    --red-deep:#b00500;
+    --red-glow:rgba(225,6,0,.55);
+    --white:#ffffff;
+    --off:#f4f4f4;
+    --gray:#b8b8b8;
+    --line:rgba(255,255,255,.10);
+    --gold:#d9b04a;
+    --maxw:1160px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:hidden;max-width:100%}
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:"Noto Sans JP","Hiragino Sans",sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  a.xlink{cursor:pointer;transition:opacity .2s}
+  a.xlink:hover{opacity:.72}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .display{font-family:"Anton","Oswald",sans-serif;font-weight:400;letter-spacing:.02em;line-height:.98}
+  .ovs{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.28em;text-transform:uppercase}
+
+  /* ===== accents ===== */
+  .red{color:var(--red)}
+  .hl{background:linear-gradient(transparent 62%,var(--red) 62%);padding:0 .08em}
+  .stripe{height:6px;background:repeating-linear-gradient(135deg,var(--red) 0 22px,var(--black) 22px 30px)}
+
+  /* ===== nav ===== */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(8,8,8,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.16em;font-size:18px}
+  .brand b{color:var(--red)}
+  .brand .mark{width:34px;height:34px;border:2px solid var(--red);display:grid;place-items:center;font-family:"Anton";font-size:18px;color:#fff;transform:skewX(-8deg)}
+  .nav-links{display:flex;gap:26px;font-size:13px;letter-spacing:.06em;color:var(--gray)}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{background:var(--red);color:#fff;padding:10px 20px;border-radius:2px;font-weight:700;font-size:13px;letter-spacing:.08em;transition:.2s}
+  .nav-cta:hover{background:#fff;color:var(--red)}
+  @media(max-width:880px){.nav-links{display:none}}
+
+  /* ===== hero ===== */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;
+    background:
+      radial-gradient(1200px 700px at 78% 30%,rgba(225,6,0,.22),transparent 60%),
+      radial-gradient(900px 600px at 10% 90%,rgba(225,6,0,.10),transparent 60%),
+      linear-gradient(180deg,#0c0c0c,#050505);
+  }
+  .hero::before{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;opacity:.35;mask-image:radial-gradient(circle at 60% 40%,#000 30%,transparent 78%)}
+  /* 実写主役のシネマティック・ヒーロー */
+  .hero-photo{position:absolute;right:0;top:0;bottom:0;width:56%;z-index:1;pointer-events:none}
+  .hero-photo img{width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:contrast(1.05) saturate(1.06) drop-shadow(0 0 60px rgba(225,6,0,.25))}
+  .hero-photo::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.82) 20%,rgba(5,5,5,.1) 52%,transparent 100%),linear-gradient(0deg,#050505 1%,transparent 24%)}
+  .hero-glow{position:absolute;right:8%;top:50%;transform:translateY(-50%);width:42vw;height:42vw;max-width:560px;max-height:560px;z-index:0;
+    background:radial-gradient(circle,rgba(225,6,0,.28),transparent 62%);filter:blur(8px)}
+  @media(max-width:820px){
+    .hero-photo{width:100%;opacity:.46}
+    .hero-photo::after{background:linear-gradient(0deg,#050505 14%,rgba(5,5,5,.55) 48%,rgba(5,5,5,.72) 100%)}
+  }
+  .hero-in{position:relative;z-index:2;width:100%;padding:120px 0 60px}
+  .hero .ovs{color:var(--red);font-size:14px;margin-bottom:18px}
+  .hero h1{font-family:"Anton";font-size:clamp(54px,11vw,150px);line-height:.9;letter-spacing:.01em;text-transform:uppercase;
+    text-shadow:0 0 38px rgba(225,6,0,.35)}
+  .hero h1 span{display:block;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.85)}
+  .hero .lead{font-family:"Anton";font-size:clamp(28px,5.4vw,58px);margin:18px 0 8px;line-height:1.05}
+  .hero .lead em{font-style:normal;color:var(--red)}
+  .hero p.sub{color:var(--gray);font-size:clamp(14px,1.7vw,17px);max-width:560px;margin-top:14px;font-weight:500}
+  .hero .badges{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .badge{display:flex;flex-direction:column;gap:2px;background:rgba(20,20,20,.7);border:1px solid var(--line);
+    border-left:3px solid var(--red);padding:12px 16px;min-width:160px}
+  .badge .t{font-family:"Oswald";font-weight:700;letter-spacing:.1em;font-size:15px}
+  .badge .d{font-size:11px;color:var(--gray);line-height:1.5}
+  .hero-foot{margin-top:40px;font-family:"Oswald";font-weight:600;letter-spacing:.12em;font-size:clamp(15px,2.4vw,22px)}
+  .hero-foot .bar{display:inline-block;width:46px;height:3px;background:var(--red);vertical-align:middle;margin-right:14px}
+
+  /* ===== section base ===== */
+  section{position:relative;padding:96px 0}
+  .sec-head{margin-bottom:54px}
+  .sec-tag{display:inline-block;font-family:"Oswald";font-weight:700;letter-spacing:.24em;font-size:12px;color:var(--red);
+    border:1px solid var(--red);padding:5px 14px;border-radius:2px;margin-bottom:18px}
+  .sec-head h2{font-family:"Anton";font-size:clamp(30px,5.6vw,58px);line-height:1.04;letter-spacing:.01em}
+  .sec-head p{color:var(--gray);margin-top:14px;font-weight:500;max-width:720px}
+  .alt{background:linear-gradient(180deg,#0d0d0d,#0a0a0a);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+  /* ===== philosophy ===== */
+  .phi{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+  .phi-left .ovs{color:var(--red);font-size:13px}
+  .phi-left h3{font-family:"Anton";font-size:clamp(30px,4.6vw,50px);line-height:1.1;margin:14px 0 18px}
+  .phi-left h3 .q{color:var(--red)}
+  .phi-left .bg{margin-top:30px;border:1px solid var(--line);border-left:3px solid var(--red);padding:18px 20px;background:var(--panel)}
+  .phi-left .bg b{display:block;font-size:18px;margin-bottom:6px}
+  .phi-left .bg span{color:var(--gray);font-size:13px}
+  .phi-list{display:flex;flex-direction:column;gap:16px}
+  .phi-item{display:flex;gap:20px;background:var(--panel);border:1px solid var(--line);padding:22px 24px;border-radius:4px;transition:.25s}
+  .phi-item:hover{transform:translateX(6px);border-color:var(--red)}
+  .phi-item .no{font-family:"Anton";font-size:42px;color:var(--red);line-height:1;min-width:54px}
+  .phi-item h4{font-size:19px;font-weight:900;margin-bottom:6px}
+  .phi-item p{color:var(--gray);font-size:14px}
+
+  /* ===== stats ===== */
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--red);padding:24px;border-radius:4px;position:relative;overflow:hidden}
+  .stat::after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;background:radial-gradient(circle,var(--red-glow),transparent 70%);opacity:.4}
+  .stat .lbl{font-size:13px;color:var(--gray);font-weight:700}
+  .stat .cap{font-size:12px;color:#8a8a8a;margin-bottom:14px}
+  .stat .big{font-family:"Anton";font-size:46px;line-height:1;color:#fff}
+  .stat .delta{display:inline-block;font-family:"Oswald";font-weight:700;color:var(--red);font-size:20px;margin-left:8px;vertical-align:middle}
+  .stat .src{font-size:10px;color:#666;margin-top:12px}
+  @media(max-width:860px){.stat-grid{grid-template-columns:1fr 1fr}}
+
+  /* ===== problems ===== */
+  .prob{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .prob-col h3{font-family:"Oswald";font-weight:700;letter-spacing:.04em;font-size:22px;margin-bottom:18px;display:flex;gap:12px;align-items:center}
+  .prob-col h3 i{font-family:"Anton";font-style:normal;color:var(--red);font-size:14px;border:1px solid var(--red);padding:3px 8px}
+  .prob-row{display:flex;gap:18px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);padding:18px 20px;margin-bottom:12px;border-radius:4px}
+  .prob-row .v{font-family:"Anton";font-size:30px;color:#fff;min-width:120px;line-height:1}
+  .prob-row .v.red{color:var(--red)}
+  .prob-row p{font-size:13px;color:var(--gray)}
+  .prob-row p .src{display:block;font-size:10.5px;color:#666;margin-top:5px;letter-spacing:.02em}
+  .solve{margin-top:30px;text-align:center;font-family:"Oswald";font-weight:600;letter-spacing:.08em;font-size:clamp(16px,2.4vw,22px);
+    border:1px solid var(--red);padding:18px;border-radius:4px;background:linear-gradient(90deg,rgba(225,6,0,.12),transparent)}
+
+  /* ===== reasons ===== */
+  .reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .reason{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:.25s}
+  .reason:hover{transform:translateY(-8px);border-color:var(--red);box-shadow:0 24px 50px rgba(225,6,0,.16)}
+  .reason .top{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+  .reason .top .no{font-family:"Anton";font-size:34px;color:var(--red)}
+  .reason .top .k{font-family:"Oswald";font-weight:700;letter-spacing:.18em;font-size:11px;color:var(--gray)}
+  .reason .body{padding:26px 22px}
+  .reason .big{font-family:"Anton";font-size:30px;margin-bottom:6px;letter-spacing:.04em}
+  .reason .pill{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--red);padding:3px 10px;border-radius:20px;margin-bottom:14px}
+  .reason p{color:var(--gray);font-size:13.5px}
+  @media(max-width:860px){.reasons{grid-template-columns:1fr}}
+
+  /* ===== representative / sponsor authority ===== */
+  .rep{display:grid;grid-template-columns:1fr 1.05fr;gap:46px;align-items:center}
+  .rep-card{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--line);
+    background:linear-gradient(160deg,#1b1b1b,#0d0d0d);padding:40px 34px;min-height:540px;display:flex;flex-direction:column;justify-content:flex-end}
+  .rep-card::before{content:"ACT-R";position:absolute;top:-20px;right:-10px;font-family:"Anton";font-size:140px;color:rgba(255,255,255,.04);letter-spacing:.02em}
+  .rep-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 12%;z-index:0;
+    filter:grayscale(.05) contrast(1.05) saturate(1.05)}
+  .rep-photo.noimg{display:none}
+  .rep-card:has(.rep-photo:not(.noimg))::before{display:none}
+  .rep-card:has(.rep-photo:not(.noimg)) .rep-card-info{position:relative;z-index:2}
+  .rep-card:has(.rep-photo:not(.noimg)){background:#000}
+  .rep-card:has(.rep-photo:not(.noimg))::after{content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(0deg,rgba(0,0,0,.92) 8%,rgba(0,0,0,.45) 45%,rgba(0,0,0,.15) 100%)}
+  .rep-card-info{position:relative;z-index:2}
+  .rep-card .role{font-family:"Oswald";letter-spacing:.2em;color:var(--red);font-size:13px;font-weight:700}
+  .rep-card .nm{font-family:"Anton";font-size:54px;line-height:1;margin:8px 0 4px}
+  .rep-card .en{color:var(--gray);font-family:"Oswald";letter-spacing:.16em;font-size:13px}
+  .rep-card .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .rep-card .tags span{font-size:11px;border:1px solid var(--line);padding:5px 10px;border-radius:20px;color:#ddd}
+  .rep h3{font-family:"Anton";font-size:clamp(26px,3.8vw,40px);line-height:1.12;margin-bottom:16px}
+  .rep p.t{color:var(--gray);margin-bottom:24px}
+  .sponsor-box{display:flex;align-items:center;gap:22px;background:#000;border:1px solid var(--gold);border-radius:6px;padding:22px 26px;
+    box-shadow:0 0 40px rgba(217,176,74,.12)}
+  .sponsor-box .logo{font-family:"Anton";font-size:30px;line-height:.9;text-align:center;color:#fff;border:3px solid var(--gold);padding:10px 14px;border-radius:6px}
+  .sponsor-box .logo small{display:block;font-size:11px;letter-spacing:.2em;color:var(--gold)}
+  .sponsor-box .txt b{font-size:15px;color:var(--gold);letter-spacing:.06em}
+  .sponsor-box .txt p{font-size:13px;color:var(--gray);margin-top:4px}
+  @media(max-width:860px){.rep{grid-template-columns:1fr;gap:28px}}
+
+  /* ===== earn structure ===== */
+  .earn{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .earn-card{position:relative;border-radius:8px;padding:34px 30px;border:1px solid var(--line);text-align:center;overflow:hidden}
+  .earn-card.a{background:linear-gradient(160deg,#1c0a0a,#100505);border-color:rgba(225,6,0,.5)}
+  .earn-card.b{background:linear-gradient(160deg,#161616,#0c0c0c)}
+  .earn-card .no{position:absolute;top:14px;left:18px;font-family:"Anton";font-size:18px;background:var(--red);padding:2px 12px;border-radius:2px}
+  .earn-card.b .no{background:var(--panel2);border:1px solid var(--gold);color:var(--gold)}
+  .earn-card .k{font-family:"Oswald";font-weight:700;letter-spacing:.16em;font-size:12px;color:var(--gray);margin:10px 0 16px}
+  .earn-card h4{font-family:"Anton";font-size:clamp(24px,3.4vw,34px);line-height:1.15;margin-bottom:14px}
+  .earn-card p{color:var(--gray);font-size:14px}
+
+  /* ===== reward / rank table ===== */
+  .rank-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+  table.rank{width:100%;border-collapse:collapse;min-width:720px}
+  table.rank th,table.rank td{padding:18px 18px;text-align:left;border-bottom:1px solid var(--line);font-size:14px}
+  table.rank thead th{background:#000;font-family:"Oswald";letter-spacing:.12em;font-size:12px;color:var(--gray);text-transform:uppercase}
+  table.rank .rk{font-family:"Anton";font-size:20px;letter-spacing:.04em;display:flex;align-items:center;gap:10px}
+  table.rank .dot{width:12px;height:12px;border-radius:50%}
+  table.rank tr:last-child td{border-bottom:none}
+  table.rank tbody tr:hover{background:rgba(225,6,0,.06)}
+  .b1{background:#a86b3c}.b2{background:#c9c9c9}.b3{background:var(--gold)}.b4{background:#7fd4ff}.b5{background:var(--red)}
+  .incent{font-family:"Anton";color:var(--red);font-size:18px}
+  .note-mini{font-size:12px;color:#7c7c7c;margin-top:14px}
+  /* simplified reward example */
+  .reward-example{max-width:760px;margin:0 auto;background:linear-gradient(120deg,#1c0606,#0d0d0d);
+    border:1px solid rgba(225,6,0,.5);border-radius:12px;padding:30px 34px;position:relative;overflow:hidden}
+  .reward-example::before{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;background:radial-gradient(circle,var(--red-glow),transparent 70%);opacity:.4}
+  .reward-example .ex-tag{position:relative;display:inline-block;font-family:"Oswald";font-weight:700;letter-spacing:.16em;font-size:12px;
+    color:#fff;background:var(--red);padding:6px 16px;border-radius:50px;margin-bottom:20px}
+  .reward-example .ex-body{position:relative;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+  .reward-example .ex-case{font-family:"Anton";font-size:clamp(24px,4vw,34px);letter-spacing:.02em;white-space:nowrap}
+  .reward-example .ex-case-label{font-size:13px;color:var(--gray);font-weight:700;margin-bottom:10px}
+  .reward-example .ex-chips{display:flex;gap:8px;flex-wrap:wrap}
+  .reward-example .ex-chips span{font-family:"Anton";font-size:18px;letter-spacing:.02em;color:#fff;background:#000;
+    border:1px solid rgba(225,6,0,.55);border-radius:8px;padding:8px 14px;min-width:54px;text-align:center}
+  .reward-example .ex-arrow{color:var(--red);font-family:"Anton";font-size:22px}
+  .reward-example .ex-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .reward-example .ex-list li{font-size:15px;font-weight:700;background:#000;border:1px solid var(--line);border-left:3px solid var(--red);
+    padding:11px 18px;border-radius:6px}
+  .reward-example .ex-list li b{color:var(--red);margin-right:6px}
+  @media(max-width:680px){.reward-example .ex-arrow{transform:rotate(90deg)}.reward-example .ex-body{gap:16px}}
+
+  /* ===== perks (wear/supp/gear) ===== */
+  .perks{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .perk{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:30px 26px;position:relative;overflow:hidden;transition:.25s}
+  .perk:hover{transform:translateY(-6px);border-color:var(--red)}
+  .perk .ic{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:rgba(225,6,0,.12);border:1px solid var(--red);margin-bottom:18px}
+  .perk .ic svg{width:28px;height:28px;stroke:var(--red);fill:none;stroke-width:1.7}
+  .perk h4{font-family:"Anton";font-size:24px;margin-bottom:6px;letter-spacing:.03em}
+  .perk .brandtag{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.1em;margin-bottom:12px}
+  .perk p{color:var(--gray);font-size:13.5px}
+  .perk ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:7px}
+  .perk li{font-size:12.5px;color:#ccc;padding-left:18px;position:relative}
+  .perk li::before{content:"▶";position:absolute;left:0;color:var(--red);font-size:9px;top:4px}
+  @media(max-width:860px){.perks{grid-template-columns:1fr}}
+
+  /* ===== partner / gym ===== */
+  .partner{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .partner .gym-card{background:linear-gradient(160deg,#101a10,#0a0a0a);border:1px solid rgba(160,230,90,.3);border-radius:10px;padding:34px 32px}
+  .fitlogo{font-family:"Anton";font-size:34px;letter-spacing:.02em;color:#fff;margin-bottom:6px}
+  .fitlogo .sq{display:inline-block;width:14px;height:22px;background:#9be15d;margin-right:3px;transform:skewX(-12deg);vertical-align:-2px}
+  .fitlogo small{font-size:12px;color:#9be15d;letter-spacing:.18em;display:block;margin-top:4px}
+  .partner h3{font-family:"Anton";font-size:clamp(26px,3.6vw,40px);line-height:1.12;margin-bottom:16px}
+  .partner h3 em{font-style:normal;color:var(--red)}
+  .free-badge{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-family:"Anton";font-size:18px;padding:8px 18px;border-radius:4px;margin-bottom:18px;letter-spacing:.06em}
+  .partner p{color:var(--gray);font-size:14.5px;margin-bottom:14px}
+  .yamazawa{display:flex;align-items:center;gap:16px;background:#000;border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-top:8px}
+  .yamazawa .av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#9be15d,#1b8f2e);display:grid;place-items:center;font-family:"Anton";font-size:22px;color:#06210a;flex:0 0 auto}
+  .yamazawa b{font-size:15px}
+  .yamazawa span{font-size:12px;color:var(--gray)}
+  .perk-list-mini{list-style:none;margin-top:18px;display:grid;gap:10px}
+  .perk-list-mini li{display:flex;gap:12px;align-items:center;font-size:14px}
+  .perk-list-mini .chk{width:22px;height:22px;border-radius:50%;background:rgba(155,225,93,.15);border:1px solid #9be15d;display:grid;place-items:center;color:#9be15d;font-size:12px;flex:0 0 auto}
+  @media(max-width:860px){.partner{grid-template-columns:1fr;gap:26px}}
+
+  /* ===== case study ===== */
+  .case{display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:stretch}
+  .case-card{border:1px solid var(--line);border-radius:8px;padding:30px 28px;background:var(--panel)}
+  .case-card.before{border-top:3px solid #555}
+  .case-card.after{border-top:3px solid var(--red);background:linear-gradient(160deg,#1c0a0a,#0e0606)}
+  .case-card .who{font-size:12px;color:var(--gray);background:#000;display:inline-block;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .case-card .ph{font-family:"Oswald";letter-spacing:.16em;font-size:12px;color:var(--gray);font-weight:700}
+  .case-card .hl-big{font-family:"Anton";font-size:clamp(24px,3vw,32px);margin:6px 0 16px}
+  .case-card.after .hl-big{color:var(--red)}
+  .case-card ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .case-card li{font-size:13.5px;color:#ccc;padding-left:18px;position:relative}
+  .case-card li::before{content:"—";position:absolute;left:0;color:var(--red)}
+  .case-arrow{display:grid;place-items:center;font-family:"Anton";color:var(--red)}
+  .case-arrow div{text-align:center}
+  .case-arrow .a{font-size:40px;line-height:1}
+  .case-arrow small{display:block;font-size:11px;color:var(--gray);letter-spacing:.1em}
+  .quote{margin-top:30px;text-align:center;font-size:clamp(15px,2.2vw,20px);font-weight:500;color:#eee;font-style:italic;position:relative;padding:0 30px}
+  .quote::before,.quote::after{content:'"';font-family:"Anton";color:var(--red);font-size:40px;vertical-align:-14px}
+  @media(max-width:860px){.case{grid-template-columns:1fr}.case-arrow .a{transform:rotate(90deg)}}
+
+  /* ===== real now result ===== */
+  .real-now{margin-top:34px;display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;
+    background:linear-gradient(100deg,#1c0606,#0d0d0d);border:1px solid rgba(225,6,0,.5);border-radius:12px;padding:30px 34px;position:relative;overflow:hidden}
+  .real-now::before{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;background:radial-gradient(circle,var(--red-glow),transparent 70%);opacity:.4}
+  .real-now .live{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald";font-weight:700;letter-spacing:.16em;font-size:12px;color:#fff;
+    background:var(--red);padding:6px 14px;border-radius:50px;white-space:nowrap}
+  .real-now .live .blink{width:9px;height:9px;border-radius:50%;background:#fff;animation:blink 1.2s infinite}
+  @keyframes blink{50%{opacity:.25}}
+  .real-now .mid .who2{font-size:14px;color:var(--gray);font-weight:700;margin-bottom:4px}
+  .real-now .mid .amt{font-family:"Anton";font-size:clamp(34px,6vw,58px);line-height:1;color:#fff}
+  .real-now .mid .amt em{font-style:normal;color:var(--red)}
+  .real-now .mid .cond{font-size:13px;color:var(--gray);margin-top:6px}
+  .real-now .perks2{display:flex;flex-direction:column;gap:8px;min-width:180px}
+  .real-now .perks2 span{font-size:13px;font-weight:700;background:#000;border:1px solid var(--line);border-left:3px solid var(--red);padding:9px 14px;border-radius:4px}
+  .real-now .perks2 span b{color:var(--red)}
+  @media(max-width:780px){.real-now{grid-template-columns:1fr;gap:18px;text-align:left}}
+
+  /* ===== roadmap ===== */
+  .road{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:20px}
+  .road::before{content:"";position:absolute;top:34px;left:6%;right:6%;height:2px;background:linear-gradient(90deg,var(--red),rgba(225,6,0,.2))}
+  .road-step{position:relative;padding:0 14px;text-align:center}
+  .road-step .dot{width:18px;height:18px;border-radius:50%;background:var(--red);margin:26px auto 0;box-shadow:0 0 0 6px rgba(225,6,0,.15);position:relative;z-index:2}
+  .road-step .when{font-family:"Oswald";font-weight:700;letter-spacing:.08em;color:var(--red);font-size:13px;margin-top:16px}
+  .road-step .no{font-family:"Anton";font-size:20px;margin:6px 0}
+  .road-step h4{font-size:16px;font-weight:900;margin-bottom:10px}
+  .road-step ul{list-style:none;font-size:12px;color:var(--gray);display:flex;flex-direction:column;gap:5px}
+  @media(max-width:860px){.road{grid-template-columns:1fr 1fr;gap:30px}.road::before{display:none}}
+
+  /* ===== vision (future) ===== */
+  .vision{background:
+      radial-gradient(800px 400px at 80% 0%,rgba(217,176,74,.14),transparent 60%),
+      linear-gradient(180deg,#0e0c08,#0a0a0a)}
+  .vision .sec-tag{color:var(--gold);border-color:var(--gold)}
+  .vision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+  .v-card{border:1px solid rgba(217,176,74,.3);border-radius:10px;padding:32px 28px;background:linear-gradient(160deg,#16130c,#0b0b0b);position:relative;overflow:hidden}
+  .v-card .ic{font-size:34px;margin-bottom:14px}
+  .v-card h4{font-family:"Anton";font-size:24px;margin-bottom:10px;letter-spacing:.03em}
+  .v-card .prize{font-family:"Anton";font-size:40px;color:var(--gold);line-height:1;margin:6px 0 12px}
+  .v-card p{color:var(--gray);font-size:13.5px}
+  .v-card .soon{position:absolute;top:14px;right:14px;font-size:10px;letter-spacing:.14em;color:var(--gold);border:1px solid var(--gold);padding:3px 8px;border-radius:20px}
+  @media(max-width:860px){.vision-grid{grid-template-columns:1fr}}
+
+  /* ===== slides gallery ===== */
+  .slides-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .slides-grid a{border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:.25s;position:relative}
+  .slides-grid a:hover{border-color:var(--red);transform:scale(1.02)}
+  .slides-grid img{width:100%;height:auto}
+  .slides-grid .n{position:absolute;top:8px;left:8px;background:var(--red);font-family:"Anton";font-size:13px;padding:2px 9px;border-radius:2px}
+  @media(max-width:860px){.slides-grid{grid-template-columns:1fr 1fr}}
+
+  /* ===== entry / CTA ===== */
+  .entry{position:relative;text-align:center;overflow:hidden;
+    background:radial-gradient(900px 500px at 50% 0%,rgba(225,6,0,.28),transparent 60%),linear-gradient(180deg,#120303,#080808)}
+  .entry-photo{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.20}
+  .entry-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:grayscale(.25) contrast(1.12)}
+  .entry .wrap{position:relative;z-index:2}
+  .entry .ovs{color:var(--red);font-size:14px;margin-bottom:16px}
+  .entry h2{font-family:"Anton";font-size:clamp(40px,9vw,110px);line-height:.92;text-transform:uppercase}
+  .entry h2 span{display:block;font-size:clamp(22px,4.6vw,46px);margin-top:10px;color:#fff}
+  .entry p.lead2{color:var(--gray);max-width:560px;margin:22px auto 0;font-weight:500}
+  .entry .steps{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin:34px 0 40px}
+  .entry .step{display:flex;align-items:center;gap:10px;background:rgba(20,20,20,.8);border:1px solid var(--line);padding:12px 18px;border-radius:4px;font-size:13px}
+  .entry .step .no{font-family:"Anton";color:var(--red)}
+  .btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:"Oswald";font-weight:700;letter-spacing:.1em;font-size:16px;padding:18px 40px;border-radius:3px;transition:.22s}
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 14px 40px rgba(225,6,0,.4)}
+  .btn-primary:hover{background:#fff;color:var(--red);transform:translateY(-3px)}
+  .btn-ghost{border:1px solid #fff;color:#fff}
+  .btn-ghost:hover{background:#fff;color:#000}
+
+  /* ===== LINE primary CTA ===== */
+  .line-cta{max-width:760px;margin:0 auto 26px;background:linear-gradient(135deg,#06c755,#04a548);border-radius:14px;
+    padding:34px 32px;text-align:center;position:relative;overflow:hidden;box-shadow:0 18px 50px rgba(6,199,85,.32)}
+  .line-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 240px at 80% -10%,rgba(255,255,255,.25),transparent 60%)}
+  .line-cta .ttl{position:relative;font-family:"Anton";font-size:clamp(24px,4.6vw,38px);color:#fff;line-height:1.15;letter-spacing:.02em}
+  .line-cta .sub{position:relative;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;margin:10px 0 22px}
+  .line-cta .badge30{position:relative;display:inline-block;background:rgba(0,0,0,.18);color:#fff;font-weight:700;font-size:12px;
+    letter-spacing:.08em;padding:5px 14px;border-radius:50px;margin-bottom:16px}
+  .line-btn{position:relative;display:inline-flex;align-items:center;gap:12px;background:#fff;color:#06b34c;font-family:"Oswald";font-weight:700;
+    letter-spacing:.06em;font-size:19px;padding:18px 44px;border-radius:50px;transition:.2s;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+  .line-btn:hover{transform:translateY(-3px) scale(1.02)}
+  .line-btn .li{width:30px;height:30px;background:#06c755;border-radius:8px;display:grid;place-items:center;color:#fff;font-family:"Anton";font-size:15px}
+  .line-flow{position:relative;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px;color:#fff;font-size:12.5px;font-weight:600}
+  .line-flow span{background:rgba(255,255,255,.16);padding:7px 14px;border-radius:50px}
+  .qr-box{display:none}
+  @media(min-width:760px){
+    .qr-box{display:inline-flex;align-items:center;gap:14px;margin-top:20px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:12px 18px;position:relative;z-index:2}
+    .qr-box img{width:86px;height:86px;border-radius:8px;background:#fff;padding:5px;display:block}
+    .qr-box .qr-t{text-align:left;font-size:12.5px;color:#fff;font-weight:700;line-height:1.55}
+    .qr-box .qr-t b{display:block;font-size:14px;margin-bottom:2px}
+  }
+  .or-line{display:flex;align-items:center;gap:16px;max-width:760px;margin:0 auto 22px;color:#777;font-size:12px;letter-spacing:.12em}
+  .or-line::before,.or-line::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* ===== セクション背景に実写（没入感） ===== */
+  .bg-photo{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .bg-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4) contrast(1.12) brightness(.82)}
+  .bg-photo.r img{object-position:80% center}
+  .bg-photo.l img{object-position:20% center}
+  .bg-photo.c img{object-position:center 24%}
+  .bg-photo::after{content:"";position:absolute;inset:0}
+  .bg-photo.r::after{background:linear-gradient(90deg,#0a0a0a 8%,rgba(10,10,10,.9) 44%,rgba(10,10,10,.68) 100%)}
+  .bg-photo.l::after{background:linear-gradient(270deg,#0a0a0a 8%,rgba(10,10,10,.9) 44%,rgba(10,10,10,.68) 100%)}
+  .bg-photo.c::after{background:radial-gradient(1000px 560px at 50% 38%,rgba(10,10,10,.6),#0a0a0a 80%)}
+  section > .wrap{position:relative;z-index:2}
+
+  /* ===== gallery (THE REAL) ===== */
+  .gallery{background:linear-gradient(180deg,#070707,#0b0b0b);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .gal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+  .gal-grid figure{margin:0;position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;aspect-ratio:3/4;background:#000;transition:.3s}
+  .gal-grid figure img{width:100%;height:100%;object-fit:contain;object-position:center bottom;transition:transform .5s ease;filter:contrast(1.05) saturate(1.05)}
+  .gal-grid figure:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 20px 40px rgba(225,6,0,.18)}
+  .gal-grid figure:hover img{transform:scale(1.05)}
+  .gal-grid figure figcaption{position:absolute;left:12px;bottom:10px;font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.1em;font-size:11px;color:#fff;
+    background:rgba(225,6,0,.85);padding:4px 10px;border-radius:4px;z-index:2}
+  .gal-grid figure::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 30%);pointer-events:none}
+
+  /* ===== form ===== */
+  .form-wrap{max-width:760px;margin:8px auto 0;background:rgba(15,15,15,.86);border:1px solid var(--line);border-top:3px solid var(--red);
+    border-radius:10px;padding:38px 34px;text-align:left;backdrop-filter:blur(6px)}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+  .fld{display:flex;flex-direction:column;gap:7px}
+  .fld.full{grid-column:1 / -1}
+  .fld label{font-size:13px;font-weight:700;letter-spacing:.04em;color:#eee}
+  .fld label .req{color:var(--red);font-size:11px;margin-left:6px}
+  .fld label .opt{color:#888;font-size:11px;margin-left:6px;font-weight:400}
+  .fld input,.fld select,.fld textarea{
+    background:#0c0c0c;border:1px solid var(--line);border-radius:6px;color:#fff;font-family:inherit;font-size:14px;padding:13px 14px;width:100%;transition:.18s}
+  .fld textarea{resize:vertical;min-height:96px}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(225,6,0,.18)}
+  .fld input::placeholder,.fld textarea::placeholder{color:#5e5e5e}
+  .fld .err{color:#ff5b54;font-size:11.5px;display:none}
+  .fld.invalid input,.fld.invalid select,.fld.invalid textarea{border-color:#ff5b54}
+  .fld.invalid .err{display:block}
+  .agree{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--gray);margin-top:4px}
+  .agree input{width:18px;height:18px;accent-color:var(--red);margin-top:2px;flex:0 0 auto}
+  .agree a{color:#fff;text-decoration:underline}
+  .form-submit{width:100%;margin-top:8px;border:none;cursor:pointer;background:var(--red);color:#fff;font-family:"Oswald";font-weight:700;
+    letter-spacing:.1em;font-size:17px;padding:17px;border-radius:6px;transition:.2s;box-shadow:0 12px 34px rgba(225,6,0,.36)}
+  .form-submit:hover{background:#fff;color:var(--red);transform:translateY(-2px)}
+  .form-submit:disabled{opacity:.6;cursor:wait;transform:none}
+  .form-status{margin-top:14px;font-size:13.5px;text-align:center;display:none;padding:12px;border-radius:6px}
+  .form-status.ok{display:block;background:rgba(60,200,90,.12);border:1px solid #3cc85a;color:#7ef29a}
+  .form-status.ng{display:block;background:rgba(255,91,84,.12);border:1px solid #ff5b54;color:#ff8a85}
+  .alt-apply{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+  .alt-apply a{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;padding:13px 24px;border-radius:50px;border:1px solid var(--line);transition:.2s}
+  .alt-apply a:hover{border-color:var(--red);background:rgba(225,6,0,.08)}
+  .alt-apply .line{border-color:#06c755;color:#06c755}
+  .alt-apply .line:hover{background:#06c755;color:#fff}
+  @media(max-width:680px){.form-grid{grid-template-columns:1fr}.form-wrap{padding:28px 20px}}
+
+  /* ===== reassurance chips (hero) ===== */
+  .hero-reassure{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;color:#d0d0d0;font-weight:600}
+  .hero-reassure span{display:inline-flex;align-items:center;gap:6px}
+  .hero-reassure span::before{content:"✓";color:#06c755;font-weight:900}
+
+  /* ===== mid CTA band ===== */
+  .midcta{position:relative;text-align:center;overflow:hidden;padding:66px 0;
+    background:radial-gradient(740px 360px at 50% 0%,rgba(6,199,85,.16),transparent 60%),linear-gradient(180deg,#0a0a0a,#070707);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .midcta h3{font-family:"Anton";font-size:clamp(26px,5.4vw,48px);line-height:1.12;margin-bottom:12px}
+  .midcta h3 em{font-style:normal;color:var(--red)}
+  .midcta p{color:var(--gray);margin-bottom:26px;font-weight:500}
+  .midcta .big-line{display:inline-flex;align-items:center;gap:11px;background:#06c755;color:#fff;font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.04em;font-size:18px;padding:19px 46px;border-radius:50px;box-shadow:0 14px 40px rgba(6,199,85,.42);animation:hpulse 1.9s infinite;transition:.2s}
+  .midcta .big-line:hover{transform:translateY(-3px) scale(1.02)}
+  .midcta .big-line .li{font-family:"Anton";background:#fff;color:#06b34c;width:24px;height:24px;border-radius:7px;display:inline-grid;place-items:center;font-size:14px}
+  .midcta .reassure{margin-top:18px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:12.5px;color:#bbb}
+  .midcta .reassure span::before{content:"✓ ";color:#06c755;font-weight:900}
+
+  /* ===== flow (応募の流れ) ===== */
+  .flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .flow-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:30px 20px 26px;text-align:center;position:relative;transition:.25s}
+  .flow-card:hover{border-color:var(--red);transform:translateY(-6px);box-shadow:0 20px 40px rgba(225,6,0,.15)}
+  .flow-card .step-n{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-family:"Anton";font-size:15px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:3px solid #0a0a0a}
+  .flow-card .ic{font-size:34px;margin:8px 0 12px}
+  .flow-card .time{font-family:"Oswald",sans-serif;font-size:11px;color:var(--red);font-weight:700;letter-spacing:.08em;margin-bottom:6px}
+  .flow-card h4{font-size:16px;font-weight:900;margin-bottom:8px}
+  .flow-card p{font-size:12.5px;color:var(--gray);line-height:1.7}
+  @media(max-width:760px){.flow-grid{grid-template-columns:1fr 1fr;gap:22px 16px}}
+
+  /* ===== FAQ ===== */
+  .faq-list{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  .faq{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.2s}
+  .faq[open]{border-color:rgba(225,6,0,.5)}
+  .faq summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .q{display:flex;gap:12px;align-items:center}
+  .faq summary .q b{color:var(--red);font-family:"Anton";font-size:19px;flex:0 0 auto}
+  .faq summary .ic{color:var(--red);font-size:24px;line-height:1;transition:transform .2s;flex:0 0 auto}
+  .faq[open] summary .ic{transform:rotate(45deg)}
+  .faq[open] summary{border-bottom:1px solid var(--line)}
+  .faq .a{padding:18px 22px 20px;color:var(--gray);font-size:14px;line-height:1.85}
+
+  /* ===== voices (応募者の声) ===== */
+  .voice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+  .voice{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 24px;transition:.25s}
+  .voice:hover{border-color:var(--red);transform:translateY(-5px);box-shadow:0 20px 44px rgba(225,6,0,.15)}
+  .voice .stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:12px}
+  .voice .who{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+  .voice .av{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--red),#7a0300);display:grid;place-items:center;font-family:"Anton";font-size:19px;color:#fff;flex:0 0 auto}
+  .voice .who b{font-size:15px;display:block}
+  .voice .who span{font-size:12px;color:var(--gray)}
+  .voice .ba{display:flex;gap:8px;align-items:stretch;margin-bottom:16px}
+  .voice .ba .col{flex:1;background:#000;border:1px solid var(--line);border-radius:8px;padding:11px 12px}
+  .voice .ba .col .t{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.12em;color:var(--gray);font-weight:700}
+  .voice .ba .col .v{font-size:13.5px;font-weight:900;margin-top:4px;line-height:1.4}
+  .voice .ba .col.aft{border-color:rgba(225,6,0,.5)}
+  .voice .ba .col.aft .v{color:var(--red)}
+  .voice .ba .arw{align-self:center;color:var(--red);font-family:"Anton";font-size:16px}
+  .voice p.q{font-size:13.5px;color:#e6e6e6;line-height:1.85}
+  .voice .role{font-size:11px;color:#7c7c7c;margin-top:12px}
+
+  /* ===== hero CTA + scroll cue ===== */
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .hero-cta a{display:inline-flex;align-items:center;gap:8px;font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.05em;font-size:15px;padding:16px 32px;border-radius:50px;transition:.22s}
+  .hero-cta .line{background:#06c755;color:#fff;box-shadow:0 12px 32px rgba(6,199,85,.4);animation:hpulse 1.9s infinite}
+  .hero-cta .line:hover{transform:translateY(-3px) scale(1.02)}
+  .hero-cta .ghost{border:1px solid rgba(255,255,255,.45);color:#fff}
+  .hero-cta .ghost:hover{background:#fff;color:#000}
+  @keyframes hpulse{0%,100%{box-shadow:0 12px 32px rgba(6,199,85,.4)}50%{box-shadow:0 12px 42px rgba(6,199,85,.7)}}
+  .scroll-cue{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:3;color:var(--gray);font-size:10px;letter-spacing:.24em;text-align:center;font-family:"Oswald",sans-serif}
+  .scroll-cue::after{content:"";display:block;width:1px;height:36px;background:linear-gradient(var(--red),transparent);margin:8px auto 0;animation:cue 1.6s ease-in-out infinite}
+  @keyframes cue{0%,100%{opacity:.3;transform:scaleY(.55)}50%{opacity:1;transform:scaleY(1)}}
+
+  /* ===== keyword marquee ===== */
+  .marquee{overflow:hidden;background:#0a0a0a;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0}
+  .marquee-track{display:flex;gap:36px;width:max-content;animation:marq 24s linear infinite;font-family:"Anton";font-size:clamp(20px,3.4vw,30px);letter-spacing:.03em}
+  .marquee-track span{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.22);white-space:nowrap}
+  .marquee-track span.hot{color:var(--red);-webkit-text-stroke:0}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ===== benefits strip ===== */
+  .benefits{background:linear-gradient(180deg,#0b0b0b,#080808)}
+  .ben-head{text-align:center;margin-bottom:30px}
+  .ben-head .sec-tag{display:inline-block;font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.22em;font-size:12px;color:var(--red);border:1px solid var(--red);padding:5px 14px;border-radius:2px;margin-bottom:14px}
+  .ben-head h2{font-family:"Anton";font-size:clamp(26px,5vw,46px)}
+  .ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:14px}
+  .ben{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;padding:24px 14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;transition:.25s}
+  .ben:hover{border-color:var(--red);transform:translateY(-6px);box-shadow:0 20px 40px rgba(225,6,0,.16)}
+  .ben .bi{font-size:30px;line-height:1}
+  .ben b{font-size:15px}
+  .ben span{font-size:11.5px;color:var(--gray);line-height:1.5}
+
+  /* ===== animated stat band ===== */
+  .statband{background:radial-gradient(820px 420px at 50% 0%,rgba(225,6,0,.18),transparent 62%),#080808;border-top:1px solid var(--line)}
+  .sb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+  .sb .num{font-family:"Anton";font-size:clamp(32px,6vw,62px);color:#fff;line-height:1}
+  .sb .num em{font-style:normal;color:var(--red)}
+  .sb .lbl{font-size:12px;color:var(--gray);margin-top:10px;font-weight:700;letter-spacing:.02em}
+  @media(max-width:680px){.sb-grid{grid-template-columns:1fr 1fr;gap:28px 18px}}
+
+  /* ===== sticky apply CTA ===== */
+  .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:10px;justify-content:center;align-items:center;
+    padding:11px 14px;background:linear-gradient(0deg,#070707,rgba(7,7,7,.94));border-top:1px solid var(--line);
+    transform:translateY(130%);transition:transform .4s cubic-bezier(.2,.8,.2,1);backdrop-filter:blur(8px)}
+  .sticky-cta.show{transform:none}
+  .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.04em;font-size:15px;padding:14px 22px;border-radius:50px;white-space:nowrap}
+  .sticky-cta .line{background:#06c755;color:#fff;flex:1;max-width:480px;box-shadow:0 6px 22px rgba(6,199,85,.45);animation:stpulse 1.8s infinite}
+  .sticky-cta .deck{border:1px solid var(--line);color:#ddd}
+  @keyframes stpulse{0%,100%{box-shadow:0 6px 22px rgba(6,199,85,.45)}50%{box-shadow:0 6px 34px rgba(6,199,85,.8)}}
+  @media(min-width:760px){
+    .sticky-cta{left:auto;right:24px;bottom:24px;background:none;border:none;padding:0;backdrop-filter:none}
+    .sticky-cta .line{max-width:none;font-size:16px;padding:16px 30px}
+    .sticky-cta .deck{display:none}
+  }
+  @media print{.sticky-cta{display:none!important}}
+
+  /* ===== モバイル：2カラムを縦積み（崩れ防止） ===== */
+  @media(max-width:760px){
+    .prob{grid-template-columns:1fr;gap:22px}
+    .earn{grid-template-columns:1fr}
+    .phi{grid-template-columns:1fr;gap:30px}
+  }
+
+  /* ===== footer ===== */
+  footer{background:#060606;border-top:1px solid var(--line);padding:54px 0 30px}
+  .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:34px}
+  .foot-brand .display{font-family:"Anton";font-size:34px}
+  .foot-brand p{color:var(--gray);font-size:13px;margin-top:8px;max-width:320px}
+  .foot-info{font-size:13px;color:var(--gray);line-height:2}
+  .foot-info b{color:#fff;font-weight:700}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:#666}
+  .disc{font-size:11px;color:#5a5a5a;margin-top:18px;line-height:1.7}
+
+  /* reveal — only hide when JS is active; always visible for print / no-JS */
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  html.js .reveal.in{opacity:1;transform:none}
+  @media print{.reveal{opacity:1!important;transform:none!important}}
+
+  /* ===== PV : オープニング・シネマティック ===== */
+  #pv{position:fixed;inset:0;z-index:9999;background:#050505;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  #pv.hide{opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+  /* 実動画スロット（assets/video/pv.mp4 があれば自動でこちらを再生） */
+  #pv .pv-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;display:none;background:#000}
+  @media (min-aspect-ratio:1/1){#pv .pv-video{object-fit:contain}}
+  #pv.video-mode .pv-video{display:block}
+  #pv.video-mode .scene{display:none!important}
+  #pv.video-mode .pv-bg,#pv.video-mode .pv-grid,#pv.video-mode .pv-embers{display:none}
+  #pv .pv-bg{position:absolute;inset:0;background:radial-gradient(760px 520px at 50% 42%,rgba(225,6,0,.14),transparent 70%)}
+  #pv .pv-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(circle at 50% 50%,#000,transparent 76%)}
+  #pv .pv-embers span{position:absolute;bottom:-12px;width:4px;height:4px;border-radius:50%;background:var(--red);opacity:0;animation:ember linear infinite}
+  @keyframes ember{0%{transform:translateY(0) scale(1);opacity:0}12%{opacity:.85}100%{transform:translateY(-104vh) scale(.2);opacity:0}}
+  #pv .pv-progress{position:absolute;left:0;top:0;height:3px;background:var(--red);width:0;z-index:6;box-shadow:0 0 12px var(--red)}
+  #pv .pv-skip{position:absolute;top:20px;right:22px;z-index:6;color:#cfcfcf;font-size:12.5px;letter-spacing:.12em;font-weight:700;
+    border:1px solid rgba(255,255,255,.28);padding:8px 16px;border-radius:50px;cursor:pointer;background:rgba(0,0,0,.35);transition:.2s}
+  #pv .pv-skip:hover{color:#fff;border-color:#fff}
+  #pv .scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
+    opacity:0;transform:scale(1.02);transition:opacity .8s ease,transform .8s ease;padding:24px;text-align:center}
+  #pv .scene.on{opacity:1;transform:scale(1)}
+  #pv .cap{font-family:"Noto Sans JP",sans-serif;font-size:clamp(22px,5.2vw,46px);font-weight:900;line-height:1.5;letter-spacing:.02em;color:#fff;text-shadow:0 2px 34px rgba(0,0,0,.7)}
+  #pv .cap .r{color:var(--red)}
+  #pv .cap small{display:block;font-size:.5em;color:var(--gray);font-weight:500;margin-top:12px;letter-spacing:.12em}
+  /* figures */
+  /* protagonist — スリムな人体シルエット＋顔（before表現） */
+  #pv .fig{position:relative;width:150px;height:300px;filter:drop-shadow(0 12px 26px rgba(0,0,0,.6))}
+  #pv .fig .body{position:absolute;inset:0;width:100%;height:100%}
+  #pv .fig .body path{fill:#1d1d1f;stroke:#6e6e72;stroke-width:2}
+  #pv .fig .head{position:absolute;top:4px;left:50%;transform:translateX(-50%);width:66px;height:66px;border-radius:50%;overflow:hidden;border:2px solid #8c8c8c;z-index:2;background:#222}
+  #pv .fig .head img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;filter:grayscale(1) brightness(.72)}
+  /* 実写真（after表現） */
+  #pv .hero-photo{height:min(48vh,372px);width:auto;border-radius:14px;object-fit:cover;border:1px solid rgba(225,6,0,.45);
+    box-shadow:0 0 66px rgba(225,6,0,.5);filter:saturate(1.12) contrast(1.06)}
+  #pv .scene.on .hero-photo{animation:pvzoom 5.2s ease forwards}
+  @keyframes pvzoom{from{transform:scale(1.05)}to{transform:scale(1)}}
+  /* sound button */
+  #pv .pv-sound{position:absolute;top:20px;left:22px;z-index:6;color:#fff;font-size:12.5px;letter-spacing:.06em;font-weight:700;
+    border:1px solid rgba(255,255,255,.4);padding:8px 16px;border-radius:50px;cursor:pointer;background:rgba(225,6,0,.55);transition:.2s;animation:sndpulse 1.7s infinite}
+  #pv .pv-sound:hover{background:var(--red)}
+  #pv .pv-sound.off{background:rgba(0,0,0,.4);animation:none;color:#bbb}
+  @keyframes sndpulse{0%,100%{box-shadow:0 0 0 0 rgba(225,6,0,.5)}50%{box-shadow:0 0 0 9px rgba(225,6,0,0)}}
+  /* barbell */
+  #pv .barbell{width:min(72vw,440px);filter:drop-shadow(0 0 26px rgba(225,6,0,.65))}
+  #pv .scene.on .barbell{animation:pvslam .55s cubic-bezier(.2,.8,.2,1)}
+  @keyframes pvslam{0%{transform:scale(1.7) rotate(-3deg);opacity:0}60%{transform:scale(.95)}100%{transform:scale(1);opacity:1}}
+  /* chart */
+  #pv .chart{display:flex;align-items:flex-end;gap:14px;height:210px}
+  #pv .chart i{width:34px;height:8%;background:linear-gradient(var(--red),#6e0200);border-radius:5px 5px 0 0;transition:height .8s cubic-bezier(.2,.8,.2,1)}
+  #pv .scene.on .chart i{height:var(--h)}
+  #pv .scene.on .chart i:nth-child(2){transition-delay:.1s}
+  #pv .scene.on .chart i:nth-child(3){transition-delay:.2s}
+  #pv .scene.on .chart i:nth-child(4){transition-delay:.3s}
+  #pv .scene.on .chart i:nth-child(5){transition-delay:.4s}
+  #pv .scene.on .chart i:nth-child(6){transition-delay:.5s}
+  /* end card */
+  #pv .pv-logo{font-family:"Anton";font-size:clamp(44px,12vw,120px);line-height:.88;text-transform:uppercase;letter-spacing:.02em;text-shadow:0 0 38px rgba(225,6,0,.4)}
+  #pv .pv-logo span{display:block;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.9)}
+  #pv .pv-tag{font-family:"Anton";font-size:clamp(22px,5.4vw,44px);margin-top:6px}
+  #pv .pv-tag em{font-style:normal;color:var(--red)}
+  #pv .pv-photo{width:118px;height:118px;border-radius:50%;object-fit:cover;object-position:center 12%;border:3px solid var(--red);box-shadow:0 0 30px rgba(225,6,0,.5)}
+  #pv .pv-enter{margin-top:8px;display:inline-flex;align-items:center;gap:10px;font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.08em;
+    font-size:17px;color:#fff;background:var(--red);border:none;cursor:pointer;padding:16px 38px;border-radius:50px;box-shadow:0 12px 34px rgba(225,6,0,.4);transition:.2s}
+  #pv .pv-enter:hover{background:#fff;color:var(--red);transform:translateY(-2px)}
+  @media print{#pv{display:none!important}html,body{overflow:visible!important}}
+  @media (prefers-reduced-motion: reduce){#pv .fig.buff{animation:none}}
+
+  /* =====================================================================
+     ★ LIGHT THEME（赤×白基調）— act-r-inc.com に合わせた配色
+     文章セクション＝白地＋黒文字＋濃い赤アクセント／写真・PV・CTA＝黒の見せ場バンド
+     ===================================================================== */
+  :root{
+    --red:#c8102e; --red-deep:#9c0c23; --red-glow:rgba(200,16,46,.5);
+    --gray:#5e6168; --line:rgba(0,0,0,.12); --panel:#ffffff; --panel2:#f3f4f6; --off:#f5f6f8; --gold:#b8860b;
+  }
+  body{background:#ffffff;color:#1b1c1f}
+
+  /* --- 明るくする（文章）セクション --- */
+  #philosophy,#background,#reward,#voices,#flow,#roadmap,#representative{background:#ffffff}
+  .alt{background:#f5f6f8;border-top-color:rgba(0,0,0,.07);border-bottom-color:rgba(0,0,0,.07)}
+  .benefits{background:#ffffff}
+  .statband{background:radial-gradient(820px 420px at 50% 0%,rgba(200,16,46,.10),transparent 62%),#fbfbfc;border-top-color:rgba(0,0,0,.07)}
+  .midcta{background:radial-gradient(740px 360px at 50% 0%,rgba(6,199,85,.10),transparent 60%),#f5f6f8;border-top-color:rgba(0,0,0,.07);border-bottom-color:rgba(0,0,0,.07)}
+
+  /* --- 暗いまま残す“見せ場”バンド（写真/PV/CTAのみ） --- */
+  .hero,.marquee,.gallery,.entry,#pv{color:#fff}
+  .gallery .sec-head h2{color:#fff}.gallery .sec-head p{color:#cccccc}
+
+  /* --- 旧ダークの写真背景ゴーストは白テーマでは非表示 --- */
+  .bg-photo{display:none}
+
+  /* --- 稼げる仕組み（structure）を白に --- */
+  #structure{background:#f5f6f8}
+  .earn-card.a{background:linear-gradient(160deg,#ffffff,#fbecef);border-color:rgba(200,16,46,.4)}
+  .earn-card.b{background:#ffffff;border-color:rgba(0,0,0,.1)}
+  .earn-card .k{color:#777}.earn-card h4{color:#16171b}.earn-card p{color:#52555c}
+  .earn-card.b .no{background:#fff;border-color:var(--gold);color:#9c7a1a}
+
+  /* --- 特典（perks）を白に --- */
+  #perks{background:#ffffff}
+  .perk{background:#ffffff;border-color:rgba(0,0,0,.1)}
+  .perk h4{color:#16171b}.perk p,.perk li{color:#52555c}.perk .brandtag{color:#9c7a1a}
+  .perk .ic{background:rgba(200,16,46,.08)}
+
+  /* --- 成功事例（case）を白に --- */
+  #case{background:#f5f6f8}
+  .case-card{background:#ffffff;border-color:rgba(0,0,0,.1)}
+  .case-card.after{background:linear-gradient(160deg,#ffffff,#fbecef)}
+  .case-card .who{background:#eee;color:#555}
+  .case-card .hl-big{color:#16171b}.case-card.after .hl-big{color:var(--red)}
+  .case-card li{color:#52555c}.quote{color:#333}
+  .real-now{background:linear-gradient(100deg,#ffffff,#fbecef);border-color:rgba(200,16,46,.4)}
+  .real-now .mid .amt{color:#16171b}.real-now .who2{color:#666}.real-now .cond{color:#777}
+  .real-now .perks2 span{background:#f3f4f6;color:#16171b}
+
+  /* --- 声（voice）のbefore/after枠を白に --- */
+  .voice .ba .col{background:#f3f4f6;border-color:rgba(0,0,0,.1)}
+  .voice .ba .col .t{color:#888}.voice .ba .col .v{color:#16171b}.voice .ba .col.aft .v{color:var(--red)}
+
+  /* --- ビジョン（vision）を白に（ゴールド基調維持） --- */
+  .vision{background:radial-gradient(800px 400px at 80% 0%,rgba(184,134,11,.10),transparent 60%),#fbfbf7}
+  .vision .sec-head h2{color:#16171b}.vision .sec-head p{color:#5e6168}
+  .v-card{background:#ffffff;border-color:rgba(184,134,11,.35)}
+  .v-card h4{color:#16171b}.v-card p{color:#52555c}
+
+  /* --- ロードマップ文字 --- */
+  .road-step h4{color:#16171b}.road-step ul{color:#666}
+
+  /* --- 採用資料ギャラリー（deck）を白に --- */
+  #deck{background:#f5f6f8}.slides-grid a{border-color:rgba(0,0,0,.12)}
+
+  /* --- 見出し・本文を黒に（明るいエリア） --- */
+  .sec-head h2{color:#16171b}
+  .sec-head p{color:#5e6168}
+  .midcta h3{color:#16171b}.midcta p{color:#5e6168}.midcta .reassure{color:#666}
+
+  /* --- カードを白に（明るいエリアのみ） --- */
+  .phi-item,.stat,.prob-row,.reason,.reward-example,.voice,.flow-card,.faq,.ben{
+    background:#ffffff;border-color:rgba(0,0,0,.10);box-shadow:0 6px 22px rgba(0,0,0,.06)}
+  .faq[open]{border-color:rgba(200,16,46,.45)}
+  .ex-list li{background:#f3f4f6;border-color:rgba(0,0,0,.1)}
+  .ex-list li b{color:var(--red)}
+  .reward-example{background:linear-gradient(120deg,#fff,#fbecef);border-color:rgba(200,16,46,.4)}
+
+  /* --- 明るいエリアの“白文字”を黒へ --- */
+  .stat .big,.reason .big,.prob-row .v,.sb .num,.flow-card h4,.ben b,.voice .who b,.phi-item h4,
+  .reward-example .ex-case,.faq summary{color:#16171b}
+  .stat .lbl,.reason p,.voice p.q,.flow-card p,.ben span,.faq .a,.prob-row p,.phi-item p,.voice .who span,.flow-card .time,.stat .cap,.stat .src,.prob-row p .src,.note-mini{color:#52555c}
+  .sb .num em{color:var(--red)}
+  .sb .lbl{color:#52555c}
+  .prob-col h3{color:#16171b}
+  .phi-left h3{color:#16171b}.phi-left .ovs{color:var(--red)}
+  .phi-left p{color:#52555c}
+  .phi-left .bg{background:#f3f4f6}.phi-left .bg b{color:#16171b}.phi-left .bg span{color:#555}
+  .solve{color:#16171b;background:linear-gradient(90deg,rgba(200,16,46,.08),transparent)}
+
+  /* nav 明るく */
+  header.nav{background:rgba(255,255,255,.92);border-bottom-color:rgba(0,0,0,.1)}
+  .brand{color:#16171b}.brand b{color:var(--red)}.brand .mark{color:var(--red);border-color:var(--red)}
+  .nav-links{color:#555}.nav-links a:hover{color:#000}
+
+  /* footer 明るく */
+  footer{background:#f1f2f4;border-top-color:rgba(0,0,0,.1)}
+  .foot-brand .display{color:#16171b}
+  .foot-brand p,.foot-info,.foot-info b{color:#444}
+  .foot-info b a{color:#16171b}
+  .foot-bottom{border-top-color:rgba(0,0,0,.1);color:#888}
+  .disc{color:#999}
+
+  /* 区切りstripeを赤×白に */
+  .stripe{background:repeating-linear-gradient(135deg,var(--red) 0 22px,#fff 22px 30px)}
+
+  /* ===== 30秒 適性診断 ===== */
+  .quiz{background:linear-gradient(180deg,#fff,#f7f8fa)}
+  .quiz-card{max-width:660px;margin:0 auto;background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.10);padding:34px 30px;position:relative;overflow:hidden}
+  .quiz-prog{height:7px;background:#eceff2;border-radius:10px;overflow:hidden;margin-bottom:24px}
+  .quiz-prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red),#ff5a72);transition:width .35s ease}
+  .quiz-step{display:none}
+  .quiz-step.on{display:block;animation:qfade .4s ease}
+  @keyframes qfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .quiz-q{font-size:clamp(18px,3.6vw,25px);font-weight:900;text-align:center;margin-bottom:22px;color:#16171b;line-height:1.5}
+  .quiz-q small{display:block;font-family:"Oswald",sans-serif;font-size:12px;color:var(--red);font-weight:700;letter-spacing:.12em;margin-bottom:8px}
+  .quiz-opts{display:flex;flex-direction:column;gap:12px}
+  .quiz-opt{display:flex;align-items:center;gap:14px;padding:17px 20px;border:1.5px solid rgba(0,0,0,.12);border-radius:14px;cursor:pointer;font-weight:700;font-size:15px;transition:.18s;background:#fff;text-align:left;color:#222;width:100%}
+  .quiz-opt:hover{border-color:var(--red);background:#fff5f6;transform:translateY(-2px);box-shadow:0 10px 24px rgba(200,16,46,.12)}
+  .quiz-opt .emo{font-size:23px;line-height:1}
+  .quiz-result{display:none;text-align:center}
+  .quiz-result.on{display:block;animation:qfade .5s ease}
+  .quiz-result .rbadge{display:inline-block;background:var(--red);color:#fff;font-family:"Oswald",sans-serif;font-weight:700;font-size:12px;letter-spacing:.12em;padding:7px 18px;border-radius:50px;margin-bottom:16px}
+  .quiz-result h3{font-family:"Anton";font-size:clamp(24px,5.4vw,40px);margin-bottom:12px;color:#16171b;line-height:1.2}
+  .quiz-result h3 em{font-style:normal;color:var(--red)}
+  .quiz-result p{color:#555;margin:0 auto 24px;max-width:460px;line-height:1.85}
+  .quiz-result .q-line{display:inline-flex;align-items:center;gap:11px;background:#06c755;color:#fff;font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.04em;font-size:17px;padding:17px 38px;border-radius:50px;box-shadow:0 14px 34px rgba(6,199,85,.38);transition:.2s;animation:hpulse 1.9s infinite}
+  .quiz-result .q-line:hover{transform:translateY(-3px) scale(1.02)}
+  .quiz-result .q-line .li{font-family:"Anton";background:#fff;color:#06b34c;width:24px;height:24px;border-radius:7px;display:inline-grid;place-items:center;font-size:14px}
+  .quiz-retry{display:block;margin:16px auto 0;background:none;border:none;color:#aaa;font-size:12.5px;text-decoration:underline;cursor:pointer}
+
+  /* ===== NEWS / SNS 更新欄 ===== */
+  #news{background:#ffffff}
+  .news-featured{position:relative;overflow:hidden;background:linear-gradient(120deg,#fff,#fbecef);
+    border:1px solid rgba(200,16,46,.4);border-radius:20px;padding:34px 34px 30px;
+    box-shadow:0 18px 46px rgba(0,0,0,.08);margin-bottom:40px}
+  .news-featured::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--red)}
+  .news-featured .nf-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .news-featured .nf-tag{display:inline-flex;align-items:center;gap:7px;background:var(--red);color:#fff;
+    font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.1em;font-size:12px;padding:6px 15px;border-radius:50px}
+  .news-featured .nf-tag .blink{width:8px;height:8px;border-radius:50%;background:#fff;animation:stpulse 1.5s infinite}
+  .news-featured .nf-date{font-family:"Oswald",sans-serif;font-weight:700;color:#9c0c23;font-size:13px;letter-spacing:.08em}
+  .news-featured .nf-src{margin-left:auto;font-size:12px;color:#8a8d93}
+  .news-featured h3{font-family:"Anton";font-size:clamp(21px,3.8vw,34px);line-height:1.22;color:#16171b;margin-bottom:6px}
+  .news-featured h3 em{font-style:normal;color:var(--red)}
+  .news-featured h3 .apf{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.02em}
+  .news-featured .nf-body{color:#4a4d54;line-height:1.9;font-weight:500;max-width:760px;margin-top:12px}
+  .news-featured .nf-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .news-featured .nf-meta span{background:#fff;border:1px solid rgba(200,16,46,.3);color:#16171b;
+    font-size:13px;font-weight:700;padding:9px 16px;border-radius:10px}
+  .news-featured .nf-meta span b{color:var(--red);font-family:"Oswald",sans-serif;letter-spacing:.02em}
+  .news-featured .nf-link{display:inline-flex;align-items:center;gap:8px;margin-top:22px;
+    color:var(--red);font-weight:800;font-size:14px;text-decoration:none;border-bottom:2px solid transparent;transition:.18s}
+  .news-featured .nf-link:hover{border-bottom-color:var(--red)}
+
+  .sns-head{display:flex;align-items:baseline;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+  .sns-head h3{font-family:"Anton";font-size:clamp(20px,3.4vw,30px);color:#16171b}
+  .sns-head h3 .x{color:var(--red)}
+  .sns-head p{color:#5e6168;font-size:14px}
+  .sns-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+  .sns-col{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:18px;
+    box-shadow:0 6px 22px rgba(0,0,0,.06);padding:20px 20px 16px;min-height:220px}
+  .sns-col .sc-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+  .sns-col .sc-ava{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;flex:none;
+    background:#000;color:#fff;font-family:"Anton";font-size:18px}
+  .sns-col .sc-name{font-weight:800;color:#16171b;font-size:15px;line-height:1.3}
+  .sns-col .sc-handle{color:#8a8d93;font-size:12.5px;font-weight:600}
+  .sns-col .sc-x{margin-left:auto;width:30px;height:30px;border-radius:8px;background:#000;color:#fff;
+    display:grid;place-items:center;font-family:"Anton";font-size:16px;text-decoration:none;transition:.18s}
+  .sns-col .sc-x:hover{transform:translateY(-2px);background:var(--red)}
+  .sns-col .twitter-tweet{margin:0 auto!important}
+  .sns-col .tw-fallback{display:block;padding:16px;border:1px dashed rgba(0,0,0,.16);border-radius:12px;
+    color:#4a4d54;font-size:13.5px;line-height:1.8;text-decoration:none}
+  .sns-col .tw-fallback b{color:var(--red)}
+  @media(max-width:760px){.sns-grid{grid-template-columns:1fr}}
+
+  /* === 視認性向上：黒/濃色カード内の文字を明るく（ライトテーマ対策・--grayが暗色に上書きされる問題の局所修正）=== */
+  .sponsor-box{--gray:#cfcfcf}
+  .rep-card-info{--gray:#dcdcdc}
+  .rep-card .nm{color:#fff}
+  .yamazawa{--gray:#d6d6d6}
+  .yamazawa b{color:#fff}
+  .gym-card{--gray:#cfcfcf}
+  /* reward例のピルがダーク用CSSの詳細度で黒背景のまま→ライトで明色に上書き */
+  .reward-example .ex-list li{background:#f3f4f6;color:#16171b;border-color:rgba(0,0,0,.1)}
+  .reward-example .ex-case{color:#16171b}
+  /* 黒カード上のロゴ文字（inline color:inherit で暗色化する問題）を白に固定 */
+  .sponsor-box .logo{color:#fff!important;white-space:nowrap}
+  .gym-card .fitlogo{color:#fff!important}
+</style>
+</head>
+<body>
+
+<!-- ===== PV : オープニング・シネマティック（初回アクセス時に自動再生／スキップ可） ===== -->
+<div id="pv" aria-hidden="true">
+  <!-- 実動画（生成したMP4を assets/video/pv.mp4 に置くと自動再生。無ければ下のアニメPVが流れます） -->
+  <video class="pv-video" id="pvVideo" muted playsinline preload="auto" poster="assets/img/bbj1.jpg">
+    <source src="assets/video/pv.mp4" type="video/mp4">
+  </video>
+  <div class="pv-bg"></div>
+  <div class="pv-grid"></div>
+  <div class="pv-embers">
+    <span style="left:8%;animation-duration:6.5s;animation-delay:.2s"></span>
+    <span style="left:20%;animation-duration:5.5s;animation-delay:1.4s"></span>
+    <span style="left:34%;animation-duration:7s;animation-delay:.8s"></span>
+    <span style="left:48%;animation-duration:6s;animation-delay:2.1s"></span>
+    <span style="left:62%;animation-duration:5.8s;animation-delay:.5s"></span>
+    <span style="left:76%;animation-duration:7.2s;animation-delay:1.7s"></span>
+    <span style="left:88%;animation-duration:6.3s;animation-delay:1s"></span>
+    <span style="left:54%;animation-duration:6.8s;animation-delay:3s"></span>
+  </div>
+  <div class="pv-progress" id="pvProgress"></div>
+  <div class="pv-skip" id="pvSkip">スキップ ▶</div>
+  <div class="pv-sound" id="pvSound">🔊 サウンドON</div>
+
+  <!-- s0 -->
+  <div class="scene" data-s="0">
+    <div class="fig">
+      <svg class="body" viewBox="0 0 200 530" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><path d="M110 92 L116 98 L150 116 L158 150 L160 210 L152 290 L150 300 L142 298 L146 250 L146 212 L132 150 L118 210 L130 250 L134 320 L130 400 L122 505 L134 512 L110 512 L108 505 L112 420 L104 330 L100 300 L96 330 L88 420 L92 505 L90 512 L66 512 L78 505 L70 400 L66 320 L70 250 L82 210 L68 150 L54 212 L54 250 L58 298 L50 300 L48 290 L40 210 L42 150 L50 116 L84 98 L90 92 Z"/></svg>
+      <div class="head"><img src="assets/img/taisuke-face.jpg" alt=""></div>
+    </div>
+    <div class="cap">ある男は、細くて、<br>だらしなかった。</div>
+  </div>
+  <!-- s1 -->
+  <div class="scene" data-s="1">
+    <div class="fig" style="opacity:.9">
+      <svg class="body" viewBox="0 0 200 530" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><path d="M110 92 L116 98 L150 116 L158 150 L160 210 L152 290 L150 300 L142 298 L146 250 L146 212 L132 150 L118 210 L130 250 L134 320 L130 400 L122 505 L134 512 L110 512 L108 505 L112 420 L104 330 L100 300 L96 330 L88 420 L92 505 L90 512 L66 512 L78 505 L70 400 L66 320 L70 250 L82 210 L68 150 L54 212 L54 250 L58 298 L50 300 L48 290 L40 210 L42 150 L50 116 L84 98 L90 92 Z"/></svg>
+      <div class="head"><img src="assets/img/taisuke-face.jpg" alt=""></div>
+    </div>
+    <div class="cap">毎日は、ただ過ぎていく。<small>— このままで、終わるのか。</small></div>
+  </div>
+  <!-- s2 -->
+  <div class="scene" data-s="2">
+    <svg class="barbell" viewBox="0 0 240 80" aria-hidden="true">
+      <rect x="20" y="37" width="200" height="6" rx="3" fill="#fff"/>
+      <rect x="34" y="20" width="12" height="40" rx="3" fill="#fff"/>
+      <rect x="50" y="13" width="14" height="54" rx="3" fill="#e10600"/>
+      <rect x="176" y="13" width="14" height="54" rx="3" fill="#e10600"/>
+      <rect x="194" y="20" width="12" height="40" rx="3" fill="#fff"/>
+    </svg>
+    <div class="cap">だが、ある日。<br><span class="r">鉄</span>を、握った。</div>
+  </div>
+  <!-- s3 : 実写真で「after」 -->
+  <div class="scene" data-s="3">
+    <img class="hero-photo" src="assets/img/taisuke-kono.jpg" alt="鍛え上げた身体">
+    <div class="cap">筋肉が、<span class="r">身体</span>を変えた。</div>
+  </div>
+  <!-- s4 -->
+  <div class="scene" data-s="4">
+    <div class="chart"><i style="--h:26%"></i><i style="--h:40%"></i><i style="--h:55%"></i><i style="--h:70%"></i><i style="--h:85%"></i><i style="--h:98%"></i></div>
+    <div class="cap">自信が、言葉を変える。<br>営業で、<span class="r">結果</span>が出る。</div>
+  </div>
+  <!-- end -->
+  <div class="scene" data-s="5">
+    <div class="pv-logo">MACHO<span>RECRUIT</span></div>
+    <div class="pv-tag">筋肉が、<em>稼ぐ力</em>になる。</div>
+    <img class="pv-photo" src="assets/img/taisuke-kono.jpg" alt="" onerror="this.style.display='none'">
+    <button class="pv-enter" id="pvEnter">物語の続きへ ▶</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><span class="mark">A</span> ACT-R <b>/</b> MACHO RECRUIT</a>
+    <nav class="nav-links">
+      <a href="#philosophy">理念</a>
+      <a href="#reasons">選ばれる理由</a>
+      <a href="#reward">報酬・特典</a>
+      <a href="#partner">ジム・トレ</a>
+      <a href="#vision">ビジョン</a>
+      <a href="#news">最新情報</a>
+    </nav>
+    <a class="nav-cta" href="#entry">エントリー</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-glow"></div>
+  <div class="hero-photo"><img src="assets/img/bbj5.jpg" alt="河野泰佑 ベストボディジャパン2025 MR.BEST BODY" fetchpriority="high"></div>
+  <div class="hero-in wrap">
+    <div class="ovs">SCIENCE × MUSCLE × SALES — 採用革命</div>
+    <h1>MACHO<br><span>RECRUIT</span></h1>
+    <div class="lead">筋肉が、<em>稼ぐ力</em>になる。</div>
+    <p class="sub">科学的根拠に基づく、新しい採用革命。<br>鍛え抜かれた身体と、圧倒的な成果で、未来を切り拓け。<strong style="color:#fff">日本一マッチョが多い営業会社へ。</strong></p>
+    <div class="badges">
+      <div class="badge"><span class="t">BEST BODY JAPAN</span><span class="d">代表が日本大会出場／日本3位の<br>アスリート営業会社</span></div>
+      <a class="badge xlink" target="_blank" rel="noopener"><span class="t" style="color:var(--gold)">超人気ブランド</span><span class="d">オフィシャルスポンサー／国内トップ<br>フィットネスブランドが全面サポート</span></a>
+      <div class="badge"><span class="t" style="color:#9be15d">ジム代サポート</span><span class="d">好きな24時間ジムで<br>思い切り鍛えられる</span></div>
+    </div>
+    <div class="hero-foot"><span class="bar"></span>鍛えた分だけ、報われる。</div>
+    <div class="hero-cta">
+      <a class="line" id="heroLine" href="#entry"><span style="font-family:Anton;background:#fff;color:#06b34c;width:22px;height:22px;border-radius:6px;display:inline-grid;place-items:center;font-size:13px">L</span> 公式LINEで応募する</a>
+      <a class="ghost" href="#benefits">どんな会社か見る ↓</a>
+    </div>
+    <div class="hero-reassure">
+      <span>未経験OK</span><span>履歴書ナシ</span><span>質問だけでもOK</span><span>30秒で完了</span>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL</div>
+</section>
+
+<!-- KEYWORD MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="hot">筋肉 × 営業</span><span>未経験OK</span><span class="hot">ジム代サポート</span><span>ウェア・サプリ支給</span><span class="hot">月収UPの実績</span><span>大会賞金100万</span><span class="hot">仲間と鍛える</span><span>最強の自分へ</span>
+    <span class="hot">筋肉 × 営業</span><span>未経験OK</span><span class="hot">ジム代サポート</span><span>ウェア・サプリ支給</span><span class="hot">月収UPの実績</span><span>大会賞金100万</span><span class="hot">仲間と鍛える</span><span>最強の自分へ</span>
+  </div>
+</div>
+
+<!-- BENEFITS STRIP -->
+<section class="benefits" id="benefits">
+  <div class="wrap">
+    <div class="ben-head reveal">
+      <span class="sec-tag">WHAT YOU GET</span>
+      <h2>入って、<span class="red">手に入る</span>もの。</h2>
+    </div>
+    <div class="ben-grid reveal">
+      <div class="ben"><div class="bi">🔰</div><b>未経験OK</b><span>筋トレも営業も<br>イチから育てる</span></div>
+      <div class="ben"><div class="bi">🏋️</div><b>ジム代サポート</b><span>好きな24時間ジム<br>で鍛えられる</span></div>
+      <div class="ben"><div class="bi">👕</div><b>ウェア・サプリ</b><span>成績に応じて<br>超人気ブランドを支給</span></div>
+      <div class="ben"><div class="bi">💰</div><b>月収UPの実績</b><span>土日のみで<br>月25万の事例も</span></div>
+      <div class="ben"><div class="bi">🏆</div><b>大会・賞金</b><span>出場支援＋<br>優勝賞金100万（予定）</span></div>
+      <div class="ben"><div class="bi">🤝</div><b>最高の仲間</b><span>切磋琢磨できる<br>マッチョ集団</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ : 30秒適性診断 -->
+<section class="quiz" id="quiz">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="sec-tag">30秒診断</span>
+      <h2>あなたの<span class="red">「稼ぐ×鍛える」</span>適性は?</h2>
+      <p>3つの質問にタップで答えるだけ。あなたに筋肉採用が向いているか、サクッと診断します。</p>
+    </div>
+    <div class="quiz-card reveal">
+      <div class="quiz-prog"><i id="qProg"></i></div>
+      <div class="quiz-step on" data-step="0">
+        <div class="quiz-q"><small>Q1 / 3</small>今の働き方、ぶっちゃけ満足してる?</div>
+        <div class="quiz-opts">
+          <button type="button" class="quiz-opt" data-v="a"><span class="emo">😮‍💨</span>正直、モヤモヤしてる</button>
+          <button type="button" class="quiz-opt" data-v="b"><span class="emo">😐</span>まあまあ。でも物足りない</button>
+          <button type="button" class="quiz-opt" data-v="c"><span class="emo">🙂</span>そこそこ満足してる</button>
+        </div>
+      </div>
+      <div class="quiz-step" data-step="1">
+        <div class="quiz-q"><small>Q2 / 3</small>体、変えたい気持ちある?</div>
+        <div class="quiz-opts">
+          <button type="button" class="quiz-opt" data-v="a"><span class="emo">🔥</span>ガラッと変えたい</button>
+          <button type="button" class="quiz-opt" data-v="b"><span class="emo">💪</span>できれば鍛えたい</button>
+          <button type="button" class="quiz-opt" data-v="c"><span class="emo">🙂</span>健康でいられれば十分</button>
+        </div>
+      </div>
+      <div class="quiz-step" data-step="2">
+        <div class="quiz-q"><small>Q3 / 3</small>どれにいちばんワクワクする?</div>
+        <div class="quiz-opts">
+          <button type="button" class="quiz-opt" data-v="money"><span class="emo">💰</span>稼いで、自由になる</button>
+          <button type="button" class="quiz-opt" data-v="body"><span class="emo">🏋️</span>鍛えて、自信をつける</button>
+          <button type="button" class="quiz-opt" data-v="team"><span class="emo">🤝</span>仲間と、本気で熱くなる</button>
+        </div>
+      </div>
+      <div class="quiz-result" id="qResult">
+        <div class="rbadge">診断結果</div>
+        <h3 id="qTitle"></h3>
+        <p id="qDesc"></p>
+        <a class="q-line" id="quizLine" href="#entry"><span class="li">L</span> この結果でLINEに相談する</a>
+        <button type="button" class="quiz-retry" id="qRetry">もう一度診断する</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANIMATED STAT BAND -->
+<section class="statband">
+  <div class="wrap">
+    <div class="sb-grid">
+      <div class="sb reveal"><div class="num"><em>¥</em><span class="count" data-to="50">50</span>万</div><div class="lbl">営業 月収例（半年）</div></div>
+      <div class="sb reveal"><div class="num"><em>¥</em><span class="count" data-to="25">25</span>万</div><div class="lbl">インターン・土日のみ</div></div>
+      <div class="sb reveal"><div class="num"><em>¥</em><span class="count" data-to="100">100</span>万</div><div class="lbl">大会 優勝賞金</div></div>
+      <div class="sb reveal"><div class="num"><span class="count" data-to="100">100</span>名</div><div class="lbl">2026年 採用目標</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">PHILOSOPHY</span>
+      <h2>ACT-Rの理念。</h2>
+      <p>『真の豊かさ』その一つが、健康。ACT-Rの理念から生まれた「健康経営」という考え方で、<b style="color:#fff">不健康な社会</b>と<b style="color:#fff">稼げない働き方</b>、両方の課題を一気に解決する。</p>
+    </div>
+    <div class="phi">
+      <div class="phi-left reveal">
+        <div class="ovs">OUR BELIEF</div>
+        <h3>『真の豊かさ』<br>その一つが、<span class="q">健康。</span></h3>
+        <p style="color:var(--gray);font-size:14px">健康経営 × 営業。心も身体も、キャリアも。すべてを同時に引き上げる仕組みが、ここにある。</p>
+        <div class="bg">
+          <b>BACKGROUND</b>
+          <span>不健康な社会／稼げない働き方。健康経営×営業で、両方の課題を一気に解決する。</span>
+        </div>
+      </div>
+      <div class="phi-list">
+        <div class="phi-item reveal"><div class="no">01</div><div><h4>健康経営</h4><p>筋トレ・食事・睡眠を整え、心身の健康を最優先にパフォーマンスを最大化する。</p></div></div>
+        <div class="phi-item reveal"><div class="no">02</div><div><h4>稼げる環境</h4><p>頑張りが正当に評価されるインセンティブ制度と、強力なサポート体制を整備する。</p></div></div>
+        <div class="phi-item reveal"><div class="no">03</div><div><h4>仲間と高め合う</h4><p>合同トレーニング・交流を通じ、切磋琢磨する文化で相乗効果を生み出す。</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS / EVIDENCE -->
+<section class="alt" id="evidence">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">EVIDENCE</span>
+      <h2>やってる人と、やってない人の<br>違いを<span class="red">数字</span>で証明。</h2>
+      <p>筋トレは「気合い」ではなく「科学」。世界の研究が示す、鍛える人だけが手にする圧倒的な差。</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat reveal"><div class="lbl">テストステロン値</div><div class="cap">筋トレ → 男らしさホルモン</div><div class="big">約21%<span class="delta">+21%</span></div><div class="src">出典：Hackney et al. J Strength Cond Res. 2018</div></div>
+      <div class="stat reveal"><div class="lbl">死亡リスク（全死因）</div><div class="cap">筋トレ習慣 → 寿命を延ばす</div><div class="big">0.73倍<span class="delta">-27%</span></div><div class="src">出典：Arem H et al. JAMA Intern Med. 2015</div></div>
+      <div class="stat reveal"><div class="lbl">うつ病リスク</div><div class="cap">筋トレは心の健康を守る</div><div class="big">0.60倍<span class="delta">-40%</span></div><div class="src">出典：Schuch FB et al. JAMA Psychiatry. 2018</div></div>
+      <div class="stat reveal"><div class="lbl">仕事の生産性</div><div class="cap">プレゼンティーイズム損失</div><div class="big">18%<span class="delta">-10pt</span></div><div class="src">出典：Charles KE et al. J Occup Environ Med. 2010</div></div>
+      <div class="stat reveal"><div class="lbl">医療費（年間一人当たり）</div><div class="cap">筋トレ習慣者は医療費が少ない</div><div class="big">約20%<span class="delta">-20%</span></div><div class="src">出典：Roth GA et al. Prog Cardiovasc Dis. 2017</div></div>
+      <div class="stat reveal"><div class="lbl">筋力（握力）</div><div class="cap">心身の機能を上げてくれる</div><div class="big">約30%<span class="delta">+30%</span></div><div class="src">出典：Rantanen T et al. JAMA. 1999</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM / BACKGROUND -->
+<section id="background">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">BACKGROUND</span>
+      <h2>不健康な社会と、<br>上がらない<span class="red">給与</span>。</h2>
+      <p>健康経営 × 営業 — 日本が抱える「2つの課題」を、数字で見る。</p>
+    </div>
+    <div class="prob">
+      <div class="prob-col reveal">
+        <h3><i>01</i> 不健康が広がる社会</h3>
+        <div class="prob-row"><div class="v red">約7割</div><p>運動習慣のない成人の割合（運動習慣のある成人は男性33%・女性25%程度）</p></div>
+        <div class="prob-row"><div class="v red">約2,000万人</div><p>メタボ該当者・予備群（40〜74歳）</p></div>
+        <div class="prob-row"><div class="v red">約7時間</div><p>日本人の平均座位時間（世界最長クラス）</p></div>
+      </div>
+      <div class="prob-col reveal">
+        <h3><i>02</i> 稼げない働き方・上がらない給与</h3>
+        <div class="prob-row"><div class="v">約257万人</div><p>フリーランスとして働く人（本業209万＋副業48万）。最も多い年収層は「200〜400万円未満」で、低収入が中心。<span class="src">出典：総務省「令和4年就業構造基本調査」（2023公表）</span></p></div>
+        <div class="prob-row"><div class="v">約460万円</div><p>日本の平均給与。非正規はわずか約206万円にとどまる。<span class="src">出典：国税庁「民間給与実態統計調査」令和5年分</span></p></div>
+        <div class="prob-row"><div class="v">+2.8%</div><p>この約30年の日本の賃金の伸び。OECD平均は+32.5%と、世界から取り残されている。<span class="src">出典：OECD（1991→2021・米ドル平均年収）</span></p></div>
+      </div>
+    </div>
+    <div class="solve reveal">この2つの課題を、ACT-Rは「<span class="red">健康 × 営業</span>」の仕組みで同時に解決する。</div>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section class="alt" id="reasons">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">WHY ACT-R</span>
+      <h2>私たちが選ばれる、<span class="red">3つの理由</span>。</h2>
+    </div>
+    <div class="reasons">
+      <div class="reason reveal">
+        <div class="top"><span class="no">01</span><span class="k">REPRESENTATIVE</span></div>
+        <div class="body"><div class="pill">代表実績</div><div class="big">Best Body Japan</div><p>2025 日本大会出場／日本3位。代表・河野泰佑が日本大会で実績を持つ、アスリート営業会社。</p></div>
+      </div>
+      <div class="reason reveal">
+        <div class="top"><span class="no">02</span><span class="k">SPONSOR</span></div>
+        <div class="body"><div class="pill" style="background:var(--gold);color:#000"><a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a></div><div class="big">国内トップブランド</div><p>国内トップフィットネスブランド「<a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a>」が、サプリ・ウェア・ギアをスポンサーとして全面サポート。</p></div>
+      </div>
+      <div class="reason reveal">
+        <div class="top"><span class="no">03</span><span class="k">PARTNER GYM</span></div>
+        <div class="body"><div class="pill" style="background:#9be15d;color:#000">ジム代サポート</div><div class="big">24時間ジムで鍛える</div><p>ジム代は会社がサポート。好きな24時間ジムで、早朝でも深夜でも思い切り追い込める。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REPRESENTATIVE × 超人気ブランド AUTHORITY -->
+<section id="representative">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">REPRESENTATIVE</span>
+      <h2>代表自身が、<span class="red">本物</span>。</h2>
+      <p>「鍛える者の気持ちは、鍛える者にしか分からない」。トップアスリートが率いるからこそ、本気のサポートができる。</p>
+    </div>
+    <div class="rep">
+      <div class="rep-card reveal">
+        <!-- 実写真スロット：assets/img/taisuke-kono.jpg（ベストボディジャパン日本3位・黒髪・金サッシュ）を置くと自動表示。無い場合は文字デザインにフォールバック -->
+        <img class="rep-photo" src="assets/img/taisuke-kono.jpg" alt="株式会社アクタル 代表取締役 河野泰佑 ベストボディジャパン日本3位" loading="lazy"
+             onerror="this.classList.add('noimg')">
+        <div class="rep-card-info">
+          <div class="role">CEO ／ <a class="xlink actr-link" style="color:inherit" href="#" target="_blank" rel="noopener">株式会社アクタル（ACT-R）</a></div>
+          <div class="nm">河野 泰佑</div>
+          <div class="en">TAISUKE KONO</div>
+          <div class="tags">
+            <span>BEST BODY JAPAN 2025 日本3位</span>
+            <span>オフィシャルスポンサード</span>
+            <span>現役アスリート経営者</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3>国内トップブランド「<a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a>」が、<br>代表・河野泰佑を<br><span class="red">スポンサード</span>。</h3>
+        <p class="t">大会の舞台で結果を出し、業界が認める身体と実績。その代表に、国内トップフィットネスブランド <a class="xlink" target="_blank" rel="noopener"><b style="color:var(--gold)">超人気ブランド</b></a> がオフィシャルスポンサーとして付く——これは、ACT-Rが「本物のアスリート集団」である何よりの証明です。</p>
+        <div class="sponsor-box">
+          <a class="logo xlink" style="color:inherit" target="_blank" rel="noopener">超人気<br>ブランド<small>TRAINING GEAR</small></a>
+          <div class="txt"><b>OFFICIAL SPONSOR</b><p>代表・河野泰佑をブランドアンバサダーとして支援。所属社員にも、その契約のメリットが還元されます。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY : THE REAL -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">THE REAL</span>
+      <h2>これが、<span class="red">本物</span>の証明。</h2>
+      <p>代表・河野泰佑｜BEST BODY JAPAN 2025 日本3位／MR.BEST BODY。鍛え抜いた身体が、言葉よりも雄弁に物語る。</p>
+    </div>
+    <div class="gal-grid reveal">
+      <figure><img src="assets/img/bbj1.jpg" alt="河野泰佑 BBJ2025 フロント" loading="lazy"><figcaption>FRONT</figcaption></figure>
+      <figure><img src="assets/img/bbj4.jpg" alt="河野泰佑 MR.BEST BODY サッシュ" loading="lazy"><figcaption>MR.BEST BODY</figcaption></figure>
+      <figure><img src="assets/img/bbj3.jpg" alt="河野泰佑 バックポーズ" loading="lazy"><figcaption>BACK</figcaption></figure>
+      <figure><img src="assets/img/bbj2.jpg" alt="河野泰佑 アブスポーズ" loading="lazy"><figcaption>ABS</figcaption></figure>
+      <figure><img src="assets/img/bbj7.jpg" alt="河野泰佑 サイドポーズ" loading="lazy"><figcaption>SIDE</figcaption></figure>
+      <figure><img src="assets/img/bbj6.jpg" alt="河野泰佑 ステージ" loading="lazy"><figcaption>STAGE</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- EARN STRUCTURE -->
+<section class="alt" id="structure">
+  <div class="bg-photo l"><img src="assets/img/bbj1.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">MACHO SALARY</span>
+      <h2>マッチョ採用 — <span class="red">稼げる仕組み</span>。</h2>
+      <p>営業成果 ＋ 筋肉サポート。2層構造で、努力が必ず報われる。</p>
+    </div>
+    <div class="earn">
+      <div class="earn-card a reveal">
+        <div class="no">01</div>
+        <div class="k">生産性報酬</div>
+        <h4>生産性に応じた<br>ベース給</h4>
+        <p>生産性に応じた安定報酬。営業実績に応じて基本給が積み上がる、頑張った分だけ伸びる給与体系。</p>
+      </div>
+      <div class="earn-card b reveal">
+        <div class="no">02</div>
+        <div class="k">超人気ブランド 全面サポート</div>
+        <h4>ジム＋サプリなど<br>費用を補助</h4>
+        <p>実績に応じて、ジム・サプリ・ウェアなど、筋トレに必要な費用をサポート。稼ぎながら、鍛えられる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REWARD: SHIFT × PERFORMANCE -->
+<section id="reward">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">SHIFT × PERFORMANCE</span>
+      <h2>シフト数 × 営業成績で、<br>特典が<span class="red">変わる</span>。</h2>
+    </div>
+    <div class="reward-example reveal">
+      <div class="ex-tag">支給特典の一例</div>
+      <div class="ex-body">
+        <div class="ex-case">週5稼働の場合</div>
+        <div class="ex-arrow">▶</div>
+        <ul class="ex-list">
+          <li><b>ジム代</b>　会社がサポート</li>
+          <li><b>超人気ブランドのウェア</b>　一部支給</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note-mini">※ 上記は支給特典の一例です。実際の支給条件・内容は最新の社内規定に準じます。</p>
+  </div>
+</section>
+
+<!-- PERKS: WEAR / SUPP / GEAR -->
+<section class="alt" id="perks">
+  <div class="bg-photo r"><img src="assets/img/bbj7.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">BRAND REWARD</span>
+      <h2>成績が、<span class="red">ギア</span>になる。</h2>
+      <p>営業成績に応じて、国内トップブランド <a class="xlink" target="_blank" rel="noopener"><b style="color:var(--gold)">超人気ブランド</b></a> の ウェア・サプリメント・ギア を支給。売れば売るほど、最強の装備が手に入る。</p>
+    </div>
+    <div class="perks">
+      <div class="perk reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7l4-3 4 2 4-2 4 3-3 3v9H7v-9z"/></svg></div>
+        <div class="brandtag"><a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランドのウェア</a></div>
+        <h4>ウェア</h4>
+        <p>トレーニングを格上げする、超人気ブランド のオフィシャルウェア。成績に応じて、Tシャツ → 上下セット → 限定モデルへ。</p>
+        <ul><li>まずはTシャツ1点から</li><li>実績アップで上下セットへ</li><li>トップ成績は限定モデルを支給</li></ul>
+      </div>
+      <div class="perk reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6v4l3 3v11H6V10l3-3z"/><path d="M6 13h12"/></svg></div>
+        <div class="brandtag"><a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランドのサプリ</a></div>
+        <h4>サプリメント</h4>
+        <p>プロテイン・EAA・クレアチンなど、身体づくりに必須のサプリを支給。鍛える燃料は、会社が用意する。</p>
+        <ul><li>プロテインを毎月支給</li><li>実績に応じてEAA・クレアチン追加</li><li>トップ成績はフルラインナップ</li></ul>
+      </div>
+      <div class="perk reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h2M19 12h2M6 9v6M18 9v6M6 12h12"/></svg></div>
+        <div class="brandtag"><a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランドのギア</a></div>
+        <h4>ギア</h4>
+        <p>リフティングベルト、リストラップ、パワーグリップなど、本格ギアを支給。重量も、成果も、もう一段上へ。</p>
+        <ul><li>実績でトレーニングベルトを支給</li><li>さらにリストラップ・グリップ等</li><li>大会出場者には専用ギア支援</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GYM & TRAINING -->
+<section id="partner">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">GYM &amp; TRAINING</span>
+      <h2>ジム代は、<br><span class="red">会社がサポート</span>。</h2>
+      <p>鍛えることを、本気で応援する会社。ジム代は会社がサポートするから、あなたは好きな24時間ジムで、コストを気にせず思い切り追い込める。</p>
+    </div>
+    <div class="partner">
+      <div>
+        <div class="free-badge">★ ジム代は会社がサポート</div>
+        <h3>好きな24時間ジムで、<br><em>本気</em>で鍛える環境。</h3>
+        <p>全国どこにでもある24時間ジムを、仕事終わりにそのまま活用。<b style="color:var(--red)">ジム代は会社がサポート</b>するから、続けやすい。仲間との合同トレで、営業もカラダも一緒に伸ばしていく。</p>
+        <ul class="perk-list-mini">
+          <li><span class="chk">✓</span> ジム代は会社がサポート</li>
+          <li><span class="chk">✓</span> 24時間ジムだから早朝・深夜もOK</li>
+          <li><span class="chk">✓</span> 仲間との合同トレで高め合える</li>
+        </ul>
+      </div>
+      <div class="gym-card reveal">
+        <div class="fitlogo" style="color:#fff"><span class="sq"></span><span class="sq"></span><span class="sq"></span>24H GYM<small>TRAINING ENVIRONMENT</small></div>
+        <p style="color:var(--gray);font-size:14px;margin:18px 0">全国に広がる24時間ジムで、いつでも鍛えられる。<br>ジム代は会社がサポート、あとは通うだけ。</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:14px">
+          <div style="flex:1;min-width:120px;background:#000;border:1px solid var(--line);border-radius:6px;padding:16px;text-align:center">
+            <div style="font-family:'Anton';font-size:30px;color:#9be15d">24<small style="font-size:13px">h</small></div>
+            <div style="font-size:11px;color:var(--gray)">いつでも鍛える</div>
+          </div>
+          <div style="flex:1;min-width:120px;background:#000;border:1px solid var(--line);border-radius:6px;padding:16px;text-align:center">
+            <div style="font-family:'Anton';font-size:30px;color:#9be15d">全国</div>
+            <div style="font-size:11px;color:var(--gray)">どこでも通える</div>
+          </div>
+          <div style="flex:1;min-width:120px;background:#000;border:1px solid var(--line);border-radius:6px;padding:16px;text-align:center">
+            <div style="font-family:'Anton';font-size:30px;color:#9be15d">仲間</div>
+            <div style="font-size:11px;color:var(--gray)">合同トレ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="alt" id="case">
+  <div class="bg-photo r"><img src="assets/img/bbj2.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">SUCCESS STORY</span>
+      <h2>実際の<span class="red">成功事例</span>。</h2>
+      <p>元コールセンター勤務 → マッチョ採用で、半年で人生大逆転。</p>
+    </div>
+    <div class="case">
+      <div class="case-card before reveal">
+        <div class="who">Aくん ／ 24歳・男性</div>
+        <div class="ph">BEFORE</div>
+        <div class="hl-big">コールセンター勤務</div>
+        <ul>
+          <li>週5／月収22万円</li>
+          <li>ルーティンの毎日</li>
+          <li>キャリアの先が見えない</li>
+          <li>運動習慣ゼロ</li>
+        </ul>
+      </div>
+      <div class="case-arrow reveal"><div><div class="a">▶</div><small>半年 LATER</small></div></div>
+      <div class="case-card after reveal">
+        <div class="who">マッチョ採用 半年後</div>
+        <div class="ph">AFTER</div>
+        <div class="hl-big">営業で月収50万円</div>
+        <ul>
+          <li>週5／＋28万円アップ</li>
+          <li>ジム代サポート＋サプリ・ウェア一部支給</li>
+          <li>フィットネス大会出場へ</li>
+          <li>営業 × 筋トレ 両立中</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quote reveal">筋トレを始めてから、断られることが怖くなくなった。体に自信が持てると、話し方も変わる。</div>
+    <p class="note-mini" style="text-align:center">※ 上記Aくんは、制度・成長イメージを示すモデルケースです。下記は現在進行中の実データです。</p>
+
+    <!-- 現在進行中のリアル実績 -->
+    <div class="real-now reveal">
+      <div class="live"><span class="blink"></span>REAL／進行中</div>
+      <div class="mid">
+        <div class="who2">現役インターン（3ヶ月目）の実績</div>
+        <div class="amt"><em>土日稼働のみ</em>で 月<em>25万円</em>。</div>
+        <div class="cond">※ 平日は学業や本業と両立。週末2日だけの稼働で達成中の、リアルな現在の数字です。</div>
+      </div>
+      <div class="perks2">
+        <span><b>ジム代</b>　会社がサポート</span>
+        <span><b>ウェア・サプリ</b>　一部支給</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES : 応募者の声 -->
+<section id="voices">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">MEMBER'S VOICE</span>
+      <h2>入って、<span class="red">人生が変わった</span>。</h2>
+      <p>「自分なんて」と思っていた人ほど、変わっていく。実際にマッチョ採用で人生を動かしたメンバーの声。</p>
+    </div>
+    <div class="voice-grid">
+      <div class="voice reveal">
+        <div class="stars">★★★★★</div>
+        <div class="who"><div class="av">K</div><div><b>K.Sさん（26）</b><span>元・飲食店アルバイト</span></div></div>
+        <div class="ba">
+          <div class="col"><div class="t">BEFORE</div><div class="v">月収18万／体脂肪率20%</div></div>
+          <div class="arw">▶</div>
+          <div class="col aft"><div class="t">AFTER</div><div class="v">月収42万／体脂肪-8%</div></div>
+        </div>
+        <p class="q">「正直、営業もトレーニングも未経験でビビってました。でも“断られても折れない自分”が筋トレで作られていく。半年で給料も体も別人。鏡を見るのが楽しいです。」</p>
+        <div class="role">入社8ヶ月／営業 × 筋トレ両立中</div>
+      </div>
+      <div class="voice reveal">
+        <div class="stars">★★★★★</div>
+        <div class="who"><div class="av">T</div><div><b>T.Mさん（23）</b><span>元・フリーター</span></div></div>
+        <div class="ba">
+          <div class="col"><div class="t">BEFORE</div><div class="v">月収20万／メタボ体型</div></div>
+          <div class="arw">▶</div>
+          <div class="col aft"><div class="t">AFTER</div><div class="v">月収38万／大会出場</div></div>
+        </div>
+        <p class="q">「ジム代もサプリも会社が応援してくれるから、稼ぎながら本気で鍛えられる。気づいたらベストボディの舞台に立ってました。“なりたい自分”が仕事になるなんて思わなかった。」</p>
+        <div class="role">入社1年／フィットネス大会 出場</div>
+      </div>
+      <div class="voice reveal">
+        <div class="stars">★★★★★</div>
+        <div class="who"><div class="av">R</div><div><b>R.Aさん（29）</b><span>元・個人事業主</span></div></div>
+        <div class="ba">
+          <div class="col"><div class="t">BEFORE</div><div class="v">月収25万／細身体型</div></div>
+          <div class="arw">▶</div>
+          <div class="col aft"><div class="t">AFTER</div><div class="v">月収55万／ガッチリ体型</div></div>
+        </div>
+        <p class="q">「一人で稼ぐ厳しさを知ってたからこそ、“仲間と高め合える環境”が刺さった。合同トレで追い込んで、営業数字も全員で更新していく。人生で一番、毎日が濃いです。」</p>
+        <div class="role">入社1年4ヶ月／チームリーダー</div>
+      </div>
+    </div>
+    <p class="note-mini" style="text-align:center">※ 掲載の声は、実際の事例をもとにしたモデルケースを含み、一部内容を編集しています。成果には個人差があります。</p>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<section class="midcta">
+  <div class="wrap reveal">
+    <h3>「変わりたい」。<br>その気持ちが、<em>第一歩</em>。</h3>
+    <p>まずは話を聞くだけでもOK。あなたのペースで、未来を変えよう。</p>
+    <a class="big-line" id="midLine" href="#entry"><span class="li">L</span> 公式LINEで応募・相談する</a>
+    <div class="reassure"><span>未経験OK</span><span>履歴書ナシ</span><span>しつこい勧誘なし</span><span>30秒で完了</span></div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">ROADMAP</span>
+      <h2>成長<span class="red">ロードマップ</span>。</h2>
+      <p>2026年4月 → 2027年4月。1年で日本一の組織へ。</p>
+    </div>
+    <div class="road">
+      <div class="road-step reveal"><div class="dot"></div><div class="when">2026年 4〜6月</div><div class="no">01</div><h4>実績づくり</h4><ul><li>集客</li><li>実績積み上げ</li><li>合同トレ開始</li><li>マッチョイベント</li><li>広告開始</li></ul></div>
+      <div class="road-step reveal"><div class="dot"></div><div class="when">2026年 7〜9月</div><div class="no">02</div><h4>SNS拡散</h4><ul><li>Vlog制作・投稿</li><li>認知度向上</li><li>フォロワー獲得</li><li>口コミ展開</li></ul></div>
+      <div class="road-step reveal"><div class="dot"></div><div class="when">2026年 10〜12月</div><div class="no">03</div><h4>100人採用</h4><ul><li>100人達成</li><li>採用フロー確定</li><li>文化定着</li><li>メディア露出</li></ul></div>
+      <div class="road-step reveal"><div class="dot"></div><div class="when">2027年 4月</div><div class="no">04</div><h4>150人達成</h4><ul><li>150人の組織</li><li>YouTuberコラボ</li><li>地上波露出</li><li>日本一マッチョが多い営業会社へ</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION (FUTURE) -->
+<section class="vision" id="vision">
+  <div class="bg-photo c"><img src="assets/img/bbj4.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">FUTURE VISION</span>
+      <h2>稼ぐだけじゃ、終わらない。<br><span style="color:var(--gold)">頂点</span>を、用意する。</h2>
+      <p>ACT-Rが描く未来。営業の成果が、ステージの上の栄光につながる。大会サポートから優勝賞金まで——マッチョが主役になる舞台を、本気で創る。</p>
+    </div>
+    <div class="vision-grid">
+      <div class="v-card reveal">
+        <div class="soon">COMING</div>
+        <div class="ic">🏆</div>
+        <h4>大会サポート</h4>
+        <p>出場費・遠征費・ギアまで会社が支援。ベストボディ／フィジーク大会への挑戦を全面バックアップし、社員のステージ挑戦を後押しする。</p>
+      </div>
+      <div class="v-card reveal">
+        <div class="soon">COMING</div>
+        <div class="ic">💰</div>
+        <h4>優勝賞金</h4>
+        <div class="prize">¥1,000,000<small style="font-size:14px;color:#fff">〜</small></div>
+        <p>社内大会・提携大会での優勝者に、賞金を授与。営業も、身体も、頂点を取った者が最も報われる仕組みへ。</p>
+      </div>
+      <div class="v-card reveal">
+        <div class="soon">COMING</div>
+        <div class="ic">📺</div>
+        <h4>メディア × 全国展開</h4>
+        <p>有名筋トレYouTuberコラボ、地上波・各ニュース媒体展開、日本全国マッチョネットワーク構築。「日本一マッチョが多い営業会社」を世に示す。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDES (original deck) -->
+<!-- ぼかし版：採用資料ギャラリー(#deck)はスライド画像にブランドロゴが焼き込まれているため非表示 -->
+
+<!-- FLOW : 応募の流れ -->
+<section id="flow">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">FLOW</span>
+      <h2>応募から入社まで、<span class="red">かんたん4ステップ</span>。</h2>
+      <p>むずかしい手続きはなし。あなたのペースで進められます。まずはLINEで一歩だけ。</p>
+    </div>
+    <div class="flow-grid reveal">
+      <div class="flow-card">
+        <div class="step-n">1</div><div class="ic">💬</div>
+        <div class="time">所要 30秒</div><h4>応募</h4>
+        <p>公式LINEで「応募」と送るだけ。履歴書も費用も不要。質問だけでもOK。</p>
+      </div>
+      <div class="flow-card">
+        <div class="step-n">2</div><div class="ic">🤝</div>
+        <div class="time">約20分</div><h4>カジュアル面談</h4>
+        <p>オンライン・私服でOK。まずは雑談から。お互いを知る場です。</p>
+      </div>
+      <div class="flow-card">
+        <div class="step-n">3</div><div class="ic">🏋️</div>
+        <div class="time">半日</div><h4>体験トレ＆面接</h4>
+        <p>合同トレに参加して、そのまま面接。仲間とカルチャーを体感。</p>
+      </div>
+      <div class="flow-card">
+        <div class="step-n">4</div><div class="ic">🚀</div>
+        <div class="time">入社</div><h4>入社・始動</h4>
+        <p>メンター＆合同トレで立ち上がりを全力サポート。最強の自分へ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">FAQ</span>
+      <h2>不安は、<span class="red">ぜんぶ</span>解消。</h2>
+      <p>応募前のよくある質問。少しでも気になったら、LINEで直接聞くのが一番早いです。</p>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq"><summary><span class="q"><b>Q</b>未経験でも応募できますか？</span><span class="ic">＋</span></summary><div class="a">もちろんOKです。むしろ未経験スタートが大多数。営業も筋トレもイチから育てる仕組みがあり、元飲食・元フリーター・元個人事業主など様々な経歴の仲間が活躍しています。</div></details>
+      <details class="faq"><summary><span class="q"><b>Q</b>筋トレ初心者なんですが大丈夫？</span><span class="ic">＋</span></summary><div class="a">全く問題ありません。ジム代は会社がサポートするので、好きな24時間ジムで無理なく始められます。合同トレーニングで仲間と一緒に、器具の使い方から食事まで先輩がサポートします。</div></details>
+      <details class="faq"><summary><span class="q"><b>Q</b>体型に自信がなくても応募していい？</span><span class="ic">＋</span></summary><div class="a">「細い」「だらしない」と思っている人ほど変われます。それを証明するのが筋肉採用。今の体型は一切問いません。"変わりたい"気持ちだけ持ってきてください。</div></details>
+      <details class="faq"><summary><span class="q"><b>Q</b>学生や副業でも働けますか？</span><span class="ic">＋</span></summary><div class="a">土日稼働のみで月25万円を達成している現役インターンもいます。稼働日数は週1〜週5から相談可能。まずはあなたの状況をLINEで聞かせてください。</div></details>
+      <details class="faq"><summary><span class="q"><b>Q</b>応募にお金や履歴書は必要？</span><span class="ic">＋</span></summary><div class="a">一切不要です。費用もかかりません。公式LINEで「応募」と送るだけ、まずは質問だけでもOK。30秒で完了します。</div></details>
+      <details class="faq"><summary><span class="q"><b>Q</b>応募から入社までの流れは？</span><span class="ic">＋</span></summary><div class="a">①公式LINEで応募 → ②カジュアル面談（まずは話すだけ） → ③体験トレ＆面接 → ④入社・始動。あなたのペースで進められます。</div></details>
+      <details class="faq"><summary><span class="q"><b>Q</b>勤務地はどこですか？</span><span class="ic">＋</span></summary><div class="a">東京・渋谷を拠点に活動しています。詳細な勤務条件は、面談であなたの希望を聞きながらご案内します。</div></details>
+      <details class="faq"><summary><span class="q"><b>Q</b>ノルマや“詰め”はありますか？</span><span class="ic">＋</span></summary><div class="a">目標数字はありますが、いわゆる“詰める”文化はありません。頑張りが正当に評価される仕組みと、強力なサポート体制で、前向きに伸ばしていく環境です。</div></details>
+      <details class="faq"><summary><span class="q"><b>Q</b>給与はどのくらいですか？</span><span class="ic">＋</span></summary><div class="a">生産性に応じたベース給＋インセンティブ。営業半年で月収50万円の例、土日のみ稼働で月25万円の例もあります（成果には個人差があります）。詳しくは面談で。</div></details>
+      <details class="faq"><summary><span class="q"><b>Q</b>女性も応募できますか？</span><span class="ic">＋</span></summary><div class="a">もちろんです。性別は問いません。「鍛えたい・稼ぎたい・変わりたい」気持ちのある方を歓迎します。</div></details>
+      <details class="faq"><summary><span class="q"><b>Q</b>いつから働けますか？</span><span class="ic">＋</span></summary><div class="a">即日〜ご相談OK。在学中・在職中の方も、あなたのタイミングに合わせて調整します。まずはLINEで希望を教えてください。</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS / SNS 更新欄 -->
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">NEWS / SNS</span>
+      <h2>最新の<span class="red">動き</span>。</h2>
+      <p>株式会社アクタルと、代表・河野泰佑の最新の挑戦。公式SNSと連動して更新しています。</p>
+    </div>
+
+    <!-- 会社からの文章（act-r-inc.com の告知と連動） -->
+    <div class="news-featured reveal">
+      <div class="nf-top">
+        <span class="nf-tag"><span class="blink"></span>PRESS</span>
+        <span class="nf-date">2026.07.17</span>
+        <span class="nf-src">株式会社アクタル 公式発表</span>
+      </div>
+      <h3><span class="apf">APF VISIONARY TRYOUT CUP 2026</span><br>「ドラフトトライアウト」に、企業として<em>参画決定</em>。</h3>
+      <p class="nf-body">
+        株式会社アクタルは、2026年8月15日に開催される「<span class="apf">APF VISIONARY TRYOUT CUP 2026</span> ドラフトトライアウト」に、企業として参画することが決定しました。
+        鍛え抜かれた身体と成果でキャリアを切り拓く挑戦者たちの舞台へ——「筋肉 × 営業」で人生を変える私たちの想いを、この場からも発信していきます。
+      </p>
+      <div class="nf-meta">
+        <span>大会：<b>APF VISIONARY TRYOUT CUP 2026</b></span>
+        <span>開催：<b>2026.8.15</b></span>
+        <span>参画：<b>株式会社アクタル</b></span>
+      </div>
+      <a class="nf-link" href="https://act-r-inc.com/" target="_blank" rel="noopener">会社公式サイトで告知を見る →</a>
+    </div>
+
+    <!-- X（旧Twitter）更新欄 -->
+    <div class="sns-head reveal">
+      <h3><span class="x">X</span>（旧Twitter）の最新投稿</h3>
+      <p>タップすると、それぞれの投稿がXで開きます。</p>
+    </div>
+    <div class="sns-grid reveal">
+      <div class="sns-col">
+        <div class="sc-head">
+          <div class="sc-ava">河</div>
+          <div>
+            <div class="sc-name">河野 泰佑</div>
+            <div class="sc-handle">@taisukessk_1125</div>
+          </div>
+          <a class="sc-x" href="https://x.com/taisukessk_1125/status/2077955018024689905" target="_blank" rel="noopener" aria-label="河野泰佑のXを開く">X</a>
+        </div>
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-align="center" data-width="100%">
+          <a class="tw-fallback" href="https://x.com/taisukessk_1125/status/2077955018024689905" target="_blank" rel="noopener"><b>河野泰佑の投稿を見る（X）</b><br>APF VISIONARY TRYOUT CUP 2026 参画についての投稿 ▶</a>
+        </blockquote>
+      </div>
+      <div class="sns-col">
+        <div class="sc-head">
+          <div class="sc-ava">マ</div>
+          <div>
+            <div class="sc-name">マッチョ介護</div>
+            <div class="sc-handle">@_visionary_2008</div>
+          </div>
+          <a class="sc-x" href="https://x.com/_visionary_2008/status/2077591956700766561" target="_blank" rel="noopener" aria-label="マッチョ介護のXを開く">X</a>
+        </div>
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-align="center" data-width="100%">
+          <a class="tw-fallback" href="https://x.com/_visionary_2008/status/2077591956700766561" target="_blank" rel="noopener"><b>マッチョ介護の投稿を見る（X）</b><br>APF VISIONARY TRYOUT CUP 2026 関連の投稿 ▶</a>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+
+<!-- ENTRY / CTA -->
+<section class="entry" id="entry">
+  <div class="entry-photo"><img src="assets/img/bbj2.jpg" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:18px">
+      <span style="display:inline-flex;align-items:center;gap:9px;background:rgba(225,6,0,.16);border:1px solid var(--red);color:#fff;font-weight:700;font-size:13px;padding:9px 20px;border-radius:50px">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--red);animation:stpulse 1.5s infinite"></span>2026年、100名体制へ｜ただいま仲間を募集中
+      </span>
+    </div>
+    <div class="ovs reveal">最強の自分へ</div>
+    <h2 class="reveal">MACHO RECRUIT<span>今すぐ、マッチョとして稼ぐ道を選べ。</span></h2>
+    <p class="lead2 reveal">見た目を超えて、人生を変える。筋トレは、最高の自己投資である。<br>鍛えた身体と圧倒的な成果で、未来を切り拓こう。</p>
+    <div class="steps reveal">
+      <div class="step"><span class="no">01</span> LINEで応募</div>
+      <div class="step"><span class="no">02</span> カジュアル面談</div>
+      <div class="step"><span class="no">03</span> 体験トレ＆面接</div>
+      <div class="step"><span class="no">04</span> 入社・始動</div>
+    </div>
+    <!-- ===== PRIMARY: 公式LINE 応募導線 ===== -->
+    <div class="line-cta reveal">
+      <div class="badge30">かんたん30秒・スマホで完結</div>
+      <div class="ttl">まずは公式LINEで、<br>応募・相談スタート。</div>
+      <div class="sub">友だち追加して「応募」と送るだけ。質問だけでもOK。<br>あなたの「変わりたい」に、ぜんぶ答えます。</div>
+      <a class="line-btn" href="#" id="linePrimary"><span class="li">L</span> 公式LINEで応募する</a>
+      <div class="line-flow"><span>① 友だち追加</span><span>② 「応募」と送信</span><span>③ 日程調整して面談</span></div>
+      <div class="qr-box"><img src="assets/img/line-qr.png" alt="公式LINE QRコード"><div class="qr-t"><b>PCでご覧の方へ</b>スマホでこのQRを読み取って<br>そのまま応募できます📱</div></div>
+    </div>
+    <div class="or-line reveal">または、フォームに記入して応募する（送信後、公式LINEへご案内します）</div>
+    <!-- ===== SECONDARY: 詳細フォーム ===== -->
+    <form class="form-wrap reveal" id="entryForm" novalidate>
+      <div class="form-grid">
+        <div class="fld">
+          <label for="f-name">お名前<span class="req">必須</span></label>
+          <input id="f-name" name="お名前" type="text" placeholder="山田 太郎" required>
+          <span class="err">お名前を入力してください</span>
+        </div>
+        <div class="fld">
+          <label for="f-kana">フリガナ<span class="opt">任意</span></label>
+          <input id="f-kana" name="フリガナ" type="text" placeholder="ヤマダ タロウ">
+        </div>
+        <div class="fld">
+          <label for="f-age">年齢<span class="req">必須</span></label>
+          <input id="f-age" name="年齢" type="number" min="16" max="80" placeholder="24" required>
+          <span class="err">年齢を入力してください</span>
+        </div>
+        <div class="fld">
+          <label for="f-tel">電話番号<span class="req">必須</span></label>
+          <input id="f-tel" name="電話番号" type="tel" placeholder="090-1234-5678" required>
+          <span class="err">電話番号を入力してください</span>
+        </div>
+        <div class="fld full">
+          <label for="f-email">メールアドレス<span class="req">必須</span></label>
+          <input id="f-email" name="メールアドレス" type="email" placeholder="example@mail.com" required>
+          <span class="err">正しいメールアドレスを入力してください</span>
+        </div>
+        <div class="fld">
+          <label for="f-job">現在のご職業<span class="opt">任意</span></label>
+          <input id="f-job" name="現在の職業" type="text" placeholder="コールセンター勤務 など">
+        </div>
+        <div class="fld">
+          <label for="f-train">筋トレ歴<span class="opt">任意</span></label>
+          <select id="f-train" name="筋トレ歴">
+            <option value="">選択してください</option>
+            <option>未経験・これから</option>
+            <option>半年未満</option>
+            <option>半年〜2年</option>
+            <option>2年以上</option>
+            <option>大会出場経験あり</option>
+          </select>
+        </div>
+        <div class="fld">
+          <label for="f-route">応募のきっかけ<span class="opt">任意</span></label>
+          <select id="f-route" name="応募経路">
+            <option value="">選択してください</option>
+            <option>このサイト・Web検索</option>
+            <option>SNS（Instagram / X など）</option>
+            <option>YouTube</option>
+            <option>知人・社員の紹介</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="fld">
+          <label for="f-pref">希望勤務開始<span class="opt">任意</span></label>
+          <input id="f-pref" name="希望勤務開始" type="text" placeholder="即日 / ◯月から など">
+        </div>
+        <div class="fld full">
+          <label for="f-msg">志望動機・メッセージ<span class="opt">任意</span></label>
+          <textarea id="f-msg" name="メッセージ" placeholder="「筋トレ × 営業で人生を変えたい」など、あなたの想いを聞かせてください。"></textarea>
+        </div>
+      </div>
+      <label class="agree">
+        <input id="f-agree" type="checkbox" required>
+        <span><a href="#">個人情報の取り扱い</a>に同意の上、応募します。ご入力内容は採用選考のみに利用します。</span>
+      </label>
+      <button type="submit" class="form-submit" id="submitBtn">この内容で応募して公式LINEへ ▶</button>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+
+    <div class="alt-apply reveal">
+      <a class="line" href="#" id="lineApply">公式LINEで質問する</a>
+      <a href="#" id="telApply">☎ 電話で応募する</a>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY APPLY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="line" id="stickyLine" href="#entry"><span style="font-family:Anton;background:#fff;color:#06b34c;width:22px;height:22px;border-radius:6px;display:inline-grid;place-items:center;font-size:13px">L</span> 公式LINEで応募・相談する</a>
+  <a class="deck" href="#benefits">特典を見る</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="display">MACHO RECRUIT</div>
+        <p>筋肉が、稼ぐ力になる。科学的根拠に基づく、新しい採用革命。日本一マッチョが多い営業会社へ。</p>
+      </div>
+      <div class="foot-info">
+        <b><a class="xlink actr-link" style="color:inherit" href="#" target="_blank" rel="noopener">株式会社アクタル（ACT-R）</a></b><br>
+        代表取締役：河野 泰佑<br>
+        オフィシャルスポンサー：<a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a><br>
+        ジム代：会社がサポート
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ACT-R Inc. All Rights Reserved.</span>
+      <span>MACHO RECRUIT ／ 筋肉採用</span>
+    </div>
+    <p class="disc">※ 本ページに記載の制度・特典・報酬・賞金・スポンサー等の内容は、企画段階のものを含み、実際の内容と異なる場合があります。最新の募集要項・社内規定が優先されます。各種ブランド名・人物名は各権利者に帰属します。</p>
+  </div>
+</footer>
+
+<script>
+  /* =========================================================================
+     ▼▼▼ 応募フォーム設定（ここを書き換えるだけで本番稼働します） ▼▼▼
+     応募は「公式LINEへ送客」する動線です。
+     - LINE_URL      : ★最重要。公式LINEの友だち追加URL。設定で「公式LINEで応募」ボタン＆
+                       フォーム送信後の自動LINE遷移が有効化（未設定だと準備中アラート表示）。
+     - FORM_ENDPOINT : 任意。Formspree等のID。設定するとLINE送客と併せて入力控えをサーバ保存。
+     - RECRUIT_EMAIL : 任意。LINEが開けない端末向けの mailto フォールバック先。
+     - TEL_NUMBER    : 任意。電話応募番号（無ければ空でボタン非表示）。
+     ========================================================================= */
+  const LINE_URL      = "https://s.lmes.jp/landing-qr/2007637021-vnPn7KAp?uLand=heXWbj";  // ★公式LINE 友だち追加URL
+  const FORM_ENDPOINT = "";                         // 任意：Formspree等のID。LINE_URL併用時はバックアップ保存に使われます
+  const RECRUIT_EMAIL = "recruit@act-r.example";    // 任意：mailtoフォールバック先（LINEが開けない端末用）
+  const TEL_NUMBER    = "";                         // 任意：電話応募番号（例 "03-1234-5678"）
+  const ACTR_URL      = "https://act-r-inc.com/";   // ★株式会社アクタル（ACT-R）の会社HP
+  const ANALYTICS_ID  = "G-R41E77ZRR8";             // GA4測定ID
+
+  // 「アクタル（ACT-R）」表記を会社HPへリンク（未設定ならクリックを無効化）
+  (function(){
+    document.querySelectorAll('.actr-link').forEach(el=>{
+      if(ACTR_URL){ el.href=ACTR_URL; }
+      else{ el.addEventListener('click',e=>e.preventDefault()); el.style.cursor='default'; }
+    });
+  })();
+
+  // ===== UTM計測：来訪時のutmを保存し、LINE/フォームに引き継ぐ =====
+  const UTM_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  (function(){try{const p=new URLSearchParams(location.search),got={};UTM_KEYS.forEach(k=>{const v=p.get(k);if(v)got[k]=v;});if(Object.keys(got).length)sessionStorage.setItem('utm',JSON.stringify(got));}catch(_){}})();
+  function getUTM(){try{return JSON.parse(sessionStorage.getItem('utm')||'{}');}catch(_){return{};}}
+  function appendUTM(url){const u=getUTM(),q=Object.keys(u).map(k=>k+'='+encodeURIComponent(u[k])).join('&');return q?url+(url.indexOf('?')>-1?'&':'?')+q:url;}
+
+  // GA4（ANALYTICS_ID 設定時のみ）
+  (function(){if(!ANALYTICS_ID)return;const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ANALYTICS_ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag('js',new Date());gtag('config',ANALYTICS_ID);})();
+
+  // --- primary & alt apply buttons ---
+  (function(){
+    const prim=document.getElementById('linePrimary');
+    const line=document.getElementById('lineApply'), tel=document.getElementById('telApply');
+    // すべての応募ボタンを公式LINEへ（UTM引き継ぎ＋クリック計測）
+    const setLine=el=>{if(!el)return;el.href=appendUTM(LINE_URL);el.target='_blank';el.rel='noopener';el.addEventListener('click',()=>{if(window.gtag)gtag('event','apply_click',{method:'line',location:el.id||'line'});});};
+    if(LINE_URL){['heroLine','stickyLine','midLine','linePrimary','lineApply','quizLine'].forEach(id=>setLine(document.getElementById(id)));}
+    if(LINE_URL){
+      // prim/line は上の setLine 済み
+    }else{
+      // 未設定時：設定を促す（公開前に必ずLINE_URLを入れてください）
+      prim.addEventListener('click',e=>{e.preventDefault();alert('公開準備中：index.html の LINE_URL に公式LINEのURLを設定してください。');});
+      line.style.display='none';
+    }
+    if(TEL_NUMBER){tel.href='tel:'+TEL_NUMBER.replace(/[^0-9+]/g,'');tel.textContent='☎ '+TEL_NUMBER+' に電話する';}else{tel.style.display='none';}
+  })();
+
+  // --- form handling ---
+  (function(){
+    const form=document.getElementById('entryForm');
+    if(!form) return;
+    const statusEl=document.getElementById('formStatus');
+    const btn=document.getElementById('submitBtn');
+    const setInvalid=(el,bad)=>el.closest('.fld').classList.toggle('invalid',bad);
+
+    function validate(){
+      let ok=true;
+      [['f-name',v=>v.trim()],['f-age',v=>v.trim()],['f-tel',v=>v.trim()],
+       ['f-email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())]].forEach(([id,test])=>{
+        const el=document.getElementById(id); const bad=!test(el.value); setInvalid(el,bad); if(bad) ok=false;
+      });
+      const agree=document.getElementById('f-agree');
+      if(!agree.checked){ok=false; agree.closest('.agree').style.color='#ff8a85';} else {agree.closest('.agree').style.color='';}
+      return ok;
+    }
+
+    function collect(){
+      const data={};
+      new FormData(form).forEach((v,k)=>{if(k!=='on') data[k]=v;});
+      const u=getUTM(); if(Object.keys(u).length) data['流入元']=Object.entries(u).map(([k,v])=>k+'='+v).join(' / ');
+      data['送信日時']=new Date().toLocaleString('ja-JP');
+      return data;
+    }
+
+    function mailtoFallback(data){
+      const body=Object.entries(data).map(([k,v])=>`${k}：${v||'（未入力）'}`).join('\n');
+      const subject=`【MACHO RECRUIT 応募】${data['お名前']||''}様`;
+      window.location.href=`mailto:${RECRUIT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    form.addEventListener('submit',async(e)=>{
+      e.preventDefault();
+      statusEl.className='form-status';
+      if(!validate()){statusEl.className='form-status ng';statusEl.textContent='未入力・不備のある項目があります。赤い項目をご確認ください。';return;}
+      const data=collect();
+      btn.disabled=true; btn.textContent='送信中…';
+      try{
+        // 入力内容をサーバ（任意）に控えとして保存
+        if(FORM_ENDPOINT){
+          try{await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});}catch(_){}
+        }
+        if(LINE_URL){
+          // ★本命の動線：公式LINEへ送客。入力内容はコピーしてLINEで貼れるよう控えめに保持
+          statusEl.className='form-status ok';
+          statusEl.textContent='✅ ありがとうございます！公式LINEを開きます。トークで「応募」と送って、面談日程に進んでください。';
+          try{sessionStorage.setItem('machoEntry',JSON.stringify(data));}catch(_){}
+          setTimeout(()=>{window.open(LINE_URL,'_blank');},700);
+          form.reset();
+        }else if(FORM_ENDPOINT){
+          statusEl.className='form-status ok';
+          statusEl.textContent='✅ ご応募ありがとうございます！担当より追ってご連絡いたします。';
+          form.reset();
+        }else{
+          mailtoFallback(data);
+          statusEl.className='form-status ok';
+          statusEl.textContent='✅ メールソフトが起動しました。本文そのまま送信で応募完了です。起動しない場合は '+RECRUIT_EMAIL+' へご連絡ください。';
+        }
+      }catch(err){
+        mailtoFallback(data);
+        statusEl.className='form-status ng';
+        statusEl.textContent='うまく送信できなかったため、メール送信に切り替えました。起動しない場合は '+RECRUIT_EMAIL+' まで。';
+      }finally{
+        btn.disabled=false; btn.textContent='この内容で応募して公式LINEへ ▶';
+      }
+    });
+  })();
+
+  // ===== PV : オープニング・シネマティック制御 =====
+  (function(){
+    const pv=document.getElementById('pv');
+    if(!pv) return;
+    const scenes=[...pv.querySelectorAll('.scene')];
+    const skip=document.getElementById('pvSkip'), enter=document.getElementById('pvEnter'), prog=document.getElementById('pvProgress');
+    const video=document.getElementById('pvVideo');
+    const durations=[4200,3600,4200,4200,4600];               // s0..s4（s5=エンドはユーザー操作待ち）
+    const totalAuto=durations.reduce((a,b)=>a+b,0);
+    let idx=0, timer=null, done=false;
+    const lock=()=>{document.documentElement.style.overflow='hidden';document.body.style.overflow='hidden';};
+    const unlock=()=>{document.documentElement.style.overflow='';document.body.style.overflow='';};
+    const show=i=>scenes.forEach((s,n)=>s.classList.toggle('on',n===i));
+
+    // ===== BGM（WebAudio・原曲／著作権フリーのドライブ系ループ） =====
+    const sound=document.getElementById('pvSound');
+    let actx=null, master=null, bgmTimer=null, bgmOn=false, muted=true;
+    function startBGM(){
+      try{ actx=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){ return; }
+      bgmOn=true; muted=false;
+      master=actx.createGain(); master.gain.value=0; master.connect(actx.destination);
+      master.gain.linearRampToValueAtTime(0.40, actx.currentTime+1.2);
+      const nb=actx.createBuffer(1, Math.floor(actx.sampleRate*0.2), actx.sampleRate), nd=nb.getChannelData(0);
+      for(let i=0;i<nd.length;i++) nd[i]=Math.random()*2-1;
+      const step=(60/126)/4;
+      const F={E1:41.2,G1:49,A1:55,B1:61.7,D2:73.4,E2:82.4,G2:98,A2:110,B2:123.5,E3:164.8,G3:196,B3:246.9};
+      const bass=['E1','E1','E2','G1','A1','A1','E2','G1','E1','E1','E2','G1','B1','B1','D2','A1'];
+      const lead=['E3',null,'G3','B3',null,'G3','A2',null,'E3',null,'B3','G3','A2',null,'B2',null];
+      const kick=t=>{const o=actx.createOscillator(),g=actx.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(45,t+.12);g.gain.setValueAtTime(.95,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);o.connect(g).connect(master);o.start(t);o.stop(t+.22);};
+      const hat=t=>{const s=actx.createBufferSource();s.buffer=nb;const hp=actx.createBiquadFilter();hp.type='highpass';hp.frequency.value=7200;const g=actx.createGain();g.gain.setValueAtTime(.16,t);g.gain.exponentialRampToValueAtTime(.001,t+.05);s.connect(hp).connect(g).connect(master);s.start(t);s.stop(t+.06);};
+      const syn=(f,t,d,ty,v)=>{const o=actx.createOscillator(),g=actx.createGain();o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g).connect(master);o.start(t);o.stop(t+d+.02);};
+      let s16=0, next=actx.currentTime+0.08;
+      (function sched(){
+        while(next<actx.currentTime+0.18){
+          const s=s16%16;
+          if(s%4===0) kick(next);
+          if(s%2===1) hat(next);
+          if(bass[s]) syn(F[bass[s]], next, step*1.6, 'sawtooth', .16);
+          if(lead[s]) syn(F[lead[s]], next, step*1.2, 'square', .045);
+          next+=step; s16++;
+        }
+        bgmTimer=setTimeout(sched,30);
+      })();
+    }
+    function stopBGM(){ if(!actx) return; try{master.gain.linearRampToValueAtTime(0,actx.currentTime+.35);}catch(e){} clearTimeout(bgmTimer); setTimeout(()=>{try{actx.close();}catch(e){}},450); }
+    sound&&sound.addEventListener('click',()=>{
+      // 動画モードのときは動画の音声をトグル
+      if(pv.classList.contains('video-mode')){
+        if(video.muted){ video.muted=false; sound.textContent='🔊 サウンドON'; sound.classList.remove('off'); }
+        else { video.muted=true; sound.textContent='🔇 サウンドOFF'; sound.classList.add('off'); }
+        return;
+      }
+      if(!bgmOn){ startBGM(); sound.textContent='🔊 サウンドON'; sound.classList.remove('off'); }
+      else if(muted){ try{master.gain.linearRampToValueAtTime(.40,actx.currentTime+.2);}catch(e){} muted=false; sound.textContent='🔊 サウンドON'; sound.classList.remove('off'); }
+      else { try{master.gain.linearRampToValueAtTime(0,actx.currentTime+.2);}catch(e){} muted=true; sound.textContent='🔇 サウンドOFF'; sound.classList.add('off'); }
+    });
+
+    function end(){ if(done) return; done=true; clearTimeout(timer); stopBGM(); pv.classList.add('hide'); unlock();
+      setTimeout(()=>{pv.parentNode&&pv.remove();},950); try{sessionStorage.setItem('pvSeen','1');}catch(_){}}
+    function step(){ if(done) return;
+      if(idx<durations.length){ show(idx); timer=setTimeout(()=>{idx++;step();},durations[idx-0]); }
+      else { show(scenes.length-1); }                         // エンドカードを表示して停止
+    }
+    // 初回のみ再生。再訪・動き低減設定・印刷時はスキップ
+    let mode=null;
+    function startGraphics(){
+      if(mode) return; mode='gfx';
+      prog.style.transition='width '+totalAuto+'ms linear';
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{prog.style.width='100%';}));
+      step();
+    }
+    function startVideo(){
+      if(mode==='video') return; mode='video';
+      clearTimeout(timer); stopBGM(); scenes.forEach(s=>s.classList.remove('on'));
+      pv.classList.add('video-mode');
+      sound&&(sound.textContent='🔊 サウンドON'); sound&&sound.classList.remove('off');
+      prog.style.transition='width .2s linear'; prog.style.width='0%';
+      video.muted=true; const p=video.play(); p&&p.catch&&p.catch(()=>{});
+      video.addEventListener('timeupdate',()=>{ if(video.duration) prog.style.width=Math.min(100,video.currentTime/video.duration*100)+'%'; });
+      video.addEventListener('ended', end);
+    }
+
+    let seen=false; try{seen=!!sessionStorage.getItem('pvSeen');}catch(_){}
+    const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const skipParam=location.search.indexOf('nopv')>-1;
+    if(seen||reduce||skipParam){ pv.remove(); }
+    else{
+      lock();
+      skip&&skip.addEventListener('click',end);
+      enter&&enter.addEventListener('click',end);
+      const src=video&&video.querySelector('source');
+      if(video&&src&&src.getAttribute('src')){        // 実動画あり → 即・動画モード（poster=実写がすぐ出る／シルエットは出さない）
+        startVideo();
+        video.addEventListener('error',()=>{ pv.classList.remove('video-mode'); mode=null; startGraphics(); },{once:true});
+        try{ video.load(); }catch(e){ pv.classList.remove('video-mode'); mode=null; startGraphics(); }
+      }else{
+        startGraphics();                              // 動画が無い時だけアニメPV
+      }
+    }
+  })();
+
+  // enable JS-driven reveal (content stays visible if JS/Observer unavailable)
+  document.documentElement.classList.add('js');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    // safety net: reveal anything still hidden after load
+    window.addEventListener('load',()=>setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in')),1200));
+  }else{
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+  }
+
+  // count-up numbers
+  (function(){
+    const nums=document.querySelectorAll('.count'); if(!nums.length||!('IntersectionObserver' in window)) return;
+    const run=el=>{const to=+el.dataset.to,dur=1300;let s=null;
+      const tick=t=>{if(!s)s=t;const p=Math.min((t-s)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(tick);};requestAnimationFrame(tick);};
+    const cio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){run(e.target);cio.unobserve(e.target);}})},{threshold:.5});
+    nums.forEach(n=>cio.observe(n));
+  })();
+
+  // 30秒適性診断
+  (function(){
+    const steps=[...document.querySelectorAll('.quiz-step')];
+    const prog=document.getElementById('qProg'), result=document.getElementById('qResult');
+    if(!steps.length||!prog||!result) return;
+    let ans=[];
+    function show(i){steps.forEach((s,n)=>s.classList.toggle('on',n===i));prog.style.width=(i/steps.length*100)+'%';}
+    function finish(){
+      steps.forEach(s=>s.classList.remove('on'));prog.style.width='100%';
+      const R={
+        money:{t:'ポテンシャル<em>爆発</em>タイプ',d:'「変わりたい」熱量は十分。稼げる環境さえあれば、一気に伸びる人です。筋肉採用、ドンピシャ。まずは話を聞いてみませんか?'},
+        body:{t:'ストイック<em>成長</em>タイプ',d:'自分を高めることに喜びを感じるあなたは、鍛えながら結果を出す働き方と相性抜群。伸びしろしかありません。'},
+        team:{t:'仲間と<em>燃える</em>タイプ',d:'一人より、みんなで高め合いたいあなた。切磋琢磨できるマッチョ集団が、最高の居場所になります。'}
+      }[ans[2]||'money'];
+      document.getElementById('qTitle').innerHTML='あなたは「'+R.t+'」';
+      document.getElementById('qDesc').textContent=R.d;
+      result.classList.add('on');
+      if(window.gtag) gtag('event','quiz_complete',{result:ans[2]||'money'});
+    }
+    steps.forEach((step,i)=>step.querySelectorAll('.quiz-opt').forEach(btn=>btn.addEventListener('click',()=>{
+      ans[i]=btn.dataset.v; if(i<steps.length-1) show(i+1); else finish();
+    })));
+    const retry=document.getElementById('qRetry');
+    retry&&retry.addEventListener('click',()=>{ans=[];result.classList.remove('on');show(0);});
+  })();
+
+  // sticky apply CTA：少しスクロールで出す／エントリー表示中は隠す
+  (function(){
+    const cta=document.getElementById('stickyCta'); if(!cta) return;
+    let entryVisible=false; const entry=document.getElementById('entry');
+    if(entry&&'IntersectionObserver' in window){new IntersectionObserver((es)=>{entryVisible=es[0].isIntersecting;upd();},{threshold:.15}).observe(entry);}
+    function upd(){cta.classList.toggle('show',window.scrollY>640&&!entryVisible);}
+    window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
+  })();
+</script>
+</body>
+</html>
