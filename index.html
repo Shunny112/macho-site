@@ -839,12 +839,2112 @@
   /* 黒カード上のロゴ文字（inline color:inherit で暗色化する問題）を白に固定 */
   .sponsor-box .logo{color:#fff!important;white-space:nowrap}
   .gym-card .fitlogo{color:#fff!important}
+
+  /* =========================================================
+     2026 — "BEYOND" ART DIRECTION
+     日産キャリア採用サイトの構成原理をMACHO RECRUITへ翻訳
+     ========================================================= */
+  :root{
+    --beyond-navy:#172633;
+    --beyond-deep:#07141e;
+    --beyond-blue:#003f66;
+    --beyond-sky:#5796bc;
+    --beyond-ice:#d9e6ee;
+    --beyond-gray:#e7e7e7;
+    --beyond-white:#f4f4f4;
+  }
+  body{background:var(--beyond-gray);color:#07141e}
+  body.is-loading{overflow:hidden}
+  .red{color:var(--beyond-sky)!important}
+  .hl{background:linear-gradient(transparent 67%,rgba(87,150,188,.42) 67%)}
+  .stripe{height:1px;background:rgba(7,20,30,.18)}
+
+  /* loading — small pictures open into the first view */
+  .beyond-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;
+    overflow:hidden;background-color:var(--beyond-deep);color:#fff;
+    background-image:radial-gradient(circle at center,rgba(87,150,188,.13) 0 1px,transparent 1.5px);
+    background-size:9px 9px;transition:opacity .8s ease,visibility .8s}
+  .beyond-loader.is-out{opacity:0;visibility:hidden;pointer-events:none}
+  .beyond-loader::before{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.18)}
+  .beyond-loader-logo{position:absolute;top:clamp(28px,5vw,68px);left:clamp(30px,7vw,110px);
+    z-index:3;font-family:"Oswald",sans-serif;font-size:18px;font-weight:700;letter-spacing:.16em}
+  .beyond-loader-logo span{display:block;margin-top:7px;color:rgba(255,255,255,.52);
+    font-family:"Noto Sans JP",sans-serif;font-size:9px;font-weight:500;letter-spacing:.16em}
+  .beyond-loader-media{position:absolute;z-index:1;width:min(28vw,360px);aspect-ratio:16/10;
+    overflow:hidden;transition:width 1s cubic-bezier(.16,1,.3,1),height 1s cubic-bezier(.16,1,.3,1)}
+  .beyond-loader.is-open .beyond-loader-media{width:100%;height:100%;aspect-ratio:auto}
+  .beyond-loader-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    object-position:center 32%;opacity:0;clip-path:inset(50%);filter:saturate(.72) contrast(1.08)}
+  .beyond-loader-media img:nth-child(1){animation:beyondPicture .48s .38s cubic-bezier(.16,1,.3,1) forwards}
+  .beyond-loader-media img:nth-child(2){animation:beyondPicture .48s .72s cubic-bezier(.16,1,.3,1) forwards}
+  .beyond-loader-media img:nth-child(3){animation:beyondPicture .48s 1.06s cubic-bezier(.16,1,.3,1) forwards}
+  .beyond-loader.is-open .beyond-loader-media img:not(:last-child){opacity:0}
+  .beyond-loader.is-open .beyond-loader-media img:last-child{opacity:.54;clip-path:inset(0)}
+  .beyond-loader-media::after{content:"";position:absolute;inset:0;background:rgba(7,20,30,.34)}
+  .beyond-loader-count{position:absolute;right:clamp(30px,7vw,110px);bottom:clamp(27px,5vw,64px);
+    z-index:3;font-family:"Oswald",sans-serif;font-size:20px;letter-spacing:.08em}
+  @keyframes beyondPicture{0%{opacity:1;clip-path:inset(50%)}100%{opacity:1;clip-path:inset(0)}}
+
+  /* header */
+  header.nav{background:transparent;border-bottom-color:rgba(255,255,255,.2);color:#fff;
+    transition:height .35s,background-color .35s,color .35s}
+  header.nav .brand,header.nav .nav-links a{color:#fff!important}
+  header.nav.is-scrolled{background:rgba(255,255,255,.94);color:#07141e;
+    border-bottom-color:rgba(7,20,30,.16);backdrop-filter:blur(16px)}
+  header.nav.is-scrolled .brand,header.nav.is-scrolled .nav-links a{color:#07141e!important}
+  .nav-in{height:82px;transition:height .35s}
+  .nav.is-scrolled .nav-in{height:64px}
+  .brand .mark{border:1px solid currentColor;background:transparent;color:inherit;transform:skew(-8deg)}
+  .brand b{color:var(--beyond-sky)}
+  .nav-links a::after{background:currentColor}
+  .nav-cta{border:1px solid rgba(255,255,255,.5);border-radius:0;background:transparent;color:inherit}
+  .nav.is-scrolled .nav-cta{border-color:var(--beyond-blue);background:var(--beyond-blue);color:#fff}
+  .nav-cta:hover{border-color:var(--beyond-sky);background:var(--beyond-sky);color:#fff}
+
+  /* first view */
+  .hero{min-height:100svh;display:grid;place-items:center;isolation:isolate;overflow:hidden;
+    background-color:var(--beyond-deep);color:#fff}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background-image:radial-gradient(circle,rgba(255,255,255,.13) 0 1px,transparent 1.3px);
+    background-size:10px 10px;opacity:.32}
+  .hero::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(circle at 70% 62%,rgba(87,150,188,.36),transparent 38%),
+      linear-gradient(180deg,rgba(7,20,30,.12),rgba(7,20,30,.72))}
+  .hero-film{position:absolute;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;
+    object-position:center 32%;filter:saturate(.68) contrast(1.12);transform:scale(1.03)}
+  .hero-in{position:relative;z-index:2;width:100%;max-width:none;padding:130px 7vw 82px;text-align:center}
+  .hero-keywords{position:absolute;top:108px;left:0;right:0;display:flex;justify-content:center;
+    gap:clamp(20px,5vw,78px);font-family:"Oswald",sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.15em;color:rgba(255,255,255,.66)}
+  .hero h1{margin:0 auto;font-family:"Oswald",sans-serif;font-size:clamp(84px,16.5vw,252px);
+    font-weight:700;line-height:.72;letter-spacing:-.045em;text-align:center}
+  .hero h1 span{display:block;color:transparent;-webkit-text-stroke:clamp(1px,.13vw,2px) var(--beyond-white)}
+  .hero h1 span:last-child{margin-left:10vw}
+  .hero-jp{display:flex;align-items:center;justify-content:center;gap:clamp(18px,3vw,52px);
+    margin-top:clamp(42px,6vw,84px);font-size:clamp(19px,2vw,32px);font-weight:600;letter-spacing:.08em}
+  .hero-jp i{width:clamp(60px,12vw,190px);height:1px;background:rgba(255,255,255,.72)}
+  .hero-subline{width:min(600px,100%);margin:28px auto 0;color:rgba(255,255,255,.65);
+    font-size:13px;line-height:2;overflow-wrap:anywhere}
+  .hero-actions{display:flex;justify-content:center;gap:14px;margin-top:30px}
+  .hero-actions a{display:flex;align-items:center;justify-content:space-between;gap:40px;min-width:260px;
+    padding:18px 20px;border:1px solid rgba(255,255,255,.45);font-size:13px;font-weight:700}
+  .hero-actions a:first-child{border-color:var(--beyond-sky);background:var(--beyond-blue)}
+  .hero-actions a:hover{border-color:var(--beyond-sky);background:var(--beyond-sky)}
+  .hero-actions svg{width:20px;height:20px}
+  .scroll-cue{z-index:3;right:4vw;bottom:40px;left:auto;color:rgba(255,255,255,.65);
+    font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.18em;writing-mode:vertical-rl}
+  .scroll-cue::before{content:"";display:block;width:1px;height:48px;margin:0 auto 12px;
+    background:linear-gradient(#fff,transparent);animation:beyondScroll 2s infinite}
+  @keyframes beyondScroll{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}
+    55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* message with floating stage photographs */
+  .beyond-message{position:relative;min-height:1450px;overflow:hidden;padding:180px 0 260px;
+    color:#fff;background-color:var(--beyond-navy);
+    background-image:radial-gradient(circle at center,rgba(255,255,255,.1) 0 1px,transparent 1.35px);
+    background-size:10px 10px}
+  .beyond-message::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 35% 38%,rgba(87,150,188,.42),transparent 30%),
+      radial-gradient(circle at 75% 72%,rgba(0,63,102,.7),transparent 28%)}
+  .beyond-message-inner{position:relative;z-index:2;width:min(880px,calc(100% - 48px));margin:auto}
+  .beyond-message .message-en{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.7);
+    font-family:"Oswald",sans-serif;font-size:clamp(76px,12vw,170px);font-weight:700;line-height:.9;letter-spacing:-.04em}
+  .beyond-message-copy{position:relative;z-index:3;margin-top:110px;margin-left:auto;width:min(650px,85%);
+    font-size:clamp(21px,2.25vw,34px);font-weight:600;line-height:2.15;letter-spacing:.07em}
+  .beyond-message-copy p+p{margin-top:62px}
+  .message-pic{position:absolute;z-index:1;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.35);
+    will-change:transform}
+  .message-pic img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.06)}
+  .message-pic.p1{top:280px;left:4vw;width:clamp(130px,18vw,270px);aspect-ratio:4/5}
+  .message-pic.p2{top:570px;right:2vw;width:clamp(160px,22vw,330px);aspect-ratio:3/4}
+  .message-pic.p3{top:910px;left:8vw;width:clamp(150px,20vw,300px);aspect-ratio:4/5}
+  .message-pic.p4{bottom:110px;right:16vw;width:clamp(120px,16vw,240px);aspect-ratio:4/5}
+
+  /* horizontal phrase */
+  .marquee{border:0;background:var(--beyond-gray);padding:34px 0}
+  .marquee-track{gap:5vw;animation-duration:34s}
+  .marquee-track span{font-family:"Oswald",sans-serif;font-size:clamp(74px,11vw,160px);font-weight:700;
+    line-height:.8;letter-spacing:-.04em;color:transparent!important;
+    -webkit-text-stroke:1px rgba(7,20,30,.46)}
+
+  /* global section language */
+  section:not(.hero):not(.beyond-message):not(.quiz):not(.statband):not(.vision):not(.midcta):not(.entry):not(.gallery){
+    background:var(--beyond-gray);color:#07141e}
+  section.alt{background:#fff!important}
+  section{padding-top:clamp(100px,11vw,170px);padding-bottom:clamp(100px,11vw,170px)}
+  .benefits{background:#fff!important}
+  .sec-tag{display:block;margin-bottom:24px;color:transparent!important;
+    -webkit-text-stroke:1px rgba(7,20,30,.5);font-family:"Oswald",sans-serif;
+    font-size:clamp(52px,8vw,112px)!important;font-weight:700!important;line-height:.9;letter-spacing:-.035em!important}
+  .sec-head h2,.ben-head h2{color:#07141e;font-size:clamp(32px,4.6vw,64px);letter-spacing:-.035em}
+  .sec-head p,.ben-head p{color:rgba(7,20,30,.63)}
+  .ben-grid,.reason-grid,.perk-grid,.voice-grid,.flow-grid,.vision-grid{gap:1px;background:rgba(7,20,30,.2)}
+  .ben-grid{counter-reset:beyondBenefit}
+  .ben,.reason,.perk,.voice,.flow-step,.v-card{border-radius:0!important;border:0!important;background:#fff!important;
+    box-shadow:none!important;color:#07141e}
+  .ben .bi,.quiz-opt .emo{display:none}
+  .ben{min-height:220px;justify-content:flex-end;text-align:left;counter-increment:beyondBenefit}
+  .ben::before{content:"0" counter(beyondBenefit);color:var(--beyond-sky);font-family:"Oswald",sans-serif}
+  .stat,.prob-col,.sponsor-box,.yamazawa,.gym-card,.story-panel,.reward-example,.quiz-card,
+  .news-featured,.sns-col,.form-wrap{border-radius:0!important;box-shadow:none!important}
+  .stat,.prob-col{border-color:rgba(7,20,30,.18)!important;background:rgba(255,255,255,.64)!important}
+  .stat .big,.prob-row .v{color:var(--beyond-blue)!important}
+  .btn,.line,.ghost,.q-line,.line-btn,.form-submit,.sticky a{border-radius:0!important}
+  .sticky .ln,.line-btn,.form-submit{background:var(--beyond-blue)!important}
+  .sticky .ln:hover,.line-btn:hover,.form-submit:hover{background:var(--beyond-sky)!important}
+
+  /* dark system sections */
+  .quiz,.statband,.vision,.midcta,.entry,.gallery{color:#fff;background-color:var(--beyond-navy)!important;
+    background-image:radial-gradient(circle,rgba(255,255,255,.09) 0 1px,transparent 1.3px)!important;
+    background-size:10px 10px!important}
+  .quiz .sec-tag,.gallery .sec-tag,.vision .sec-tag{color:transparent!important;
+    -webkit-text-stroke:1px rgba(255,255,255,.62)}
+  .quiz .sec-head h2,.gallery .sec-head h2,.vision .sec-head h2{color:#fff}
+  .quiz .sec-head p{color:rgba(255,255,255,.62)}
+  .quiz-card{border:1px solid rgba(255,255,255,.22)!important;background:rgba(7,20,30,.5)!important}
+  .quiz-opt{border-radius:0!important;background:transparent!important;border-color:rgba(255,255,255,.18)!important}
+  .quiz-opt:hover{border-color:var(--beyond-sky)!important;background:rgba(87,150,188,.12)!important}
+  .statband{border:0}
+  .sb+.sb{border-left-color:rgba(255,255,255,.22)}
+  .sb .num em,.sb .num span{color:#fff}
+  .midcta{background:linear-gradient(120deg,var(--beyond-blue),var(--beyond-navy))!important}
+  .entry{background:var(--beyond-deep)!important}
+  .entry-open,.form-wrap{background:#fff!important;color:#07141e!important}
+  footer{background:#021b2b}
+
+  @media(max-width:760px){
+    .beyond-loader-media{width:62vw}
+    .nav-in{height:64px}
+    .nav-cta{display:none}
+    .hero{min-height:760px}
+    .hero-in{padding:120px 18px 72px}
+    .hero-keywords{top:90px;gap:10px;padding:0 8px;font-size:7px;letter-spacing:.1em}
+    .hero h1{font-size:clamp(72px,21.5vw,94px);line-height:.8}
+    .hero h1 span:last-child{margin-left:0}
+    .hero-jp{display:grid;gap:16px;margin-top:54px;font-size:18px}
+    .hero-jp i{width:100px;margin:auto}
+    .hero-subline{width:330px;max-width:100%;white-space:normal!important;word-break:break-all}
+    .hero-actions{display:grid}
+    .hero-actions a{width:min(330px,100%);min-width:0}
+    .scroll-cue{right:17px;bottom:25px}
+    .beyond-message{min-height:1260px;padding:120px 0 210px}
+    .beyond-message-copy{width:82%;margin-top:80px;font-size:20px;line-height:2}
+    .beyond-message-copy p+p{margin-top:42px}
+    .message-pic.p1{top:240px;left:-18px;width:125px}
+    .message-pic.p2{top:510px;right:-28px;width:145px}
+    .message-pic.p3{top:810px;left:-15px;width:135px}
+    .message-pic.p4{right:14px;bottom:70px;width:120px}
+    .marquee-track span{font-size:78px}
+    .sec-tag{font-size:58px!important}
+    .ben-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .beyond-loader{display:none}
+    .marquee-track,.scroll-cue::before{animation:none!important}
+    .message-pic{transform:none!important}
+  }
+
+  /* =========================================================
+     APPLE PRECISION PASS
+     一つの被写体、短いコピー、精密な余白へ整理
+     ========================================================= */
+  :root{
+    --apple-black:#000;
+    --apple-ink:#1d1d1f;
+    --apple-copy:#6e6e73;
+    --apple-gray:#f5f5f7;
+    --apple-card:#fff;
+    --apple-blue:#0071e3;
+    --apple-blue-hover:#0077ed;
+    --apple-sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",
+      "Helvetica Neue","Noto Sans JP","Hiragino Sans",sans-serif;
+    --red:var(--apple-blue);
+    --black:var(--apple-black);
+    --ink:var(--apple-ink);
+    --off:var(--apple-gray);
+    --gray:var(--apple-copy);
+  }
+  html{background:var(--apple-black)}
+  body{background:var(--apple-gray);color:var(--apple-ink);font-family:var(--apple-sans);
+    line-height:1.5;letter-spacing:0}
+  .beyond-loader{display:none!important}
+  .marquee{display:none}
+  .red{color:var(--apple-blue)!important}
+  .wrap{max-width:1200px;padding-left:24px;padding-right:24px}
+  :focus-visible{outline:3px solid rgba(0,113,227,.7);outline-offset:4px}
+
+  /* Appleのグローバルナビのように、存在感を抑える */
+  header.nav,header.nav.is-scrolled{height:48px;background:rgba(0,0,0,.82);
+    border-bottom:0;color:#f5f5f7;backdrop-filter:saturate(180%) blur(20px)}
+  header.nav .nav-in,header.nav.is-scrolled .nav-in{height:48px}
+  header.nav .brand,header.nav.is-scrolled .brand{color:#f5f5f7!important;
+    font-family:var(--apple-sans);font-size:13px;font-weight:600;letter-spacing:.04em}
+  header.nav .brand .mark{width:24px;height:24px;border:1px solid rgba(255,255,255,.65);
+    font-family:var(--apple-sans);font-size:12px;transform:none}
+  header.nav .brand b{color:#7dc5ef}
+  header.nav .nav-links{gap:30px}
+  header.nav .nav-links a,header.nav.is-scrolled .nav-links a{color:rgba(255,255,255,.76)!important;
+    font-size:11px;letter-spacing:0}
+  header.nav .nav-links a:hover{color:#fff!important}
+  .nav-cta,.nav.is-scrolled .nav-cta{padding:7px 16px;border:0!important;border-radius:980px;
+    background:var(--apple-blue)!important;color:#fff!important;font-size:12px;letter-spacing:0}
+  .nav-cta:hover,.nav.is-scrolled .nav-cta:hover{background:var(--apple-blue-hover)!important}
+
+  /* Hero — 人物をプロダクトのように見せ、コピーは下端に置く */
+  .hero{min-height:100svh;padding:0;background:#000!important;color:#f5f5f7}
+  .hero::before{display:none}
+  .hero::after{z-index:0;background:
+    radial-gradient(circle at 50% 43%,transparent 0 26%,rgba(0,0,0,.14) 48%,#000 88%),
+    linear-gradient(180deg,transparent 58%,#000 94%)}
+  .hero-film{z-index:-1;width:100%;height:82%;top:5%;object-fit:contain;object-position:center 34%;
+    opacity:.92;filter:saturate(.58) contrast(1.08) brightness(.92);
+    transform:scale(var(--hero-scale,1));transition:opacity .2s}
+  .hero-in{position:relative;width:100%;height:100svh;max-width:1440px;padding:0 6.25vw;margin:auto;text-align:left}
+  .apple-hero-copy{position:absolute;z-index:3;left:6.25vw;bottom:6.8vh;max-width:760px}
+  .apple-hero-copy .product-name{margin-bottom:8px;color:#f5f5f7;font-size:clamp(18px,1.8vw,28px);
+    font-weight:600;letter-spacing:-.02em}
+  .apple-hero-copy h1{margin:0;font-family:var(--apple-sans);font-size:clamp(48px,5.8vw,86px);
+    font-weight:700;line-height:1.04;letter-spacing:-.055em;
+    background:linear-gradient(90deg,#effcff 0%,#a7dce4 44%,#6485a0 92%);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .apple-hero-copy p:last-child{margin-top:16px;color:#f5f5f7;font-size:clamp(18px,2vw,28px);
+    font-weight:600;letter-spacing:-.025em}
+  .apple-hero-offer{position:absolute;z-index:4;right:6.25vw;bottom:7vh;display:flex;align-items:center;
+    gap:22px;max-width:340px;padding:12px 12px 12px 22px;border-radius:980px;
+    background:rgba(44,44,46,.88);backdrop-filter:blur(18px);font-size:13px;font-weight:600}
+  .apple-hero-offer a{padding:10px 17px;border-radius:980px;background:var(--apple-blue);
+    color:#fff;white-space:nowrap}
+  .apple-hero-offer a:hover{background:var(--apple-blue-hover)}
+  .scroll-cue{display:none}
+
+  /* Scroll cinematic — Appleの製品スクロールを人物映像へ翻訳 */
+  .apple-story{position:relative;height:390svh;padding:0!important;background:#000!important;color:#fff}
+  .apple-story-sticky{position:sticky;top:0;height:100svh;overflow:hidden;isolation:isolate;background:#000}
+  .apple-story-media{position:absolute;inset:0;display:grid;place-items:center}
+  .apple-story-media::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(circle at center,transparent 20%,rgba(0,0,0,.08) 50%,#000 90%),
+    linear-gradient(180deg,rgba(0,0,0,.22),transparent 30%,transparent 68%,rgba(0,0,0,.82))}
+  .apple-story-media video{width:min(78vw,1040px);height:86svh;object-fit:contain;
+    filter:grayscale(calc(1 - var(--story-progress,0))) contrast(1.08);
+    opacity:calc(.5 + var(--story-progress,0) * .5);
+    transform:scale(calc(.76 + var(--story-progress,0) * .24));
+    will-change:transform,opacity,filter}
+  .apple-story-frame{position:absolute;inset:0;z-index:2;display:grid;place-items:center;
+    padding:0 24px;text-align:center;opacity:0;transform:translateY(26px) scale(.985);
+    will-change:opacity,transform}
+  .apple-story-frame.is-active{opacity:1;transform:none}
+  .apple-story-frame .eyebrow{margin-bottom:18px;color:#a1a1a6;font-size:14px;font-weight:600}
+  .apple-story-frame h2{font-family:var(--apple-sans);font-size:clamp(54px,8vw,116px);
+    font-weight:700;line-height:1.02;letter-spacing:-.06em;text-wrap:balance}
+  .apple-story-frame h2 span{background:linear-gradient(90deg,#f5f5f7,#9ed9e5 58%,#6086a5);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .apple-story-frame p{max-width:660px;margin:24px auto 0;color:#a1a1a6;
+    font-size:clamp(16px,1.7vw,22px);font-weight:600;line-height:1.55}
+  .apple-story-progress{position:absolute;z-index:4;left:50%;bottom:36px;width:min(220px,42vw);
+    height:3px;border-radius:3px;background:rgba(255,255,255,.18);transform:translateX(-50%)}
+  .apple-story-progress i{display:block;width:100%;height:100%;border-radius:inherit;background:#f5f5f7;
+    transform:scaleX(var(--story-progress,0));transform-origin:left}
+
+  /* Highlights — Appleの横スナップカード */
+  .benefits{padding:150px 0 170px!important;background:var(--apple-gray)!important;color:var(--apple-ink)}
+  .ben-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:54px}
+  .ben-head .sec-tag{display:none}
+  .ben-head h2{font-family:var(--apple-sans);font-size:clamp(40px,5vw,64px);
+    font-weight:700;line-height:1.08;letter-spacing:-.05em;color:var(--apple-ink)}
+  .highlight-controls{display:flex;gap:12px;flex:none}
+  .highlight-controls button{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;
+    border:0;background:#e2e2e5;color:#515154;cursor:pointer;transition:background .2s,color .2s}
+  .highlight-controls button:hover{background:#d2d2d7;color:#1d1d1f}
+  .highlight-controls svg{width:17px;height:17px}
+  .ben-grid{display:flex!important;gap:22px!important;width:calc(100vw - max(24px,(100vw - 1200px)/2));
+    margin-right:calc(50% - 50vw);padding:0 24px 20px 0;overflow-x:auto;scroll-snap-type:x mandatory;
+    scroll-padding-left:0;background:transparent!important;scrollbar-width:none}
+  .ben-grid::-webkit-scrollbar{display:none}
+  .ben{position:relative;flex:0 0 clamp(300px,34vw,430px);min-height:540px!important;
+    align-items:flex-start!important;justify-content:flex-start!important;padding:38px!important;
+    overflow:hidden;border-radius:28px!important;background:#000!important;color:#f5f5f7!important;
+    scroll-snap-align:start;text-align:left;isolation:isolate}
+  .ben::before{display:none}
+  .ben::after{content:"";position:absolute;inset:0;z-index:-1;background:
+    linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.92) 87%)}
+  .ben:nth-child(1){background:linear-gradient(145deg,#111 12%,#263844 58%,#07141e)!important}
+  .ben:nth-child(2){background:
+    linear-gradient(180deg,rgba(0,0,0,.02),#000 94%),
+    url("assets/img/bbj1.jpg") center 28%/cover!important}
+  .ben:nth-child(3){background:linear-gradient(145deg,#041b2a,#006a9c 58%,#111)!important}
+  .ben:nth-child(4){background:linear-gradient(155deg,#2b2b2d,#0b0b0b 64%)!important}
+  .ben:nth-child(5){background:
+    linear-gradient(180deg,rgba(0,0,0,.08),#000 94%),
+    url("assets/img/bbj4.jpg") center 24%/cover!important}
+  .ben:nth-child(6){background:linear-gradient(145deg,#0d1c24,#153e54 55%,#030303)!important}
+  .ben b{max-width:320px;font-family:var(--apple-sans);font-size:clamp(28px,3vw,42px)!important;
+    font-weight:700;line-height:1.08;letter-spacing:-.045em}
+  .ben span{margin-top:auto!important;color:#d2d2d7!important;font-size:17px!important;
+    font-weight:600;line-height:1.45!important}
+
+  /* 残りのページもAppleの製品ページと同じ静かな階層に */
+  section:not(.hero):not(.apple-story):not(.quiz):not(.statband):not(.vision):not(.midcta):not(.entry):not(.gallery):not(.benefits){
+    background:var(--apple-gray)!important;color:var(--apple-ink)}
+  section.alt{background:#fff!important}
+  section{padding-top:clamp(110px,11vw,168px);padding-bottom:clamp(110px,11vw,168px)}
+  .sec-tag{margin-bottom:14px;color:var(--apple-blue)!important;-webkit-text-stroke:0!important;
+    font-family:var(--apple-sans);font-size:14px!important;font-weight:600!important;
+    line-height:1.2;letter-spacing:0!important;text-transform:none}
+  .sec-head h2,.phi-left h3,.gym-left h3{font-family:var(--apple-sans)!important;
+    font-weight:700!important;letter-spacing:-.045em!important}
+  .sec-head h2{font-size:clamp(40px,5.5vw,72px);line-height:1.08}
+  .sec-head p{max-width:720px;color:var(--apple-copy);font-size:17px;line-height:1.7}
+  .stat,.prob-col,.reason,.perk,.voice,.flow-step,.v-card,.news-featured,.sns-col,
+  .sponsor-box,.yamazawa,.gym-card,.story-panel,.reward-example,.form-wrap,.quiz-card{
+    border-radius:28px!important;border-color:rgba(0,0,0,.06)!important;
+    box-shadow:none!important}
+  .reason-grid,.perk-grid,.voice-grid,.flow-grid,.vision-grid{gap:18px;background:transparent}
+  .stat-grid{gap:18px}
+  .stat,.prob-col{background:#fff!important}
+  .stat .big,.prob-row .v{color:var(--apple-ink)!important}
+  .stat .delta{color:var(--apple-blue)!important}
+  .btn,.line,.ghost,.q-line,.line-btn,.form-submit,.sticky a{border-radius:980px!important}
+  a,button{transition-duration:.2s}
+  .reveal{transform:translateY(28px) scale(.992);transition-duration:.9s;
+    transition-timing-function:cubic-bezier(.16,1,.3,1)}
+
+  /* Dark chapters */
+  .quiz,.statband,.vision,.midcta,.entry,.gallery{background:#000!important;
+    background-image:none!important;color:#f5f5f7}
+  .quiz .sec-tag,.gallery .sec-tag,.vision .sec-tag{color:#2997ff!important;-webkit-text-stroke:0!important}
+  .quiz-card{background:#1d1d1f!important;border-color:#38383a!important}
+  .quiz-opt{border-radius:14px!important;background:#2c2c2e!important;border:0!important}
+  .quiz-opt:hover{background:#3a3a3c!important}
+  .statband{border:0}
+  .midcta{background:#000!important}
+  .entry-open,.form-wrap{background:#fff!important}
+  .line-btn,.form-submit,.sticky .ln{background:var(--apple-blue)!important}
+  .line-btn:hover,.form-submit:hover,.sticky .ln:hover{background:var(--apple-blue-hover)!important}
+  footer{background:#1d1d1f}
+
+  @media(max-width:760px){
+    header.nav .nav-in,header.nav.is-scrolled .nav-in{height:48px}
+    header.nav .brand,header.nav.is-scrolled .brand{font-size:12px}
+    .hero{min-height:760px}
+    .hero-in{height:760px;padding:0 24px}
+    .hero-film{top:4%;height:79%;width:118%;left:-9%;object-position:center 25%}
+    .apple-hero-copy{left:24px;right:24px;bottom:38px}
+    .apple-hero-copy .product-name{font-size:17px}
+    .apple-hero-copy h1{font-size:46px}
+    .apple-hero-copy p:last-child{font-size:18px}
+    .apple-hero-offer{display:none}
+    .apple-story{height:330svh}
+    .apple-story-media video{width:120vw;height:80svh}
+    .apple-story-frame h2{font-size:54px}
+    .apple-story-frame p{font-size:16px}
+    .benefits{padding:104px 0 120px!important}
+    .ben-head{align-items:center;margin-bottom:34px}
+    .ben-head h2{font-size:38px}
+    .highlight-controls{display:none}
+    .ben-grid{width:calc(100vw - 24px);gap:14px!important}
+    .ben{flex-basis:82vw;min-height:490px!important;padding:28px!important;border-radius:24px!important}
+    .ben b{font-size:32px!important}
+    .ben span{font-size:15px!important}
+    .sec-head h2{font-size:40px}
+    .stat,.prob-col,.reason,.perk,.voice,.flow-step,.v-card,.news-featured,.sns-col,
+    .sponsor-box,.yamazawa,.gym-card,.story-panel,.reward-example,.form-wrap,.quiz-card{
+      border-radius:22px!important}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .apple-story{height:auto;padding:100px 0!important}
+    .apple-story-sticky{position:relative;height:auto;min-height:760px}
+    .apple-story-media video{transform:none!important;filter:none!important;opacity:.65!important}
+    .apple-story-frame{display:none}
+    .apple-story-frame[data-story-frame="2"]{display:grid;opacity:1;transform:none}
+  }
+
+  /* ========================================================================
+     RED POWERHOUSE PASS
+     GOLD'S GYMの力強い情報設計を、ACT-Rの赤い採用ブランドへ翻訳
+     ======================================================================== */
+  :root{
+    --power-red:#d20a19;
+    --power-red-dark:#9d0712;
+    --power-black:#050505;
+    --power-ink:#111;
+    --power-paper:#f2f0ea;
+    --power-white:#fff;
+    --power-muted:#6d6b67;
+    --red:#d20a19;
+    --gold:#d20a19;
+    --black:#050505;
+    --ink:#111;
+    --off:#f2f0ea;
+    --gray:#62615d;
+    --line:rgba(17,17,17,.14);
+  }
+  html{scroll-padding-top:80px}
+  body{
+    background:var(--power-black);font-family:"Noto Sans JP",sans-serif;
+    color:var(--power-ink);line-height:1.75;letter-spacing:.01em}
+  body::before{display:none}
+  ::selection{background:var(--power-red);color:#fff}
+  :where(a,button,input,select,textarea):focus-visible{
+    outline:3px solid var(--power-red)!important;outline-offset:3px}
+  .wrap{max-width:1240px}
+
+  /* Reference-like black bar with a single solid brand block */
+  header.nav,header.nav.is-scrolled{
+    height:80px;background:rgba(5,5,5,.97)!important;border:0!important;
+    backdrop-filter:none!important;box-shadow:none!important}
+  header.nav .nav-in,header.nav.is-scrolled .nav-in{
+    width:100%;max-width:none;height:80px;padding:0 22px 0 0}
+  header.nav .brand,header.nav.is-scrolled .brand{
+    align-self:stretch;display:flex;align-items:center;width:350px;padding:0 28px;
+    background:var(--power-red);color:#fff!important;
+    font-family:"Oswald",sans-serif;font-size:17px;font-weight:700;letter-spacing:.04em}
+  header.nav .brand .mark{
+    width:42px;height:42px;border:3px solid #fff;border-radius:50%;
+    font-family:"Anton",sans-serif;font-size:17px}
+  header.nav .brand b{color:#fff}
+  header.nav .nav-links{height:100%;margin-left:auto;gap:0}
+  header.nav .nav-links a,header.nav.is-scrolled .nav-links a{
+    display:flex;align-items:center;height:100%;padding:0 21px;color:#fff!important;
+    font-family:"Oswald",sans-serif;font-size:14px;font-weight:700;letter-spacing:.035em}
+  header.nav .nav-links a:hover{background:#1d1d1d!important;color:#fff!important}
+  .nav-cta,.nav.is-scrolled .nav-cta{
+    flex:none;margin-left:16px;padding:13px 24px;border-radius:2px!important;
+    background:var(--power-red)!important;color:#fff!important;
+    font-family:"Oswald",sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em}
+  .nav-cta:hover,.nav.is-scrolled .nav-cta:hover{background:#fff!important;color:#111!important}
+
+  /* Full-bleed recruiting film */
+  .hero{
+    min-height:calc(100svh - 80px);margin-top:80px;padding:0!important;
+    background:#000!important;color:#fff}
+  .hero-film{
+    inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;
+    object-position:center 34%!important;opacity:1!important;
+    filter:saturate(.74) contrast(1.12) brightness(.72)!important}
+  .hero::after{
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.28) 46%,rgba(0,0,0,.08) 72%),
+      linear-gradient(0deg,#000 0%,rgba(0,0,0,.92) 22%,rgba(0,0,0,.62) 42%,transparent 66%)!important}
+  .hero-in{height:calc(100svh - 80px)!important;max-width:none!important;padding:0 5vw!important}
+  .apple-hero-copy{left:5vw!important;bottom:7vh!important;max-width:900px!important}
+  .apple-hero-copy .product-name{
+    display:inline-flex;align-items:center;min-height:32px;margin:0 0 18px!important;padding:4px 12px;
+    background:var(--power-red);color:#fff!important;
+    font-family:"Oswald",sans-serif;font-size:15px!important;font-weight:700;letter-spacing:.12em!important}
+  .apple-hero-copy h1{
+    color:#fff!important;background:none!important;
+    font-family:"Anton","Noto Sans JP",sans-serif!important;
+    font-size:clamp(62px,8.4vw,128px)!important;font-weight:400!important;
+    line-height:.9!important;letter-spacing:-.035em!important;text-shadow:0 4px 24px rgba(0,0,0,.35)}
+  .apple-hero-copy h1 em{color:var(--power-red);font-style:normal}
+  .apple-hero-copy p:last-of-type{
+    margin-top:22px!important;color:#fff!important;
+    font-family:"Oswald","Noto Sans JP",sans-serif;font-size:clamp(18px,2vw,29px)!important;
+    font-weight:700!important;letter-spacing:.08em!important}
+  .apple-hero-offer{
+    right:4vw!important;bottom:4vh!important;gap:18px!important;max-width:360px!important;
+    padding:10px 10px 10px 20px!important;border-radius:3px!important;
+    background:#fff!important;color:#111!important;backdrop-filter:none!important}
+  .apple-hero-offer a{
+    padding:14px 22px!important;border-radius:2px!important;background:var(--power-red)!important;
+    font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.06em}
+  .apple-hero-offer a:hover{background:#111!important}
+
+  /* Black recruiting ticker */
+  .marquee{
+    display:block!important;height:88px;overflow:hidden;background:#080808!important;
+    padding:0!important;border:0!important;
+    border-bottom:1px solid rgba(255,255,255,.72)!important;color:var(--power-red)!important}
+  .marquee-track{height:100%!important;align-items:center;gap:62px}
+  .marquee-track span{
+    color:var(--power-red)!important;font-family:"Noto Sans JP",sans-serif!important;
+    font-size:29px!important;font-weight:500!important;letter-spacing:-.025em!important;
+    line-height:1!important;white-space:nowrap!important;-webkit-text-stroke:0!important}
+  .marquee-track span:nth-child(even){
+    color:transparent!important;-webkit-text-stroke:1px rgba(255,255,255,.24)!important}
+  .marquee-track span::after{display:none!important}
+
+  /* One cinematic moment: training film + three recruiting truths */
+  .apple-story{height:310svh!important;background:#050505!important}
+  .apple-story-sticky{background:#050505!important}
+  .apple-story-media{inset:0!important}
+  .apple-story-media::after{
+    background:
+      linear-gradient(90deg,#050505 0%,rgba(5,5,5,.84) 25%,rgba(5,5,5,.25) 66%,rgba(5,5,5,.72)),
+      linear-gradient(0deg,#050505 0%,transparent 28%,transparent 72%,rgba(5,5,5,.55))!important}
+  .apple-story-media video{
+    position:absolute!important;inset:0!important;display:block!important;
+    width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;
+    filter:saturate(.55) contrast(1.12) brightness(.68)!important;
+    opacity:calc(.62 + var(--story-progress,0) * .28)!important;
+    transform:scale(calc(1.04 + var(--story-progress,0) * .04))!important}
+  .apple-story-frame{
+    display:flex!important;align-items:center!important;justify-content:flex-start!important;
+    padding:80px max(32px,8vw)!important;text-align:left!important}
+  .apple-story-frame>div{width:min(760px,72vw)}
+  .apple-story-frame .eyebrow{
+    display:inline-block;margin-bottom:18px!important;padding:5px 11px;
+    background:var(--power-red);color:#fff!important;
+    font-family:"Oswald",sans-serif;font-size:14px!important;font-weight:700;letter-spacing:.12em}
+  .apple-story-frame h2{
+    color:#fff;font-family:"Anton","Noto Sans JP",sans-serif!important;
+    font-size:clamp(74px,10vw,150px)!important;font-weight:400!important;
+    line-height:.88!important;letter-spacing:-.045em!important}
+  .apple-story-frame h2 span{color:var(--power-red)!important;background:none!important}
+  .apple-story-frame p{
+    max-width:580px!important;margin:30px 0 0!important;color:#fff!important;
+    font-size:clamp(16px,1.5vw,21px)!important;font-weight:600!important;line-height:1.8!important}
+  .apple-story-progress{
+    left:auto!important;right:4vw!important;bottom:40px!important;width:240px!important;height:5px!important;
+    background:rgba(255,255,255,.24)!important;transform:none!important;border-radius:0!important}
+  .apple-story-progress i{background:var(--power-red)!important;border-radius:0!important}
+
+  /* Horizontal quality carousel */
+  .benefits{padding:140px 0 160px!important;background:var(--power-paper)!important}
+  .ben-head{align-items:end!important;margin-bottom:42px!important}
+  .ben-head .sec-tag{display:inline-flex!important}
+  .ben-head h2{
+    color:#111!important;font-family:"Anton","Noto Sans JP",sans-serif!important;
+    font-size:clamp(56px,7vw,92px)!important;font-weight:400!important;
+    line-height:.94!important;letter-spacing:-.035em!important}
+  .highlight-controls button{
+    width:48px!important;height:48px!important;border:2px solid #111!important;border-radius:50%!important;
+    background:transparent!important;color:#111!important}
+  .highlight-controls button:hover{background:var(--power-red)!important;border-color:var(--power-red)!important;color:#fff!important}
+  .ben-grid{gap:16px!important}
+  .ben{
+    flex-basis:clamp(310px,31vw,410px)!important;min-height:520px!important;padding:32px!important;
+    border:0!important;border-radius:0!important;background:#111!important}
+  .ben::after{background:linear-gradient(180deg,rgba(0,0,0,.02) 30%,rgba(0,0,0,.94) 92%)!important}
+  .ben::before{
+    content:"";display:block!important;position:absolute;z-index:2;top:0;right:0;
+    width:72px;height:72px;background:linear-gradient(135deg,transparent 49%,var(--power-red) 50%)}
+  .ben:nth-child(1){background:linear-gradient(140deg,#111,#4d050c)!important}
+  .ben:nth-child(2){background:
+    linear-gradient(180deg,rgba(0,0,0,.02),#050505 96%),
+    url("assets/img/bbj1.jpg") center 23%/cover!important}
+  .ben:nth-child(3){background:linear-gradient(140deg,#760712,#160205)!important}
+  .ben:nth-child(4){background:linear-gradient(140deg,#2a2a2a,#090909)!important}
+  .ben:nth-child(5){background:
+    linear-gradient(180deg,rgba(0,0,0,.02),#050505 96%),
+    url("assets/img/bbj4.jpg") center 22%/cover!important}
+  .ben:nth-child(6){background:linear-gradient(140deg,#4b040a,#050505)!important}
+  .ben .bi{
+    display:grid!important;place-items:center!important;width:48px!important;height:48px!important;
+    margin:0 0 22px!important;background:var(--power-red)!important;color:#fff!important;
+    font-family:"Oswald",sans-serif!important;font-size:14px!important;font-weight:700!important}
+  .ben b{
+    max-width:330px!important;color:#fff!important;
+    font-family:"Anton","Noto Sans JP",sans-serif!important;font-size:clamp(34px,3vw,44px)!important;
+    font-weight:400!important;line-height:1.05!important;letter-spacing:-.025em!important}
+  .ben span{color:#fff!important;font-size:16px!important;font-weight:600!important}
+
+  /* System-wide red / black editorial language */
+  section:not(.hero):not(.apple-story):not(.quiz):not(.statband):not(.vision):not(.midcta):not(.entry):not(.gallery):not(.benefits){
+    background:var(--power-paper)!important;color:#111!important}
+  section.alt{background:#fff!important}
+  section{padding-top:clamp(100px,9vw,146px);padding-bottom:clamp(100px,9vw,146px)}
+  .sec-tag{
+    display:inline-flex!important;margin-bottom:18px!important;padding:5px 11px!important;
+    background:var(--power-red)!important;color:#fff!important;
+    font-family:"Oswald",sans-serif!important;font-size:13px!important;font-weight:700!important;
+    letter-spacing:.1em!important;text-transform:uppercase!important}
+  .sec-head h2,.phi-left h3,.gym-left h3{
+    color:#111!important;font-family:"Anton","Noto Sans JP",sans-serif!important;
+    font-weight:400!important;line-height:.98!important;letter-spacing:-.03em!important}
+  .sec-head h2{
+    max-width:1050px;font-size:clamp(52px,6.3vw,84px)!important;
+    word-break:auto-phrase;overflow-wrap:break-word;text-wrap:balance}
+  .sec-head p{
+    max-width:780px;color:#4d4c49!important;font-size:16px!important;font-weight:500;
+    line-height:1.9!important;word-break:auto-phrase;overflow-wrap:break-word;text-wrap:pretty}
+  .sec-head p b{color:inherit!important}
+  .phi-left h3,.partner h3,.rep h3,.midcta h3,.entry h2{
+    word-break:auto-phrase;overflow-wrap:break-word;text-wrap:balance}
+  :where(.phi-item,.stat,.prob-col,.reason,.perk,.voice,.flow-step,.v-card,.case-card,.gym-card) p{
+    line-height:1.75;text-wrap:pretty}
+  :where(.stat,.prob-col,.reason,.perk,.voice,.flow-step,.news-featured,.sns-col) :where(p,li,.src){
+    color:#51504d}
+  .red,.phi-left .q{color:var(--power-red)!important}
+  .stripe{height:12px;background:repeating-linear-gradient(135deg,var(--power-red) 0 42px,#050505 42px 54px)}
+  .stat,.prob-col,.reason,.perk,.voice,.flow-step,.v-card,.news-featured,.sns-col,
+  .sponsor-box,.yamazawa,.gym-card,.story-panel,.reward-example,.form-wrap,.quiz-card,
+  .rep-card,.case-card,.rank-wrap,.real-now{
+    border-radius:0!important;box-shadow:none!important}
+  .stat,.prob-col,.reason,.perk,.voice,.flow-step,.v-card,.news-featured,.sns-col{
+    border:1px solid rgba(0,0,0,.12)!important}
+  .phi-item{border-radius:0!important;border-left:6px solid var(--power-red)!important}
+  .phi-item .no,.reason .no,.flow-step .n{color:var(--power-red)!important}
+  .stat .delta,.reward-example .plus{color:var(--power-red)!important}
+  .btn,.line,.ghost,.q-line,.line-btn,.form-submit,.sticky a{
+    border-radius:2px!important;font-family:"Oswald","Noto Sans JP",sans-serif!important;
+    font-weight:700!important;letter-spacing:.04em!important}
+  .reveal{
+    transform:translateY(34px)!important;transition-duration:.75s!important;
+    transition-timing-function:cubic-bezier(.16,1,.3,1)!important}
+  .reveal.in{transform:none!important}
+
+  /* Dark chapters and high-impact stats */
+  .quiz,.vision,.midcta,.entry,.gallery{background:#050505!important;color:#fff!important}
+  .quiz .sec-head h2,.vision .sec-head h2,.gallery .sec-head h2{color:#fff!important}
+  .quiz .sec-head p,.vision .sec-head p,.gallery .sec-head p{color:#bdbdbd!important}
+  .quiz-card{background:#141414!important;border:1px solid #333!important}
+  .quiz-q{color:#fff!important}
+  .quiz-q small{color:var(--power-red)!important}
+  .quiz-opt{border-radius:0!important;background:#222!important;border:1px solid #3b3b3b!important}
+  .quiz-opt{color:#fff!important}
+  .quiz-opt .emo{border-color:var(--power-red)!important;color:#fff!important;background:var(--power-red)!important}
+  .quiz-opt:hover{background:var(--power-red)!important}
+  .quiz-prog i{background:var(--power-red)!important}
+  .statband{padding:0!important;background:var(--power-red)!important;color:#fff!important}
+  .sb-grid{min-height:230px}
+  .sb{padding:48px 20px!important;border-color:rgba(255,255,255,.28)!important}
+  .sb .num,.sb .num em{color:#fff!important}
+  .gallery .gal{border-radius:0!important}
+  .entry-open,.form-wrap{background:#fff!important;border-radius:0!important}
+  .line-btn,.form-submit,.sticky .ln{background:var(--power-red)!important}
+  .line-btn:hover,.form-submit:hover,.sticky .ln:hover{background:var(--power-red-dark)!important}
+  .line-cta{
+    background:var(--power-red)!important;border-radius:0!important;box-shadow:none!important}
+  .line-btn{
+    background:#fff!important;color:var(--power-red)!important;border-radius:2px!important}
+  .midcta .big-line,.quiz-result .q-line,.hero-cta .line,.alt-apply .line{
+    background:var(--power-red)!important;border-color:var(--power-red)!important;
+    color:#fff!important;box-shadow:none!important;animation:none!important;border-radius:2px!important}
+  .midcta .big-line:hover,.quiz-result .q-line:hover,.hero-cta .line:hover,.alt-apply .line:hover{
+    background:var(--power-red-dark)!important;color:#fff!important}
+  :where(.line-btn,.big-line,.q-line,.hero-cta,.sticky-cta) .li{
+    background:#fff!important;color:var(--power-red)!important}
+  .free-badge,.perk .brandtag,.reason .pill{
+    background:var(--power-red)!important;color:#fff!important;border-color:var(--power-red)!important}
+  .fitlogo .sq{background:var(--power-red)!important}
+  .fitlogo small,.perk-list-mini .chk,.voice .stars,.v-card .prize,.v-card .soon{
+    color:var(--power-red)!important}
+  .hero-reassure span::before,.midcta .reassure span::before{color:var(--power-red)!important}
+  .perk-list-mini .chk{border-color:var(--power-red)!important;background:rgba(210,10,25,.1)!important}
+  .yamazawa .av{background:var(--power-red)!important;color:#fff!important}
+  .earn-card.b .no{border-color:var(--power-red)!important;color:var(--power-red)!important}
+  .gym-card{background:#101010!important;border-color:#2f2f2f!important;color:#fff!important}
+  .gym-card p,.gym-card [style*="color:var(--gray)"]{color:#c9c8c5!important}
+  .gym-card [style*="background:#000"]{background:#050505!important;border-color:#333!important;border-radius:0!important}
+  .sponsor-box{border-color:var(--power-red)!important}
+  .sponsor-box .logo{border-color:var(--power-red)!important}
+  .sponsor-box .logo small,.sponsor-box .txt b{color:var(--power-red)!important}
+  .vision .sec-tag{color:#fff!important;border-color:var(--power-red)!important}
+  .vision .v-card{background:#141414!important;border-color:#333!important}
+  .vision .v-card,.vision .v-card h4{color:#fff!important}
+  .vision .v-card p{color:#c9c8c5!important}
+  .v-card .ic{
+    display:grid!important;place-items:center;width:52px;height:52px;margin-bottom:22px;
+    color:var(--power-red)!important}
+  .v-card .ic svg{width:44px;height:44px;fill:none;stroke:currentColor;stroke-width:1.7;
+    stroke-linecap:round;stroke-linejoin:round}
+  .reason,.perk,.voice{color:#111!important}
+  .reason h4,.perk h4,.voice b,.case-card .hl-big,.prob-col h3,.phi-item h4{
+    color:#111!important}
+  .voice .q{color:#4d4c49!important}
+  .voice .role,.voice .who span{color:#676662!important}
+  footer{background:#050505!important;border-top:10px solid var(--power-red)}
+
+  /* Bottom-right LINE action, always available */
+  .sticky-cta{
+    left:auto!important;right:24px!important;bottom:24px!important;display:flex!important;gap:8px!important;
+    width:auto!important;padding:0!important;background:transparent!important;border:0!important;
+    opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+  .sticky-cta.show{opacity:1!important;visibility:visible;transform:none!important}
+  .sticky-cta a{box-shadow:none!important}
+  .sticky-cta .line{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:12px!important;
+    min-width:350px!important;min-height:62px!important;padding:0 28px!important;
+    border:0!important;border-radius:999px!important;background:#06c755!important;color:#fff!important;
+    font-family:"Noto Sans JP",sans-serif!important;font-size:16px!important;font-weight:900!important;
+    letter-spacing:.015em!important;white-space:nowrap!important;animation:none!important;
+    box-shadow:0 12px 34px rgba(6,199,85,.26)!important}
+  .sticky-cta .line:hover{background:#05b84d!important}
+  .sticky-cta .line .li{
+    display:grid!important;place-items:center!important;width:30px!important;height:30px!important;
+    border-radius:7px!important;background:#fff!important;color:#06b94f!important;
+    font-family:"Oswald",sans-serif!important;font-size:17px!important;font-weight:700!important}
+  .sticky-cta .deck{display:none!important}
+
+  @media(min-width:761px){
+    .vision .sec-head h2{max-width:1200px;font-size:clamp(58px,5.55vw,80px)!important}
+    .hero-film{
+      left:24%!important;width:76%!important;object-fit:contain!important;
+      object-position:center!important;background:#000}
+  }
+  @media(max-width:1000px){
+    header.nav .brand,header.nav.is-scrolled .brand{width:300px}
+    header.nav .nav-links a,header.nav.is-scrolled .nav-links a{padding:0 11px;font-size:12px}
+  }
+  @media(max-width:760px){
+    html{scroll-padding-top:64px}
+    header.nav,header.nav.is-scrolled{height:64px!important}
+    header.nav .nav-in,header.nav.is-scrolled .nav-in{height:64px!important;padding:0!important;gap:0!important}
+    header.nav .brand,header.nav.is-scrolled .brand{
+      width:68%;padding:0 16px;font-size:13px!important}
+    header.nav .brand .mark{width:34px;height:34px;font-size:14px}
+    .nav-cta,.nav.is-scrolled .nav-cta{
+      display:flex!important;align-self:stretch;align-items:center;justify-content:center;width:32%;
+      margin:0!important;padding:0 8px!important;border-radius:0!important;
+      background:#050505!important;color:#fff!important;font-size:12px!important}
+    .hero{min-height:calc(100svh - 64px)!important;margin-top:64px!important}
+    .hero-in{height:calc(100svh - 64px)!important;padding:0 22px!important}
+    .hero-film{left:0!important;width:100%!important;object-position:55% center!important}
+    .hero::after{background:
+      linear-gradient(0deg,#000 0%,rgba(0,0,0,.98) 30%,rgba(0,0,0,.68) 58%,rgba(0,0,0,.08) 78%),
+      linear-gradient(90deg,rgba(0,0,0,.25),transparent)!important}
+    .apple-hero-copy{left:22px!important;right:22px!important;bottom:34px!important}
+    .apple-hero-copy .product-name{font-size:12px!important}
+    .apple-hero-copy h1{font-size:clamp(42px,11.3vw,46px)!important;line-height:.94!important;white-space:nowrap}
+    .apple-hero-copy p:last-of-type{font-size:16px!important;margin-top:16px!important}
+    .marquee,.marquee-track{height:66px!important}
+    .marquee-track{gap:38px!important}
+    .marquee-track span{font-size:22px!important}
+    .apple-story{height:270svh!important}
+    .apple-story-media video{object-position:58% center!important}
+    .apple-story-media::after{background:
+      linear-gradient(0deg,#050505 0%,rgba(5,5,5,.55) 54%,rgba(5,5,5,.22))!important}
+    .apple-story-frame{align-items:flex-end!important;padding:0 22px 116px!important}
+    .apple-story-frame>div{width:100%!important}
+    .apple-story-frame h2{font-size:clamp(64px,20vw,88px)!important}
+    .apple-story-frame p{font-size:15px!important;line-height:1.7!important;margin-top:18px!important}
+    .apple-story-progress{right:22px!important;left:22px!important;bottom:62px!important;width:auto!important}
+    .benefits{padding:100px 0 116px!important}
+    .ben-head{margin-bottom:30px!important}
+    .ben-head h2{font-size:54px!important}
+    .ben-grid{width:calc(100vw - 20px)!important}
+    .ben{flex-basis:84vw!important;min-height:470px!important;padding:26px!important}
+    .sec-head{margin-bottom:42px}
+    .sec-head h2{
+      font-size:clamp(38px,11vw,46px)!important;line-height:1.1!important;
+      letter-spacing:-.035em!important;text-wrap:balance}
+    .sec-head p{font-size:15px!important;line-height:1.85!important}
+    .title-break{display:none}
+    .title-break.keep-mobile{display:block}
+    .ben span br,.gym-card p br,.lead2 br{display:none}
+    .partner h3,.rep h3,.midcta h3{line-height:1.14!important}
+    .partner h3{font-size:clamp(34px,10.5vw,44px)!important}
+    .midcta h3{font-size:clamp(38px,11vw,48px)!important}
+    :where(.phi-item,.stat,.prob-col,.reason,.perk,.voice,.flow-step,.v-card,.case-card,.gym-card) p{
+      font-size:14px;line-height:1.8}
+    .stat,.prob-col,.reason,.perk,.voice,.flow-step,.v-card,.news-featured,.sns-col,
+    .sponsor-box,.yamazawa,.gym-card,.story-panel,.reward-example,.form-wrap,.quiz-card{
+      border-radius:0!important}
+    .sticky-cta{
+      left:auto!important;right:12px!important;bottom:12px!important;width:auto!important}
+    .sticky-cta .line{
+      min-width:0!important;min-height:54px!important;padding:0 20px!important;font-size:13px!important}
+    .sticky-cta .line .li{width:27px!important;height:27px!important;font-size:15px!important}
+    .sticky-cta .line{flex:none!important}
+    .sticky-cta .deck{display:none!important}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .marquee-track{animation:none!important}
+    .apple-story{height:auto!important;padding:0!important}
+    .apple-story-sticky{min-height:760px!important}
+    .apple-story-frame{display:none!important}
+    .apple-story-frame[data-story-frame="2"]{display:flex!important;opacity:1!important;transform:none!important}
+  }
+
+  @media(max-width:0px){
+  /* ========================================================================
+     ACT-R EDITORIAL PASS
+     求人広告らしい情報の明快さと、競技誌の硬質な写真設計へ整理する。
+     ======================================================================== */
+  :root{
+    --actr-red:#c90918;
+    --actr-black:#080808;
+    --actr-ink:#191919;
+    --actr-paper:#f1f0eb;
+    --actr-white:#fff;
+    --actr-rule:#cbc9c2;
+    --actr-muted:#66645f;
+    --power-red:var(--actr-red);
+    --power-red-dark:#9e0712;
+    --power-black:var(--actr-black);
+    --power-paper:var(--actr-paper);
+    --red:var(--actr-red);
+    --black:var(--actr-black);
+    --off:var(--actr-paper);
+    --gray:var(--actr-muted);
+  }
+  html{scroll-padding-top:72px}
+  body{
+    background:var(--actr-paper);
+    color:var(--actr-ink);
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+    letter-spacing:0;
+  }
+  .wrap{max-width:1200px;padding-inline:32px}
+  .skip-link{
+    position:fixed;z-index:1000;top:10px;left:10px;transform:translateY(-150%);
+    padding:10px 16px;background:#fff;color:#111;border:2px solid var(--actr-red);
+    font-size:13px;font-weight:700;
+  }
+  .skip-link:focus{transform:none}
+
+  /* Header: one clear brand block, one clear action. */
+  header.nav,header.nav.is-scrolled{
+    height:72px!important;background:var(--actr-black)!important;
+    border-bottom:1px solid #292929!important;
+  }
+  header.nav .nav-in,header.nav.is-scrolled .nav-in{height:72px!important;padding-right:18px!important}
+  header.nav .brand,header.nav.is-scrolled .brand{
+    width:310px!important;padding:0 24px!important;background:var(--actr-red)!important;
+    font-size:15px!important;letter-spacing:.055em!important;
+  }
+  header.nav .brand .mark{
+    width:36px!important;height:36px!important;border:0!important;border-radius:0!important;
+    background:#fff;color:var(--actr-red)!important;font-family:"Oswald",sans-serif!important;
+    font-size:15px!important;transform:none!important;
+  }
+  header.nav .nav-links a,header.nav.is-scrolled .nav-links a{
+    padding:0 15px!important;font-size:12px!important;letter-spacing:.045em!important;
+  }
+  .nav-cta,.nav.is-scrolled .nav-cta{
+    align-self:stretch!important;display:flex!important;align-items:center!important;
+    margin-left:10px!important;padding:0 22px!important;border-radius:0!important;
+    font-size:12px!important;
+  }
+
+  /* Hero: restrained split layout, real footage first. */
+  .hero{
+    min-height:720px!important;height:calc(100svh - 72px)!important;
+    margin-top:72px!important;background:var(--actr-black)!important;
+  }
+  .hero::before,.hero::after{display:none!important}
+  .hero-film{
+    left:44%!important;right:0!important;width:56%!important;height:100%!important;
+    object-fit:cover!important;object-position:center!important;
+    filter:grayscale(.08) saturate(.78) contrast(1.08) brightness(.78)!important;
+    transform:none!important;
+  }
+  .hero-in{height:100%!important;max-width:1200px!important;margin:0 auto!important;padding:0 32px!important}
+  .apple-hero-copy{
+    left:32px!important;bottom:72px!important;width:min(40%,520px)!important;max-width:none!important;
+  }
+  .apple-hero-copy .product-name{
+    min-height:0!important;margin:0 0 24px!important;padding:0 0 0 14px!important;
+    border-left:4px solid var(--actr-red);background:none!important;
+    color:#fff!important;font-size:12px!important;letter-spacing:.12em!important;
+  }
+  .apple-hero-copy h1{
+    font-family:"Noto Sans JP",sans-serif!important;font-size:clamp(48px,5vw,72px)!important;
+    font-weight:900!important;line-height:1.12!important;letter-spacing:-.055em!important;
+    text-shadow:none!important;text-wrap:balance;
+  }
+  .apple-hero-copy h1 em{color:var(--actr-red)!important}
+  .apple-hero-copy p:last-child{
+    margin-top:28px!important;padding-top:18px;border-top:1px solid #3b3b3b;
+    font-size:15px!important;letter-spacing:.19em!important;color:#d9d9d9!important;
+  }
+  .apple-hero-offer{
+    right:32px!important;bottom:28px!important;max-width:330px!important;
+    gap:14px!important;padding:8px 8px 8px 16px!important;border:1px solid #d6d6d6!important;
+    border-radius:0!important;background:#fff!important;box-shadow:none!important;
+  }
+  .apple-hero-offer span{font-size:12px!important;line-height:1.55!important}
+  .apple-hero-offer a{
+    min-width:76px;padding:12px 18px!important;border-radius:0!important;
+    font-size:12px!important;text-align:center;
+  }
+  .marquee{display:none!important}
+
+  /* Story: all three ideas are visible; no scroll-jacking or oversized slogans. */
+  .apple-story{
+    height:auto!important;padding:112px 0!important;background:var(--actr-black)!important;
+  }
+  .apple-story-sticky{
+    position:relative!important;top:auto!important;inset:auto!important;
+    display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(360px,.65fr)!important;
+    grid-template-rows:repeat(3,minmax(210px,1fr))!important;
+    width:min(1200px,calc(100% - 64px))!important;height:auto!important;min-height:680px!important;
+    margin:0 auto!important;overflow:hidden!important;background:#111!important;
+  }
+  .apple-story-media{
+    position:relative!important;inset:auto!important;grid-column:1!important;grid-row:1 / 4!important;
+    min-height:680px!important;
+  }
+  .apple-story-media::after{background:rgba(0,0,0,.12)!important}
+  .apple-story-media video{
+    inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;
+    object-position:center!important;opacity:1!important;transform:none!important;
+    filter:grayscale(.12) saturate(.76) contrast(1.08) brightness(.8)!important;
+  }
+  .apple-story-frame{
+    position:relative!important;inset:auto!important;display:flex!important;grid-column:2!important;
+    align-items:center!important;justify-content:flex-start!important;min-height:210px!important;
+    padding:30px 34px!important;border-bottom:1px solid #333!important;background:#111!important;
+    opacity:1!important;transform:none!important;pointer-events:auto!important;text-align:left!important;
+  }
+  .apple-story-frame:last-of-type{border-bottom:0!important}
+  .apple-story-frame>div{width:auto!important}
+  .apple-story-frame .eyebrow{
+    margin:0 0 11px!important;padding:0!important;background:none!important;
+    color:var(--actr-red)!important;font-size:11px!important;letter-spacing:.16em!important;
+  }
+  .apple-story-frame h2{
+    font-family:"Noto Sans JP",sans-serif!important;font-size:clamp(30px,3vw,43px)!important;
+    font-weight:900!important;line-height:1.22!important;letter-spacing:-.045em!important;
+  }
+  .apple-story-frame h2 span{color:#fff!important}
+  .apple-story-frame p{
+    margin:14px 0 0!important;color:#bcbcbc!important;font-size:13px!important;
+    font-weight:400!important;line-height:1.75!important;
+  }
+  .apple-story-frame::before{
+    content:"0" counter(story);position:absolute;top:30px;right:28px;
+    color:#5e5e5e;font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.12em;
+  }
+  .apple-story-sticky{counter-reset:story}
+  .apple-story-frame{counter-increment:story}
+  .apple-story-progress{display:none!important}
+
+  /* Benefits: a compact index, not six campaign cards. */
+  .benefits{padding:112px 0!important;background:var(--actr-paper)!important}
+  .ben-head{margin-bottom:38px!important}
+  .ben-head h2{
+    font-family:"Noto Sans JP",sans-serif!important;font-size:clamp(40px,4.5vw,60px)!important;
+    font-weight:900!important;line-height:1.14!important;letter-spacing:-.045em!important;
+  }
+  .highlight-controls{display:none!important}
+  .ben-grid{
+    display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    width:auto!important;gap:1px!important;overflow:visible!important;padding:1px!important;
+    background:#bab8b1!important;scroll-snap-type:none!important;
+  }
+  .ben{
+    display:flex!important;flex-direction:column!important;justify-content:flex-end!important;
+    min-width:0!important;min-height:245px!important;padding:28px!important;
+    border:0!important;background:#fff!important;color:#111!important;
+    scroll-snap-align:none!important;
+  }
+  .ben:nth-child(n){background:#fff!important}
+  .ben::before,.ben::after{display:none!important}
+  .ben .bi{
+    display:block!important;width:auto!important;height:auto!important;margin:0 auto auto 0!important;
+    background:none!important;color:var(--actr-red)!important;
+    font-size:12px!important;letter-spacing:.12em!important;
+  }
+  .ben b{
+    color:#111!important;font-family:"Noto Sans JP",sans-serif!important;
+    font-size:25px!important;font-weight:900!important;line-height:1.28!important;letter-spacing:-.025em!important;
+  }
+  .ben span{margin-top:10px;color:#666!important;font-size:13px!important;font-weight:400!important;line-height:1.7!important}
+
+  /* Typography: Japanese first, display type only for utility labels. */
+  section{padding-top:112px;padding-bottom:112px}
+  .sec-head{margin-bottom:46px!important}
+  .sec-tag{
+    position:relative;min-height:0!important;margin-bottom:16px!important;padding:0 0 0 18px!important;
+    background:none!important;color:var(--actr-red)!important;border:0!important;
+    font-size:11px!important;letter-spacing:.15em!important;
+  }
+  .sec-tag::before{
+    content:"";position:absolute;left:0;top:50%;width:10px;height:2px;background:var(--actr-red);
+  }
+  .sec-head h2,.phi-left h3,.gym-left h3{
+    font-family:"Noto Sans JP",sans-serif!important;font-weight:900!important;
+    letter-spacing:-.045em!important;line-height:1.16!important;
+  }
+  .sec-head h2{max-width:920px;font-size:clamp(38px,4.7vw,62px)!important}
+  .sec-head p{max-width:720px;font-size:15px!important;font-weight:400!important;line-height:1.9!important}
+  .phi-left h3,.partner h3,.rep h3{font-size:clamp(34px,4vw,52px)!important;line-height:1.22!important}
+  .entry h2,.midcta h3{font-family:"Noto Sans JP",sans-serif!important;font-weight:900!important}
+  .display{font-family:"Oswald","Noto Sans JP",sans-serif!important}
+
+  /* Components: flat, factual and consistent. */
+  .reveal,.reveal.in{opacity:1!important;transform:none!important;transition:none!important}
+  :where(.stat,.prob-col,.reason,.perk,.voice,.flow-step,.flow-card,.v-card,.case-card,.gym-card,
+    .news-featured,.sns-col,.sponsor-box,.yamazawa,.story-panel,.reward-example,.form-wrap,.quiz-card,
+    .rep-card,.rank-wrap,.real-now,.earn-card,.faq){
+    border-radius:0!important;box-shadow:none!important;
+  }
+  :where(.stat,.prob-col,.reason,.perk,.voice,.flow-step,.flow-card,.news-featured,.sns-col,.earn-card){
+    border-color:var(--actr-rule)!important;
+  }
+  :where(.stat,.prob-col,.reason,.perk,.voice,.flow-step,.flow-card,.news-featured,.sns-col,.earn-card):hover{
+    transform:none!important;box-shadow:none!important;
+  }
+  .phi-item{border-left:0!important;border-top:1px solid var(--actr-rule)!important;background:transparent!important}
+  .reason .pill,.perk .brandtag,.free-badge{
+    padding:0!important;background:none!important;color:var(--actr-red)!important;border:0!important;
+    font-size:11px!important;letter-spacing:.08em!important;
+  }
+  .quiz-card{max-width:820px!important;padding:38px!important;background:#111!important}
+  .quiz-opt{
+    min-height:58px!important;border:1px solid #373737!important;background:#171717!important;
+    text-align:left!important;font-size:14px!important;
+  }
+  .quiz-opt .emo{
+    width:28px!important;height:28px!important;border:0!important;background:none!important;
+    color:var(--actr-red)!important;font-family:"Oswald",sans-serif!important;font-size:11px!important;
+  }
+  .quiz-opt:hover{background:#242424!important;border-color:#777!important}
+  .statband{background:var(--actr-red)!important}
+  .sb-grid{min-height:190px!important}
+  .sb{padding:38px 18px!important}
+  .sb .num{font-size:clamp(36px,4.6vw,62px)!important}
+  .stripe{height:6px!important;background:var(--actr-black)!important}
+  .flow-card .ic{font-size:0!important}
+  .flow-card .ic::after{
+    color:var(--actr-red);font-family:"Oswald",sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;
+  }
+  .flow-card:nth-child(1) .ic::after{content:"LINE"}
+  .flow-card:nth-child(2) .ic::after{content:"TALK"}
+  .flow-card:nth-child(3) .ic::after{content:"GYM"}
+  .flow-card:nth-child(4) .ic::after{content:"START"}
+  .voice .stars{display:none!important}
+  .entry [style*="border-radius:50px"]{border-radius:0!important}
+  .entry [style*="animation:stpulse"]{animation:none!important}
+  .line-cta{border-radius:0!important;box-shadow:none!important}
+  .line-btn,.form-submit,.midcta .big-line,.quiz-result .q-line,.hero-cta .line,.alt-apply .line{
+    border-radius:0!important;box-shadow:none!important;animation:none!important;
+  }
+  .sticky-cta{right:18px!important;bottom:18px!important}
+  .sticky-cta a{min-height:50px!important;padding:0 18px!important;box-shadow:none!important;border-radius:0!important}
+  footer{border-top:6px solid var(--actr-red)!important}
+
+  @media(max-width:1000px){
+    header.nav .brand,header.nav.is-scrolled .brand{width:270px!important}
+    .hero-film{left:40%!important;width:60%!important}
+    .apple-story-sticky{grid-template-columns:minmax(0,1fr) minmax(330px,.75fr)!important}
+    .ben-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  }
+  @media(max-width:760px){
+    html{scroll-padding-top:60px}
+    .wrap{padding-inline:20px}
+    header.nav,header.nav.is-scrolled,
+    header.nav .nav-in,header.nav.is-scrolled .nav-in{height:60px!important}
+    header.nav .brand,header.nav.is-scrolled .brand{
+      width:calc(100% - 94px)!important;padding:0 14px!important;font-size:12px!important;
+    }
+    header.nav .brand .mark{width:30px!important;height:30px!important;font-size:12px!important}
+    .nav-cta,.nav.is-scrolled .nav-cta{
+      width:94px!important;min-width:94px!important;padding:0 8px!important;background:#050505!important;
+    }
+    .hero{
+      height:calc(100svh - 60px)!important;min-height:650px!important;margin-top:60px!important;
+    }
+    .hero-film{
+      left:0!important;width:100%!important;opacity:.58!important;object-position:58% center!important;
+    }
+    .hero::after{
+      content:"";display:block!important;background:rgba(0,0,0,.36)!important;
+    }
+    .hero-in{padding:0 20px!important}
+    .apple-hero-copy{
+      left:20px!important;right:20px!important;bottom:34px!important;width:auto!important;
+    }
+    .apple-hero-copy .product-name{margin-bottom:18px!important}
+    .apple-hero-copy h1{
+      max-width:350px;font-size:clamp(39px,11.4vw,50px)!important;line-height:1.14!important;
+      white-space:normal!important;
+    }
+    .apple-hero-copy p:last-child{margin-top:20px!important;padding-top:14px!important;font-size:13px!important}
+    .apple-hero-offer{display:none!important}
+    .apple-story{padding:72px 0!important}
+    .apple-story-sticky{
+      display:block!important;width:calc(100% - 40px)!important;min-height:0!important;
+    }
+    .apple-story-media{min-height:58svh!important}
+    .apple-story-frame{min-height:0!important;padding:27px 24px!important}
+    .apple-story-frame::before{top:27px;right:22px}
+    .apple-story-frame h2{font-size:32px!important}
+    .apple-story-frame p{padding-right:28px}
+    .benefits{padding:78px 0!important}
+    .ben-head h2,.sec-head h2{font-size:clamp(34px,9.7vw,42px)!important}
+    .ben-grid{grid-template-columns:1fr!important;width:auto!important}
+    .ben{min-height:190px!important;padding:24px!important}
+    .ben b{font-size:23px!important}
+    section{padding-top:78px;padding-bottom:78px}
+    .sec-head{margin-bottom:34px!important}
+    .quiz-card{padding:24px 20px!important}
+    .sticky-cta{right:10px!important;bottom:10px!important}
+    .sticky-cta a{min-height:48px!important;padding:0 15px!important}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+  }
+  }
+
+  @media (max-width:0px){
+  /* ========================================================================
+     GOLD STANDARD — FINAL UI LAYER
+     Gold's Gymの「黒／黄／白・実写主役・フラットな情報設計」を、
+     MACHO RECRUIT固有の採用体験として再構成。
+     ======================================================================== */
+  :root{
+    --gym-yellow:#ffd400;
+    --gym-yellow-deep:#e9c200;
+    --gym-black:#080808;
+    --gym-ink:#141414;
+    --gym-paper:#f2f1ed;
+    --gym-white:#fff;
+    --gym-muted:#66645f;
+    --power-red:var(--gym-yellow);
+    --power-red-dark:var(--gym-yellow-deep);
+    --power-black:var(--gym-black);
+    --power-ink:var(--gym-ink);
+    --power-paper:var(--gym-paper);
+    --red:var(--gym-yellow);
+    --gold:var(--gym-yellow);
+    --black:var(--gym-black);
+    --ink:var(--gym-ink);
+    --off:var(--gym-paper);
+    --gray:var(--gym-muted);
+  }
+  html{scroll-padding-top:80px}
+  body{
+    background-color:var(--gym-paper);
+    background-image:radial-gradient(rgba(20,20,20,.055) .65px,transparent .65px);
+    background-size:6px 6px;
+    color:var(--gym-ink)}
+  ::selection{background:var(--gym-yellow);color:#000}
+  :where(a,button,input,select,textarea):focus-visible{
+    outline:3px solid var(--gym-yellow)!important;
+    outline-offset:4px}
+  button,a[href]{cursor:pointer}
+  .skip-link{
+    position:fixed;z-index:10001;top:10px;left:10px;padding:11px 16px;
+    background:var(--gym-yellow);color:#000;font-size:13px;font-weight:900;
+    transform:translateY(-160%);transition:transform .18s}
+  .skip-link:focus{transform:none}
+
+  /* Navigation: one yellow brand block, then a quiet black utility rail. */
+  header.nav,header.nav.is-scrolled{
+    height:80px!important;background:rgba(8,8,8,.98)!important;color:#fff!important;
+    border:0!important;box-shadow:none!important;backdrop-filter:none!important}
+  header.nav .nav-in,header.nav.is-scrolled .nav-in{
+    height:80px!important;max-width:none!important;padding:0 22px 0 0!important}
+  header.nav .brand,header.nav.is-scrolled .brand{
+    align-self:stretch;width:350px!important;padding:0 28px!important;
+    background:var(--gym-yellow)!important;color:#000!important;
+    font-family:"Oswald","Noto Sans JP",sans-serif!important;
+    font-size:17px!important;font-weight:700!important;letter-spacing:.045em!important}
+  header.nav .brand .mark{
+    width:42px!important;height:42px!important;border:3px solid #000!important;
+    color:#000!important;background:transparent!important;border-radius:50%!important}
+  header.nav .brand b{color:#000!important}
+  header.nav .nav-links a,header.nav.is-scrolled .nav-links a{
+    color:#fff!important}
+  header.nav .nav-links a:hover{
+    background:#242424!important;color:var(--gym-yellow)!important}
+  .nav-cta,.nav.is-scrolled .nav-cta{
+    background:var(--gym-yellow)!important;color:#000!important;border:2px solid var(--gym-yellow)!important;
+    border-radius:0!important;font-weight:900!important}
+  .nav-cta:hover,.nav.is-scrolled .nav-cta:hover{
+    background:#fff!important;border-color:#fff!important;color:#000!important}
+
+  /* Hero: authentic film, one message, no decorative UI effects. */
+  .hero{
+    min-height:calc(100svh - 80px)!important;margin-top:80px!important;
+    background:#000!important;color:#fff}
+  .hero-film{
+    background:#000!important;filter:saturate(.78) contrast(1.12) brightness(.68)!important}
+  .hero::after{
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.48) 38%,rgba(0,0,0,.08) 72%),
+      linear-gradient(0deg,#000 0%,rgba(0,0,0,.72) 27%,transparent 62%)!important}
+  .apple-hero-copy .product-name{
+    background:var(--gym-yellow)!important;color:#000!important}
+  .apple-hero-copy h1{
+    max-width:850px!important;color:#fff!important;
+    font-family:"Noto Sans JP",sans-serif!important;
+    font-size:clamp(56px,7.2vw,104px)!important;font-weight:900!important;
+    line-height:1.03!important;letter-spacing:-.055em!important}
+  .apple-hero-copy h1 em{color:var(--gym-yellow)!important}
+  .apple-hero-copy p:last-child{
+    color:#fff!important;font-family:"Oswald",sans-serif!important;
+    font-size:clamp(18px,2vw,28px)!important;letter-spacing:.12em!important}
+  .apple-hero-offer{
+    padding:0!important;gap:0!important;background:var(--gym-yellow)!important;color:#000!important;
+    border:0!important;border-radius:0!important}
+  .apple-hero-offer span{padding:13px 18px;font-weight:900;line-height:1.55}
+  .apple-hero-offer a{
+    align-self:stretch;display:grid;place-items:center;padding:14px 24px!important;
+    background:#000!important;color:#fff!important;border:2px solid var(--gym-yellow)!important;
+    border-radius:0!important}
+  .apple-hero-offer a:hover{background:#fff!important;color:#000!important}
+
+  /* Yellow training rail instead of an ornamental marquee. */
+  .marquee,.marquee-track{background:var(--gym-yellow)!important}
+  .marquee-track span{color:#000!important;-webkit-text-stroke:0!important}
+  .marquee-track span::after{background:#000!important}
+
+  /* Fix from the supplied screenshot:
+     Japanese heading is sized and flowed as text, never as overlapping display glyphs. */
+  .apple-story{height:280svh!important;background:#050505!important}
+  .apple-story-sticky{background:#050505!important}
+  .apple-story-media::after{
+    background:
+      linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.78) 32%,rgba(5,5,5,.15) 72%),
+      linear-gradient(0deg,#050505 0%,transparent 34%,rgba(5,5,5,.28) 100%)!important}
+  .apple-story-frame{
+    align-items:center!important;justify-content:flex-start!important;
+    padding:80px max(30px,8vw)!important}
+  .apple-story-frame>div{
+    width:min(720px,48vw)!important;padding:34px 36px 38px;
+    background:rgba(5,5,5,.82);border-top:7px solid var(--gym-yellow)}
+  .apple-story-frame .eyebrow{
+    margin:0 0 20px!important;padding:0!important;background:transparent!important;
+    color:var(--gym-yellow)!important;font-size:13px!important;letter-spacing:.16em!important}
+  .apple-story-frame h2{
+    max-width:100%!important;margin:0!important;color:#fff!important;
+    font-family:"Noto Sans JP",sans-serif!important;
+    font-size:clamp(46px,5.1vw,76px)!important;font-weight:900!important;
+    line-height:1.16!important;letter-spacing:-.055em!important;
+    word-break:keep-all!important;overflow-wrap:normal!important;text-wrap:balance!important}
+  .apple-story-frame h2 span{
+    display:inline!important;color:var(--gym-yellow)!important;background:none!important}
+  .apple-story-frame p{
+    margin:24px 0 0!important;color:#e9e9e7!important;
+    font-size:clamp(15px,1.35vw,18px)!important;font-weight:600!important;line-height:1.9!important}
+  .apple-story-progress{
+    right:4vw!important;bottom:40px!important;background:rgba(255,255,255,.25)!important}
+  .apple-story-progress i{background:var(--gym-yellow)!important}
+
+  /* Section language: compact Japanese, useful labels, no AI-style oversized type. */
+  section{padding-top:clamp(92px,8vw,132px);padding-bottom:clamp(92px,8vw,132px)}
+  section:not(.hero):not(.apple-story):not(.quiz):not(.statband):not(.vision):not(.midcta):not(.entry):not(.gallery):not(.benefits){
+    background:var(--gym-paper)!important;color:var(--gym-ink)!important}
+  section.alt{background:#fff!important}
+  .sec-head{margin-bottom:48px}
+  .sec-tag{
+    display:inline-flex!important;align-items:center!important;min-height:30px;
+    margin-bottom:18px!important;padding:5px 12px!important;
+    background:#111!important;color:var(--gym-yellow)!important;border:0!important;
+    font-family:"Oswald",sans-serif!important;font-size:13px!important;font-weight:700!important;
+    letter-spacing:.12em!important}
+  .sec-head h2,.phi-left h3,.gym-left h3,.partner h3,.rep h3,.midcta h3,.entry h2,
+  .ben-head h2{
+    font-family:"Noto Sans JP",sans-serif!important;font-weight:900!important;
+    letter-spacing:-.05em!important}
+  .sec-head h2{
+    max-width:980px!important;font-size:clamp(42px,5.25vw,70px)!important;
+    line-height:1.12!important}
+  .sec-head p{
+    color:#4f4d48!important;font-size:16px!important;line-height:1.9!important}
+  .red,.phi-left .q{color:#a88700!important}
+  .stripe{
+    height:10px!important;
+    background:repeating-linear-gradient(135deg,var(--gym-yellow) 0 40px,#050505 40px 52px)!important}
+
+  /* Benefits become a clear 3×2 facility-board grid, not a trendy carousel. */
+  .benefits{padding:120px 0 132px!important;background:var(--gym-paper)!important}
+  .ben-head{align-items:end!important;margin-bottom:38px!important}
+  .ben-head .sec-tag{display:inline-flex!important}
+  .ben-head h2{
+    color:#111!important;font-size:clamp(42px,5.25vw,70px)!important;line-height:1.1!important}
+  .highlight-controls{display:none!important}
+  .ben-grid{
+    display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    width:auto!important;margin:0!important;padding:0!important;overflow:visible!important;
+    gap:2px!important;background:#111!important}
+  .ben{
+    min-width:0!important;min-height:390px!important;padding:28px!important;
+    border:0!important;border-radius:0!important;scroll-snap-align:none!important}
+  .ben::before{
+    width:62px!important;height:62px!important;
+    background:linear-gradient(135deg,transparent 49%,var(--gym-yellow) 50%)!important}
+  .ben .bi{
+    display:grid!important;width:48px!important;height:48px!important;
+    background:var(--gym-yellow)!important;color:#000!important}
+  .ben b{
+    color:#fff!important;font-family:"Noto Sans JP",sans-serif!important;
+    font-size:clamp(28px,2.5vw,38px)!important;font-weight:900!important;
+    line-height:1.2!important;letter-spacing:-.035em!important}
+  .ben span{color:#fff!important;font-size:15px!important;line-height:1.7!important}
+  .ben:nth-child(1){background:linear-gradient(145deg,#171717,#090909)!important}
+  .ben:nth-child(3){background:linear-gradient(145deg,#342d00,#090909)!important}
+  .ben:nth-child(4){background:linear-gradient(145deg,#202020,#090909)!important}
+  .ben:nth-child(6){background:linear-gradient(145deg,#2b2500,#090909)!important}
+
+  /* A single flat component language for every information box. */
+  :where(.stat,.prob-col,.reason,.perk,.voice,.flow-step,.v-card,.news-featured,.sns-col,
+    .sponsor-box,.yamazawa,.gym-card,.story-panel,.reward-example,.form-wrap,.quiz-card,
+    .rep-card,.case-card,.rank-wrap,.real-now,.phi-item,.earn-card){
+    border-radius:0!important;box-shadow:none!important}
+  :where(.stat,.prob-col,.reason,.perk,.voice,.flow-step,.v-card,.news-featured,.sns-col,.phi-item){
+    position:relative;border:1px solid rgba(0,0,0,.16)!important;border-top:6px solid var(--gym-yellow)!important;
+    background:#fff!important;color:#111!important}
+  :where(.stat,.prob-col,.reason,.perk,.voice,.flow-step,.v-card,.news-featured,.sns-col,.phi-item):hover{
+    transform:none!important;border-color:#111!important;border-top-color:var(--gym-yellow)!important;
+    box-shadow:inset 0 0 0 1px #111!important}
+  .phi-item{border-left:1px solid rgba(0,0,0,.16)!important}
+  .phi-item .no,.reason .no,.flow-step .n,.stat .delta,.reward-example .plus{
+    color:#9b7d00!important}
+  .reason .pill,.perk .brandtag,.free-badge{
+    background:var(--gym-yellow)!important;color:#000!important;border-color:var(--gym-yellow)!important}
+  .stat .big,.prob-row .v{color:#111!important}
+  .prob-row .v.red{color:#8c7100!important}
+  table.rank thead th{background:#111!important;color:var(--gym-yellow)!important}
+  table.rank tbody tr:hover{background:rgba(255,212,0,.15)!important}
+
+  /* Dark chapters and actions. Yellow is reserved for decisions and progress. */
+  .quiz,.vision,.midcta,.entry,.gallery{background:#080808!important;color:#fff!important}
+  .quiz .sec-head h2,.vision .sec-head h2,.gallery .sec-head h2{color:#fff!important}
+  .quiz .sec-tag,.vision .sec-tag,.gallery .sec-tag{background:var(--gym-yellow)!important;color:#000!important}
+  .quiz-card{background:#151515!important;border:1px solid #3b3b3b!important;border-top:7px solid var(--gym-yellow)!important}
+  .quiz-opt{background:#222!important;border-color:#444!important;color:#fff!important}
+  .quiz-opt .emo{background:var(--gym-yellow)!important;border-color:var(--gym-yellow)!important;color:#000!important}
+  .quiz-opt:hover{background:var(--gym-yellow)!important;color:#000!important;border-color:var(--gym-yellow)!important}
+  .quiz-prog i{background:var(--gym-yellow)!important}
+  .statband{background:var(--gym-yellow)!important;color:#000!important}
+  .sb{border-color:rgba(0,0,0,.28)!important}
+  .sb .num,.sb .num em,.sb .lbl{color:#000!important}
+  .vision .v-card{background:#161616!important;border-color:#3b3b3b!important;border-top-color:var(--gym-yellow)!important}
+  .vision .v-card,.vision .v-card h4{color:#fff!important}
+  .v-card .ic,.v-card .prize,.v-card .soon{color:var(--gym-yellow)!important}
+  .midcta{background:#111!important;border-top:10px solid var(--gym-yellow)}
+  .entry{border-top:10px solid var(--gym-yellow)}
+  .entry-open,.form-wrap{background:#fff!important;color:#111!important}
+  .line-cta{background:var(--gym-yellow)!important;color:#000!important}
+  .line-btn,.form-submit,.midcta .big-line,.quiz-result .q-line,
+  .hero-cta .line,.alt-apply .line{
+    background:var(--gym-yellow)!important;border-color:var(--gym-yellow)!important;
+    color:#000!important;border-radius:0!important;box-shadow:none!important;animation:none!important}
+  .line-btn:hover,.form-submit:hover,.midcta .big-line:hover,.quiz-result .q-line:hover,
+  .hero-cta .line:hover,.alt-apply .line:hover{
+    background:#fff!important;border-color:#fff!important;color:#000!important}
+  :where(.line-btn,.big-line,.q-line,.hero-cta,.sticky-cta) .li{
+    background:#000!important;color:var(--gym-yellow)!important}
+  footer{background:#050505!important;border-top:10px solid var(--gym-yellow)!important}
+
+  /* Floating CTA stays compact and is suppressed by JS over cinematic sections. */
+  .sticky-cta .line{
+    background:var(--gym-yellow)!important;color:#000!important;border:2px solid #000!important}
+  .sticky-cta .line:hover{background:#fff!important;color:#000!important}
+  .sticky-cta .deck{background:#fff!important;border:2px solid #111!important;color:#111!important}
+
+  @media(max-width:1000px){
+    header.nav .brand,header.nav.is-scrolled .brand{width:285px!important}
+    .ben-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    .apple-story-frame>div{width:min(620px,58vw)!important}
+  }
+  @media(max-width:760px){
+    html{scroll-padding-top:64px}
+    header.nav,header.nav.is-scrolled{height:64px!important}
+    header.nav .nav-in,header.nav.is-scrolled .nav-in{height:64px!important}
+    header.nav .brand,header.nav.is-scrolled .brand{
+      width:calc(100% - 96px)!important;min-width:0!important;
+      flex:0 1 calc(100% - 96px)!important;
+      padding:0 12px!important;font-size:12px!important;white-space:nowrap!important}
+    header.nav .brand .mark{width:34px!important;height:34px!important;border-width:2px!important}
+    .nav-cta,.nav.is-scrolled .nav-cta{
+      width:96px!important;min-width:96px!important;flex:0 0 96px!important;
+      display:flex!important;align-items:center!important;justify-content:center!important;
+      margin:0!important;padding:0 8px!important;border:0!important}
+    .hero{min-height:calc(100svh - 64px)!important;margin-top:64px!important}
+    .apple-hero-copy{bottom:32px!important}
+    .apple-hero-copy h1{
+      font-size:clamp(40px,11vw,50px)!important;line-height:1.08!important;white-space:normal!important}
+    .apple-hero-offer{display:none!important}
+    .apple-story{height:240svh!important}
+    .apple-story-frame{align-items:flex-end!important;padding:0 18px 86px!important}
+    .apple-story-frame>div{
+      width:100%!important;padding:24px 22px 26px!important;background:rgba(5,5,5,.88)}
+    .apple-story-frame h2{
+      font-size:clamp(38px,10.8vw,48px)!important;line-height:1.18!important;
+      letter-spacing:-.05em!important;word-break:normal!important}
+    .apple-story-frame p{font-size:14px!important;line-height:1.75!important;margin-top:16px!important}
+    .apple-story-progress{right:18px!important;left:18px!important;bottom:48px!important;width:auto!important}
+    .benefits{padding:92px 0 104px!important}
+    .ben-head h2,.sec-head h2{font-size:clamp(36px,10vw,44px)!important;line-height:1.16!important}
+    .ben-grid{grid-template-columns:1fr!important;width:auto!important}
+    .ben{min-height:360px!important;padding:25px!important}
+    .ben b{font-size:31px!important}
+    .sticky-cta{right:10px!important;bottom:10px!important}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .marquee-track{animation:none!important}
+    .reveal{opacity:1!important;transform:none!important;transition:none!important}
+    .apple-story{height:auto!important}
+    .apple-story-frame[data-story-frame="2"]{
+      display:flex!important;position:relative!important;min-height:760px!important}
+  }
+  }
+
+  /* ===== Netflix-inspired benefit ranking ===== */
+  section.ui-nr{
+    max-width:none!important;padding:86px 0 94px!important;
+    background:var(--actr-paper,#f1f0eb)!important;color:#111!important;overflow:hidden
+  }
+  .ui-nr .wrap{max-width:1200px}
+  .ui-nr__head{margin-bottom:18px}
+  .ui-nr__head .sec-tag{
+    display:inline-flex!important;margin-bottom:16px!important;padding:6px 12px!important;
+    background:var(--actr-red,#c90918)!important;color:#fff!important;border:0!important;
+    font:700 12px "Oswald",sans-serif!important;letter-spacing:.14em!important
+  }
+  .ui-nr__title{
+    margin:0;color:#111!important;
+    font-family:"Noto Sans JP","Helvetica Neue",Arial,sans-serif!important;
+    font-size:clamp(34px,5vw,64px)!important;font-weight:900!important;
+    line-height:1.12!important;letter-spacing:-.055em!important
+  }
+  .ui-nr__scroll{
+    display:flex!important;gap:8px!important;width:calc(100vw - max(24px,(100vw - 1200px)/2));
+    margin-right:calc(50% - 50vw);padding:34px 28px 38px 0!important;
+    overflow-x:auto!important;overflow-y:hidden;scroll-snap-type:x proximity;
+    scrollbar-width:none;background:transparent!important;overscroll-behavior-inline:contain
+  }
+  .ui-nr__scroll::-webkit-scrollbar{display:none}
+  .ui-nr__scroll:focus-visible{outline:2px solid var(--actr-red,#c90918);outline-offset:4px}
+  .ui-nr__card{
+    position:relative;flex:none!important;display:flex!important;align-items:flex-end!important;
+    min-width:0!important;min-height:0!important;padding:0!important;border:0!important;
+    background:transparent!important;scroll-snap-align:start;cursor:default;isolation:isolate;
+    transition:transform .25s ease!important
+  }
+  .ui-nr__card::before,.ui-nr__card::after{display:none!important}
+  .ui-nr__card:hover,.ui-nr__card:focus-visible{z-index:2;transform:scale(1.12)!important}
+  .ui-nr__card:hover~.ui-nr__card,.ui-nr__card:focus-visible~.ui-nr__card{
+    transform:translateX(13px)!important
+  }
+  .ui-nr__card:focus-visible{outline:3px solid var(--actr-red,#c90918);outline-offset:5px}
+  .ui-nr__rank{
+    position:relative;z-index:1;margin-right:-28px;color:var(--actr-paper,#f1f0eb)!important;
+    font:900 128px/0.82 "Arial Black","Helvetica Neue",sans-serif!important;
+    letter-spacing:-.08em!important;-webkit-text-stroke:4px #111;
+    paint-order:stroke fill
+  }
+  .ui-nr__poster{
+    position:relative;width:148px;height:216px;display:flex;align-items:flex-end;justify-content:center;
+    overflow:hidden;border-radius:4px;background:linear-gradient(135deg,var(--c1),var(--c2));
+    box-shadow:0 7px 22px rgba(0,0,0,.28)
+  }
+  .ui-nr__poster::before{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(180deg,rgba(0,0,0,.02) 18%,rgba(0,0,0,.12) 48%,rgba(0,0,0,.94) 100%),
+      linear-gradient(135deg,rgba(201,9,24,.20),transparent 52%)
+  }
+  .ui-nr__poster img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 34%;
+    filter:saturate(.78) contrast(1.08);transition:transform .35s ease
+  }
+  .ui-nr__poster>span{
+    position:relative;z-index:2;width:100%;margin:0!important;padding:0 10px 14px;color:#fff!important;
+    text-align:left;text-shadow:0 2px 5px rgba(0,0,0,.65)
+  }
+  .ui-nr__poster b{
+    display:block;color:#fff!important;font:900 17px/1.2 "Noto Sans JP",Helvetica,Arial,sans-serif!important;
+    letter-spacing:-.04em!important
+  }
+  .ui-nr__poster small{
+    display:block;margin-top:6px;color:rgba(255,255,255,.82);
+    font:600 9px/1.45 "Noto Sans JP",Helvetica,Arial,sans-serif;
+    letter-spacing:0
+  }
+  .ui-nr__card:hover .ui-nr__poster img,.ui-nr__card:focus-visible .ui-nr__poster img{
+    transform:scale(1.05)
+  }
+  @media(max-width:760px){
+    section.ui-nr{padding:72px 0 78px!important}
+    .ui-nr__head{margin-bottom:8px}
+    .ui-nr__title{font-size:clamp(34px,10vw,44px)!important;line-height:1.16!important}
+    .ui-nr__scroll{
+      width:calc(100vw - 24px);gap:4px!important;padding:28px 22px 32px 0!important
+    }
+    .ui-nr__rank{margin-right:-20px;font-size:94px!important;-webkit-text-stroke-width:3px}
+    .ui-nr__poster{width:112px;height:164px}
+    .ui-nr__poster>span{padding:0 8px 10px}
+    .ui-nr__poster b{font-size:14px!important}
+    .ui-nr__poster small{margin-top:4px;font-size:8px}
+    .ui-nr__card:hover,.ui-nr__card:focus-visible{transform:scale(1.06)!important}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .ui-nr__card,.ui-nr__card:hover,.ui-nr__card:focus-visible,
+    .ui-nr__card:hover~.ui-nr__card,.ui-nr__card:focus-visible~.ui-nr__card{
+      transition:none!important;transform:none!important
+    }
+  }
+
+  /* ===== Opening scene ===== */
+  body.intro-active{overflow:hidden!important}
+  .site-intro{
+    position:fixed;inset:0;z-index:20000;overflow:hidden;isolation:isolate;
+    background:#000;color:#fff;opacity:1;visibility:visible;
+    transition:opacity .72s cubic-bezier(.4,0,.2,1),visibility .72s
+  }
+  .site-intro::before{
+    content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:
+      radial-gradient(circle at 63% 50%,transparent 0 22%,rgba(0,0,0,.12) 52%,#000 92%),
+      linear-gradient(90deg,#000 0%,rgba(0,0,0,.96) 29%,rgba(0,0,0,.18) 63%,rgba(0,0,0,.74) 100%)
+  }
+  .site-intro::after{
+    content:"";position:absolute;z-index:8;inset:-15% -30%;
+    background:var(--actr-red,#c90918);transform:translateX(-115%) skewX(-12deg);
+    pointer-events:none
+  }
+  .site-intro.is-exiting::after{
+    animation:introWipe .9s cubic-bezier(.76,0,.24,1) forwards
+  }
+  .site-intro.is-gone{opacity:0;visibility:hidden;pointer-events:none}
+  .site-intro__figure{
+    position:absolute;z-index:1;top:4%;right:8%;width:min(46vw,760px);height:96%;
+    object-fit:contain;object-position:center bottom;
+    filter:saturate(.82) contrast(1.08) brightness(.9);
+    opacity:0;transform:translateY(22px) scale(.96);
+    animation:introFigure 1.35s .12s cubic-bezier(.16,1,.3,1) forwards
+  }
+  .site-intro__copy{
+    position:absolute;z-index:4;left:6vw;bottom:10vh;width:min(720px,50vw)
+  }
+  .site-intro__eyebrow{
+    display:inline-block;margin-bottom:18px;padding:8px 14px;background:var(--actr-red,#c90918);
+    color:#fff;font:700 13px/1 "Oswald",sans-serif;letter-spacing:.15em;
+    opacity:0;transform:translateY(20px);
+    animation:introCopy .7s .9s cubic-bezier(.16,1,.3,1) forwards
+  }
+  .site-intro__copy h1{
+    margin:0;color:#fff;font-family:"Noto Sans JP",sans-serif;
+    font-size:clamp(48px,6.4vw,104px);font-weight:900;line-height:1.08;letter-spacing:-.065em;
+    opacity:0;transform:translateY(28px);
+    animation:introCopy .85s 1.12s cubic-bezier(.16,1,.3,1) forwards
+  }
+  .site-intro__copy h1 em{display:inline-block;color:var(--actr-red,#c90918);font-style:normal}
+  .site-intro__tagline{
+    margin-top:22px;color:#fff;font:700 clamp(15px,1.5vw,21px)/1 "Oswald",sans-serif;
+    letter-spacing:.2em;opacity:0;transform:translateY(18px);
+    animation:introCopy .7s 1.48s cubic-bezier(.16,1,.3,1) forwards
+  }
+  .site-intro__control{
+    position:absolute;z-index:10;top:36px;min-height:54px;padding:0 24px;
+    border:1px solid #5a5a5a;border-radius:999px;background:rgba(0,0,0,.45);color:#ddd;
+    font:700 14px/1 "Noto Sans JP",sans-serif;letter-spacing:.06em;cursor:pointer;
+    backdrop-filter:blur(8px);transition:border-color .2s,color .2s,background .2s
+  }
+  .site-intro__control:hover,.site-intro__control:focus-visible{
+    border-color:#fff;color:#fff;outline:none
+  }
+  .site-intro__sound{
+    left:36px;border-color:rgba(255,255,255,.42);background:rgba(120,8,16,.78);color:#fff
+  }
+  .site-intro__sound.is-on{background:var(--actr-red,#c90918);border-color:#ff727b}
+  .site-intro__skip{right:36px}
+  .site-intro__progress{
+    position:absolute;z-index:10;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.12)
+  }
+  .site-intro__progress i{
+    display:block;width:100%;height:100%;background:var(--actr-red,#c90918);
+    transform:scaleX(0);transform-origin:left;
+    animation:introProgress 5.2s linear forwards
+  }
+  .site-intro.is-exiting .site-intro__figure{
+    transition:transform .9s cubic-bezier(.16,1,.3,1),filter .9s;
+    transform:scale(1.055);filter:saturate(1) contrast(1.1) brightness(1.12)
+  }
+  @keyframes introFigure{
+    from{opacity:0;transform:translateY(22px) scale(.96)}
+    to{opacity:1;transform:translateY(0) scale(1)}
+  }
+  @keyframes introCopy{to{opacity:1;transform:none}}
+  @keyframes introProgress{to{transform:scaleX(1)}}
+  @keyframes introWipe{
+    0%{transform:translateX(-115%) skewX(-12deg)}
+    48%{transform:translateX(0) skewX(-12deg)}
+    100%{transform:translateX(115%) skewX(-12deg)}
+  }
+  @media(max-width:760px){
+    .site-intro::before{
+      background:
+        linear-gradient(0deg,#000 0%,rgba(0,0,0,.95) 26%,rgba(0,0,0,.12) 62%,rgba(0,0,0,.42) 100%)
+    }
+    .site-intro__figure{
+      top:5%;right:-19%;width:112vw;height:82%;object-position:center top
+    }
+    .site-intro__copy{left:24px;right:24px;bottom:8vh;width:auto}
+    .site-intro__copy h1{font-size:clamp(42px,12vw,58px);line-height:1.12}
+    .site-intro__eyebrow{margin-bottom:12px;font-size:10px}
+    .site-intro__tagline{margin-top:15px;font-size:14px}
+    .site-intro__control{top:18px;min-height:44px;padding:0 15px;font-size:11px}
+    .site-intro__sound{left:16px}
+    .site-intro__skip{right:16px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .site-intro{display:none!important}
+  }
+
+  /* ===== Dynamic curiosity pass: six reasons ===== */
+  section.ui-nr{
+    position:relative;isolation:isolate;padding:110px 0 118px!important
+  }
+  section.ui-nr::before{
+    content:"6 REASONS";display:block!important;position:absolute;z-index:-1;
+    top:42%;left:-2vw;color:transparent;
+    font:900 clamp(120px,20vw,330px)/.75 "Arial Black",sans-serif;
+    letter-spacing:-.09em;-webkit-text-stroke:1px rgba(17,17,17,.065);
+    white-space:nowrap;transform:rotate(-3deg);pointer-events:none
+  }
+  section.ui-nr::after{
+    content:"";display:block!important;position:absolute;z-index:-2;inset:0;
+    background:
+      radial-gradient(circle at 78% 42%,rgba(201,9,24,.13),transparent 24%),
+      linear-gradient(115deg,transparent 0 66%,rgba(201,9,24,.04) 66% 100%);
+    pointer-events:none
+  }
+  .ui-nr .wrap{position:relative;z-index:2}
+  .ui-nr__head{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:50px;margin-bottom:18px
+  }
+  .ui-nr__head-main{max-width:840px}
+  .ui-nr__lead{
+    max-width:620px;margin-top:22px;color:#555!important;
+    font-size:15px;font-weight:600;line-height:1.9
+  }
+  .ui-nr__controls{display:flex;align-items:center;gap:12px;flex:none;padding-bottom:4px}
+  .ui-nr__hint{
+    margin-right:8px;color:#777;font:700 10px/1 "Oswald",sans-serif;
+    letter-spacing:.17em;white-space:nowrap
+  }
+  .ui-nr__control{
+    position:relative;display:grid;place-items:center;width:52px;height:52px;
+    border:2px solid #111;border-radius:50%;background:transparent;color:#111;
+    cursor:pointer;overflow:hidden;transition:color .25s,border-color .25s,transform .25s
+  }
+  .ui-nr__control::before{
+    content:"";position:absolute;inset:0;border-radius:inherit;background:var(--actr-red,#c90918);
+    transform:scale(0);transition:transform .25s cubic-bezier(.16,1,.3,1)
+  }
+  .ui-nr__control svg{position:relative;z-index:1;width:19px;height:19px}
+  .ui-nr__control:hover,.ui-nr__control:focus-visible{
+    border-color:var(--actr-red,#c90918);color:#fff;outline:none;transform:scale(1.07)
+  }
+  .ui-nr__control:hover::before,.ui-nr__control:focus-visible::before{transform:scale(1)}
+  .ui-nr__control:disabled{opacity:.28;cursor:default;transform:none}
+  .ui-nr__control:disabled::before{display:none}
+  .ui-nr__scroll{
+    gap:18px!important;padding:62px 52px 68px 8px!important;scroll-snap-type:x mandatory
+  }
+  .ui-nr__card{
+    transform:translateY(var(--card-y,0)) rotate(var(--card-r,0));
+    transform-origin:50% 88%;
+    transition:transform .42s cubic-bezier(.16,1,.3,1),filter .35s!important;
+    filter:saturate(.82)
+  }
+  .ui-nr__card:nth-child(1){--card-y:20px;--card-r:-2.2deg}
+  .ui-nr__card:nth-child(2){--card-y:-8px;--card-r:1.4deg}
+  .ui-nr__card:nth-child(3){--card-y:28px;--card-r:-1deg}
+  .ui-nr__card:nth-child(4){--card-y:-18px;--card-r:1.8deg}
+  .ui-nr__card:nth-child(5){--card-y:16px;--card-r:-1.6deg}
+  .ui-nr__card:nth-child(6){--card-y:-4px;--card-r:1deg}
+  .ui-nr__card:hover,.ui-nr__card:focus-visible{
+    z-index:8;filter:saturate(1);
+    transform:translateY(-20px) rotate(0) scale(1.13)!important
+  }
+  .ui-nr__card:hover~.ui-nr__card,.ui-nr__card:focus-visible~.ui-nr__card{
+    transform:translateX(24px) translateY(var(--card-y,0)) rotate(var(--card-r,0)) scale(.97)!important
+  }
+  .ui-nr__rank{
+    margin-right:-34px;font-size:148px!important;-webkit-text-stroke-width:3px;
+    text-shadow:8px 12px 0 rgba(17,17,17,.055);
+    transition:color .3s,-webkit-text-stroke-color .3s,text-shadow .3s
+  }
+  .ui-nr__card:hover .ui-nr__rank,.ui-nr__card:focus-visible .ui-nr__rank{
+    color:var(--actr-red,#c90918)!important;
+    -webkit-text-stroke-color:var(--actr-red,#c90918);text-shadow:10px 14px 0 rgba(201,9,24,.12)
+  }
+  .ui-nr__poster{
+    z-index:2;width:174px;height:254px;border-radius:3px;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 18px 36px rgba(0,0,0,.22);
+    transform:perspective(800px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));
+    transition:transform .18s ease-out,box-shadow .35s!important
+  }
+  .ui-nr__poster::after{
+    content:"";position:absolute;z-index:3;top:0;right:0;width:42px;height:42px;
+    background:linear-gradient(135deg,transparent 49%,var(--actr-red,#c90918) 50%);
+    opacity:0;transform:translate(10px,-10px);transition:opacity .3s,transform .3s
+  }
+  .ui-nr__card:hover .ui-nr__poster,.ui-nr__card:focus-visible .ui-nr__poster{
+    box-shadow:0 34px 62px rgba(0,0,0,.38),0 0 0 1px rgba(201,9,24,.35)
+  }
+  .ui-nr__card:hover .ui-nr__poster::after,.ui-nr__card:focus-visible .ui-nr__poster::after{
+    opacity:1;transform:none
+  }
+  .ui-nr__poster img{opacity:.88;transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .35s}
+  .ui-nr__card:hover .ui-nr__poster img,.ui-nr__card:focus-visible .ui-nr__poster img{
+    opacity:1;transform:scale(1.1)
+  }
+  .ui-nr__poster>span{padding:0 13px 16px}
+  .ui-nr__poster b{font-size:20px!important}
+  .ui-nr__poster small{
+    max-height:0;margin-top:0;overflow:hidden;opacity:0;transform:translateY(8px);
+    transition:max-height .35s,margin .35s,opacity .3s,transform .35s
+  }
+  .ui-nr__card:hover .ui-nr__poster small,.ui-nr__card:focus-visible .ui-nr__poster small{
+    max-height:58px;margin-top:7px;opacity:1;transform:none
+  }
+  .ui-nr__rail{
+    display:grid;grid-template-columns:auto minmax(120px,1fr) auto;align-items:center;gap:16px;
+    margin-top:0;color:#5d5d5d;font:700 10px/1 "Oswald",sans-serif;letter-spacing:.13em
+  }
+  .ui-nr__rail-track{height:3px;background:rgba(17,17,17,.14);overflow:hidden}
+  .ui-nr__rail-track i{
+    display:block;width:100%;height:100%;background:var(--actr-red,#c90918);
+    transform:scaleX(var(--rank-progress,.08));transform-origin:left;transition:transform .18s ease-out
+  }
+  .ui-nr__rail-end{color:var(--actr-red,#c90918)}
+  @media(max-width:760px){
+    section.ui-nr{padding:82px 0 90px!important}
+    section.ui-nr::before{top:47%;font-size:180px}
+    .ui-nr__head{display:block;margin-bottom:8px}
+    .ui-nr__lead{margin-top:16px;font-size:13px;line-height:1.75}
+    .ui-nr__controls{margin-top:22px;justify-content:flex-end}
+    .ui-nr__hint{margin-right:auto}
+    .ui-nr__control{width:44px;height:44px}
+    .ui-nr__scroll{gap:11px!important;padding:48px 36px 54px 2px!important}
+    .ui-nr__rank{margin-right:-24px;font-size:108px!important}
+    .ui-nr__poster{width:128px;height:188px}
+    .ui-nr__poster>span{padding:0 9px 11px}
+    .ui-nr__poster b{font-size:15px!important}
+    .ui-nr__poster small{
+      max-height:48px;margin-top:4px;font-size:8px;opacity:1;transform:none
+    }
+    .ui-nr__card:hover,.ui-nr__card:focus-visible{
+      transform:translateY(-10px) rotate(0) scale(1.07)!important
+    }
+    .ui-nr__card:hover~.ui-nr__card,.ui-nr__card:focus-visible~.ui-nr__card{
+      transform:translateX(12px) translateY(var(--card-y,0)) rotate(var(--card-r,0))!important
+    }
+  }
+  @media(prefers-reduced-motion:reduce){
+    .ui-nr__card,.ui-nr__card:hover,.ui-nr__card:focus-visible,
+    .ui-nr__card:hover~.ui-nr__card,.ui-nr__card:focus-visible~.ui-nr__card{
+      transform:none!important;filter:none!important;transition:none!important
+    }
+    .ui-nr__poster,.ui-nr__poster img{transform:none!important;transition:none!important}
+    .ui-nr__poster small{max-height:58px;margin-top:7px;opacity:1;transform:none}
+  }
+
+  /* The same ranked-card system, inverted for THE REAL */
+  section.ui-nr--real{
+    padding:110px 0 118px!important;background:#080808!important;color:#fff!important;
+    border:0!important
+  }
+  section.ui-nr--real::before{
+    content:"THE REAL";top:52%;left:-1vw;
+    -webkit-text-stroke-color:rgba(255,255,255,.075)
+  }
+  section.ui-nr--real::after{
+    background:
+      radial-gradient(circle at 69% 44%,rgba(201,9,24,.22),transparent 27%),
+      linear-gradient(112deg,transparent 0 64%,rgba(201,9,24,.065) 64% 100%)
+  }
+  .ui-nr--real .ui-nr__title{color:#fff!important}
+  .ui-nr--real .ui-nr__title .red{color:var(--actr-red,#c90918)!important}
+  .ui-nr--real .ui-nr__lead{color:#bdbdbd!important}
+  .ui-nr--real .ui-nr__hint{color:#8f8f8f}
+  .ui-nr--real .ui-nr__control{border-color:#fff;color:#fff}
+  .ui-nr--real .ui-nr__rank{
+    color:#080808!important;-webkit-text-stroke-color:#f4f4f4;
+    text-shadow:8px 12px 0 rgba(255,255,255,.06)
+  }
+  .ui-nr--real .ui-nr__card:hover .ui-nr__rank,
+  .ui-nr--real .ui-nr__card:focus-visible .ui-nr__rank{
+    color:var(--actr-red,#c90918)!important;
+    -webkit-text-stroke-color:var(--actr-red,#c90918)
+  }
+  .ui-nr--real .ui-nr__poster{
+    background:#000;border-color:rgba(255,255,255,.16);
+    box-shadow:0 18px 38px rgba(0,0,0,.65)
+  }
+  .ui-nr--real .ui-nr__poster::before{
+    background:
+      linear-gradient(180deg,rgba(0,0,0,.02) 25%,rgba(0,0,0,.1) 54%,rgba(0,0,0,.94) 100%),
+      linear-gradient(135deg,rgba(201,9,24,.17),transparent 52%)
+  }
+  .ui-nr--real .ui-nr__poster b{
+    font-family:"Oswald","Noto Sans JP",sans-serif!important;letter-spacing:.035em!important
+  }
+  .ui-nr--real .ui-nr__poster small{
+    max-height:48px;margin-top:5px;opacity:.78;transform:none
+  }
+  .ui-nr--real .ui-nr__rail{color:#8f8f8f}
+  .ui-nr--real .ui-nr__rail-track{background:rgba(255,255,255,.18)}
+  @media(max-width:760px){
+    section.ui-nr--real{padding:82px 0 90px!important}
+  }
+
+  /* ===== THE REAL: compact Netflix-inspired ranking requested for the gallery ===== */
+  section.gallery.ui-nr--real{
+    max-width:none!important;
+    padding:78px 0 88px!important;
+    background:#141414!important;
+    border-radius:0!important;
+    color:#fff!important;
+    overflow:hidden
+  }
+  section.gallery.ui-nr--real::before,
+  section.gallery.ui-nr--real::after{display:none!important}
+  .gallery.ui-nr--real .wrap{max-width:1160px}
+  .gallery.ui-nr--real .ui-nr__title{
+    margin:0 0 12px!important;
+    color:#e5e5e5!important;
+    font:700 clamp(22px,3vw,34px)/1.3 "Noto Sans JP","Helvetica Neue",Arial,sans-serif!important;
+    letter-spacing:-.035em!important
+  }
+  .gallery.ui-nr--real .ui-nr__caption{
+    margin:0 0 12px;
+    max-width:100%;
+    color:#b3b3b3;
+    font-size:13px;
+    font-weight:600;
+    line-height:1.75;
+    white-space:normal!important;
+    overflow-wrap:anywhere
+  }
+  .gallery.ui-nr--real .ui-nr__scroll{
+    display:flex!important;
+    gap:6px!important;
+    width:calc(100vw - max(24px,(100vw - 1160px)/2));
+    margin:0 calc(50% - 50vw) 0 0!important;
+    padding:24px max(16px,calc((100vw - 1160px)/2)) 24px 0!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none;
+    overscroll-behavior-inline:contain
+  }
+  .gallery.ui-nr--real .ui-nr__scroll::-webkit-scrollbar{display:none}
+  .gallery.ui-nr--real .ui-nr__scroll:focus-visible{
+    outline:2px solid #e50914;
+    outline-offset:4px
+  }
+  .gallery.ui-nr--real .ui-nr__card{
+    position:relative;
+    flex:none!important;
+    display:flex!important;
+    align-items:flex-end!important;
+    min-width:0!important;
+    min-height:0!important;
+    padding:0!important;
+    border:0!important;
+    background:transparent!important;
+    filter:none!important;
+    transform:none!important;
+    transform-origin:center!important;
+    scroll-snap-align:start;
+    cursor:pointer;
+    transition:transform .25s ease!important
+  }
+  .gallery.ui-nr--real .ui-nr__card::before,
+  .gallery.ui-nr--real .ui-nr__card::after{display:none!important}
+  .gallery.ui-nr--real .ui-nr__card:hover,
+  .gallery.ui-nr--real .ui-nr__card:focus-visible{
+    z-index:2;
+    filter:none!important;
+    transform:scale(1.18)!important
+  }
+  .gallery.ui-nr--real .ui-nr__card:hover~.ui-nr__card,
+  .gallery.ui-nr--real .ui-nr__card:focus-visible~.ui-nr__card{
+    transform:translateX(14px)!important
+  }
+  .gallery.ui-nr--real .ui-nr__card:focus-visible{
+    outline:3px solid #e50914;
+    outline-offset:4px
+  }
+  .gallery.ui-nr--real .ui-nr__rank{
+    position:relative;
+    z-index:1;
+    margin-right:-22px!important;
+    color:transparent!important;
+    font:900 96px/.85 "Arial Black",sans-serif!important;
+    letter-spacing:-.05em!important;
+    -webkit-text-stroke:3px #e5e5e5!important;
+    text-shadow:none!important;
+    paint-order:stroke fill
+  }
+  .gallery.ui-nr--real .ui-nr__card:hover .ui-nr__rank,
+  .gallery.ui-nr--real .ui-nr__card:focus-visible .ui-nr__rank{
+    color:transparent!important;
+    -webkit-text-stroke-color:#fff!important;
+    text-shadow:none!important
+  }
+  .gallery.ui-nr--real .ui-nr__poster{
+    position:relative;
+    z-index:0;
+    width:96px;
+    height:140px;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+    border:0!important;
+    border-radius:4px;
+    background:linear-gradient(135deg,var(--c1),var(--c2));
+    box-shadow:0 4px 12px rgba(0,0,0,.5)!important;
+    transform:none!important;
+    transition:box-shadow .25s ease!important
+  }
+  .gallery.ui-nr--real .ui-nr__poster::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:1;
+    background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.16) 50%,rgba(0,0,0,.82))
+  }
+  .gallery.ui-nr--real .ui-nr__poster::after{display:none!important}
+  .gallery.ui-nr--real .ui-nr__poster img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    opacity:1;
+    filter:saturate(.92) contrast(1.08);
+    transform:none!important;
+    transition:filter .25s ease!important
+  }
+  .gallery.ui-nr--real .ui-nr__poster>span{
+    position:relative;
+    z-index:2;
+    width:auto;
+    margin:0!important;
+    padding:0 8px 10px!important;
+    align-self:end;
+    color:#fff!important;
+    font:900 11px/1.15 "Oswald","Noto Sans JP",Helvetica,Arial,sans-serif!important;
+    text-align:center;
+    letter-spacing:.04em!important;
+    text-shadow:0 2px 4px rgba(0,0,0,.7)
+  }
+  .gallery.ui-nr--real .ui-nr__card:hover .ui-nr__poster img,
+  .gallery.ui-nr--real .ui-nr__card:focus-visible .ui-nr__poster img{
+    filter:saturate(1.05) contrast(1.1)
+  }
+  @media(min-width:900px){
+    .gallery.ui-nr--real .ui-nr__poster{width:128px;height:186px}
+    .gallery.ui-nr--real .ui-nr__rank{margin-right:-28px!important;font-size:126px!important}
+    .gallery.ui-nr--real .ui-nr__poster>span{font-size:13px!important;padding-bottom:12px!important}
+  }
+  @media(max-width:760px){
+    section.gallery.ui-nr--real{padding:64px 0 70px!important}
+    .gallery.ui-nr--real .ui-nr__title{font-size:24px!important}
+    .gallery.ui-nr--real .ui-nr__caption{
+      width:calc(100vw - 48px);
+      font-size:12px
+    }
+    .gallery.ui-nr--real .ui-nr__scroll{
+      width:calc(100vw - 24px);
+      padding:24px 22px 24px 0!important
+    }
+    .gallery.ui-nr--real .ui-nr__card:hover,
+    .gallery.ui-nr--real .ui-nr__card:focus-visible{transform:scale(1.08)!important}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .gallery.ui-nr--real .ui-nr__card,
+    .gallery.ui-nr--real .ui-nr__card:hover,
+    .gallery.ui-nr--real .ui-nr__card:focus-visible,
+    .gallery.ui-nr--real .ui-nr__card:hover~.ui-nr__card,
+    .gallery.ui-nr--real .ui-nr__card:focus-visible~.ui-nr__card{
+      transition:none!important;
+      transform:none!important
+    }
+  }
 </style>
 </head>
-<body>
+<body class="intro-active">
+
+<!-- OPENING — screenshot-inspired cinematic first frame -->
+<div class="site-intro" id="siteIntro" role="dialog" aria-modal="true" aria-label="MACHO RECRUIT オープニング">
+  <img class="site-intro__figure" src="assets/img/bbj1.jpg" alt="大会に出場する鍛え上げた社員">
+  <div class="site-intro__copy">
+    <p class="site-intro__eyebrow">ACT-R / MACHO RECRUIT</p>
+    <h1>鍛えた身体を、<br><em>稼ぐ力へ。</em></h1>
+    <p class="site-intro__tagline">TRAIN. WORK. WIN.</p>
+  </div>
+  <button class="site-intro__control site-intro__sound" id="introSound" type="button" aria-pressed="false">🔊 サウンドON</button>
+  <button class="site-intro__control site-intro__skip" id="introSkip" type="button">スキップ ▶</button>
+  <div class="site-intro__progress" aria-hidden="true"><i></i></div>
+</div>
+<noscript><style>.site-intro{display:none!important}body.intro-active{overflow:auto!important}</style></noscript>
+<script>
+  (function(){
+    const intro=document.getElementById('siteIntro');
+    if(!intro)return;
+    const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const params=new URLSearchParams(location.search);
+    const force=params.has('intro');
+    const skip=params.has('nopv');
+    let seen=false;
+    try{seen=!!sessionStorage.getItem('machoIntroSeen');}catch(_){}
+    if(reduce||skip||(seen&&!force)){
+      intro.remove();
+      document.body.classList.remove('intro-active');
+      return;
+    }
+
+    const soundButton=document.getElementById('introSound');
+    const skipButton=document.getElementById('introSkip');
+    let finished=false,timer=null,audio=null,master=null,pulseTimer=null;
+
+    function hit(freq,volume,duration){
+      if(!audio||!master)return;
+      const now=audio.currentTime;
+      const oscillator=audio.createOscillator();
+      const gain=audio.createGain();
+      oscillator.type='sine';
+      oscillator.frequency.setValueAtTime(freq,now);
+      oscillator.frequency.exponentialRampToValueAtTime(Math.max(32,freq*.42),now+duration);
+      gain.gain.setValueAtTime(volume,now);
+      gain.gain.exponentialRampToValueAtTime(.001,now+duration);
+      oscillator.connect(gain).connect(master);
+      oscillator.start(now);oscillator.stop(now+duration);
+    }
+    function startSound(){
+      if(audio)return;
+      try{audio=new (window.AudioContext||window.webkitAudioContext)();}catch(_){return;}
+      master=audio.createGain();master.gain.value=.34;master.connect(audio.destination);
+      hit(92,.42,.42);setTimeout(()=>hit(58,.5,.5),180);
+      pulseTimer=setInterval(()=>{hit(54,.32,.38);setTimeout(()=>hit(82,.22,.22),230);},760);
+      soundButton.classList.add('is-on');
+      soundButton.setAttribute('aria-pressed','true');
+      soundButton.textContent='🔇 サウンドOFF';
+    }
+    function stopSound(updateButton){
+      clearInterval(pulseTimer);
+      if(master&&audio){
+        try{
+          master.gain.cancelScheduledValues(audio.currentTime);
+          master.gain.setValueAtTime(master.gain.value,audio.currentTime);
+          master.gain.linearRampToValueAtTime(0,audio.currentTime+.22);
+        }catch(_){}
+        setTimeout(()=>{try{audio.close();}catch(_){}},260);
+      }
+      audio=null;master=null;
+      if(updateButton){
+        soundButton.classList.remove('is-on');
+        soundButton.setAttribute('aria-pressed','false');
+        soundButton.textContent='🔊 サウンドON';
+      }
+    }
+    function finish(){
+      if(finished)return;
+      finished=true;clearTimeout(timer);stopSound(false);
+      intro.classList.add('is-exiting');
+      setTimeout(()=>intro.classList.add('is-gone'),620);
+      setTimeout(()=>{
+        intro.remove();
+        document.body.classList.remove('intro-active');
+        try{sessionStorage.setItem('machoIntroSeen','1');}catch(_){}
+      },1050);
+    }
+    soundButton.addEventListener('click',()=>{
+      if(audio)stopSound(true);else startSound();
+    });
+    skipButton.addEventListener('click',finish);
+    document.addEventListener('keydown',event=>{if(event.key==='Escape')finish();},{once:true});
+    timer=setTimeout(finish,5200);
+  })();
+</script>
 
 <!-- ===== PV : オープニング・シネマティック（初回アクセス時に自動再生／スキップ可） ===== -->
-<div id="pv" aria-hidden="true">
+<div id="legacyPv" hidden aria-hidden="true">
   <!-- 実動画（生成したMP4を assets/video/pv.mp4 に置くと自動再生。無ければ下のアニメPVが流れます） -->
   <video class="pv-video" id="pvVideo" muted playsinline preload="auto" poster="assets/img/bbj1.jpg">
     <source src="assets/video/pv.mp4" type="video/mp4">
@@ -911,73 +3011,170 @@
   </div>
 </div>
 
+<!-- 日産MC採用サイトの「写真が中央から開く」導入を、既存の大会写真で再構成 -->
+<div class="beyond-loader" id="beyondLoaderLegacy" hidden aria-hidden="true">
+  <div class="beyond-loader-logo">ACT-R / MACHO RECRUIT<span>Mid-Career Recruitment Site</span></div>
+  <div class="beyond-loader-media">
+    <img src="assets/img/bbj2.jpg" alt="">
+    <img src="assets/img/bbj1.jpg" alt="">
+    <img src="assets/img/bbj5.jpg" alt="">
+  </div>
+  <div class="beyond-loader-count"><span id="beyondCount">00</span>%</div>
+</div>
+
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#top"><span class="mark">A</span> ACT-R <b>/</b> MACHO RECRUIT</a>
+    <a class="brand" href="#top"><span class="mark">M</span> MACHO <b>/</b> RECRUIT</a>
     <nav class="nav-links">
-      <a href="#philosophy">理念</a>
-      <a href="#reasons">選ばれる理由</a>
-      <a href="#reward">報酬・特典</a>
-      <a href="#partner">ジム・トレ</a>
-      <a href="#vision">ビジョン</a>
-      <a href="#news">最新情報</a>
+      <a href="#philosophy">ABOUT</a>
+      <a href="#reasons">REASONS</a>
+      <a href="#reward">REWARD</a>
+      <a href="#partner">TRAINING</a>
+      <a href="#vision">VISION</a>
+      <a href="#news">NEWS</a>
     </nav>
-    <a class="nav-cta" href="#entry">エントリー</a>
+    <a class="nav-cta" href="#entry">JOIN US</a>
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO — full-bleed film with a red recruiting identity -->
 <section class="hero" id="top">
-  <div class="hero-glow"></div>
-  <div class="hero-photo"><img src="assets/img/bbj5.jpg" alt="河野泰佑 ベストボディジャパン2025 MR.BEST BODY" fetchpriority="high"></div>
+  <video class="hero-film" autoplay muted loop playsinline preload="metadata" poster="assets/img/bbj5.jpg">
+    <source src="assets/video/train-raw.mp4" type="video/mp4">
+  </video>
   <div class="hero-in wrap">
-    <div class="ovs">SCIENCE × MUSCLE × SALES — 採用革命</div>
-    <h1>MACHO<br><span>RECRUIT</span></h1>
-    <div class="lead">筋肉が、<em>稼ぐ力</em>になる。</div>
-    <p class="sub">科学的根拠に基づく、新しい採用革命。<br>鍛え抜かれた身体と、圧倒的な成果で、未来を切り拓け。<strong style="color:#fff">日本一マッチョが多い営業会社へ。</strong></p>
-    <div class="badges">
-      <div class="badge"><span class="t">BEST BODY JAPAN</span><span class="d">代表が日本大会出場／日本3位の<br>アスリート営業会社</span></div>
-      <a class="badge xlink" target="_blank" rel="noopener"><span class="t" style="color:var(--gold)">超人気ブランド</span><span class="d">オフィシャルスポンサー／国内トップ<br>フィットネスブランドが全面サポート</span></a>
-      <div class="badge"><span class="t" style="color:#9be15d">ジム代サポート</span><span class="d">好きな24時間ジムで<br>思い切り鍛えられる</span></div>
+    <div class="apple-hero-copy">
+      <h1>鍛えた身体を、<br><em>稼ぐ力へ。</em></h1>
+      <p>TRAIN. WORK. WIN.</p>
     </div>
-    <div class="hero-foot"><span class="bar"></span>鍛えた分だけ、報われる。</div>
-    <div class="hero-cta">
-      <a class="line" id="heroLine" href="#entry"><span style="font-family:Anton;background:#fff;color:#06b34c;width:22px;height:22px;border-radius:6px;display:inline-grid;place-items:center;font-size:13px">L</span> 公式LINEで応募する</a>
-      <a class="ghost" href="#benefits">どんな会社か見る ↓</a>
-    </div>
-    <div class="hero-reassure">
-      <span>未経験OK</span><span>履歴書ナシ</span><span>質問だけでもOK</span><span>30秒で完了</span>
+    <div class="apple-hero-offer">
+      <span>未経験から、<br>身体と収入を変える。</span>
+      <a id="heroLine" href="#entry">応募</a>
     </div>
   </div>
-  <div class="scroll-cue">SCROLL</div>
 </section>
 
-<!-- KEYWORD MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="hot">筋肉 × 営業</span><span>未経験OK</span><span class="hot">ジム代サポート</span><span>ウェア・サプリ支給</span><span class="hot">月収UPの実績</span><span>大会賞金100万</span><span class="hot">仲間と鍛える</span><span>最強の自分へ</span>
-    <span class="hot">筋肉 × 営業</span><span>未経験OK</span><span class="hot">ジム代サポート</span><span>ウェア・サプリ支給</span><span class="hot">月収UPの実績</span><span>大会賞金100万</span><span class="hot">仲間と鍛える</span><span>最強の自分へ</span>
+<!-- RECRUITING KEYWORDS -->
+<div class="marquee" aria-label="マッチョ採用の特長">
+  <div class="marquee-track" aria-hidden="true">
+    <span>月収UPの実績</span>
+    <span>大会賞金100万</span>
+    <span>仲間と鍛える</span>
+    <span>最強の自分へ</span>
+    <span>筋肉 × 営業</span>
+    <span>未経験OK</span>
+    <span>ジム代サポート</span>
+    <span>ウェア・サプリ支給</span>
+    <span>月収UPの実績</span>
+    <span>大会賞金100万</span>
+    <span>仲間と鍛える</span>
+    <span>最強の自分へ</span>
+    <span>筋肉 × 営業</span>
+    <span>未経験OK</span>
+    <span>ジム代サポート</span>
+    <span>ウェア・サプリ支給</span>
   </div>
 </div>
 
-<!-- BENEFITS STRIP -->
-<section class="benefits" id="benefits">
+<!-- BENEFITS STRIP — Netflix-inspired ranking -->
+<section class="benefits ui-nr" id="benefits" aria-labelledby="benefitsTitle">
   <div class="wrap">
-    <div class="ben-head reveal">
-      <span class="sec-tag">WHAT YOU GET</span>
-      <h2>入って、<span class="red">手に入る</span>もの。</h2>
+    <div class="ui-nr__head reveal">
+      <div class="ui-nr__head-main">
+        <span class="sec-tag">MACHO RECRUIT QUALITY</span>
+        <h2 class="ui-nr__title" id="benefitsTitle">選ばれる、6つの理由。</h2>
+        <p class="ui-nr__lead">鍛えることが、仕事のハンデではなく武器になる。<br>その理由を、横へたどってください。</p>
+      </div>
+      <div class="ui-nr__controls" aria-label="理由を移動">
+        <span class="ui-nr__hint">DRAG TO DISCOVER</span>
+        <button class="ui-nr__control" id="rankingPrev" type="button" aria-label="前の理由">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+        <button class="ui-nr__control" id="rankingNext" type="button" aria-label="次の理由">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+      </div>
     </div>
-    <div class="ben-grid reveal">
-      <div class="ben"><div class="bi">🔰</div><b>未経験OK</b><span>筋トレも営業も<br>イチから育てる</span></div>
-      <div class="ben"><div class="bi">🏋️</div><b>ジム代サポート</b><span>好きな24時間ジム<br>で鍛えられる</span></div>
-      <div class="ben"><div class="bi">👕</div><b>ウェア・サプリ</b><span>成績に応じて<br>超人気ブランドを支給</span></div>
-      <div class="ben"><div class="bi">💰</div><b>月収UPの実績</b><span>土日のみで<br>月25万の事例も</span></div>
-      <div class="ben"><div class="bi">🏆</div><b>大会・賞金</b><span>出場支援＋<br>優勝賞金100万（予定）</span></div>
-      <div class="ben"><div class="bi">🤝</div><b>最高の仲間</b><span>切磋琢磨できる<br>マッチョ集団</span></div>
+    <div class="ui-nr__scroll reveal" tabindex="0" aria-label="選ばれる6つの理由。横にスクロールできます">
+      <article class="ui-nr__card" tabindex="0" aria-label="1位 未経験OK。筋トレも営業もイチから育てる" style="--c1:#e94560;--c2:#0f3460">
+        <span class="ui-nr__rank" aria-hidden="true">1</span>
+        <div class="ui-nr__poster"><img src="assets/img/benefit-01-training.jpg" alt=""><span><b>未経験<br>OK</b><small>筋トレも営業も<br>イチから育てる</small></span></div>
+      </article>
+      <article class="ui-nr__card" tabindex="0" aria-label="2位 ジム代サポート。好きな24時間ジムで鍛えられる" style="--c1:#16213e;--c2:#e94560">
+        <span class="ui-nr__rank" aria-hidden="true">2</span>
+        <div class="ui-nr__poster"><img src="assets/img/benefit-02-gym.jpg" alt=""><span><b>ジム代<br>サポート</b><small>好きな24時間ジムで<br>鍛えられる</small></span></div>
+      </article>
+      <article class="ui-nr__card" tabindex="0" aria-label="3位 ウェア・サプリ。成績に応じて提携ブランドから支給" style="--c1:#9c27b0;--c2:#1a1a2e">
+        <span class="ui-nr__rank" aria-hidden="true">3</span>
+        <div class="ui-nr__poster"><img src="assets/img/benefit-03-gear.jpg" alt=""><span><b>ウェア<br>サプリ</b><small>成績に応じて<br>提携ブランドから支給</small></span></div>
+      </article>
+      <article class="ui-nr__card" tabindex="0" aria-label="4位 月収アップの実績。土日のみで月25万円の事例も" style="--c1:#0f3460;--c2:#16213e">
+        <span class="ui-nr__rank" aria-hidden="true">4</span>
+        <div class="ui-nr__poster"><img src="assets/img/benefit-04-income.jpg" alt=""><span><b>月収UP<br>の実績</b><small>土日のみで<br>月25万の事例も</small></span></div>
+      </article>
+      <article class="ui-nr__card" tabindex="0" aria-label="5位 大会・賞金。出場支援と優勝賞金100万円を予定" style="--c1:#f39c12;--c2:#c0392b">
+        <span class="ui-nr__rank" aria-hidden="true">5</span>
+        <div class="ui-nr__poster"><img src="assets/img/bbj4.jpg" alt=""><span><b>大会<br>賞金</b><small>出場支援＋<br>優勝賞金100万（予定）</small></span></div>
+      </article>
+      <article class="ui-nr__card" tabindex="0" aria-label="6位 最高の仲間。切磋琢磨できるマッチョ集団" style="--c1:#27ae60;--c2:#1a1a2e">
+        <span class="ui-nr__rank" aria-hidden="true">6</span>
+        <div class="ui-nr__poster"><img src="assets/img/benefit-06-team.jpg" alt=""><span><b>最高の<br>仲間</b><small>切磋琢磨できる<br>マッチョ集団</small></span></div>
+      </article>
+    </div>
+    <div class="ui-nr__rail" aria-hidden="true">
+      <span>01</span>
+      <div class="ui-nr__rail-track"><i id="rankingProgress"></i></div>
+      <span class="ui-nr__rail-end">06 / KEEP GOING</span>
     </div>
   </div>
 </section>
+<script>
+  (function(){
+    const scroller=document.querySelector('.ui-nr__scroll');
+    const prev=document.getElementById('rankingPrev');
+    const next=document.getElementById('rankingNext');
+    const progress=document.getElementById('rankingProgress');
+    if(!scroller||!prev||!next||!progress)return;
+    const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer=window.matchMedia&&matchMedia('(pointer: fine)').matches;
+
+    function updateRanking(){
+      const max=Math.max(0,scroller.scrollWidth-scroller.clientWidth);
+      const ratio=max?scroller.scrollLeft/max:1;
+      progress.style.setProperty('--rank-progress',String(Math.max(.08,ratio)));
+      prev.disabled=scroller.scrollLeft<3;
+      next.disabled=scroller.scrollLeft>max-3;
+    }
+    function moveRanking(direction){
+      const card=scroller.querySelector('.ui-nr__card');
+      const distance=(card?.getBoundingClientRect().width||240)+18;
+      scroller.scrollBy({left:distance*direction,behavior:reduce?'auto':'smooth'});
+    }
+    prev.addEventListener('click',()=>moveRanking(-1));
+    next.addEventListener('click',()=>moveRanking(1));
+    scroller.addEventListener('scroll',updateRanking,{passive:true});
+    window.addEventListener('resize',updateRanking);
+
+    if(finePointer&&!reduce){
+      scroller.querySelectorAll('.ui-nr__card').forEach(card=>{
+        const poster=card.querySelector('.ui-nr__poster');
+        card.addEventListener('pointermove',event=>{
+          const box=card.getBoundingClientRect();
+          const x=(event.clientX-box.left)/box.width-.5;
+          const y=(event.clientY-box.top)/box.height-.5;
+          poster.style.setProperty('--tilt-x',(-y*7).toFixed(2)+'deg');
+          poster.style.setProperty('--tilt-y',(x*9).toFixed(2)+'deg');
+        });
+        card.addEventListener('pointerleave',()=>{
+          poster.style.setProperty('--tilt-x','0deg');
+          poster.style.setProperty('--tilt-y','0deg');
+        });
+      });
+    }
+    updateRanking();
+  })();
+</script>
 
 <!-- QUIZ : 30秒適性診断 -->
 <section class="quiz" id="quiz">
@@ -992,25 +3189,25 @@
       <div class="quiz-step on" data-step="0">
         <div class="quiz-q"><small>Q1 / 3</small>今の働き方、ぶっちゃけ満足してる?</div>
         <div class="quiz-opts">
-          <button type="button" class="quiz-opt" data-v="a"><span class="emo">😮‍💨</span>正直、モヤモヤしてる</button>
-          <button type="button" class="quiz-opt" data-v="b"><span class="emo">😐</span>まあまあ。でも物足りない</button>
-          <button type="button" class="quiz-opt" data-v="c"><span class="emo">🙂</span>そこそこ満足してる</button>
+          <button type="button" class="quiz-opt" data-v="a"><span class="emo">A</span>正直、モヤモヤしてる</button>
+          <button type="button" class="quiz-opt" data-v="b"><span class="emo">B</span>まあまあ。でも物足りない</button>
+          <button type="button" class="quiz-opt" data-v="c"><span class="emo">C</span>そこそこ満足してる</button>
         </div>
       </div>
       <div class="quiz-step" data-step="1">
         <div class="quiz-q"><small>Q2 / 3</small>体、変えたい気持ちある?</div>
         <div class="quiz-opts">
-          <button type="button" class="quiz-opt" data-v="a"><span class="emo">🔥</span>ガラッと変えたい</button>
-          <button type="button" class="quiz-opt" data-v="b"><span class="emo">💪</span>できれば鍛えたい</button>
-          <button type="button" class="quiz-opt" data-v="c"><span class="emo">🙂</span>健康でいられれば十分</button>
+          <button type="button" class="quiz-opt" data-v="a"><span class="emo">A</span>ガラッと変えたい</button>
+          <button type="button" class="quiz-opt" data-v="b"><span class="emo">B</span>できれば鍛えたい</button>
+          <button type="button" class="quiz-opt" data-v="c"><span class="emo">C</span>健康でいられれば十分</button>
         </div>
       </div>
       <div class="quiz-step" data-step="2">
         <div class="quiz-q"><small>Q3 / 3</small>どれにいちばんワクワクする?</div>
         <div class="quiz-opts">
-          <button type="button" class="quiz-opt" data-v="money"><span class="emo">💰</span>稼いで、自由になる</button>
-          <button type="button" class="quiz-opt" data-v="body"><span class="emo">🏋️</span>鍛えて、自信をつける</button>
-          <button type="button" class="quiz-opt" data-v="team"><span class="emo">🤝</span>仲間と、本気で熱くなる</button>
+          <button type="button" class="quiz-opt" data-v="money"><span class="emo">A</span>稼いで、自由になる</button>
+          <button type="button" class="quiz-opt" data-v="body"><span class="emo">B</span>鍛えて、自信をつける</button>
+          <button type="button" class="quiz-opt" data-v="team"><span class="emo">C</span>仲間と、本気で熱くなる</button>
         </div>
       </div>
       <div class="quiz-result" id="qResult">
@@ -1049,7 +3246,7 @@
     <div class="phi">
       <div class="phi-left reveal">
         <div class="ovs">OUR BELIEF</div>
-        <h3>『真の豊かさ』<br>その一つが、<span class="q">健康。</span></h3>
+        <h3>『真の豊かさ』<br class="title-break">その一つが、<span class="q">健康。</span></h3>
         <p style="color:var(--gray);font-size:14px">健康経営 × 営業。心も身体も、キャリアも。すべてを同時に引き上げる仕組みが、ここにある。</p>
         <div class="bg">
           <b>BACKGROUND</b>
@@ -1070,7 +3267,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">EVIDENCE</span>
-      <h2>やってる人と、やってない人の<br>違いを<span class="red">数字</span>で証明。</h2>
+      <h2>やってる人と、やってない人の<br class="title-break">違いを<span class="red">数字</span>で証明。</h2>
       <p>筋トレは「気合い」ではなく「科学」。世界の研究が示す、鍛える人だけが手にする圧倒的な差。</p>
     </div>
     <div class="stat-grid">
@@ -1089,7 +3286,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">BACKGROUND</span>
-      <h2>不健康な社会と、<br>上がらない<span class="red">給与</span>。</h2>
+      <h2>不健康な社会と、<br class="title-break">上がらない<span class="red">給与</span>。</h2>
       <p>健康経営 × 営業 — 日本が抱える「2つの課題」を、数字で見る。</p>
     </div>
     <div class="prob">
@@ -1124,11 +3321,11 @@
       </div>
       <div class="reason reveal">
         <div class="top"><span class="no">02</span><span class="k">SPONSOR</span></div>
-        <div class="body"><div class="pill" style="background:var(--gold);color:#000"><a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a></div><div class="big">国内トップブランド</div><p>国内トップフィットネスブランド「<a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a>」が、サプリ・ウェア・ギアをスポンサーとして全面サポート。</p></div>
+        <div class="body"><div class="pill"><a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a></div><div class="big">国内トップブランド</div><p>国内トップフィットネスブランド「<a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a>」が、サプリ・ウェア・ギアをスポンサーとして全面サポート。</p></div>
       </div>
       <div class="reason reveal">
         <div class="top"><span class="no">03</span><span class="k">PARTNER GYM</span></div>
-        <div class="body"><div class="pill" style="background:#9be15d;color:#000">ジム代サポート</div><div class="big">24時間ジムで鍛える</div><p>ジム代は会社がサポート。好きな24時間ジムで、早朝でも深夜でも思い切り追い込める。</p></div>
+        <div class="body"><div class="pill">ジム代サポート</div><div class="big">24時間ジムで鍛える</div><p>ジム代は会社がサポート。好きな24時間ジムで、早朝でも深夜でも思い切り追い込める。</p></div>
       </div>
     </div>
   </div>
@@ -1159,8 +3356,8 @@
         </div>
       </div>
       <div class="reveal">
-        <h3>国内トップブランド「<a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a>」が、<br>代表・河野泰佑を<br><span class="red">スポンサード</span>。</h3>
-        <p class="t">大会の舞台で結果を出し、業界が認める身体と実績。その代表に、国内トップフィットネスブランド <a class="xlink" target="_blank" rel="noopener"><b style="color:var(--gold)">超人気ブランド</b></a> がオフィシャルスポンサーとして付く——これは、ACT-Rが「本物のアスリート集団」である何よりの証明です。</p>
+        <h3>国内トップブランド「<a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a>」が、<br class="title-break">代表・河野泰佑を<br class="title-break"><span class="red">スポンサード</span>。</h3>
+        <p class="t">大会の舞台で結果を出し、業界が認める身体と実績。その代表に、国内トップフィットネスブランド <a class="xlink" target="_blank" rel="noopener"><b class="red">超人気ブランド</b></a> がオフィシャルスポンサーとして付く——これは、ACT-Rが「本物のアスリート集団」である何よりの証明です。</p>
         <div class="sponsor-box">
           <a class="logo xlink" style="color:inherit" target="_blank" rel="noopener">超人気<br>ブランド<small>TRAINING GEAR</small></a>
           <div class="txt"><b>OFFICIAL SPONSOR</b><p>代表・河野泰佑をブランドアンバサダーとして支援。所属社員にも、その契約のメリットが還元されます。</p></div>
@@ -1170,21 +3367,36 @@
   </div>
 </section>
 
-<!-- GALLERY : THE REAL -->
-<section class="gallery" id="gallery">
+<!-- GALLERY : THE REAL — compact Netflix-inspired ranking -->
+<section class="gallery ui-nr ui-nr--real" id="gallery" aria-labelledby="realTitle">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-tag">THE REAL</span>
-      <h2>これが、<span class="red">本物</span>の証明。</h2>
-      <p>代表・河野泰佑｜BEST BODY JAPAN 2025 日本3位／MR.BEST BODY。鍛え抜いた身体が、言葉よりも雄弁に物語る。</p>
-    </div>
-    <div class="gal-grid reveal">
-      <figure><img src="assets/img/bbj1.jpg" alt="河野泰佑 BBJ2025 フロント" loading="lazy"><figcaption>FRONT</figcaption></figure>
-      <figure><img src="assets/img/bbj4.jpg" alt="河野泰佑 MR.BEST BODY サッシュ" loading="lazy"><figcaption>MR.BEST BODY</figcaption></figure>
-      <figure><img src="assets/img/bbj3.jpg" alt="河野泰佑 バックポーズ" loading="lazy"><figcaption>BACK</figcaption></figure>
-      <figure><img src="assets/img/bbj2.jpg" alt="河野泰佑 アブスポーズ" loading="lazy"><figcaption>ABS</figcaption></figure>
-      <figure><img src="assets/img/bbj7.jpg" alt="河野泰佑 サイドポーズ" loading="lazy"><figcaption>SIDE</figcaption></figure>
-      <figure><img src="assets/img/bbj6.jpg" alt="河野泰佑 ステージ" loading="lazy"><figcaption>STAGE</figcaption></figure>
+    <h2 class="ui-nr__title reveal" id="realTitle">これが、<span class="red">本物</span>の証明。</h2>
+    <p class="ui-nr__caption reveal">代表・河野泰佑｜BEST BODY JAPAN 2025 日本3位／MR.BEST BODY。鍛え抜いた身体を、6つの角度から。</p>
+    <div class="ui-nr__scroll reveal" id="realScroller" tabindex="0" aria-label="大会写真6枚。横にスクロールできます">
+      <article class="ui-nr__card" tabindex="0" aria-label="1位 フロントポーズ" style="--c1:#e94560;--c2:#0f3460">
+        <span class="ui-nr__rank" aria-hidden="true">1</span>
+        <div class="ui-nr__poster"><img src="assets/img/bbj1.jpg" alt="河野泰佑 BBJ2025 フロント" loading="lazy"><span>FRONT<br>POSE</span></div>
+      </article>
+      <article class="ui-nr__card" tabindex="0" aria-label="2位 ミスターベストボディ" style="--c1:#16213e;--c2:#e94560">
+        <span class="ui-nr__rank" aria-hidden="true">2</span>
+        <div class="ui-nr__poster"><img src="assets/img/bbj4.jpg" alt="河野泰佑 MR.BEST BODY サッシュ" loading="lazy"><span>MR.BEST<br>BODY</span></div>
+      </article>
+      <article class="ui-nr__card" tabindex="0" aria-label="3位 バックポーズ" style="--c1:#9c27b0;--c2:#1a1a2e">
+        <span class="ui-nr__rank" aria-hidden="true">3</span>
+        <div class="ui-nr__poster"><img src="assets/img/bbj3.jpg" alt="河野泰佑 バックポーズ" loading="lazy"><span>BACK<br>POSE</span></div>
+      </article>
+      <article class="ui-nr__card" tabindex="0" aria-label="4位 アブスポーズ" style="--c1:#0f3460;--c2:#16213e">
+        <span class="ui-nr__rank" aria-hidden="true">4</span>
+        <div class="ui-nr__poster"><img src="assets/img/bbj2.jpg" alt="河野泰佑 アブスポーズ" loading="lazy"><span>ABS<br>POSE</span></div>
+      </article>
+      <article class="ui-nr__card" tabindex="0" aria-label="5位 サイドポーズ" style="--c1:#f39c12;--c2:#c0392b">
+        <span class="ui-nr__rank" aria-hidden="true">5</span>
+        <div class="ui-nr__poster"><img src="assets/img/bbj7.jpg" alt="河野泰佑 サイドポーズ" loading="lazy"><span>SIDE<br>POSE</span></div>
+      </article>
+      <article class="ui-nr__card" tabindex="0" aria-label="6位 ステージポーズ" style="--c1:#27ae60;--c2:#1a1a2e">
+        <span class="ui-nr__rank" aria-hidden="true">6</span>
+        <div class="ui-nr__poster"><img src="assets/img/bbj6.jpg" alt="河野泰佑 ステージ" loading="lazy"><span>STAGE<br>POSE</span></div>
+      </article>
     </div>
   </div>
 </section>
@@ -1220,7 +3432,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">SHIFT × PERFORMANCE</span>
-      <h2>シフト数 × 営業成績で、<br>特典が<span class="red">変わる</span>。</h2>
+      <h2>シフト数 × 営業成績で、<br class="title-break">特典が<span class="red">変わる</span>。</h2>
     </div>
     <div class="reward-example reveal">
       <div class="ex-tag">支給特典の一例</div>
@@ -1244,7 +3456,7 @@
     <div class="sec-head reveal">
       <span class="sec-tag">BRAND REWARD</span>
       <h2>成績が、<span class="red">ギア</span>になる。</h2>
-      <p>営業成績に応じて、国内トップブランド <a class="xlink" target="_blank" rel="noopener"><b style="color:var(--gold)">超人気ブランド</b></a> の ウェア・サプリメント・ギア を支給。売れば売るほど、最強の装備が手に入る。</p>
+      <p>営業成績に応じて、国内トップブランド <a class="xlink" target="_blank" rel="noopener"><b class="red">超人気ブランド</b></a> のウェア・サプリメント・ギアを支給。売れば売るほど、最強の装備が手に入る。</p>
     </div>
     <div class="perks">
       <div class="perk reveal">
@@ -1277,13 +3489,13 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">GYM &amp; TRAINING</span>
-      <h2>ジム代は、<br><span class="red">会社がサポート</span>。</h2>
+      <h2>ジム代は、<br class="title-break"><span class="red">会社がサポート</span>。</h2>
       <p>鍛えることを、本気で応援する会社。ジム代は会社がサポートするから、あなたは好きな24時間ジムで、コストを気にせず思い切り追い込める。</p>
     </div>
     <div class="partner">
       <div>
         <div class="free-badge">★ ジム代は会社がサポート</div>
-        <h3>好きな24時間ジムで、<br><em>本気</em>で鍛える環境。</h3>
+        <h3>好きな24時間ジムで、<br class="title-break"><em>本気</em>で鍛える環境。</h3>
         <p>全国どこにでもある24時間ジムを、仕事終わりにそのまま活用。<b style="color:var(--red)">ジム代は会社がサポート</b>するから、続けやすい。仲間との合同トレで、営業もカラダも一緒に伸ばしていく。</p>
         <ul class="perk-list-mini">
           <li><span class="chk">✓</span> ジム代は会社がサポート</li>
@@ -1296,15 +3508,15 @@
         <p style="color:var(--gray);font-size:14px;margin:18px 0">全国に広がる24時間ジムで、いつでも鍛えられる。<br>ジム代は会社がサポート、あとは通うだけ。</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:14px">
           <div style="flex:1;min-width:120px;background:#000;border:1px solid var(--line);border-radius:6px;padding:16px;text-align:center">
-            <div style="font-family:'Anton';font-size:30px;color:#9be15d">24<small style="font-size:13px">h</small></div>
+            <div style="font-family:'Anton';font-size:30px;color:var(--power-red)">24<small style="font-size:13px">h</small></div>
             <div style="font-size:11px;color:var(--gray)">いつでも鍛える</div>
           </div>
           <div style="flex:1;min-width:120px;background:#000;border:1px solid var(--line);border-radius:6px;padding:16px;text-align:center">
-            <div style="font-family:'Anton';font-size:30px;color:#9be15d">全国</div>
+            <div style="font-family:'Anton';font-size:30px;color:var(--power-red)">全国</div>
             <div style="font-size:11px;color:var(--gray)">どこでも通える</div>
           </div>
           <div style="flex:1;min-width:120px;background:#000;border:1px solid var(--line);border-radius:6px;padding:16px;text-align:center">
-            <div style="font-family:'Anton';font-size:30px;color:#9be15d">仲間</div>
+            <div style="font-family:'Anton';font-size:30px;color:var(--power-red)">仲間</div>
             <div style="font-size:11px;color:var(--gray)">合同トレ</div>
           </div>
         </div>
@@ -1416,7 +3628,7 @@
 <!-- MID CTA -->
 <section class="midcta">
   <div class="wrap reveal">
-    <h3>「変わりたい」。<br>その気持ちが、<em>第一歩</em>。</h3>
+    <h3>「変わりたい」。<br class="title-break">その気持ちが、<em>第一歩</em>。</h3>
     <p>まずは話を聞くだけでもOK。あなたのペースで、未来を変えよう。</p>
     <a class="big-line" id="midLine" href="#entry"><span class="li">L</span> 公式LINEで応募・相談する</a>
     <div class="reassure"><span>未経験OK</span><span>履歴書ナシ</span><span>しつこい勧誘なし</span><span>30秒で完了</span></div>
@@ -1446,26 +3658,32 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">FUTURE VISION</span>
-      <h2>稼ぐだけじゃ、終わらない。<br><span style="color:var(--gold)">頂点</span>を、用意する。</h2>
+      <h2>稼ぐだけじゃ、終わらない。<br class="title-break"><span class="red">頂点</span>を、用意する。</h2>
       <p>ACT-Rが描く未来。営業の成果が、ステージの上の栄光につながる。大会サポートから優勝賞金まで——マッチョが主役になる舞台を、本気で創る。</p>
     </div>
     <div class="vision-grid">
       <div class="v-card reveal">
         <div class="soon">COMING</div>
-        <div class="ic">🏆</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M16 7h16v9c0 8-3 13-8 13s-8-5-8-13V7Z"/><path d="M16 11H8v4c0 6 3 10 10 10M32 11h8v4c0 6-3 10-10 10M24 29v7M17 41h14M20 36h8"/></svg>
+        </div>
         <h4>大会サポート</h4>
         <p>出場費・遠征費・ギアまで会社が支援。ベストボディ／フィジーク大会への挑戦を全面バックアップし、社員のステージ挑戦を後押しする。</p>
       </div>
       <div class="v-card reveal">
         <div class="soon">COMING</div>
-        <div class="ic">💰</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><rect x="6" y="12" width="36" height="25"/><path d="M12 18h24M12 31h24M24 18v13M20 21l4-3 4 3M20 28l4 3 4-3"/></svg>
+        </div>
         <h4>優勝賞金</h4>
         <div class="prize">¥1,000,000<small style="font-size:14px;color:#fff">〜</small></div>
         <p>社内大会・提携大会での優勝者に、賞金を授与。営業も、身体も、頂点を取った者が最も報われる仕組みへ。</p>
       </div>
       <div class="v-card reveal">
         <div class="soon">COMING</div>
-        <div class="ic">📺</div>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><rect x="6" y="11" width="36" height="28" rx="1"/><path d="m18 5 6 6 6-6M20 39v4M28 39v4M16 43h16"/><path d="m21 19 10 6-10 6V19Z"/></svg>
+        </div>
         <h4>メディア × 全国展開</h4>
         <p>有名筋トレYouTuberコラボ、地上波・各ニュース媒体展開、日本全国マッチョネットワーク構築。「日本一マッチョが多い営業会社」を世に示す。</p>
       </div>
@@ -1549,7 +3767,7 @@
         <span class="nf-date">2026.07.17</span>
         <span class="nf-src">株式会社アクタル 公式発表</span>
       </div>
-      <h3><span class="apf">APF VISIONARY TRYOUT CUP 2026</span><br>「ドラフトトライアウト」に、企業として<em>参画決定</em>。</h3>
+      <h3><span class="apf">APF VISIONARY TRYOUT CUP 2026</span><br class="title-break keep-mobile">「ドラフトトライアウト」に、企業として<em>参画決定</em>。</h3>
       <p class="nf-body">
         株式会社アクタルは、2026年8月15日に開催される「<span class="apf">APF VISIONARY TRYOUT CUP 2026</span> ドラフトトライアウト」に、企業として参画することが決定しました。
         鍛え抜かれた身体と成果でキャリアを切り拓く挑戦者たちの舞台へ——「筋肉 × 営業」で人生を変える私たちの想いを、この場からも発信していきます。
@@ -1610,7 +3828,7 @@
     </div>
     <div class="ovs reveal">最強の自分へ</div>
     <h2 class="reveal">MACHO RECRUIT<span>今すぐ、マッチョとして稼ぐ道を選べ。</span></h2>
-    <p class="lead2 reveal">見た目を超えて、人生を変える。筋トレは、最高の自己投資である。<br>鍛えた身体と圧倒的な成果で、未来を切り拓こう。</p>
+    <p class="lead2 reveal">見た目を超えて、人生を変える。筋トレは、最高の自己投資である。<br class="title-break">鍛えた身体と圧倒的な成果で、未来を切り拓こう。</p>
     <div class="steps reveal">
       <div class="step"><span class="no">01</span> LINEで応募</div>
       <div class="step"><span class="no">02</span> カジュアル面談</div>
@@ -1706,7 +3924,7 @@
 
 <!-- STICKY APPLY CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <a class="line" id="stickyLine" href="#entry"><span style="font-family:Anton;background:#fff;color:#06b34c;width:22px;height:22px;border-radius:6px;display:inline-grid;place-items:center;font-size:13px">L</span> 公式LINEで応募・相談する</a>
+  <a class="line" id="stickyLine" href="#entry"><span class="li">L</span>公式LINEで応募・相談する</a>
   <a class="deck" href="#benefits">特典を見る</a>
 </div>
 
@@ -2001,13 +4219,71 @@
     retry&&retry.addEventListener('click',()=>{ans=[];result.classList.remove('on');show(0);});
   })();
 
-  // sticky apply CTA：少しスクロールで出す／エントリー表示中は隠す
+</script>
+<script>
+  /* Compact navigation and benefit-board controls */
   (function(){
-    const cta=document.getElementById('stickyCta'); if(!cta) return;
-    let entryVisible=false; const entry=document.getElementById('entry');
-    if(entry&&'IntersectionObserver' in window){new IntersectionObserver((es)=>{entryVisible=es[0].isIntersecting;upd();},{threshold:.15}).observe(entry);}
-    function upd(){cta.classList.toggle('show',window.scrollY>640&&!entryVisible);}
-    window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
+    const loader=document.getElementById('beyondLoader');
+    const count=document.getElementById('beyondCount');
+    const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const skip=location.search.includes('nopv');
+    let visited=false;
+    try{visited=!!sessionStorage.getItem('beyondSeen');}catch(_){}
+
+    function removeLoader(){
+      document.body.classList.remove('is-loading');
+      if(loader){loader.classList.add('is-out');setTimeout(()=>loader.remove(),850);}
+    }
+    if(!loader||reduce||skip||visited){
+      loader&&loader.remove();
+    }else{
+      document.body.classList.add('is-loading');
+      const start=performance.now(),duration=1750;
+      const tick=now=>{
+        const p=Math.min((now-start)/duration,1);
+        count.textContent=String(Math.round(p*100)).padStart(2,'0');
+        if(p<1)requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      setTimeout(()=>loader.classList.add('is-open'),1550);
+      setTimeout(()=>{
+        removeLoader();
+        try{sessionStorage.setItem('beyondSeen','1');}catch(_){}
+      },2750);
+    }
+
+    const nav=document.querySelector('header.nav');
+    const hero=document.querySelector('.hero');
+    const highlights=document.querySelector('.ben-grid');
+    const highlightPrev=document.getElementById('highlightPrev');
+    const highlightNext=document.getElementById('highlightNext');
+    const clamp=(n,min=0,max=1)=>Math.min(max,Math.max(min,n));
+    let queued=false;
+
+    function render(){
+      const y=window.scrollY;
+      nav&&nav.classList.toggle('is-scrolled',y>40);
+      if(hero&&!reduce){
+        const heroProgress=clamp(y/Math.max(hero.offsetHeight,1));
+        hero.style.setProperty('--hero-scale',(1+heroProgress*.035).toFixed(4));
+      }
+      queued=false;
+    }
+    window.addEventListener('scroll',()=>{
+      if(!queued){queued=true;requestAnimationFrame(render);}
+    },{passive:true});
+    window.addEventListener('resize',render);
+
+    function moveHighlights(direction){
+      if(!highlights)return;
+      const card=highlights.querySelector('.ben');
+      const amount=(card?.getBoundingClientRect().width||Math.min(460,window.innerWidth*.78))+24;
+      highlights.scrollBy({left:amount*direction,behavior:reduce?'auto':'smooth'});
+    }
+    highlightPrev&&highlightPrev.addEventListener('click',()=>moveHighlights(-1));
+    highlightNext&&highlightNext.addEventListener('click',()=>moveHighlights(1));
+
+    render();
   })();
 </script>
 </body>
