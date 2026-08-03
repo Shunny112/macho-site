@@ -2195,6 +2195,7 @@
   .vision .v-card,.vision .v-card h4{color:#fff!important}
   .v-card .ic,.v-card .prize,.v-card .soon{color:var(--gym-yellow)!important}
   .midcta{background:#111!important;border-top:10px solid var(--gym-yellow)}
+  .midcta h3{color:#fff!important}
   .entry{border-top:10px solid var(--gym-yellow)}
   .entry-open,.form-wrap{background:#fff!important;color:#111!important}
   .line-cta{background:var(--gym-yellow)!important;color:#000!important}
@@ -4777,9 +4778,7 @@
   body#machoRecruit #faq details.faq{margin:0;background:transparent!important;border:0!important;border-bottom:1px solid #d2d2d6!important;border-radius:0!important;box-shadow:none!important}
   body#machoRecruit #faq details.faq summary{padding:22px 0!important;font-size:15px}
   body#machoRecruit #faq details.faq .a{padding:0 34px 22px;color:#5b5b60!important;font-size:13px!important;line-height:1.8!important}
-  body#machoRecruit #faq details.faq:nth-child(3),
-  body#machoRecruit #faq details.faq:nth-child(6),
-  body#machoRecruit #faq details.faq:nth-child(11){display:none!important}
+  body#machoRecruit #faq .faq-suppressed{display:none!important}
 
   /* One primary application route. The long form opens only on request. */
   body#machoRecruit #entry{padding:104px 0!important}
@@ -5087,8 +5086,7 @@
 
     body#machoRecruit #faq{padding-block:52px!important}
     body#machoRecruit #faq .sec-head{margin-bottom:26px!important}
-    body#machoRecruit #faq details.faq:nth-child(2),
-    body#machoRecruit #faq details.faq:nth-child(8){display:none!important}
+    body#machoRecruit #faq details.faq.faq--compact-hide{display:none!important}
     body#machoRecruit #faq details.faq summary{padding:17px 0!important}
 
     body#machoRecruit #entry{padding:50px 0!important}
@@ -5356,7 +5354,6 @@
   #flow .flow-visual--apply img{object-position:center 32%}
   #flow .flow-slide:nth-child(2) img{object-position:center 35%}
   #flow .flow-slide:nth-child(3) img{object-position:center 48%}
-  #flow .flow-slide:nth-child(4) img{object-position:center 23%}
   #flow .flow-scene{
     position:absolute;z-index:2;top:24px;left:24px;right:24px;display:flex;align-items:center;
     justify-content:space-between;color:#fff;
@@ -5377,15 +5374,8 @@
   #flow .flow-copy p strong{color:#f5f5f7;font-size:16px}
   #flow .flow-copy>span{padding-top:2px;color:#ff4f60;font-size:11px;font-weight:700;white-space:nowrap}
   #flow .flow-controls{
-    display:grid;grid-template-columns:auto minmax(120px,320px) 44px 44px;align-items:center;justify-content:end;
+    display:grid;grid-template-columns:44px 44px;align-items:center;justify-content:end;
     gap:10px;width:min(1180px,calc(100% - 48px));margin:18px auto 0;
-  }
-  #flow .flow-count{color:#777;font-size:12px}
-  #flow .flow-count b{color:#fff;font-size:16px}
-  #flow .flow-progress{height:2px;overflow:hidden;background:#333}
-  #flow .flow-progress i{
-    display:block;width:100%;height:100%;background:#d20a1e;transform:scaleX(.25);transform-origin:left;
-    transition:transform .45s cubic-bezier(.16,1,.3,1);
   }
   #flow .flow-controls button{
     display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;
@@ -5426,12 +5416,12 @@
     #flow .flow-copy p{font-size:12px;line-height:1.6}
     #flow .flow-copy p strong{font-size:14px}
     #flow .flow-copy>span{grid-row:1;color:#ff4f60}
-    #flow .flow-controls{grid-template-columns:auto 1fr 42px 42px;width:calc(100% - 48px);margin-top:12px}
+    #flow .flow-controls{grid-template-columns:42px 42px;width:calc(100% - 48px);margin-top:12px}
     #flow .flow-controls button{width:42px;height:42px}
   }
   @media(prefers-reduced-motion:reduce){
     #flow .flow-track{scroll-behavior:auto}
-    #flow .flow-visual img,#flow .flow-progress i{transition:none}
+    #flow .flow-visual img{transition:none}
   }
 
   /* Chapter labels — plain-language navigation, not decorative AI-style eyebrows. */
@@ -6582,6 +6572,66 @@
     body#machoRecruit .marquee-track{animation:none!important}
   }
 
+  /* Keep the dark mid-page CTA copy legible after all theme overrides. */
+  body#machoRecruit .midcta h3{color:#fff!important}
+  body#machoRecruit .midcta p{color:#fff!important}
+  body#machoRecruit .midcta .reassure{color:#fff!important}
+  body#machoRecruit #entry h2 span{
+    letter-spacing:.025em!important;
+    font-feature-settings:"kern" 1!important;
+  }
+  body#machoRecruit #entry .lead2{color:#fff!important}
+  body#machoRecruit footer,
+  body#machoRecruit footer *{color:#fff!important}
+  body#machoRecruit #faq details.faq.is-closing summary .ic{transform:rotate(0)}
+  body#machoRecruit #faq .faq-column{min-width:0}
+  body#machoRecruit #perks .perk-top{align-items:flex-start}
+  body#machoRecruit #perks .perk-top>span{
+    display:flex;
+    min-height:30px;
+    flex-direction:column;
+    align-items:flex-end;
+    justify-content:flex-start;
+    line-height:1;
+  }
+  body#machoRecruit #perks .perk-top .perk-pop{
+    position:static;
+    align-self:auto;
+    margin:6px 0 0;
+    padding:0;
+    background:transparent;
+    border:0;
+    color:#d20a1e;
+    font-size:10px;
+    line-height:1;
+  }
+  @media(min-width:901px){
+    body#machoRecruit #faq{align-items:flex-start!important}
+    body#machoRecruit #faq .faq-list{
+      display:grid!important;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+      align-items:start!important;
+      column-gap:52px!important;
+    }
+    body#machoRecruit #faq .faq-column{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+  }
+  @media(max-width:900px){
+    body#machoRecruit #faq .faq-list{display:flex!important;flex-direction:column}
+    body#machoRecruit #faq .faq-column{display:contents}
+    body#machoRecruit #faq .faq--order-1{order:1}
+    body#machoRecruit #faq .faq--order-2{order:2}
+    body#machoRecruit #faq .faq--order-3{order:3}
+    body#machoRecruit #faq .faq--order-4{order:4}
+    body#machoRecruit #faq .faq--order-5{order:5}
+    body#machoRecruit #faq .faq--order-6{order:6}
+    body#machoRecruit #faq .faq--order-7{order:7}
+    body#machoRecruit #faq .faq--order-8{order:8}
+  }
+
 </style>
 </head>
 <body class="intro-active" id="machoRecruit">
@@ -6889,9 +6939,8 @@
       next.disabled=scroller.scrollLeft>max-3;
     }
     function moveRanking(direction){
-      const card=scroller.querySelector('.ui-nr__card');
-      const distance=(card?.getBoundingClientRect().width||240)+18;
-      scroller.scrollBy({left:distance*direction,behavior:reduce?'auto':'smooth'});
+      const max=Math.max(0,scroller.scrollWidth-scroller.clientWidth);
+      scroller.scrollTo({left:direction<0?0:max,behavior:reduce?'auto':'smooth'});
     }
     prev.addEventListener('click',()=>moveRanking(-1));
     next.addEventListener('click',()=>moveRanking(1));
@@ -7321,8 +7370,7 @@
         <ul><li>まずはTシャツ1点から</li><li>実績アップで上下セットへ</li><li>トップ成績は限定モデルを支給</li></ul>
       </article>
       <article class="perk perk--featured reveal">
-        <span class="perk-pop">毎月支給</span>
-        <div class="perk-top"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6v4l3 3v11H6V10l3-3z"/><path d="M6 13h12"/></svg></div><span>SUPPLEMENT</span></div>
+        <div class="perk-top"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6v4l3 3v11H6V10l3-3z"/><path d="M6 13h12"/></svg></div><span>SUPPLEMENT<small class="perk-pop">毎月支給</small></span></div>
         <h4>サプリメント</h4>
         <p>プロテイン・EAA・クレアチンなど、身体づくりに必須のサプリを支給。鍛える燃料は、会社が用意する。</p>
         <div class="perk-status perk-status--solid">基本サポートに含まれる</div>
@@ -7546,12 +7594,12 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="sec-tag">選考フロー</span>
-      <h2>入社までの、<span class="red">4つのシーン</span>。</h2>
+      <h2>入社までの、<span class="red">3つのシーン</span>。</h2>
       <p>まずはLINEで一歩だけ。写真を横へ送ると、入社までの流れを順番に確認できます。</p>
     </div>
     <div class="flow-carousel reveal">
-      <div class="flow-track" id="flowScroller" tabindex="0" aria-label="応募から入社までの4つのシーン。横にスクロールできます">
-        <article class="flow-slide is-current">
+      <div class="flow-track" id="flowScroller" tabindex="0" aria-label="応募から入社までの3つのシーン。横にスクロールできます">
+        <article class="flow-slide">
           <figure class="flow-visual flow-visual--apply">
             <img src="assets/img/benefit-04-income.jpg" alt="スマートフォンから公式LINEで応募するイメージ" loading="lazy">
             <div class="flow-scene"><span>SCENE 01</span><strong>30 SEC</strong></div>
@@ -7559,7 +7607,7 @@
           </figure>
           <div class="flow-copy"><p><strong>公式LINEから応募。</strong>「応募」と送るだけ。履歴書も費用も不要です。</p><span>所要 30秒</span></div>
         </article>
-        <article class="flow-slide">
+        <article class="flow-slide is-current">
           <figure class="flow-visual">
             <img src="assets/img/benefit-01-training.jpg" alt="カジュアル面談で計画を確認するイメージ" loading="lazy">
             <div class="flow-scene"><span>SCENE 02</span><strong>20 MIN</strong></div>
@@ -7573,17 +7621,8 @@
           </figure>
           <div class="flow-copy"><p><strong>体験トレ＆面接。</strong>仲間、仕事、カルチャーを同じ日に体感できます。</p><span>半日</span></div>
         </article>
-        <article class="flow-slide">
-          <figure class="flow-visual">
-            <img src="assets/img/benefit-06-team.jpg" alt="入社後に支え合うトレーニングチーム" loading="lazy">
-            <div class="flow-scene"><span>SCENE 04</span><strong>JOIN</strong></div>
-          </figure>
-          <div class="flow-copy"><p><strong>入社・始動。</strong>メンターと合同トレが、最初の一歩から支えます。</p><span>入社</span></div>
-        </article>
       </div>
       <div class="flow-controls" aria-label="応募フローのスライド操作">
-        <span class="flow-count"><b id="flowCurrent">1</b> / 4</span>
-        <div class="flow-progress" aria-hidden="true"><i id="flowProgress"></i></div>
         <button type="button" id="flowPrev" aria-label="前のシーンを見る"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
         <button type="button" id="flowNext" aria-label="次のシーンを見る"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
       </div>
@@ -7600,17 +7639,23 @@
       <p>応募前のよくある質問。少しでも気になったら、LINEで直接聞くのが一番早いです。</p>
     </div>
     <div class="faq-list reveal">
-      <details class="faq"><summary><span class="q"><b>Q</b>未経験でも応募できますか？</span><span class="ic">＋</span></summary><div class="a">もちろんOKです。むしろ未経験スタートが大多数。営業も筋トレもイチから育てる仕組みがあり、元飲食・元フリーター・元個人事業主など様々な経歴の仲間が活躍しています。</div></details>
-      <details class="faq"><summary><span class="q"><b>Q</b>筋トレ初心者なんですが大丈夫？</span><span class="ic">＋</span></summary><div class="a">全く問題ありません。ジム代は会社がサポートするので、好きな24時間ジムで無理なく始められます。合同トレーニングで仲間と一緒に、器具の使い方から食事まで先輩がサポートします。</div></details>
-      <details class="faq"><summary><span class="q"><b>Q</b>体型に自信がなくても応募していい？</span><span class="ic">＋</span></summary><div class="a">「細い」「だらしない」と思っている人ほど変われます。それを証明するのが筋肉採用。今の体型は一切問いません。"変わりたい"気持ちだけ持ってきてください。</div></details>
-      <details class="faq"><summary><span class="q"><b>Q</b>学生や副業でも働けますか？</span><span class="ic">＋</span></summary><div class="a">土日稼働のみで月25万円を達成している現役インターンもいます。稼働日数は週1〜週5から相談可能。まずはあなたの状況をLINEで聞かせてください。</div></details>
-      <details class="faq"><summary><span class="q"><b>Q</b>応募にお金や履歴書は必要？</span><span class="ic">＋</span></summary><div class="a">一切不要です。費用もかかりません。公式LINEで「応募」と送るだけ、まずは質問だけでもOK。30秒で完了します。</div></details>
-      <details class="faq"><summary><span class="q"><b>Q</b>応募から入社までの流れは？</span><span class="ic">＋</span></summary><div class="a">①公式LINEで応募 → ②カジュアル面談（まずは話すだけ） → ③体験トレ＆面接 → ④入社・始動。あなたのペースで進められます。</div></details>
-      <details class="faq"><summary><span class="q"><b>Q</b>勤務地はどこですか？</span><span class="ic">＋</span></summary><div class="a">東京・渋谷を拠点に活動しています。詳細な勤務条件は、面談であなたの希望を聞きながらご案内します。</div></details>
-      <details class="faq"><summary><span class="q"><b>Q</b>ノルマや“詰め”はありますか？</span><span class="ic">＋</span></summary><div class="a">目標数字はありますが、いわゆる“詰める”文化はありません。頑張りが正当に評価される仕組みと、強力なサポート体制で、前向きに伸ばしていく環境です。</div></details>
-      <details class="faq"><summary><span class="q"><b>Q</b>給与はどのくらいですか？</span><span class="ic">＋</span></summary><div class="a">生産性に応じたベース給＋インセンティブ。営業半年で月収50万円の例、土日のみ稼働で月25万円の例もあります（成果には個人差があります）。詳しくは面談で。</div></details>
-      <details class="faq"><summary><span class="q"><b>Q</b>女性も応募できますか？</span><span class="ic">＋</span></summary><div class="a">もちろんです。性別は問いません。「鍛えたい・稼ぎたい・変わりたい」気持ちのある方を歓迎します。</div></details>
-      <details class="faq"><summary><span class="q"><b>Q</b>いつから働けますか？</span><span class="ic">＋</span></summary><div class="a">即日〜ご相談OK。在学中・在職中の方も、あなたのタイミングに合わせて調整します。まずはLINEで希望を教えてください。</div></details>
+      <div class="faq-column">
+        <details class="faq faq--order-1"><summary><span class="q"><b>Q</b>未経験でも応募できますか？</span><span class="ic">＋</span></summary><div class="a">もちろんOKです。むしろ未経験スタートが大多数。営業も筋トレもイチから育てる仕組みがあり、元飲食・元フリーター・元個人事業主など様々な経歴の仲間が活躍しています。</div></details>
+        <details class="faq faq--order-3"><summary><span class="q"><b>Q</b>学生や副業でも働けますか？</span><span class="ic">＋</span></summary><div class="a">土日稼働のみで月25万円を達成している現役インターンもいます。稼働日数は週1〜週5から相談可能。まずはあなたの状況をLINEで聞かせてください。</div></details>
+        <details class="faq faq--order-5"><summary><span class="q"><b>Q</b>勤務地はどこですか？</span><span class="ic">＋</span></summary><div class="a">東京・渋谷を拠点に活動しています。詳細な勤務条件は、面談であなたの希望を聞きながらご案内します。</div></details>
+        <details class="faq faq--order-7"><summary><span class="q"><b>Q</b>給与はどのくらいですか？</span><span class="ic">＋</span></summary><div class="a">生産性に応じたベース給＋インセンティブ。営業半年で月収50万円の例、土日のみ稼働で月25万円の例もあります（成果には個人差があります）。詳しくは面談で。</div></details>
+      </div>
+      <div class="faq-column">
+        <details class="faq faq--order-2 faq--compact-hide"><summary><span class="q"><b>Q</b>筋トレ初心者なんですが大丈夫？</span><span class="ic">＋</span></summary><div class="a">全く問題ありません。ジム代は会社がサポートするので、好きな24時間ジムで無理なく始められます。合同トレーニングで仲間と一緒に、器具の使い方から食事まで先輩がサポートします。</div></details>
+        <details class="faq faq--order-4"><summary><span class="q"><b>Q</b>応募にお金や履歴書は必要？</span><span class="ic">＋</span></summary><div class="a">一切不要です。費用もかかりません。公式LINEで「応募」と送るだけ、まずは質問だけでもOK。30秒で完了します。</div></details>
+        <details class="faq faq--order-6 faq--compact-hide"><summary><span class="q"><b>Q</b>ノルマや“詰め”はありますか？</span><span class="ic">＋</span></summary><div class="a">目標数字はありますが、いわゆる“詰める”文化はありません。頑張りが正当に評価される仕組みと、強力なサポート体制で、前向きに伸ばしていく環境です。</div></details>
+        <details class="faq faq--order-8"><summary><span class="q"><b>Q</b>女性も応募できますか？</span><span class="ic">＋</span></summary><div class="a">もちろんです。性別は問いません。「鍛えたい・稼ぎたい・変わりたい」気持ちのある方を歓迎します。</div></details>
+      </div>
+      <div class="faq-suppressed" hidden>
+        <details class="faq"><summary><span class="q"><b>Q</b>体型に自信がなくても応募していい？</span><span class="ic">＋</span></summary><div class="a">「細い」「だらしない」と思っている人ほど変われます。それを証明するのが筋肉採用。今の体型は一切問いません。"変わりたい"気持ちだけ持ってきてください。</div></details>
+        <details class="faq"><summary><span class="q"><b>Q</b>応募から入社までの流れは？</span><span class="ic">＋</span></summary><div class="a">①公式LINEで応募 → ②カジュアル面談（まずは話すだけ） → ③体験トレ＆面接 → ④入社・始動。あなたのペースで進められます。</div></details>
+        <details class="faq"><summary><span class="q"><b>Q</b>いつから働けますか？</span><span class="ic">＋</span></summary><div class="a">即日〜ご相談OK。在学中・在職中の方も、あなたのタイミングに合わせて調整します。まずはLINEで希望を教えてください。</div></details>
+      </div>
     </div>
   </div>
 </section>
@@ -7644,9 +7689,9 @@
       <a class="nf-link" href="https://act-r-inc.com/" target="_blank" rel="noopener">会社公式サイトで告知を見る →</a>
     </div>
 
-    <!-- X（旧Twitter）更新欄 -->
+    <!-- X更新欄 -->
     <div class="sns-head reveal">
-      <h3><span class="x">X</span>（旧Twitter）の最新投稿</h3>
+      <h3><span class="x">X</span>の最新投稿</h3>
       <p>タップすると、それぞれの投稿がXで開きます。</p>
     </div>
     <div class="sns-grid reveal">
@@ -8398,33 +8443,96 @@
   })();
 </script>
 <script>
+  /* FAQ: animate only the item the visitor opens or closes. */
+  (function(){
+    const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce)return;
+
+    document.querySelectorAll('#faq details.faq').forEach(item=>{
+      const summary=item.querySelector('summary');
+      if(!summary)return;
+      let animation=null;
+      let closing=false;
+
+      function finish(open){
+        animation=null;
+        closing=false;
+        item.open=open;
+        item.classList.remove('is-closing');
+        item.style.height='';
+        item.style.overflow='';
+      }
+
+      summary.addEventListener('click',event=>{
+        event.preventDefault();
+        const shouldOpen=closing||!item.open;
+        const startHeight=item.offsetHeight;
+        animation&&animation.cancel();
+        item.style.overflow='hidden';
+
+        if(shouldOpen){
+          closing=false;
+          item.classList.remove('is-closing');
+          item.open=true;
+          const border=item.offsetHeight-item.clientHeight;
+          const endHeight=item.scrollHeight+border;
+          item.style.height=startHeight+'px';
+          animation=item.animate(
+            {height:[startHeight+'px',endHeight+'px']},
+            {duration:520,easing:'cubic-bezier(.16,1,.3,1)'}
+          );
+          animation.onfinish=()=>finish(true);
+        }else{
+          closing=true;
+          item.classList.add('is-closing');
+          const border=item.offsetHeight-item.clientHeight;
+          const endHeight=summary.offsetHeight+border;
+          item.style.height=startHeight+'px';
+          animation=item.animate(
+            {height:[startHeight+'px',endHeight+'px']},
+            {duration:420,easing:'cubic-bezier(.4,0,.2,1)'}
+          );
+          animation.onfinish=()=>finish(false);
+        }
+      });
+    });
+  })();
+</script>
+<script>
   /* Flow filmstrip: native horizontal scroll with clear, accessible controls. */
   (function(){
     const scroller=document.getElementById('flowScroller');
     if(!scroller)return;
     const slides=[...scroller.querySelectorAll('.flow-slide')];
-    const current=document.getElementById('flowCurrent');
-    const progress=document.getElementById('flowProgress');
     const prev=document.getElementById('flowPrev');
     const next=document.getElementById('flowNext');
     const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let active=0,flowRaf=0;
+    const startIndex=Math.floor((slides.length-1)/2);
+    let active=startIndex,flowRaf=0,moveTimer=0,moving=false;
 
     function activate(index,move){
       if(!slides.length)return;
       active=Math.max(0,Math.min(slides.length-1,index));
       slides.forEach((slide,i)=>slide.classList.toggle('is-current',i===active));
-      if(current)current.textContent=String(active+1);
-      if(progress)progress.style.transform='scaleX('+((active+1)/slides.length)+')';
       if(prev)prev.disabled=active===0;
       if(next)next.disabled=active===slides.length-1;
       if(move){
+        moving=true;
+        clearTimeout(moveTimer);
         const padding=parseFloat(getComputedStyle(scroller).paddingLeft)||0;
         scroller.scrollTo({left:slides[active].offsetLeft-padding,behavior:reduce?'auto':'smooth'});
+        moveTimer=setTimeout(()=>{
+          moving=false;
+          nearest();
+        },reduce?0:700);
       }
     }
     function nearest(){
       const padding=parseFloat(getComputedStyle(scroller).paddingLeft)||0;
+      const max=Math.max(0,scroller.scrollWidth-scroller.clientWidth);
+      const edgeTolerance=24;
+      if(scroller.scrollLeft<=edgeTolerance){activate(0,false);return;}
+      if(scroller.scrollLeft>=max-edgeTolerance){activate(slides.length-1,false);return;}
       const target=scroller.scrollLeft+padding;
       let nextIndex=0,distance=Infinity;
       slides.forEach((slide,index)=>{
@@ -8434,6 +8542,7 @@
       activate(nextIndex,false);
     }
     scroller.addEventListener('scroll',()=>{
+      if(moving)return;
       cancelAnimationFrame(flowRaf);
       flowRaf=requestAnimationFrame(nearest);
     },{passive:true});
@@ -8441,15 +8550,15 @@
       if(event.key==='ArrowRight'){event.preventDefault();activate(active+1,true);}
       if(event.key==='ArrowLeft'){event.preventDefault();activate(active-1,true);}
     });
-    slides.forEach((slide,index)=>slide.addEventListener('click',()=>activate(index,true)));
-    prev&&prev.addEventListener('click',()=>activate(active-1,true));
-    next&&next.addEventListener('click',()=>activate(active+1,true));
+    prev&&prev.addEventListener('click',()=>activate(0,true));
+    next&&next.addEventListener('click',()=>activate(slides.length-1,true));
     window.addEventListener('resize',nearest);
     window.addEventListener('load',()=>setTimeout(()=>{
-      scroller.scrollLeft=0;
-      activate(0,false);
+      const padding=parseFloat(getComputedStyle(scroller).paddingLeft)||0;
+      scroller.scrollLeft=slides[startIndex].offsetLeft-padding;
+      activate(startIndex,false);
     },80),{once:true});
-    activate(0,false);
+    activate(startIndex,false);
   })();
 </script>
 </body>
