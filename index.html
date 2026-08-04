@@ -2455,7 +2455,7 @@
     .site-intro__figure{
       top:5%;right:-19%;width:112vw;height:82%;object-position:center top
     }
-    .site-intro__copy{left:24px;right:24px;bottom:8vh;width:auto}
+    .site-intro__copy{left:24px;right:24px;bottom:12vh;width:auto}
     .site-intro__copy h1{font-size:clamp(42px,12vw,58px);line-height:1.12}
     .site-intro__eyebrow{margin-bottom:12px;font-size:10px}
     .site-intro__tagline{margin-top:15px;font-size:14px}
@@ -3380,9 +3380,9 @@
   #background .wrap{max-width:1240px}
   #background .sec-head{
     display:grid;
-    grid-template-columns:minmax(0,1.2fr) minmax(330px,.8fr);
+    grid-template-columns:minmax(0,1fr) minmax(440px,1fr);
     align-items:end;
-    gap:70px;
+    gap:48px;
     margin-bottom:64px!important;
     padding-bottom:34px;
     border-bottom:1px solid #555;
@@ -3395,6 +3395,9 @@
     line-height:1.17!important;
   }
   #background .sec-head p{margin:0!important;color:#b9b9b4!important;font-size:14px!important;line-height:1.95!important}
+  @media(min-width:981px){
+    #background .background-lead-first{white-space:nowrap}
+  }
   #background .prob{
     display:grid!important;
     grid-template-columns:1fr 1fr!important;
@@ -3428,7 +3431,7 @@
   }
   #background .prob-row{
     display:grid!important;
-    grid-template-columns:148px minmax(0,1fr)!important;
+    grid-template-columns:210px minmax(0,1fr)!important;
     align-items:start!important;
     gap:22px!important;
     min-height:126px;
@@ -3448,6 +3451,7 @@
     font-weight:700;
     line-height:1.05!important;
     letter-spacing:-.035em;
+    white-space:nowrap;
   }
   #background .prob-row p{color:#c0c0bb!important;font-size:12px!important;line-height:1.85!important}
   #background .prob-row p .src{margin-top:9px;color:#777!important;font-size:9.5px!important;line-height:1.55}
@@ -3479,7 +3483,7 @@
     #philosophy .phi-list{margin:0 -28px}
     #philosophy .phi-item{padding-inline:15px!important}
     #background .prob{gap:36px!important}
-    #background .prob-row{grid-template-columns:120px 1fr!important}
+    #background .prob-row{grid-template-columns:170px minmax(0,1fr)!important}
   }
   @media(max-width:760px){
     #quiz .quiz-layout{display:block;min-height:0;height:auto}
@@ -3525,7 +3529,7 @@
     #evidence .evidence-note{text-align:left}
     #background .prob{grid-template-columns:1fr!important;gap:52px!important}
     #background .prob-col h3{min-height:0}
-    #background .prob-row{grid-template-columns:108px 1fr!important;gap:18px!important}
+    #background .prob-row{grid-template-columns:170px minmax(0,1fr)!important;gap:18px!important}
     #background .solve{grid-template-columns:1fr;gap:12px;margin-top:48px!important;padding:24px 20px!important}
   }
   @media(max-width:390px){
@@ -3866,7 +3870,7 @@
     font-size:15px!important;
     line-height:1.9!important;
   }
-  #reasons .reasons-stage{position:relative}
+  #reasons .reasons-stage{position:relative;padding-bottom:8px}
   body#machoRecruit #reasons .reasons{
     display:flex!important;
     grid-template-columns:none!important;
@@ -4280,7 +4284,7 @@
     z-index:1;
     display:flex;
     align-items:baseline;
-    gap:6px;
+    gap:10px;
     color:#fff;
   }
   #reward .reward-days-value strong{
@@ -4290,14 +4294,18 @@
     font-size:clamp(92px,9vw,124px);
     font-weight:900;
     line-height:.82;
-    letter-spacing:-.08em;
+    letter-spacing:0;
   }
   #reward .reward-days-value small{
+    display:block;
+    width:1em;
+    flex:0 0 1em;
     margin:0;
     color:#fff;
     font-size:24px;
     font-weight:900;
     line-height:1;
+    text-align:center;
   }
   #reward .reward-days p{
     position:relative;
@@ -5140,15 +5148,19 @@
 
     body#machoRecruit #case{padding-block:52px!important}
     body#machoRecruit #case .sec-head{margin-bottom:28px!important}
-    body#machoRecruit #case .case{grid-template-columns:minmax(0,1fr) 26px minmax(0,1fr);align-items:stretch}
-    body#machoRecruit #case .case-card{padding:18px 0!important}
+    body#machoRecruit #case .case{
+      grid-template-columns:minmax(0,1fr);
+      gap:0;
+      align-items:stretch
+    }
+    body#machoRecruit #case .case-card{min-width:0;padding:22px 0!important}
     #case .case-card .who{font-size:10px!important}
     #case .case-card .hl-big{font-size:18px!important;line-height:1.35!important}
     #case .case-card ul{display:grid;gap:5px;margin-top:14px!important}
     #case .case-card li{font-size:10px!important;line-height:1.45!important}
-    #case .case-arrow{min-height:0}
-    #case .case-arrow .a{transform:none}
-    #case .case-arrow small{font-size:7px}
+    #case .case-arrow{min-height:64px;padding:6px 0}
+    #case .case-arrow .a{transform:rotate(90deg)}
+    #case .case-arrow small{margin-top:4px;font-size:9px;white-space:nowrap}
     body#machoRecruit #case .quote,body#machoRecruit #case>.wrap>.note-mini{display:none}
     body#machoRecruit #case .real-now{margin-top:18px;padding:18px 0!important}
     #case .real-now .amt{font-size:28px!important}
@@ -5225,10 +5237,9 @@
 
   /* The final CTA is a flat application desk, not another glowing card. */
   body#machoRecruit #entry>.wrap>:first-child>span{
-    padding:9px 0 9px 14px!important;
+    padding:9px 0!important;
     background:transparent!important;
     border:0!important;
-    border-left:3px solid #d20a1e!important;
     border-radius:0!important;
   }
   body#machoRecruit #entry .line-cta{
@@ -6033,14 +6044,15 @@
     letter-spacing:.08em!important
   }
   body#machoRecruit #quiz .quiz-intro h2{
-    grid-column:1/8!important;
+    grid-column:1/-1!important;
     margin:0!important;
     color:#fff!important;
     font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif!important;
     font-size:clamp(37px,4.6vw,62px)!important;
     font-weight:800!important;
     line-height:1.13!important;
-    letter-spacing:-.035em!important
+    letter-spacing:-.035em!important;
+    white-space:nowrap
   }
   body#machoRecruit #quiz .quiz-intro>p{
     grid-column:8/13!important;
@@ -6239,7 +6251,7 @@
   @media(max-width:900px){
     body#machoRecruit #quiz>.wrap{padding-inline:24px!important}
     body#machoRecruit #quiz .quiz-layout{min-height:650px!important}
-    body#machoRecruit #quiz .quiz-intro h2{grid-column:1/8!important;font-size:44px!important}
+    body#machoRecruit #quiz .quiz-intro h2{grid-column:1/-1!important;font-size:44px!important}
     body#machoRecruit #quiz .quiz-intro>p{grid-column:8/13!important}
     body#machoRecruit #quiz .quiz-card{grid-column:1/11!important}
     body#machoRecruit #quiz .quiz-photo{right:-10%!important;width:48%!important;opacity:.2!important}
@@ -6249,7 +6261,7 @@
     body#machoRecruit #quiz .quiz-layout{display:block!important;min-height:0!important}
     body#machoRecruit #quiz .quiz-intro{display:block!important;padding:48px 0 27px!important}
     body#machoRecruit #quiz .quiz-intro .sec-tag{display:inline-block!important;margin-bottom:17px!important}
-    body#machoRecruit #quiz .quiz-intro h2{font-size:35px!important;line-height:1.18!important}
+    body#machoRecruit #quiz .quiz-intro h2{font-size:35px!important;line-height:1.18!important;white-space:normal}
     body#machoRecruit #quiz .quiz-intro>p{max-width:34em!important;margin-top:18px!important;font-size:13px!important;line-height:1.75!important}
     body#machoRecruit #quiz .quiz-photo{
       right:-33%!important;
@@ -6671,7 +6683,7 @@
     color:transparent;
     font:800 56px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     letter-spacing:-.08em;
-    -webkit-text-stroke:1px rgba(255,255,255,.11)
+    -webkit-text-stroke:1px rgba(255,255,255,.18)
   }
   body#machoRecruit .statband .sb:nth-child(1)::before{content:"01"}
   body#machoRecruit .statband .sb:nth-child(2)::before{content:"02"}
@@ -6815,15 +6827,8 @@
     color:#f5f5f7!important
   }
   body#machoRecruit #roadmap::before{
-    content:"2026 → 2027";
-    position:absolute;
-    top:-.18em;
-    right:-.04em;
-    color:transparent;
-    font:800 clamp(100px,17vw,250px)/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    letter-spacing:-.08em;
-    -webkit-text-stroke:1px rgba(255,255,255,.07);
-    pointer-events:none
+    content:none;
+    display:none
   }
   body#machoRecruit #roadmap>.wrap{max-width:1240px!important}
   body#machoRecruit #roadmap .sec-head{position:relative!important;z-index:1!important;margin-bottom:56px!important}
@@ -6885,12 +6890,13 @@
   }
   body#machoRecruit #roadmap .road-step .no{
     grid-column:1!important;
-    grid-row:1/3!important;
+    grid-row:2!important;
+    align-self:center!important;
     margin:0!important;
-    color:transparent!important;
+    color:rgba(255,255,255,.12)!important;
     font:800 56px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
     letter-spacing:-.07em!important;
-    -webkit-text-stroke:1px rgba(255,255,255,.28)
+    -webkit-text-stroke:1px rgba(255,255,255,.48)
   }
   body#machoRecruit #roadmap .road-step h4{grid-column:2!important;grid-row:2!important;margin:6px 0 0!important;color:#fff!important;font-size:23px!important}
   body#machoRecruit #roadmap .road-step ul{
@@ -7178,8 +7184,9 @@
     body#machoRecruit #roadmap .sec-head h2 .red{display:block!important}
     body#machoRecruit #roadmap .road{display:block!important}
     body#machoRecruit #roadmap .road-step{grid-template-columns:56px 1fr!important;gap:8px 14px!important;padding:22px 0!important}
-    body#machoRecruit #roadmap .road-step .no{grid-column:1!important;font-size:38px!important}
+    body#machoRecruit #roadmap .road-step .no{grid-column:1!important;grid-row:2!important;align-self:center!important;font-size:38px!important}
     body#machoRecruit #roadmap .road-step .when,body#machoRecruit #roadmap .road-step h4{grid-column:2!important}
+    body#machoRecruit #roadmap .road-step h4{grid-row:2!important;align-self:center!important;margin:0!important}
     body#machoRecruit #roadmap .road-step ul{grid-column:2!important;grid-row:3!important;margin-top:10px!important}
     body#machoRecruit #roadmap .road-step .road-summary{grid-column:2!important;grid-row:3!important;margin-top:10px!important;font-size:12px!important;line-height:1.75!important}
     body#machoRecruit #roadmap .road-step:nth-child(4){min-height:410px!important;margin-top:22px!important;padding:28px!important}
@@ -7256,11 +7263,171 @@
     letter-spacing:.025em!important;
     font-feature-settings:"kern" 1!important;
   }
+  body#machoRecruit #entry h2 .entry-heading-line{
+    display:inline!important;
+    margin:0!important;
+    color:inherit!important;
+    font-size:inherit!important;
+    line-height:inherit!important;
+    white-space:nowrap;
+  }
+  @media(max-width:480px){
+    body#machoRecruit #entry h2>span{
+      font-size:clamp(20px,5.4vw,22px)!important;
+      letter-spacing:.01em!important;
+    }
+  }
   body#machoRecruit #entry .lead2{color:#fff!important}
+  body#machoRecruit #entry .or-line{color:#fff!important}
+  body#machoRecruit #entry .fld input::placeholder,
+  body#machoRecruit #entry .fld textarea::placeholder{
+    color:#a0a0a0!important;
+    opacity:1;
+  }
   body#machoRecruit footer,
   body#machoRecruit footer *{color:#fff!important}
   body#machoRecruit #faq details.faq.is-closing summary .ic{transform:rotate(0)}
+  body#machoRecruit #faq details.faq .a.faq-answer-compact{
+    font-size:11px!important;
+    letter-spacing:-.01em!important;
+  }
   body#machoRecruit #faq .faq-column{min-width:0}
+  body#machoRecruit #benefits .ui-nr__card{
+    position:relative!important;
+    top:var(--card-y,0)!important;
+    filter:none!important;
+    transform:none!important;
+  }
+  body#machoRecruit #benefits::before{
+    content:none!important;
+    display:none!important;
+  }
+  body#machoRecruit #benefits .ui-nr__rank{
+    opacity:0!important;
+  }
+  body#machoRecruit #benefits .ui-nr__card:hover .ui-nr__rank,
+  body#machoRecruit #benefits .ui-nr__card:focus-visible .ui-nr__rank{
+    opacity:1!important;
+  }
+  body#machoRecruit #benefits .ui-nr__poster{
+    --image-lift:0px;
+    transform:none!important;
+  }
+  body#machoRecruit #benefits .ui-nr__poster::before{
+    background:linear-gradient(180deg,rgba(0,0,0,.02) 20%,rgba(0,0,0,.24) 48%,rgba(0,0,0,.98) 100%)!important;
+  }
+  body#machoRecruit #benefits .ui-nr__poster b{
+    font-size:22px!important;
+    line-height:1.15!important;
+    text-shadow:none!important;
+  }
+  body#machoRecruit #benefits .ui-nr__poster small{
+    color:#fff!important;
+    font-size:10px!important;
+    font-weight:700!important;
+    line-height:1.5!important;
+    text-shadow:none!important;
+  }
+  body#machoRecruit #benefits .ui-nr__poster img{
+    opacity:1!important;
+    filter:saturate(1.04) contrast(1.08)!important;
+    transform:translate3d(var(--image-shift-x,0px),calc(var(--image-shift-y,0px) + var(--image-lift,0px)),0) scale(1.04)!important;
+    transition:transform .16s ease-out!important;
+    backface-visibility:hidden;
+    will-change:transform;
+  }
+  body#machoRecruit #benefits .ui-nr__card:hover,
+  body#machoRecruit #benefits .ui-nr__card:focus-visible{
+    filter:none!important;
+    transform:none!important;
+  }
+  body#machoRecruit #benefits .ui-nr__card:hover .ui-nr__poster,
+  body#machoRecruit #benefits .ui-nr__card:focus-visible .ui-nr__poster{
+    --image-lift:-8px;
+    transform:none!important;
+  }
+  body#machoRecruit #benefits .ui-nr__card:hover~.ui-nr__card,
+  body#machoRecruit #benefits .ui-nr__card:focus-visible~.ui-nr__card{
+    transform:none!important;
+  }
+  body#machoRecruit #benefits .ui-nr__control:disabled{
+    border-color:rgba(17,17,17,.3)!important;
+    color:rgba(17,17,17,.3)!important;
+    opacity:.35!important;
+    pointer-events:none;
+  }
+  body#machoRecruit #gallery #realTitle{
+    line-height:.96!important;
+  }
+  body#machoRecruit #gallery #realTitle .red::after{
+    bottom:.12em!important;
+    height:4px!important;
+  }
+  body#machoRecruit #structure .earn-result strong.earn-result-singleline{
+    max-width:none!important;
+    font-size:clamp(23px,3vw,42px)!important;
+    letter-spacing:-.06em!important;
+    white-space:nowrap;
+  }
+  body#machoRecruit #representative .rep-proof strong{
+    max-width:none!important;
+    font-size:clamp(15px,1.7vw,22px)!important;
+    letter-spacing:-.04em!important;
+    white-space:nowrap;
+  }
+  @media(min-width:881px) and (max-width:1200px){
+    body#machoRecruit header.nav .brand,
+    body#machoRecruit header.nav.is-scrolled .brand{
+      width:230px!important;
+      padding:0 14px!important;
+    }
+    body#machoRecruit header.nav .nav-links a,
+    body#machoRecruit header.nav.is-scrolled .nav-links a{
+      padding:0 8px!important;
+      font-size:11px!important;
+    }
+    body#machoRecruit .nav-cta,
+    body#machoRecruit .nav.is-scrolled .nav-cta{
+      flex-shrink:0!important;
+      gap:6px!important;
+      margin-left:6px!important;
+      padding:0 12px!important;
+      white-space:nowrap;
+    }
+    body#machoRecruit .nav-cta small{
+      padding-left:6px;
+      white-space:nowrap;
+    }
+  }
+  @media(min-width:601px) and (max-width:760px){
+    body#machoRecruit header.nav .brand,
+    body#machoRecruit header.nav.is-scrolled .brand{
+      width:calc(100% - 156px)!important;
+      flex:0 1 calc(100% - 156px)!important;
+    }
+    body#machoRecruit .nav-cta,
+    body#machoRecruit .nav.is-scrolled .nav-cta{
+      width:156px!important;
+      min-width:156px!important;
+      flex:0 0 156px!important;
+      gap:8px!important;
+      padding:0 14px!important;
+    }
+  }
+  @media(max-width:760px){
+    body#machoRecruit #reasons .reason{
+      height:600px!important;
+      min-height:600px!important;
+    }
+    body#machoRecruit #reasons .reason-copy{
+      flex:0 0 350px!important;
+      min-height:350px!important;
+    }
+    body#machoRecruit #reasons .reason-media{
+      flex:1 1 250px!important;
+      min-height:250px!important;
+    }
+  }
   body#machoRecruit #perks .perk-top{align-items:flex-start}
   body#machoRecruit #perks .perk-top>span{
     display:flex;
@@ -7282,6 +7449,12 @@
     line-height:1;
   }
   @media(min-width:901px){
+    body#machoRecruit #entry .entry-lead-first{white-space:nowrap}
+    body#machoRecruit #entry .line-cta .sub{
+      max-width:none!important;
+      font-size:11px!important;
+      white-space:nowrap;
+    }
     body#machoRecruit #faq{align-items:flex-start!important}
     body#machoRecruit #faq .faq-list{
       display:grid!important;
@@ -7449,6 +7622,14 @@
     translate:0 var(--hero-copy-shift);
     filter:opacity(var(--hero-copy-opacity)) blur(var(--hero-copy-blur));
     will-change:translate,filter;
+  }
+  body#machoRecruit .hero .apple-hero-copy{
+    bottom:154px!important;
+  }
+  body#machoRecruit .hero .apple-hero-copy h1{
+    position:relative;
+    top:-24px;
+    font-size:clamp(66px,8.4vw,120px)!important;
   }
   body#machoRecruit .hero-stage-flare{
     position:absolute;
@@ -7679,10 +7860,14 @@
       height:calc(100svh - 64px)!important;
       min-height:calc(100svh - 64px)!important;
     }
+    body#machoRecruit .hero .apple-hero-copy{bottom:142px!important}
+    body#machoRecruit .hero .apple-hero-copy h1{
+      font-size:clamp(58px,14.5vw,68px)!important
+    }
     body#machoRecruit .hero-impact{padding:24px}
     body#machoRecruit .hero-impact p{margin-bottom:14px;font-size:10px;letter-spacing:.11em}
     body#machoRecruit .hero-impact strong{
-      font-size:clamp(48px,15vw,68px);
+      font-size:clamp(54px,17vw,74px);
       line-height:1.05;
       white-space:nowrap;
     }
@@ -8064,9 +8249,10 @@
     function updateRanking(){
       const max=Math.max(0,scroller.scrollWidth-scroller.clientWidth);
       const ratio=max?scroller.scrollLeft/max:1;
+      const edgeTolerance=Math.max(24,scroller.clientWidth*.025);
       progress.style.setProperty('--rank-progress',String(Math.max(.08,ratio)));
-      prev.disabled=scroller.scrollLeft<3;
-      next.disabled=scroller.scrollLeft>max-3;
+      prev.disabled=scroller.scrollLeft<=edgeTolerance;
+      next.disabled=scroller.scrollLeft>=max-edgeTolerance;
     }
     function moveRanking(direction){
       const max=Math.max(0,scroller.scrollWidth-scroller.clientWidth);
@@ -8084,15 +8270,16 @@
           const box=card.getBoundingClientRect();
           const x=(event.clientX-box.left)/box.width-.5;
           const y=(event.clientY-box.top)/box.height-.5;
-          poster.style.setProperty('--tilt-x',(-y*7).toFixed(2)+'deg');
-          poster.style.setProperty('--tilt-y',(x*9).toFixed(2)+'deg');
+          poster.style.setProperty('--image-shift-x',Math.round(x*10)+'px');
+          poster.style.setProperty('--image-shift-y',Math.round(y*8)+'px');
         });
         card.addEventListener('pointerleave',()=>{
-          poster.style.setProperty('--tilt-x','0deg');
-          poster.style.setProperty('--tilt-y','0deg');
+          poster.style.setProperty('--image-shift-x','0px');
+          poster.style.setProperty('--image-shift-y','0px');
         });
       });
     }
+
     updateRanking();
   })();
 </script>
@@ -8103,7 +8290,7 @@
     <div class="quiz-layout">
       <div class="quiz-intro reveal">
         <span class="sec-tag"><strong>3問アンケート</strong><small>約30秒</small></span>
-        <h2>まず、今のことを<br class="title-break">聞かせてください。</h2>
+        <h2>まず、今のことを聞かせてください。</h2>
         <p>3つの回答から、あなたが仕事で大切にしたいことを整理します。選考ではなく、相談のきっかけにするための質問です。</p>
       </div>
       <div class="quiz-card reveal" aria-label="働き方に関する3問アンケート">
@@ -8173,7 +8360,7 @@
     <div class="sec-head reveal">
       <span class="sec-tag">私たちの考え方</span>
       <h2>「健康を削って働く」&#8288;を、当たり前にしない。</h2>
-      <p>仕事で結果を出すことと、身体を整えること。どちらも続けられる会社を、競技を続ける代表自身がつくります。</p>
+      <p>仕事で結果を出すことと、身体を整えること。<br>どちらも続けられる会社を、競技を続ける代表自身がつくります。</p>
     </div>
     <div class="phi">
       <figure class="phi-figure reveal">
@@ -8184,7 +8371,7 @@
         <div class="phi-left reveal">
           <div class="ovs">代表からのメッセージ</div>
           <h3>仕事が理由で、<span class="nowrap-phrase">鍛えることを</span><span class="q">諦めてほしくない。</span></h3>
-          <p>大会に向けて身体をつくるには、時間も継続も必要です。だからACT-Rでは、トレーニングを「仕事の外の自己責任」にせず、働く環境の一部として支えます。</p>
+          <p>大会に向けて身体をつくるには、時間も継続も必要です。だからACT-Rでは、<br>トレーニングを「仕事の外の自己責任」にせず、働く環境の一部として支えます。</p>
         </div>
         <div class="phi-list">
           <div class="phi-item reveal"><div class="no">ジム代支援</div><div><h4>鍛える場所を選べる</h4><p>好きな24時間ジムを利用できるよう、費用を会社がサポートします。</p></div></div>
@@ -8202,7 +8389,7 @@
     <div class="sec-head reveal">
       <span class="sec-tag">数字で見る</span>
       <h2>筋トレと健康を、<br class="title-break">研究から見る。</h2>
-      <p>身体を動かすことが健康や仕事にどう関わるのか。公開されている研究の数値を、出典とともに掲載します。</p>
+      <p>身体を動かすことが健康や仕事にどう関わるのか。<br>公開されている研究の数値を、出典とともに掲載します。</p>
     </div>
     <div class="stat-grid">
       <div class="stat reveal"><div class="stat-copy"><div class="lbl">テストステロン値</div><div class="cap">筋力トレーニング後の変化</div><div class="src">Hackney et al. J Strength Cond Res. 2018</div></div><div class="big">約21%<span class="delta">増加</span></div></div>
@@ -8222,7 +8409,7 @@
     <div class="sec-head reveal">
       <span class="sec-tag">採用の背景</span>
       <h2>なぜ、筋肉採用を<br class="title-break">始めるのか。</h2>
-      <p>運動を続けにくい生活と、成果が収入につながりにくい働き方。ACT-Rは、この2つを同じ職場の課題として捉えています。</p>
+      <p><span class="background-lead-first">運動を続けにくい生活と、成果が収入につながりにくい働き方。</span><br>ACT-Rは、この2つを同じ職場の課題として捉えています。</p>
     </div>
     <div class="prob">
       <div class="prob-col reveal">
@@ -8248,7 +8435,7 @@
     <div class="sec-head reasons-head reveal">
       <span class="sec-tag">ACT-Rで働く理由</span>
       <h2>選ばれる理由は、言葉より、<span class="red">実物</span>。</h2>
-      <p>代表の実績、競技を支える装備、鍛える場所。採用ページの約束ではなく、すでにある環境を見てください。</p>
+      <p>代表の実績、競技を支える装備、鍛える場所。<br>採用ページの約束ではなく、すでにある環境を見てください。</p>
     </div>
     <div class="reasons-stage reveal">
       <div class="reasons" id="reasonScroller" tabindex="0" aria-label="ACT-Rが選ばれる3つの理由。横にスクロールできます">
@@ -8439,7 +8626,7 @@
         <span class="earn-axis">01 / PRODUCTIVITY</span>
         <div class="earn-source"><small>生産性報酬</small><strong>営業成果</strong></div>
         <span class="earn-arrow" aria-hidden="true"><i></i></span>
-        <div class="earn-result"><small>努力が安定報酬へ</small><strong>生産性に応じた<br>ベース給</strong><p>生産性に応じた安定報酬。営業実績に応じて基本給が積み上がる、頑張った分だけ伸びる給与体系。</p></div>
+        <div class="earn-result"><small>努力が安定報酬へ</small><strong class="earn-result-singleline">生産性に応じたベース給</strong><p>生産性に応じた安定報酬。営業実績に応じて基本給が積み上がる、<br>頑張った分だけ伸びる給与体系。</p></div>
       </div>
       <div class="earn-card b reveal">
         <span class="earn-axis">02 / TOTAL SUPPORT</span>
@@ -8458,7 +8645,7 @@
     <div class="sec-head reward-head reveal">
       <span class="sec-tag">働き方と成果</span>
       <h2>続けるほど、<br class="title-break">支援が<span class="red">広がる。</span></h2>
-      <p>稼働状況と営業実績に応じて、競技を続けるための支援内容が変わります。</p>
+      <p>稼働状況と営業実績に応じて、<br>競技を続けるための支援内容が変わります。</p>
     </div>
     <div class="reward-route reveal">
       <div class="reward-days">
@@ -8606,7 +8793,7 @@
     <div class="sec-head reveal">
       <span class="sec-tag">メンバーの声</span>
       <h2>入って、<span class="red">人生が変わった</span>。</h2>
-      <p>「自分なんて」と思っていた人ほど、変わっていく。実際にマッチョ採用で人生を動かしたメンバーの声。</p>
+      <p>「自分なんて」と思っていた人ほど、変わっていく。<br>実際にマッチョ採用で人生を動かしたメンバーの声。</p>
     </div>
     <div class="voice-grid">
       <div class="voice reveal">
@@ -8775,7 +8962,6 @@
     <div class="sec-head reveal">
       <span class="sec-tag">よくある質問</span>
       <h2>不安は、<span class="red">ぜんぶ</span>解消。</h2>
-      <p>応募前のよくある質問。少しでも気になったら、LINEで直接聞くのが一番早いです。</p>
     </div>
     <div class="faq-list reveal">
       <div class="faq-column">
@@ -8787,7 +8973,7 @@
       <div class="faq-column">
         <details class="faq faq--order-2 faq--compact-hide"><summary><span class="q"><b>Q</b>筋トレ初心者なんですが大丈夫？</span><span class="ic">＋</span></summary><div class="a">全く問題ありません。ジム代は会社がサポートするので、好きな24時間ジムで無理なく始められます。合同トレーニングで仲間と一緒に、器具の使い方から食事まで先輩がサポートします。</div></details>
         <details class="faq faq--order-4"><summary><span class="q"><b>Q</b>応募にお金や履歴書は必要？</span><span class="ic">＋</span></summary><div class="a">一切不要です。費用もかかりません。公式LINEで「応募」と送るだけ、まずは質問だけでもOK。30秒で完了します。</div></details>
-        <details class="faq faq--order-6 faq--compact-hide"><summary><span class="q"><b>Q</b>ノルマや“詰め”はありますか？</span><span class="ic">＋</span></summary><div class="a">目標数字はありますが、いわゆる“詰める”文化はありません。頑張りが正当に評価される仕組みと、強力なサポート体制で、前向きに伸ばしていく環境です。</div></details>
+        <details class="faq faq--order-6 faq--compact-hide"><summary><span class="q"><b>Q</b>ノルマや“詰め”はありますか？</span><span class="ic">＋</span></summary><div class="a faq-answer-compact">目標数字はありますが、いわゆる“詰める”文化はありません。頑張りが正当に評価される仕組みと、強力なサポート体制で、前向きに伸ばしていく環境です。</div></details>
         <details class="faq faq--order-8"><summary><span class="q"><b>Q</b>女性も応募できますか？</span><span class="ic">＋</span></summary><div class="a">もちろんです。性別は問いません。「鍛えたい・稼ぎたい・変わりたい」気持ちのある方を歓迎します。</div></details>
       </div>
       <div class="faq-suppressed" hidden>
@@ -8870,13 +9056,13 @@
   <div class="entry-photo"><img src="assets/img/bbj2.jpg" alt="" loading="lazy"></div>
   <div class="wrap">
     <div class="reveal" style="margin-bottom:18px">
-      <span style="display:inline-flex;align-items:center;gap:9px;background:rgba(225,6,0,.16);border:1px solid var(--red);color:#fff;font-weight:700;font-size:13px;padding:9px 20px;border-radius:50px">
+      <span style="display:inline-flex;align-items:center;gap:9px;background:rgba(225,6,0,.16);border:1px solid var(--red);color:#fff;font-weight:700;font-size:15px;padding:9px 20px;border-radius:50px">
         <span style="width:8px;height:8px;border-radius:50%;background:var(--red);animation:stpulse 1.5s infinite"></span>2026年、100名体制へ｜ただいま仲間を募集中
       </span>
     </div>
     <div class="ovs reveal">最強の自分へ</div>
-    <h2 class="reveal">MACHO RECRUIT<span>今すぐ、マッチョとして稼ぐ道を選べ。</span></h2>
-    <p class="lead2 reveal">見た目を超えて、人生を変える。筋トレは、最高の自己投資である。鍛えた身体と圧倒的な成果で、未来を切り拓こう。</p>
+    <h2 class="reveal">MACHO RECRUIT<span><span class="entry-heading-line">今すぐ、マッチョとして</span><br>稼ぐ道を選べ。</span></h2>
+    <p class="lead2 reveal"><span class="entry-lead-first">見た目を超えて、人生を変える。筋トレは、最高の自己投資である。</span><br>鍛えた身体と圧倒的な成果で、未来を切り拓こう。</p>
     <div class="steps reveal">
       <div class="step"><span class="no">01</span> LINEで応募</div>
       <div class="step"><span class="no">02</span> カジュアル面談</div>
@@ -8899,31 +9085,31 @@
       <div class="form-grid">
         <div class="fld">
           <label for="f-name">お名前<span class="req">必須</span></label>
-          <input id="f-name" name="お名前" type="text" placeholder="山田 太郎" required>
+          <input id="f-name" name="お名前" type="text" placeholder="例）山田 太郎" required>
           <span class="err">お名前を入力してください</span>
         </div>
         <div class="fld">
           <label for="f-kana">フリガナ<span class="opt">任意</span></label>
-          <input id="f-kana" name="フリガナ" type="text" placeholder="ヤマダ タロウ">
+          <input id="f-kana" name="フリガナ" type="text" placeholder="例）ヤマダ タロウ">
         </div>
         <div class="fld">
           <label for="f-age">年齢<span class="req">必須</span></label>
-          <input id="f-age" name="年齢" type="number" min="16" max="80" placeholder="24" required>
+          <input id="f-age" name="年齢" type="number" min="16" max="80" placeholder="例）24" required>
           <span class="err">年齢を入力してください</span>
         </div>
         <div class="fld">
           <label for="f-tel">電話番号<span class="req">必須</span></label>
-          <input id="f-tel" name="電話番号" type="tel" placeholder="090-1234-5678" required>
+          <input id="f-tel" name="電話番号" type="tel" placeholder="例）090-1234-5678" required>
           <span class="err">電話番号を入力してください</span>
         </div>
         <div class="fld full">
           <label for="f-email">メールアドレス<span class="req">必須</span></label>
-          <input id="f-email" name="メールアドレス" type="email" placeholder="example@mail.com" required>
+          <input id="f-email" name="メールアドレス" type="email" placeholder="例）example@mail.com" required>
           <span class="err">正しいメールアドレスを入力してください</span>
         </div>
         <div class="fld">
           <label for="f-job">現在のご職業<span class="opt">任意</span></label>
-          <input id="f-job" name="現在の職業" type="text" placeholder="コールセンター勤務 など">
+          <input id="f-job" name="現在の職業" type="text" placeholder="例）コールセンター勤務 など">
         </div>
         <div class="fld">
           <label for="f-train">筋トレ歴<span class="opt">任意</span></label>
@@ -8949,11 +9135,11 @@
         </div>
         <div class="fld">
           <label for="f-pref">希望勤務開始<span class="opt">任意</span></label>
-          <input id="f-pref" name="希望勤務開始" type="text" placeholder="即日 / ◯月から など">
+          <input id="f-pref" name="希望勤務開始" type="text" placeholder="例）即日 / ◯月から など">
         </div>
         <div class="fld full">
           <label for="f-msg">志望動機・メッセージ<span class="opt">任意</span></label>
-          <textarea id="f-msg" name="メッセージ" placeholder="「筋トレ × 営業で人生を変えたい」など、あなたの想いを聞かせてください。"></textarea>
+          <textarea id="f-msg" name="メッセージ" placeholder="例）「筋トレ × 営業で人生を変えたい」など、あなたの想いを聞かせてください。"></textarea>
         </div>
       </div>
       <label class="agree">
@@ -9807,7 +9993,7 @@
         benefits.style.setProperty('--aftershock',aftershock.toFixed(4));
         benefits.style.setProperty('--aftershock-head',head.toFixed(4));
         benefitCards.forEach((card,index)=>{
-          const cardEnergy=clamp(aftershock*1.3-index*.075);
+          const cardEnergy=clamp(aftershock*1.4-index*.075);
           card.style.setProperty('--card-energy',cardEnergy.toFixed(4));
         });
       }
