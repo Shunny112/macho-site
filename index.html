@@ -7375,6 +7375,24 @@
     }
   }
 
+  /* Navigation active rule: underline the label, not its click-area padding. */
+  body#machoRecruit .nav-links a.is-active::after{display:none!important}
+  body#machoRecruit .nav-links .nav-label{
+    position:relative;
+    display:flex;
+    align-items:center;
+    height:100%;
+  }
+  body#machoRecruit .nav-links a.is-active .nav-label::after{
+    content:"";
+    position:absolute;
+    right:0;
+    bottom:0;
+    left:0;
+    height:3px;
+    background:#d20a1e;
+  }
+
   /* Hero scroll stage — split frame, full-bleed release, final manifesto. */
   html,body#machoRecruit{overflow-x:clip!important}
   body#machoRecruit .hero-scroll-stage{
@@ -7913,12 +7931,12 @@
   <div class="wrap nav-in">
     <a class="brand" href="#top"><span class="mark">M</span> MACHO <b>/</b> RECRUIT</a>
     <nav class="nav-links">
-      <a href="#philosophy">ABOUT</a>
-      <a href="#reasons">REASONS</a>
-      <a href="#structure">REWARD</a>
-      <a href="#partner">TRAINING</a>
-      <a href="#case">STORY</a>
-      <a href="#flow">FLOW</a>
+      <a href="#philosophy"><span class="nav-label">ABOUT</span></a>
+      <a href="#reasons"><span class="nav-label">REASONS</span></a>
+      <a href="#structure"><span class="nav-label">REWARD</span></a>
+      <a href="#partner"><span class="nav-label">TRAINING</span></a>
+      <a href="#case"><span class="nav-label">STORY</span></a>
+      <a href="#flow"><span class="nav-label">FLOW</span></a>
     </nav>
     <a class="nav-cta" href="#entry"><span>JOIN US</span><small>応募する</small></a>
   </div>
