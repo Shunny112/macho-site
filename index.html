@@ -4239,49 +4239,117 @@
   body#machoRecruit #reward .reward-head p{margin:0 0 8px!important;color:#aaaab0!important;font-size:15px!important;line-height:1.9!important}
   body#machoRecruit #reward .reward-route{
     display:grid!important;
-    grid-template-columns:minmax(300px,.62fr) minmax(0,1.38fr);
+    grid-template-columns:minmax(280px,320px) minmax(0,1fr);
     align-items:stretch;
-    min-height:560px;
+    gap:0;
+    min-height:330px;
     margin:0!important;
     padding:0!important;
     overflow:visible;
     background:transparent!important;
-    border:0!important;
+    border:1px solid #343438!important;
     border-radius:0!important;
     box-shadow:none!important;
   }
-  #reward .reward-days{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;border-right:1px solid #3b3b3f}
-  #reward .reward-days span{margin-left:13px;color:#88888e;font-size:12px;font-weight:700;letter-spacing:.16em}
-  #reward .reward-days strong{margin:-14px 0 -10px;color:#d20a1e;font-size:clamp(250px,29vw,410px);font-weight:700;line-height:.8;letter-spacing:-.11em}
-  #reward .reward-days small{margin-left:13px;color:#fff;font-size:21px;font-weight:700}
-  #reward .reward-flow{display:flex;flex-direction:column;justify-content:center;min-width:0;padding-left:clamp(44px,6vw,86px)}
-  #reward .reward-flow-label{display:flex;justify-content:space-between;gap:24px;margin-bottom:28px;color:#a0a0a5;font-size:11px;font-weight:700;letter-spacing:.1em}
-  #reward .reward-flow-label span{color:#ff4f60}
-  #reward .reward-track{position:relative;height:3px;margin-bottom:0;background:#333338;overflow:visible}
-  #reward .reward-track::before{content:"";position:absolute;top:50%;left:0;width:12px;height:12px;background:#d20a1e;border-radius:50%;transform:translate(-50%,-50%)}
-  #reward .reward-track i{display:block;width:100%;height:100%;background:#d20a1e;transform-origin:left}
-  #reward .reward-flow ul{list-style:none;margin:0;padding:0}
+  #reward .reward-days{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:flex-start;
+    min-height:330px;
+    padding:34px 32px 30px;
+    background:#111113;
+    border-right:1px solid #343438;
+  }
+  #reward .reward-days::before{
+    content:"";
+    position:absolute;top:0;left:0;width:7px;height:100%;background:#d20a1e;
+  }
+  #reward .reward-condition-label{
+    position:relative;
+    z-index:1;
+    margin:0!important;
+    color:#aaaab0!important;
+    font-size:11px!important;
+    font-weight:800!important;
+    letter-spacing:.16em!important;
+  }
+  #reward .reward-days-value{
+    position:relative;
+    z-index:1;
+    display:flex;
+    align-items:baseline;
+    gap:6px;
+    color:#fff;
+  }
+  #reward .reward-days-value strong{
+    margin:0;
+    color:#d20a1e;
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:clamp(92px,9vw,124px);
+    font-weight:900;
+    line-height:.82;
+    letter-spacing:-.08em;
+  }
+  #reward .reward-days-value small{
+    margin:0;
+    color:#fff;
+    font-size:24px;
+    font-weight:900;
+    line-height:1;
+  }
+  #reward .reward-days p{
+    position:relative;
+    z-index:1;
+    max-width:245px;
+    margin:0;
+    color:#b8b8bd;
+    font-size:12px;
+    font-weight:600;
+    line-height:1.8;
+  }
+  #reward .reward-flow{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    min-width:0;
+    padding:0;
+    background:#f1f0ed;
+    color:#151515;
+    border:0;
+  }
+  #reward .reward-flow-label{
+    display:flex;justify-content:space-between;align-items:center;gap:24px;
+    min-height:78px;margin:0;padding:22px 30px;
+    color:#737378;font-size:11px;font-weight:700;letter-spacing:.06em;
+    border-bottom:1px solid #c8c6c1;
+  }
+  #reward .reward-flow-label span{color:#151515;font-size:16px;font-weight:900;letter-spacing:0}
+  #reward .reward-flow ul{list-style:none;display:block;margin:0;padding:0}
   body#machoRecruit #reward .reward-flow li{
     display:grid;
-    grid-template-columns:100px minmax(0,1fr) auto;
+    grid-template-columns:170px minmax(0,1fr) 180px;
     align-items:center;
-    gap:24px;
-    min-height:132px;
+    gap:22px;
+    min-height:125px;
     margin:0;
-    padding:28px 0;
-    color:#fff;
-    border-bottom:1px solid #333338;
+    padding:24px 30px;
+    color:#151515;
+    background:transparent;
+    border:0;
+    border-bottom:1px solid #c8c6c1;
   }
-  #reward .reward-flow li span{color:#ff4f60;font-size:10px;font-weight:700;letter-spacing:.1em}
-  #reward .reward-flow li strong{font-size:clamp(23px,2.4vw,34px);line-height:1.2}
-  #reward .reward-flow li b{color:#c2c2c7;font-size:14px;font-weight:600;text-align:right}
+  body#machoRecruit #reward .reward-flow li:last-child{border-bottom:0}
+  #reward .reward-flow li span{color:#77777c;font-size:11px;font-weight:700;letter-spacing:.03em}
+  #reward .reward-flow li strong{color:#151515;font-size:clamp(22px,2vw,28px);line-height:1.25}
+  #reward .reward-flow li b{position:relative;padding-left:17px;color:#151515;font-size:13px;font-weight:800;text-align:left;white-space:nowrap}
+  #reward .reward-flow li b::before{content:"";position:absolute;top:.45em;left:0;width:8px;height:8px;background:#d20a1e}
   body#machoRecruit #reward .note-mini{margin:30px 0 0!important;color:#707076!important;font-size:10px!important;text-align:right}
   html.experience-motion #reward .reward-head{opacity:0!important;transform:translateY(50px)!important}
   html.experience-motion #reward.is-experience-active .reward-head{opacity:1!important;transform:none!important;transition:opacity .7s,transform 1.05s cubic-bezier(.16,1,.3,1)!important}
   html.experience-motion #reward .reward-days strong{opacity:0;transform:translateY(70px) scale(.88)}
   html.experience-motion #reward.is-experience-active .reward-days strong{opacity:1;transform:none;transition:opacity .6s .18s,transform 1.1s .18s cubic-bezier(.16,1,.3,1)}
-  html.experience-motion #reward .reward-track i{transform:scaleX(0)}
-  html.experience-motion #reward.is-experience-active .reward-track i{transform:scaleX(1);transition:transform 1.2s .46s cubic-bezier(.16,1,.3,1)}
   html.experience-motion #reward .reward-flow li{opacity:0;transform:translateX(54px)}
   html.experience-motion #reward.is-experience-active .reward-flow li{opacity:1;transform:none;transition:opacity .6s,transform .9s cubic-bezier(.16,1,.3,1)}
   html.experience-motion #reward.is-experience-active .reward-flow li:nth-child(1){transition-delay:.58s}
@@ -4559,11 +4627,18 @@
     body#machoRecruit #reward .reward-head{margin-bottom:44px!important}
     body#machoRecruit #reward .reward-head h2{font-size:54px!important}
     body#machoRecruit #reward .reward-route{display:block!important;min-height:0}
-    #reward .reward-days{min-height:360px;border-right:0;border-bottom:1px solid #3b3b3f}
-    #reward .reward-days strong{font-size:285px}
-    #reward .reward-flow{padding:42px 0 0}
-    body#machoRecruit #reward .reward-flow li{grid-template-columns:70px 1fr;gap:8px 18px;min-height:126px}
-    #reward .reward-flow li b{grid-column:2;text-align:left}
+    #reward .reward-days{min-height:240px;padding:27px 26px 24px;border:0;border-bottom:1px solid #343438}
+    #reward .reward-days-value strong{font-size:96px}
+    #reward .reward-days-value small{margin:0;font-size:22px}
+    #reward .reward-days p{max-width:220px;font-size:12px}
+    #reward .reward-flow{margin:0;padding:0}
+    #reward .reward-flow-label{align-items:center;min-height:68px;margin:0;padding:18px 20px}
+    #reward .reward-flow-label b{font-size:9px}
+    body#machoRecruit #reward .reward-flow li{grid-template-columns:1fr auto;gap:8px 12px;min-height:105px;padding:19px 20px}
+    #reward .reward-flow li span{grid-column:1/-1}
+    #reward .reward-flow li strong{font-size:22px;white-space:nowrap}
+    #reward .reward-flow li b{justify-self:start;padding:7px 9px;font-size:10px}
+    #reward .reward-flow li b{grid-column:2;padding:0 0 0 14px;text-align:left}
     body#machoRecruit #reward .note-mini{text-align:left}
 
     body#machoRecruit #perks{padding:88px 0 84px!important}
@@ -4593,7 +4668,7 @@
     #reasons .reason,#reasons .reason-media img,#representative .rep-photo,
     #representative .rep-copy,#representative .rep-identity,#representative .rep-proof,
     #structure .earn-card,#structure .structure-head,#reasons .reasons-head,#structure .structure-close,
-    #reward .reward-head,#reward .reward-days strong,#reward .reward-track i,#reward .reward-flow li,
+    #reward .reward-head,#reward .reward-days strong,#reward .reward-flow li,
     #perks .perks-head,#perks .perk,#partner .partner-head,#partner .partner-backdrop,
     #partner .partner-message,#partner .partner-clock,#partner .partner-facts{
       opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important
@@ -7233,11 +7308,78 @@
     body#machoRecruit #faq .faq--order-8{order:8}
   }
 
+  /* Representative mobile: copy and portrait use separate, stable zones. */
+  @media(max-width:640px){
+    body#machoRecruit #representative,
+    body#machoRecruit #representative .rep-stage{
+      min-height:920px!important;
+    }
+    body#machoRecruit #representative .rep-copy{
+      z-index:6!important;
+      top:44px!important;
+      left:24px!important;
+      width:calc(100% - 48px)!important;
+      padding-bottom:26px;
+      background:#030303;
+    }
+    body#machoRecruit #representative .rep-copy p{
+      max-width:340px;
+      margin-top:20px!important;
+      color:#c7c7ca!important;
+      font-size:13px!important;
+      line-height:1.85!important;
+    }
+    body#machoRecruit #representative .rep-photo{
+      top:330px!important;
+      right:0!important;
+      bottom:auto!important;
+      width:100%!important;
+      height:420px!important;
+      object-position:center 45%!important;
+      transform:none!important;
+      -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 7%,#000 74%,transparent 100%)!important;
+      mask-image:linear-gradient(180deg,transparent 0,#000 7%,#000 74%,transparent 100%)!important;
+    }
+    body#machoRecruit #representative .rep-stage::after{
+      background:linear-gradient(180deg,#030303 0 30%,rgba(3,3,3,.08) 43% 72%,#030303 89%)!important;
+    }
+  }
+
+  /* NEWS mobile: keep the external X widget inside the content width. */
+  @media(max-width:760px){
+    body#machoRecruit #news .sns-grid{
+      width:100%!important;
+      min-width:0!important;
+      overflow:hidden!important;
+    }
+    body#machoRecruit #news .sns-col{
+      width:100%!important;
+      max-width:100%!important;
+      min-width:0!important;
+      box-sizing:border-box!important;
+      padding:16px 10px 12px!important;
+      overflow:hidden!important;
+    }
+    body#machoRecruit #news .sns-col .sc-head{
+      min-width:0;
+      padding-inline:2px;
+    }
+    body#machoRecruit #news .sns-col .sc-head>div:nth-child(2){min-width:0}
+    body#machoRecruit #news .sns-col .sc-handle{overflow-wrap:anywhere}
+    body#machoRecruit #news .sns-col :is(.twitter-tweet,.twitter-tweet-rendered,iframe){
+      display:block!important;
+      width:100%!important;
+      max-width:100%!important;
+      min-width:0!important;
+      margin-inline:0!important;
+    }
+  }
+
   /* Hero scroll stage — split frame, full-bleed release, final manifesto. */
   html,body#machoRecruit{overflow-x:clip!important}
   body#machoRecruit .hero-scroll-stage{
     position:relative;
-    height:232svh;
+    height:330svh;
     margin-top:80px;
     background:#000;
   }
@@ -7256,8 +7398,6 @@
     --hero-shade-opacity:1;
     --hero-flare-opacity:0;
     --hero-flare-x:-42%;
-    --hero-progress:0;
-    --hero-progress-opacity:1;
     position:sticky!important;
     top:80px;
     height:calc(100svh - 80px)!important;
@@ -7357,28 +7497,6 @@
     font-weight:700;
     letter-spacing:.32em;
   }
-  body#machoRecruit .hero-scroll-progress{
-    position:absolute;
-    z-index:6;
-    right:0;
-    bottom:0;
-    left:0;
-    height:4px;
-    overflow:hidden;
-    background:rgba(255,255,255,.16);
-    opacity:var(--hero-progress-opacity);
-    pointer-events:none;
-    will-change:opacity;
-  }
-  body#machoRecruit .hero-scroll-progress i{
-    display:block;
-    width:100%;
-    height:100%;
-    background:var(--actr-red,#d20a1e);
-    transform:scaleX(var(--hero-progress));
-    transform-origin:left;
-    will-change:transform;
-  }
   body#machoRecruit .hero-energy-bridge{
     --bridge-progress:0;
     position:relative;
@@ -7438,8 +7556,105 @@
     translate:0 calc((1 - var(--aftershock)) * 42px);
     will-change:opacity,translate;
   }
+
+  /* Persistent application panel — always available, but retractable. */
+  body#machoRecruit .hero-offer-fixed{
+    position:fixed!important;
+    z-index:90!important;
+    right:18px!important;
+    bottom:18px!important;
+    display:block!important;
+    width:min(420px,calc(100vw - 62px))!important;
+    max-width:none!important;
+    min-height:76px;
+    padding:0!important;
+    border:0!important;
+    border-radius:5px!important;
+    background:#fff!important;
+    color:#111!important;
+    box-shadow:0 22px 60px rgba(0,0,0,.28)!important;
+    opacity:1!important;
+    filter:none!important;
+    translate:none!important;
+    transform:translateX(0)!important;
+    transition:transform .56s cubic-bezier(.16,1,.3,1),visibility .56s!important;
+    will-change:transform;
+  }
+  body#machoRecruit .hero-offer-fixed.is-collapsed{
+    transform:translateX(calc(100% + 18px))!important;
+  }
+  body#machoRecruit .hero-offer-content{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 92px;
+    min-height:76px;
+  }
+  body#machoRecruit .hero-offer-fixed .hero-offer-copy{
+    display:flex;
+    align-items:center;
+    margin:0;
+    padding:15px 20px!important;
+    color:#111!important;
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:clamp(13px,1vw,15px)!important;
+    font-weight:800!important;
+    line-height:1.45!important;
+    letter-spacing:.01em;
+  }
+  body#machoRecruit .hero-offer-fixed a{
+    display:grid!important;
+    place-items:center;
+    min-width:0!important;
+    margin:8px 8px 8px 0;
+    padding:0 12px!important;
+    border:0!important;
+    border-radius:4px!important;
+    background:var(--actr-red,#d20a1e)!important;
+    color:#fff!important;
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:15px!important;
+    font-weight:900!important;
+    letter-spacing:.04em;
+    text-align:center;
+    transition:background .2s ease,transform .2s ease!important;
+  }
+  body#machoRecruit .hero-offer-fixed a:hover,
+  body#machoRecruit .hero-offer-fixed a:focus-visible{
+    background:#a90011!important;
+    color:#fff!important;
+    transform:translateY(-2px);
+  }
+  body#machoRecruit .hero-offer-toggle{
+    position:absolute;
+    top:50%;
+    left:-36px;
+    display:grid;
+    place-items:center;
+    width:36px;
+    height:46px;
+    padding:0;
+    border:1px solid rgba(255,255,255,.2);
+    border-right:0;
+    border-radius:4px 0 0 4px;
+    background:#0a0a0a;
+    color:#fff;
+    box-shadow:-12px 12px 30px rgba(0,0,0,.22);
+    transform:translateY(-50%);
+    cursor:pointer;
+  }
+  body#machoRecruit .hero-offer-toggle svg{
+    width:16px;
+    height:16px;
+    transition:transform .45s cubic-bezier(.16,1,.3,1);
+  }
+  body#machoRecruit .hero-offer-fixed.is-collapsed .hero-offer-toggle svg{transform:rotate(180deg)}
+  body#machoRecruit .hero-offer-toggle:hover,
+  body#machoRecruit .hero-offer-toggle:focus-visible{background:var(--actr-red,#d20a1e)}
+  body.intro-active#machoRecruit .hero-offer-fixed{
+    visibility:hidden;
+    pointer-events:none;
+  }
   @media(max-width:760px){
-    body#machoRecruit .hero-scroll-stage{height:184svh;margin-top:64px}
+    body#machoRecruit .hero-scroll-stage{height:260svh;margin-top:64px}
     body#machoRecruit .hero-scroll-stage .hero{
       --hero-reveal-left:0%;
       top:64px;
@@ -7464,6 +7679,34 @@
       translate:0 calc((1 - var(--card-energy)) * 72px);
       rotate:none;
     }
+    body#machoRecruit .hero-offer-fixed{
+      right:10px!important;
+      bottom:10px!important;
+      width:min(285px,calc(100vw - 52px))!important;
+      min-height:64px;
+    }
+    body#machoRecruit .hero-offer-fixed.is-collapsed{
+      transform:translateX(calc(100% + 10px))!important;
+    }
+    body#machoRecruit .hero-offer-content{
+      grid-template-columns:minmax(0,1fr) 70px;
+      min-height:64px;
+    }
+    body#machoRecruit .hero-offer-fixed .hero-offer-copy{
+      padding:10px 12px!important;
+      font-size:9.5px!important;
+      line-height:1.55!important;
+    }
+    body#machoRecruit .hero-offer-fixed a{
+      margin:7px 7px 7px 0;
+      padding:0 7px!important;
+      font-size:12px!important;
+    }
+    body#machoRecruit .hero-offer-toggle{
+      left:-36px;
+      width:36px;
+      height:44px;
+    }
   }
   @media(prefers-reduced-motion:reduce){
     body#machoRecruit .hero-scroll-stage{height:auto}
@@ -7471,11 +7714,12 @@
     body#machoRecruit .hero-film{transform:none!important;filter:none!important;will-change:auto}
     body#machoRecruit .hero-cinematic-shade{opacity:1;will-change:auto}
     body#machoRecruit .hero-impact,
-    body#machoRecruit .hero-stage-flare,
-    body#machoRecruit .hero-scroll-progress{display:none}
+    body#machoRecruit .hero-stage-flare{display:none}
     body#machoRecruit .hero-energy-bridge{display:none}
     body#machoRecruit .hero .apple-hero-copy,
     body#machoRecruit .hero .apple-hero-offer{translate:none;filter:none;will-change:auto}
+    body#machoRecruit .hero-offer-fixed,
+    body#machoRecruit .hero-offer-toggle svg{transition:none!important}
     body#machoRecruit #benefits .ui-nr__head,
     body#machoRecruit #benefits .ui-nr__scroll,
     body#machoRecruit #benefits .ui-nr__card,
@@ -7696,20 +7940,24 @@
       </h1>
       <p class="hero-copy-tagline"><span>TRAIN. WORK. WIN.</span></p>
     </div>
-    <div class="apple-hero-offer">
-      <span>未経験から、身体と収入を変える。</span>
-      <a id="heroLine" href="#entry">応募</a>
-    </div>
   </div>
   <div class="hero-impact" aria-hidden="true">
     <p>身体が変わる。<span>自信が変わる。</span></p>
     <strong>人生を、<em>動かせ。</em></strong>
     <small>ACT-R 採用 — MACHO RECRUIT</small>
   </div>
-  <div class="hero-scroll-progress" aria-hidden="true"><i></i></div>
 </section>
 </div>
 <div class="hero-energy-bridge" aria-hidden="true"><i></i></div>
+<aside class="apple-hero-offer hero-offer-fixed" id="heroOffer" aria-label="応募案内">
+  <button class="hero-offer-toggle" id="heroOfferToggle" type="button" aria-expanded="true" aria-controls="heroOfferContent" aria-label="応募案内を収納">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+  </button>
+  <div class="hero-offer-content" id="heroOfferContent">
+    <span class="hero-offer-copy">未経験から、身体と収入を変える。</span>
+    <a id="heroLine" href="#entry">応募</a>
+  </div>
+</aside>
 
 <!-- RECRUITING KEYWORDS -->
 <div class="marquee" aria-label="マッチョ採用の特長">
@@ -8196,16 +8444,17 @@
     </div>
     <div class="reward-route reveal">
       <div class="reward-days">
-        <span>WEEK</span>
-        <strong>5</strong>
-        <small>日稼働の場合</small>
+        <span class="reward-condition-label">稼働条件の例</span>
+        <div class="reward-days-value" aria-label="週5日稼働">
+          <small>週</small><strong>5</strong><small>日</small>
+        </div>
+        <p>営業実績などの条件に応じて、受けられる支援内容が広がります。</p>
       </div>
       <div class="reward-flow">
-        <div class="reward-flow-label"><span>支給特典の一例</span><b>SUPPORT ROUTE</b></div>
-        <div class="reward-track" aria-hidden="true"><i></i></div>
+        <div class="reward-flow-label"><span>受けられる支援</span><b>支援内容は一例です</b></div>
         <ul>
-          <li><span>TRAINING</span><strong>ジム代</strong><b>会社がサポート</b></li>
-          <li><span>GEAR</span><strong>トレーニングウェア</strong><b>一部支給</b></li>
+          <li><span>トレーニング環境</span><strong>ジム代</strong><b>会社がサポート</b></li>
+          <li><span>トレーニング用品</span><strong>ウェア</strong><b>一部支給</b></li>
         </ul>
       </div>
     </div>
@@ -9441,6 +9690,32 @@
   })();
 </script>
 <script>
+  /* Persistent application panel: retract without removing the application path. */
+  (function(){
+    const offer=document.getElementById('heroOffer');
+    const toggle=document.getElementById('heroOfferToggle');
+    const content=document.getElementById('heroOfferContent');
+    if(!offer||!toggle||!content)return;
+
+    const syncPosition=()=>{
+      const collapsed=offer.classList.contains('is-collapsed');
+      const edge=innerWidth<=760?10:18;
+      offer.style.setProperty('transform',collapsed?`translateX(calc(100% + ${edge}px))`:'translateX(0)','important');
+      content.toggleAttribute('inert',collapsed);
+      content.setAttribute('aria-hidden',String(collapsed));
+    };
+
+    toggle.addEventListener('click',()=>{
+      const collapsed=offer.classList.toggle('is-collapsed');
+      toggle.setAttribute('aria-expanded',String(!collapsed));
+      toggle.setAttribute('aria-label',collapsed?'応募案内を表示':'応募案内を収納');
+      syncPosition();
+    });
+    addEventListener('resize',syncPosition,{passive:true});
+    syncPosition();
+  })();
+</script>
+<script>
   /* Hero film: split-to-full cinematic story without scroll-jacking. */
   (function(){
     const stage=document.getElementById('top');
@@ -9470,23 +9745,22 @@
       const scrollRange=Math.max(stage.offsetHeight-hero.offsetHeight,1);
       const progress=clamp((stickyTop-stageRect.top)/scrollRange);
       const mobile=innerWidth<=760;
-      const release=smooth(.04,.58,progress);
-      const push=smooth(.02,1,progress);
-      const copyOut=smooth(.1,.38,progress);
-      const impactIn=smooth(.5,.76,progress);
-      const impactExit=smooth(.9,.995,progress);
-      const flareIn=smooth(.18,.34,progress);
-      const flareOut=smooth(.46,.62,progress);
+      const release=smooth(.06,.54,progress);
+      const push=smooth(.04,.98,progress);
+      const copyOut=smooth(.12,.36,progress);
+      const impactIn=smooth(.43,.64,progress);
+      const impactExit=smooth(.92,.998,progress);
+      const flareIn=smooth(.2,.38,progress);
+      const flareOut=smooth(.52,.68,progress);
       const flare=flareIn*(1-flareOut);
-      const exitPulse=smooth(.82,.91,progress)*(1-smooth(.94,1,progress));
+      const exitPulse=smooth(.86,.93,progress)*(1-smooth(.965,1,progress));
       const zoom=mobile ? 0.32 : 0.46;
       const revealLeft=mobile ? 0 : 44*(1-release);
       const shade=clamp(1-.68*release+.26*impactIn+.32*impactExit);
-      const flareX=-42+84*smooth(.16,.64,progress);
+      const flareX=-42+84*smooth(.18,.7,progress);
       const impactOpacity=impactIn*(1-impactExit);
       const impactScale=.82+.18*impactIn+.72*impactExit;
       const finalZoom=mobile ? .12*impactExit : .18*impactExit;
-      const progressOpacity=1-smooth(.76,.91,progress);
 
       hero.style.setProperty('--hero-scroll-scale',(1+push*zoom+finalZoom).toFixed(4));
       hero.style.setProperty('--hero-reveal-left',revealLeft.toFixed(3)+'%');
@@ -9502,8 +9776,6 @@
       hero.style.setProperty('--hero-shade-opacity',shade.toFixed(4));
       hero.style.setProperty('--hero-flare-opacity',Math.max(.62*flare,.86*exitPulse).toFixed(4));
       hero.style.setProperty('--hero-flare-x',flareX.toFixed(2)+'%');
-      hero.style.setProperty('--hero-progress',progress.toFixed(4));
-      hero.style.setProperty('--hero-progress-opacity',progressOpacity.toFixed(4));
 
       if(bridge){
         const bridgeRect=bridge.getBoundingClientRect();
