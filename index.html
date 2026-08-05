@@ -2438,6 +2438,19 @@
     letter-spacing:.2em;opacity:0;transform:translateY(18px);
     animation:introCopy .7s 1.48s cubic-bezier(.16,1,.3,1) forwards
   }
+  .site-intro__recruit{
+    display:flex;align-items:center;gap:13px;max-width:560px;margin-top:24px;padding-top:17px;
+    border-top:1px solid rgba(255,255,255,.34);color:#fff;
+    opacity:0;transform:translateY(16px);
+    animation:introCopy .7s 1.68s cubic-bezier(.16,1,.3,1) forwards
+  }
+  .site-intro__recruit strong{
+    color:#fff;font:800 14px/1.2 "Noto Sans JP",sans-serif;letter-spacing:.04em
+  }
+  .site-intro__recruit span{
+    padding-left:13px;border-left:1px solid rgba(255,255,255,.32);
+    color:#bdbdbd;font:700 11px/1 "Noto Sans JP",sans-serif;letter-spacing:.08em
+  }
   .site-intro__control{
     position:absolute;z-index:10;top:36px;min-height:54px;padding:0 24px;
     border:1px solid #5a5a5a;border-radius:999px;background:rgba(0,0,0,.45);color:#ddd;
@@ -2487,6 +2500,10 @@
     .site-intro__copy h1{font-size:clamp(42px,12vw,58px);line-height:1.12}
     .site-intro__eyebrow{margin-bottom:12px;font-size:10px}
     .site-intro__tagline{margin-top:15px;font-size:14px}
+    .site-intro__recruit{gap:9px;margin-top:18px;padding-top:13px;flex-wrap:wrap}
+    .site-intro__recruit strong{width:100%;font-size:12px}
+    .site-intro__recruit span{padding-left:9px;font-size:9px}
+    .site-intro__recruit span:nth-of-type(1){padding-left:0;border-left:0}
     .site-intro__control{top:18px;min-height:44px;padding:0 15px;font-size:11px}
     .site-intro__sound{left:16px}
     .site-intro__skip{right:16px}
@@ -6360,7 +6377,7 @@
     margin-bottom:24px!important;
     background:repeating-linear-gradient(90deg,#343438 0 calc(33.333% - 3px),transparent calc(33.333% - 3px) 33.333%)!important
   }
-  body#machoRecruit #quiz .quiz-prog i{width:33.333%;border-radius:0!important}
+  body#machoRecruit #quiz .quiz-prog i{width:0;border-radius:0!important}
   body#machoRecruit #quiz .quiz-q{margin-bottom:8px!important}
   body#machoRecruit #quiz .quiz-q small{
     margin-bottom:10px!important;
@@ -6491,7 +6508,7 @@
     height:34%!important;
     background:#b80618!important;
     transform-origin:bottom!important;
-    transform:scaleY(var(--quiz-progress,.333))!important;
+    transform:scaleY(var(--quiz-progress,0))!important;
     transition:transform .7s cubic-bezier(.22,1,.36,1)!important
   }
   body#machoRecruit #quiz .quiz-stage-index span,
@@ -6611,7 +6628,7 @@
       margin:0 0 20px!important;
       padding:0 16px!important
     }
-    body#machoRecruit #quiz .quiz-stage-index::before{inset:0 0 0 auto!important;width:34%!important;height:100%!important;transform-origin:left!important;transform:scaleX(var(--quiz-progress,.333))!important}
+    body#machoRecruit #quiz .quiz-stage-index::before{inset:0 0 0 auto!important;width:34%!important;height:100%!important;transform-origin:left!important;transform:scaleX(var(--quiz-progress,0))!important}
     body#machoRecruit #quiz .quiz-stage-index span{font-size:32px!important;letter-spacing:-.06em!important;transform:none!important}
     body#machoRecruit #quiz .quiz-stage-index small{margin:0!important;writing-mode:horizontal-tb!important;letter-spacing:.16em!important}
     body#machoRecruit #quiz .quiz-status,
@@ -6658,7 +6675,7 @@
     height:100%!important;
     background:#d20a1e!important;
     transform-origin:bottom!important;
-    transform:scaleY(var(--quiz-progress,.333))!important
+    transform:scaleY(var(--quiz-progress,0))!important
   }
   body#machoRecruit #quiz .quiz-stage-index span{font-size:54px!important}
   body#machoRecruit #quiz .quiz-photo{display:none!important}
@@ -8037,20 +8054,698 @@
     }
   }
 
+  /* ENTRY DESK — a competition entry sheet, not a promotional card stack. */
+  body#machoRecruit #entry{
+    position:relative!important;
+    box-sizing:border-box!important;
+    min-height:calc(100svh - 72px)!important;
+    padding:0!important;
+    overflow:hidden!important;
+    background:#050505!important;
+    border-top:1px solid #242426!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .entry-photo{
+    position:absolute!important;
+    inset:0 auto 0 0!important;
+    width:62%!important;
+    height:100%!important;
+    opacity:1!important
+  }
+  body#machoRecruit #entry .entry-photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(90deg,rgba(5,5,5,.92) 0%,rgba(5,5,5,.42) 42%,rgba(5,5,5,.08) 72%,rgba(5,5,5,.84) 100%),
+      linear-gradient(0deg,rgba(5,5,5,.92) 0%,transparent 42%,rgba(5,5,5,.3) 100%)
+  }
+  body#machoRecruit #entry .entry-photo img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:57% 18%!important;
+    filter:grayscale(.58) contrast(1.2) brightness(.78)!important;
+    transform:scale(1.025)
+  }
+  body#machoRecruit #entry>.wrap{
+    position:relative!important;
+    z-index:2!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,7fr) minmax(440px,5fr)!important;
+    grid-template-rows:auto 1fr auto!important;
+    gap:0!important;
+    width:min(1440px,100%)!important;
+    min-height:calc(100svh - 73px)!important;
+    margin:0 auto!important;
+    padding:clamp(54px,7vh,84px) clamp(32px,4vw,64px)!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .entry-recruit-status{
+    grid-column:1!important;
+    grid-row:1!important;
+    align-self:start!important;
+    display:grid!important;
+    grid-template-columns:4px auto!important;
+    gap:7px 14px!important;
+    width:max-content!important;
+    max-width:calc(100% - 48px)!important;
+    margin:0!important;
+    color:#fff!important
+  }
+  body#machoRecruit #entry .entry-recruit-status::before{
+    content:"";
+    grid-row:1/3;
+    width:4px;
+    height:100%;
+    background:#d20a1e
+  }
+  body#machoRecruit #entry .entry-recruit-status span{
+    color:#ef5261!important;
+    font-size:10px!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:.15em!important
+  }
+  body#machoRecruit #entry .entry-recruit-status strong{
+    color:#fff!important;
+    font-size:14px!important;
+    font-weight:700!important;
+    line-height:1.35!important;
+    letter-spacing:.02em!important
+  }
+  body#machoRecruit #entry .ovs,
+  body#machoRecruit #entry .steps,
+  body#machoRecruit #entry .alt-apply{display:none!important}
+  body#machoRecruit #entry h2{
+    grid-column:1!important;
+    grid-row:2!important;
+    align-self:center!important;
+    max-width:650px!important;
+    margin:clamp(56px,8vh,92px) 0 28px!important;
+    color:#fff!important;
+    font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif!important;
+    font-size:clamp(58px,6.4vw,96px)!important;
+    font-weight:900!important;
+    line-height:1.02!important;
+    letter-spacing:-.065em!important;
+    text-transform:none!important;
+    text-align:left!important;
+    text-shadow:0 6px 30px rgba(0,0,0,.58)!important
+  }
+  body#machoRecruit #entry h2 .entry-title-code{
+    display:block!important;
+    margin:0 0 22px!important;
+    color:#d7d7d4!important;
+    font-family:"Oswald",sans-serif!important;
+    font-size:12px!important;
+    font-weight:600!important;
+    line-height:1!important;
+    letter-spacing:.24em!important;
+    white-space:normal!important
+  }
+  body#machoRecruit #entry h2 .entry-title-ja{
+    display:block!important;
+    margin:0!important;
+    color:#fff!important;
+    font:inherit!important;
+    letter-spacing:inherit!important;
+    white-space:normal!important
+  }
+  body#machoRecruit #entry .lead2{
+    grid-column:1!important;
+    grid-row:3!important;
+    align-self:end!important;
+    max-width:39em!important;
+    margin:0!important;
+    padding:20px 42px 0 0!important;
+    border-top:1px solid rgba(255,255,255,.28)!important;
+    color:#d6d6d3!important;
+    font-size:13px!important;
+    font-weight:500!important;
+    line-height:1.85!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .entry-lead-first{white-space:normal!important}
+  body#machoRecruit #entry .line-cta{
+    grid-column:2!important;
+    grid-row:1/4!important;
+    align-self:stretch!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:center!important;
+    width:100%!important;
+    max-width:none!important;
+    min-height:620px!important;
+    margin:0!important;
+    padding:clamp(38px,4.5vw,64px)!important;
+    overflow:visible!important;
+    background:#ececea!important;
+    border:0!important;
+    border-top:8px solid #d20a1e!important;
+    color:#111!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .line-cta::before{display:none!important}
+  body#machoRecruit #entry .badge30{
+    display:block!important;
+    width:auto!important;
+    margin:0 0 34px!important;
+    padding:0 0 14px!important;
+    background:transparent!important;
+    border:0!important;
+    border-bottom:1px solid #c7c7c2!important;
+    color:#5d5d5a!important;
+    font-family:"Oswald",sans-serif!important;
+    font-size:11px!important;
+    font-weight:700!important;
+    line-height:1!important;
+    letter-spacing:.18em!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .line-cta .ttl{
+    max-width:10em!important;
+    margin:0!important;
+    color:#111!important;
+    font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif!important;
+    font-size:clamp(38px,3.4vw,54px)!important;
+    font-weight:900!important;
+    line-height:1.12!important;
+    letter-spacing:-.055em!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .line-cta .sub{
+    max-width:38em!important;
+    margin:20px 0 28px!important;
+    color:#50504d!important;
+    font-size:13px!important;
+    font-weight:500!important;
+    line-height:1.8!important;
+    white-space:normal!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .line-btn{
+    display:flex!important;
+    justify-content:space-between!important;
+    width:100%!important;
+    min-height:76px!important;
+    padding:0 24px!important;
+    background:#d20a1e!important;
+    border:1px solid #d20a1e!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    color:#fff!important;
+    font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif!important;
+    font-size:18px!important;
+    font-weight:800!important;
+    letter-spacing:.01em!important;
+    text-align:left!important;
+    transition:background-color .18s ease,border-color .18s ease!important
+  }
+  body#machoRecruit #entry .line-btn::after{content:"→";font-size:24px;font-weight:400}
+  body#machoRecruit #entry .line-btn:hover,
+  body#machoRecruit #entry .line-btn:focus-visible{
+    background:#111!important;
+    border-color:#111!important;
+    color:#fff!important;
+    transform:none!important;
+    outline:2px solid #111!important;
+    outline-offset:3px!important
+  }
+  body#machoRecruit #entry .line-btn .li{
+    width:30px!important;
+    height:30px!important;
+    background:#fff!important;
+    border-radius:2px!important;
+    color:#d20a1e!important
+  }
+  body#machoRecruit #entry .line-flow{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:0!important;
+    margin:28px 0 0!important;
+    color:#111!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .line-flow span{
+    display:grid!important;
+    grid-template-columns:28px minmax(0,1fr)!important;
+    align-items:center!important;
+    min-height:42px!important;
+    padding:8px 0!important;
+    background:transparent!important;
+    border:0!important;
+    border-top:1px solid #c7c7c2!important;
+    border-radius:0!important;
+    color:#242422!important;
+    font-size:12px!important;
+    font-weight:650!important
+  }
+  body#machoRecruit #entry .line-flow span b{
+    color:#d20a1e!important;
+    font-family:"Oswald",sans-serif!important;
+    font-size:12px!important
+  }
+  body#machoRecruit #entry .qr-box{
+    display:grid!important;
+    grid-template-columns:82px minmax(0,1fr)!important;
+    align-items:center!important;
+    gap:18px!important;
+    margin:26px 0 0!important;
+    padding:22px 0 0!important;
+    background:transparent!important;
+    border:0!important;
+    border-top:1px solid #c7c7c2!important;
+    border-radius:0!important;
+    color:#111!important
+  }
+  body#machoRecruit #entry .qr-box img{
+    width:82px!important;
+    height:82px!important;
+    padding:4px!important;
+    border:1px solid #b7b7b2!important;
+    border-radius:0!important;
+    background:#fff!important
+  }
+  body#machoRecruit #entry .qr-box .qr-t{
+    color:#3e3e3b!important;
+    font-size:11px!important;
+    font-weight:500!important;
+    line-height:1.65!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .qr-box .qr-t b{
+    display:block!important;
+    margin-bottom:5px!important;
+    color:#111!important;
+    font-size:13px!important
+  }
+  body#machoRecruit #entry .or-line{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:26px 0 10px!important;
+    color:#666662!important;
+    font-size:10px!important;
+    font-weight:600!important;
+    line-height:1!important;
+    letter-spacing:.08em!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .or-line::before,
+  body#machoRecruit #entry .or-line::after{display:none!important}
+  body#machoRecruit #entry .form-toggle{
+    width:100%!important;
+    min-height:52px!important;
+    margin:0!important;
+    padding:0 18px!important;
+    background:transparent!important;
+    border:1px solid #8d8d88!important;
+    border-radius:0!important;
+    color:#111!important;
+    font-size:12px!important;
+    font-weight:700!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry .form-toggle::after{content:"＋";float:right;font-size:17px;font-weight:400}
+  body#machoRecruit #entry .form-toggle[aria-expanded="true"]::after{content:"−"}
+  body#machoRecruit #entry .form-toggle:hover,
+  body#machoRecruit #entry .form-toggle:focus-visible{
+    background:#111!important;
+    border-color:#111!important;
+    color:#fff!important;
+    outline:2px solid #111!important;
+    outline-offset:3px!important
+  }
+  body#machoRecruit #entry .form-wrap.is-open{
+    grid-column:1/-1!important;
+    grid-row:4!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:32px 0 0!important
+  }
+  @media(max-width:900px){
+    body#machoRecruit #entry{min-height:0!important}
+    body#machoRecruit #entry .entry-photo{
+      inset:0 0 auto!important;
+      width:100%!important;
+      height:620px!important
+    }
+    body#machoRecruit #entry .entry-photo::after{
+      background:linear-gradient(0deg,#050505 0%,rgba(5,5,5,.32) 46%,rgba(5,5,5,.38) 100%)
+    }
+    body#machoRecruit #entry .entry-photo img{object-position:55% 15%!important}
+    body#machoRecruit #entry>.wrap{
+      display:flex!important;
+      flex-direction:column!important;
+      min-height:0!important;
+      padding:100px 28px 0!important
+    }
+    body#machoRecruit #entry .entry-recruit-status{order:1!important}
+    body#machoRecruit #entry h2{
+      order:2!important;
+      align-self:auto!important;
+      min-height:325px!important;
+      margin:46px 0 26px!important;
+      font-size:clamp(52px,10.5vw,76px)!important
+    }
+    body#machoRecruit #entry .lead2{
+      order:3!important;
+      margin:0 0 38px!important;
+      padding:18px 0 0!important
+    }
+    body#machoRecruit #entry .line-cta{
+      order:4!important;
+      width:calc(100% + 56px)!important;
+      min-height:0!important;
+      margin:0 -28px!important;
+      padding:42px 28px 48px!important
+    }
+    body#machoRecruit #entry .form-wrap.is-open{order:5!important}
+  }
+  @media(max-width:560px){
+    body#machoRecruit #entry .entry-photo{height:520px!important}
+    body#machoRecruit #entry>.wrap{padding:78px 20px 0!important}
+    body#machoRecruit #entry h2{
+      min-height:278px!important;
+      margin:34px 0 22px!important;
+      font-size:clamp(44px,13vw,58px)!important
+    }
+    body#machoRecruit #entry h2 .entry-title-code{margin-bottom:16px!important;font-size:10px!important}
+    body#machoRecruit #entry .lead2{display:block!important;margin-bottom:28px!important;font-size:12px!important}
+    body#machoRecruit #entry .line-cta{
+      width:calc(100% + 40px)!important;
+      margin-inline:-20px!important;
+      padding:34px 20px 40px!important
+    }
+    body#machoRecruit #entry .line-cta .ttl{font-size:36px!important}
+    body#machoRecruit #entry .line-btn{min-height:68px!important;padding-inline:18px!important;font-size:16px!important}
+    body#machoRecruit #entry .qr-box{display:none!important}
+  }
+
+  /* ENTRY LEFT RESTORE — retain the previous campaign face beside the new entry sheet. */
+  body#machoRecruit #entry .entry-photo{
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    opacity:1!important
+  }
+  body#machoRecruit #entry .entry-photo::after{
+    background:
+      linear-gradient(90deg,rgba(5,5,5,.9) 0%,rgba(5,5,5,.58) 30%,rgba(5,5,5,.18) 49%,rgba(5,5,5,.78) 64%,#050505 78%),
+      linear-gradient(0deg,rgba(5,5,5,.88) 0%,transparent 46%,rgba(5,5,5,.36) 100%)!important
+  }
+  body#machoRecruit #entry .entry-photo img{
+    object-position:52% 18%!important;
+    filter:grayscale(.48) contrast(1.16) brightness(.76)!important;
+    transform:scale(1.02)!important
+  }
+  body#machoRecruit #entry>.wrap{
+    grid-template-rows:auto auto auto 1fr!important
+  }
+  body#machoRecruit #entry .entry-recruit-status{
+    grid-column:1!important;
+    grid-row:1!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:11px!important;
+    width:max-content!important;
+    max-width:calc(100% - 54px)!important;
+    margin:0!important;
+    color:#fff!important
+  }
+  body#machoRecruit #entry .entry-recruit-status::before{
+    content:"";
+    display:block;
+    flex:0 0 9px;
+    width:9px;
+    height:9px;
+    background:#d20a1e;
+    border-radius:50%
+  }
+  body#machoRecruit #entry .entry-recruit-status span{display:none!important}
+  body#machoRecruit #entry .entry-recruit-status strong{
+    color:#fff!important;
+    font-size:15px!important;
+    font-weight:700!important;
+    line-height:1.4!important;
+    letter-spacing:.01em!important
+  }
+  body#machoRecruit #entry .ovs{
+    grid-column:1!important;
+    grid-row:2!important;
+    display:block!important;
+    align-self:end!important;
+    margin:clamp(44px,6vh,70px) 0 18px!important;
+    color:#d20a1e!important;
+    font-size:14px!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:.06em!important;
+    text-align:left!important
+  }
+  body#machoRecruit #entry h2{
+    grid-column:1!important;
+    grid-row:3!important;
+    align-self:start!important;
+    max-width:520px!important;
+    margin:0!important;
+    font-family:"Anton",-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif!important;
+    font-size:inherit!important;
+    font-weight:400!important;
+    line-height:.92!important;
+    letter-spacing:0!important;
+    text-shadow:0 5px 28px rgba(0,0,0,.62)!important
+  }
+  body#machoRecruit #entry h2 .entry-wordmark{
+    display:block!important;
+    max-width:430px!important;
+    margin:0 0 24px!important;
+    color:#fff!important;
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif!important;
+    font-size:clamp(62px,5.7vw,84px)!important;
+    font-weight:800!important;
+    line-height:.92!important;
+    letter-spacing:-.065em!important;
+    white-space:normal!important
+  }
+  body#machoRecruit #entry h2 .entry-title-ja{
+    display:block!important;
+    margin:0!important;
+    color:#fff!important;
+    font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif!important;
+    font-size:clamp(25px,2.45vw,35px)!important;
+    font-weight:900!important;
+    line-height:1.25!important;
+    letter-spacing:-.04em!important;
+    white-space:normal!important
+  }
+  body#machoRecruit #entry h2 .entry-heading-line{
+    display:inline!important;
+    margin:0!important;
+    color:inherit!important;
+    font:inherit!important;
+    letter-spacing:inherit!important;
+    white-space:nowrap!important
+  }
+  body#machoRecruit #entry .lead2{
+    grid-column:1!important;
+    grid-row:4!important;
+    align-self:start!important;
+    max-width:520px!important;
+    margin:24px 0 0!important;
+    padding:0 44px 0 0!important;
+    border:0!important;
+    color:#d4d4d1!important;
+    font-size:13px!important;
+    line-height:1.85!important
+  }
+  body#machoRecruit #entry .line-cta{grid-row:1/5!important}
+  body#machoRecruit #entry .form-wrap.is-open{grid-row:5!important}
+  @media(min-width:901px){
+    body#machoRecruit #entry>.wrap{padding-block:clamp(24px,3.4vh,34px)!important}
+    body#machoRecruit #entry .entry-recruit-status{margin-top:32px!important}
+  }
+  @media(max-width:900px){
+    body#machoRecruit #entry .entry-photo{
+      inset:0 0 auto!important;
+      height:650px!important
+    }
+    body#machoRecruit #entry .entry-photo::after{
+      background:linear-gradient(0deg,#050505 0%,rgba(5,5,5,.28) 43%,rgba(5,5,5,.48) 100%)!important
+    }
+    body#machoRecruit #entry .entry-photo img{object-position:54% 16%!important}
+    body#machoRecruit #entry .entry-recruit-status{order:1!important}
+    body#machoRecruit #entry .ovs{
+      order:2!important;
+      align-self:auto!important;
+      margin:38px 0 16px!important
+    }
+    body#machoRecruit #entry h2{
+      order:3!important;
+      min-height:0!important;
+      margin:0!important
+    }
+    body#machoRecruit #entry h2 .entry-wordmark{
+      max-width:410px!important;
+      margin-bottom:20px!important;
+      font-size:clamp(60px,10.5vw,80px)!important
+    }
+    body#machoRecruit #entry h2 .entry-title-ja{font-size:clamp(27px,4.7vw,36px)!important}
+    body#machoRecruit #entry .lead2{
+      order:4!important;
+      margin:22px 0 46px!important;
+      padding:0!important
+    }
+    body#machoRecruit #entry .line-cta{order:5!important}
+    body#machoRecruit #entry .form-wrap.is-open{order:6!important}
+  }
+  @media(max-width:560px){
+    body#machoRecruit #entry .entry-photo{height:560px!important}
+    body#machoRecruit #entry .entry-recruit-status strong{font-size:12px!important}
+    body#machoRecruit #entry .ovs{margin:28px 0 13px!important;font-size:12px!important}
+    body#machoRecruit #entry h2 .entry-wordmark{
+      max-width:300px!important;
+      margin-bottom:16px!important;
+      font-size:clamp(48px,14vw,58px)!important
+    }
+    body#machoRecruit #entry h2 .entry-title-ja{font-size:clamp(21px,6.2vw,25px)!important}
+    body#machoRecruit #entry .lead2{margin:18px 0 34px!important;font-size:11.5px!important}
+  }
+  @media(min-width:901px) and (max-height:760px){
+    body#machoRecruit #entry{
+      min-height:calc(100svh - 72px)!important
+    }
+    body#machoRecruit #entry>.wrap{
+      min-height:calc(100svh - 73px)!important;
+      padding:18px 32px!important
+    }
+    body#machoRecruit #entry .entry-recruit-status{
+      margin-top:0!important;
+      gap:8px!important
+    }
+    body#machoRecruit #entry .entry-recruit-status::before{width:7px;height:7px;flex-basis:7px}
+    body#machoRecruit #entry .entry-recruit-status strong{font-size:11px!important}
+    body#machoRecruit #entry .ovs{margin:14px 0 8px!important;font-size:11px!important}
+    body#machoRecruit #entry h2 .entry-wordmark{
+      max-width:350px!important;
+      margin-bottom:12px!important;
+      font-size:clamp(45px,5vw,58px)!important
+    }
+    body#machoRecruit #entry h2 .entry-title-ja{font-size:clamp(20px,2vw,25px)!important;line-height:1.2!important}
+    body#machoRecruit #entry .lead2{
+      max-width:470px!important;
+      margin:10px 0 0!important;
+      padding:0 36px 0 0!important;
+      font-size:9.5px!important;
+      line-height:1.6!important
+    }
+    body#machoRecruit #entry .line-cta{
+      display:grid!important;
+      grid-template-columns:minmax(0,1fr) 92px!important;
+      grid-template-rows:auto auto auto auto auto auto auto!important;
+      column-gap:14px!important;
+      align-content:center!important;
+      min-height:0!important;
+      padding:18px 24px!important;
+      border-top-width:5px!important
+    }
+    body#machoRecruit #entry .badge30{
+      grid-column:1/3!important;
+      grid-row:1!important;
+      margin:0 0 12px!important;
+      padding:0 0 8px!important;
+      font-size:8px!important
+    }
+    body#machoRecruit #entry .line-cta .ttl{
+      grid-column:1/3!important;
+      grid-row:2!important;
+      max-width:none!important;
+      font-size:clamp(27px,2.7vw,36px)!important;
+      line-height:1.03!important
+    }
+    body#machoRecruit #entry .line-cta .sub{
+      grid-column:1/3!important;
+      grid-row:3!important;
+      margin:9px 0 12px!important;
+      font-size:9px!important;
+      line-height:1.55!important
+    }
+    body#machoRecruit #entry .line-btn{
+      grid-column:1/3!important;
+      grid-row:4!important;
+      min-height:52px!important;
+      padding:0 17px!important;
+      font-size:13px!important
+    }
+    body#machoRecruit #entry .line-btn .li{width:24px!important;height:24px!important;font-size:12px!important}
+    body#machoRecruit #entry .line-btn::after{font-size:19px!important}
+    body#machoRecruit #entry .line-flow{
+      grid-column:1!important;
+      grid-row:5!important;
+      align-self:start!important;
+      margin:12px 0 0!important
+    }
+    body#machoRecruit #entry .line-flow span{
+      grid-template-columns:23px minmax(0,1fr)!important;
+      min-height:25px!important;
+      padding:3px 0!important;
+      font-size:8.5px!important
+    }
+    body#machoRecruit #entry .line-flow span b{font-size:9px!important}
+    body#machoRecruit #entry .qr-box{
+      grid-column:2!important;
+      grid-row:5!important;
+      align-self:start!important;
+      display:block!important;
+      margin:12px 0 0!important;
+      padding:12px 0 0!important;
+      text-align:center!important
+    }
+    body#machoRecruit #entry .qr-box img{
+      width:62px!important;
+      height:62px!important;
+      margin:0 auto!important
+    }
+    body#machoRecruit #entry .qr-box .qr-t{display:none!important}
+    body#machoRecruit #entry .or-line{
+      grid-column:1/3!important;
+      grid-row:6!important;
+      margin:10px 0 5px!important;
+      font-size:8px!important
+    }
+    body#machoRecruit #entry .form-toggle{
+      grid-column:1/3!important;
+      grid-row:7!important;
+      min-height:38px!important;
+      font-size:9.5px!important
+    }
+  }
+  body#machoRecruit .hero-offer-fixed.is-entry-hidden{
+    visibility:hidden!important;
+    opacity:0!important;
+    pointer-events:none!important
+  }
+  @media(prefers-reduced-motion:reduce){
+    body#machoRecruit #entry .entry-photo img{transform:none!important}
+    body#machoRecruit #entry .line-btn{transition:none!important}
+  }
+
 </style>
 </head>
 <body class="intro-active" id="machoRecruit">
 
 <!-- OPENING — screenshot-inspired cinematic first frame -->
-<div class="site-intro" id="siteIntro" role="dialog" aria-modal="true" aria-label="MACHO RECRUIT オープニング">
+<div class="site-intro" id="siteIntro" role="dialog" aria-modal="true" aria-label="株式会社アクタル 採用サイト オープニング">
   <img class="site-intro__figure" src="assets/img/bbj1.jpg" alt="大会に出場する鍛え上げた社員">
   <div class="site-intro__copy">
-    <p class="site-intro__eyebrow">ACT-R / MACHO RECRUIT</p>
+    <p class="site-intro__eyebrow">株式会社アクタル｜採用サイト</p>
     <h1>鍛えた身体を、<br><em>稼ぐ力へ。</em></h1>
     <p class="site-intro__tagline">TRAIN. WORK. WIN.</p>
+    <div class="site-intro__recruit"><strong>2026年度 採用受付中</strong><span>営業職</span><span>未経験可</span></div>
   </div>
-  <button class="site-intro__control site-intro__sound" id="introSound" type="button" aria-pressed="false">🔊 サウンドON</button>
-  <button class="site-intro__control site-intro__skip" id="introSkip" type="button">スキップ ▶</button>
+  <button class="site-intro__control site-intro__sound" id="introSound" type="button" aria-pressed="false">音声をON</button>
+  <button class="site-intro__control site-intro__skip" id="introSkip" type="button">採用ページへ進む →</button>
   <div class="site-intro__progress" aria-hidden="true"><i></i></div>
 </div>
 <noscript><style>.site-intro{display:none!important}body.intro-active{overflow:auto!important}</style></noscript>
@@ -8099,7 +8794,7 @@
       pulseTimer=setInterval(()=>{hit(54,.32,.38);setTimeout(()=>hit(82,.22,.22),230);},760);
       soundButton.classList.add('is-on');
       soundButton.setAttribute('aria-pressed','true');
-      soundButton.textContent='🔇 サウンドOFF';
+      soundButton.textContent='音声をOFF';
     }
     function stopSound(updateButton){
       clearInterval(pulseTimer);
@@ -8115,7 +8810,7 @@
       if(updateButton){
         soundButton.classList.remove('is-on');
         soundButton.setAttribute('aria-pressed','false');
-        soundButton.textContent='🔊 サウンドON';
+        soundButton.textContent='音声をON';
       }
     }
     function finish(){
@@ -8402,7 +9097,7 @@
       </div>
       <div class="quiz-card reveal" aria-label="働き方に関する3問アンケート">
         <div class="quiz-stage-index" id="qStageIndex" aria-hidden="true"><span id="qStageNumber">01</span><small id="qStageLabel">QUESTION</small></div>
-        <div class="quiz-status" aria-live="polite"><span id="qStatusLabel">回答状況</span><strong><b id="qCurrent">1</b><i>/ 3</i></strong></div>
+        <div class="quiz-status" aria-live="polite"><span id="qStatusLabel">回答状況</span><strong><b id="qCurrent">0</b><i>/ 3</i></strong></div>
         <div class="quiz-prog" aria-hidden="true"><i id="qProg"></i></div>
         <div class="quiz-step on" data-step="0">
           <div class="quiz-q"><small>質問 1 / 3</small>今の働き方に、満足していますか？</div>
@@ -9161,13 +9856,9 @@
 <section class="entry" id="entry">
   <div class="entry-photo"><img src="assets/img/bbj2.jpg" alt="" loading="lazy"></div>
   <div class="wrap">
-    <div class="reveal" style="margin-bottom:18px">
-      <span style="display:inline-flex;align-items:center;gap:9px;background:rgba(225,6,0,.16);border:1px solid var(--red);color:#fff;font-weight:700;font-size:15px;padding:9px 20px;border-radius:50px">
-        <span style="width:8px;height:8px;border-radius:50%;background:var(--red);animation:stpulse 1.5s infinite"></span>2026年、100名体制へ｜ただいま仲間を募集中
-      </span>
-    </div>
+    <div class="entry-recruit-status reveal"><span aria-hidden="true"></span><strong>2026年、100名体制へ｜ただいま仲間を募集中</strong></div>
     <div class="ovs reveal">最強の自分へ</div>
-    <h2 class="reveal">MACHO RECRUIT<span><span class="entry-heading-line">今すぐ、マッチョとして</span><br>稼ぐ道を選べ。</span></h2>
+    <h2 class="reveal"><span class="entry-wordmark">MACHO RECRUIT</span><span class="entry-title-ja"><span class="entry-heading-line">今すぐ、マッチョとして</span><br>稼ぐ道を選べ。</span></h2>
     <p class="lead2 reveal"><span class="entry-lead-first">見た目を超えて、人生を変える。筋トレは、最高の自己投資である。</span><br class="copy-break">鍛えた身体と圧倒的な成果で、未来を切り拓こう。</p>
     <div class="steps reveal">
       <div class="step"><span class="no">01</span> LINEで応募</div>
@@ -9177,15 +9868,15 @@
     </div>
     <!-- ===== PRIMARY: 公式LINE 応募導線 ===== -->
     <div class="line-cta reveal">
-      <div class="badge30">かんたん30秒・スマホで完結</div>
-      <div class="ttl">まずは公式LINEで、応募・相談スタート。</div>
-      <div class="sub">友だち追加して「応募」と送るだけ。質問だけでもOK。あなたの「変わりたい」に、ぜんぶ答えます。</div>
+      <div class="badge30">ENTRY / OFFICIAL LINE</div>
+      <div class="ttl">公式LINEで<br>応募する。</div>
+      <div class="sub">友だち追加後に「応募」と送信してください。履歴書は不要です。質問だけでも受け付けています。</div>
       <a class="line-btn" href="#" id="linePrimary"><span class="li">L</span> 公式LINEで応募する</a>
-      <div class="line-flow"><span>① 友だち追加</span><span>② 「応募」と送信</span><span>③ 日程調整して面談</span></div>
+      <div class="line-flow"><span><b>01</b>公式アカウントを追加</span><span><b>02</b>「応募」と送信</span><span><b>03</b>面談日を調整</span></div>
       <div class="qr-box"><img src="assets/img/line-qr.png" alt="公式LINE QRコード"><div class="qr-t"><b>PCでご覧の方へ</b>スマホでこのQRを読み取ると、そのまま応募できます。</div></div>
+      <div class="or-line reveal">LINEを使わない場合</div>
+      <button class="form-toggle reveal" id="formToggle" type="button" aria-expanded="false" aria-controls="entryForm">応募フォームを開く</button>
     </div>
-    <div class="or-line reveal">LINEを使わない場合</div>
-    <button class="form-toggle reveal" id="formToggle" type="button" aria-expanded="false" aria-controls="entryForm">応募フォームを開く</button>
     <!-- ===== SECONDARY: 詳細フォーム ===== -->
     <form class="form-wrap reveal" id="entryForm" novalidate>
       <div class="form-grid">
@@ -9545,13 +10236,14 @@
     let ans=[],transitioning=false;
     function show(i){
       steps.forEach((s,n)=>s.classList.toggle('on',n===i));
-      prog.style.width=((i+1)/steps.length*100)+'%';
-      if(current)current.textContent=String(i+1);
+      const answeredCount=ans.filter(value=>value!==undefined).length;
+      prog.style.width=(answeredCount/steps.length*100)+'%';
+      if(current)current.textContent=String(answeredCount);
       if(statusLabel)statusLabel.textContent='回答状況';
       if(quiz)quiz.dataset.question=String(i+1);
       if(stageNumber)stageNumber.textContent=String(i+1).padStart(2,'0');
       if(stageLabel)stageLabel.textContent='QUESTION';
-      if(stageIndex)stageIndex.style.setProperty('--quiz-progress',String((i+1)/steps.length));
+      if(stageIndex)stageIndex.style.setProperty('--quiz-progress',String(answeredCount/steps.length));
     }
     function finish(){
       steps.forEach(s=>s.classList.remove('on'));prog.style.width='100%';
@@ -10021,6 +10713,13 @@
       toggle.setAttribute('aria-label',collapsed?'応募案内を表示':'応募案内を収納');
       syncPosition();
     });
+    const entry=document.getElementById('entry');
+    if(entry&&'IntersectionObserver' in window){
+      const entryObserver=new IntersectionObserver(entries=>{
+        offer.classList.toggle('is-entry-hidden',entries[0].isIntersecting);
+      },{threshold:.12});
+      entryObserver.observe(entry);
+    }
     addEventListener('resize',syncPosition,{passive:true});
     syncPosition();
   })();
