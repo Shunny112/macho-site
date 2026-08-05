@@ -4219,7 +4219,7 @@
     flex-wrap:wrap;
     gap:0 .28em;
     margin:92px 0 0!important;
-    color:#aaaab0!important;
+    color:#85858b!important;
     font-size:clamp(45px,7.2vw,96px)!important;
     font-weight:700!important;
     line-height:1.05!important;
@@ -5688,21 +5688,10 @@
     body#machoRecruit .sec-tag{margin-bottom:14px!important;font-size:12px!important}
   }
 
-  /* Representative and competition archive are two distinct chapters. */
-  body#machoRecruit .section-cut--representative{
-    position:relative;
-    z-index:3;
-    width:100%;
-    height:clamp(64px,9svh,96px);
-    background:#f5f5f7;
-  }
   body#machoRecruit #representative{scroll-margin-top:72px}
   body#machoRecruit #gallery{
     scroll-margin-top:72px;
     border-top:0!important;
-  }
-  @media(max-width:760px){
-    body#machoRecruit .section-cut--representative{height:42px}
   }
 
   /* Philosophy — remove the dark photo-on-photo composition and restore reading contrast. */
@@ -7570,14 +7559,21 @@
   body#machoRecruit #gallery #realTitle{
     line-height:.96!important;
   }
+  body#machoRecruit #gallery .real-head{
+    grid-template-columns:minmax(0,1fr) 280px;
+  }
   body#machoRecruit #gallery #realTitle .real-title-line{white-space:nowrap}
   body#machoRecruit #gallery #realTitle .red::after{
-    bottom:.12em!important;
-    height:4px!important;
+    display:none!important;
+    content:none!important;
   }
   @media(max-width:600px){
     body#machoRecruit #gallery .real-head{gap:12px}
     body#machoRecruit #gallery #realTitle{font-size:clamp(30px,10.5vw,44px)!important}
+  }
+  @media(max-width:900px){
+    body#machoRecruit #gallery .real-head{grid-template-columns:1fr}
+    body#machoRecruit #gallery .ui-nr__caption{grid-column:1}
   }
   body#machoRecruit #structure .earn-result strong.earn-result-singleline{
     max-width:none!important;
@@ -7650,7 +7646,7 @@
       min-height:94px!important;
     }
     body#machoRecruit #case .case-card .who{
-      font-size:12px!important;
+      font-size:14px!important;
     }
     body#machoRecruit #case .case-card .ph{
       font-size:14px!important;
@@ -9533,8 +9529,6 @@
   </div>
 </section>
 
-<div class="section-cut section-cut--representative" aria-hidden="true"></div>
-
 <!-- GALLERY : THE REAL — competition-stage carousel -->
 <section class="gallery ui-nr ui-nr--real" id="gallery" aria-labelledby="realTitle">
   <div class="real-aura" aria-hidden="true"><img id="realAuraImage" src="assets/img/bbj1.jpg" alt=""></div>
@@ -9543,9 +9537,6 @@
       <div class="real-head__copy">
         <span class="real-kicker">BEST BODY JAPAN 2025 / THE PROOF</span>
         <h2 class="ui-nr__title" id="realTitle">これが、<br class="title-break"><span class="real-title-line"><span class="red">本物</span>の証明。</span></h2>
-      </div>
-      <div class="real-head__result" aria-label="ベストボディジャパン2025 日本3位">
-        <span>JAPAN</span><strong>03</strong><small>PLACE</small>
       </div>
       <p class="ui-nr__caption">代表・河野泰佑。<b>MR.BEST BODY</b>に選出。鍛え抜いた身体を、6つの角度から。</p>
     </div>
@@ -9659,7 +9650,7 @@
         <span class="earn-axis">01 / PRODUCTIVITY</span>
         <div class="earn-source"><small>生産性報酬</small><strong>営業成果</strong></div>
         <span class="earn-arrow" aria-hidden="true"><i></i></span>
-        <div class="earn-result"><small>努力が安定報酬へ</small><strong class="earn-result-singleline">生産性に応じたベース給</strong><p>生産性に応じた安定報酬。営業実績に応じて基本給が積み上がる、<br class="copy-break">頑張った分だけ伸びる給与体系。</p></div>
+        <div class="earn-result"><small>努力が安定報酬へ</small><strong class="earn-result-singleline">生産性に応じたベース給与</strong><p>生産性に応じた安定報酬。営業実績に応じて基本給が積み上がる、<br class="copy-break">頑張った分だけ伸びる給与体系。</p></div>
       </div>
       <div class="earn-card b reveal">
         <span class="earn-axis">02 / TOTAL SUPPORT</span>
@@ -10057,7 +10048,7 @@
         <details class="faq faq--order-1"><summary><span class="q"><b>Q</b>未経験でも応募できますか？</span><span class="ic">＋</span></summary><div class="a">もちろんOKです。むしろ未経験スタートが大多数。営業も筋トレもイチから育てる仕組みがあり、元飲食・元フリーター・元個人事業主など様々な経歴の仲間が活躍しています。</div></details>
         <details class="faq faq--order-3"><summary><span class="q"><b>Q</b>学生や副業でも働けますか？</span><span class="ic">＋</span></summary><div class="a">土日稼働のみで月25万円を達成している現役インターンもいます。稼働日数は週1〜週5から相談可能。まずはあなたの状況をLINEで聞かせてください。</div></details>
         <details class="faq faq--order-5"><summary><span class="q"><b>Q</b>勤務地はどこですか？</span><span class="ic">＋</span></summary><div class="a">東京・渋谷を拠点に活動しています。詳細な勤務条件は、面談であなたの希望を聞きながらご案内します。</div></details>
-        <details class="faq faq--order-7"><summary><span class="q"><b>Q</b>給与はどのくらいですか？</span><span class="ic">＋</span></summary><div class="a">生産性に応じたベース給＋インセンティブ。営業半年で月収50万円の例、土日のみ稼働で月25万円の例もあります（成果には個人差があります）。詳しくは面談で。</div></details>
+        <details class="faq faq--order-7"><summary><span class="q"><b>Q</b>給与はどのくらいですか？</span><span class="ic">＋</span></summary><div class="a">生産性に応じたベース給与＋インセンティブ。営業半年で月収50万円の例、土日のみ稼働で月25万円の例もあります（成果には個人差があります）。詳しくは面談で。</div></details>
       </div>
       <div class="faq-column">
         <details class="faq faq--order-2 faq--compact-hide"><summary><span class="q"><b>Q</b>筋トレ初心者なんですが大丈夫？</span><span class="ic">＋</span></summary><div class="a">全く問題ありません。ジム代は会社がサポートするので、好きな24時間ジムで無理なく始められます。合同トレーニングで仲間と一緒に、器具の使い方から食事まで先輩がサポートします。</div></details>
