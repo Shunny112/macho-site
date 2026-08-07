@@ -31,8 +31,8 @@
     addEventListener('pageshow',()=>requestAnimationFrame(resetToTop),{once:true});
   })();
 </script>
-<title>MACHO RECRUIT｜筋肉採用 - 株式会社アクタル（ACT-R）</title>
-<meta name="description" content="筋肉が、稼ぐ力になる。科学的根拠に基づく、新しい採用革命。営業成績に応じてウェア・サプリ・ギアが支給される、日本一マッチョが多い営業会社。株式会社アクタル MACHO RECRUIT。">
+<title>MACHO RECRUIT｜筋肉採用 - 株式会社ACT-R</title>
+<meta name="description" content="筋肉が、稼ぐ力になる。科学的根拠に基づく、新しい採用革命。営業成績に応じてウェア・サプリ・ギアが支給される、日本一マッチョが多い営業会社。株式会社ACT-R MACHO RECRUIT。">
 <!-- OGP / Twitter（SNSシェア時の見栄え） -->
 <meta property="og:title" content="MACHO RECRUIT｜筋肉採用 - 株式会社ACT-R">
 <meta property="og:description" content="筋肉が、稼ぐ力になる。未経験OK・ジム代サポート・ウェア&サプリ支給。鍛えながら稼ぐ、新しい働き方。">
@@ -4024,7 +4024,7 @@
     transition:transform 1.4s cubic-bezier(.16,1,.3,1),filter .6s ease;
   }
   #reasons .reason.is-current .reason-media img{transform:scale(1)}
-  #reasons .reason--athlete .reason-media img{object-position:center 32%;filter:grayscale(1) contrast(1.1)}
+  #reasons .reason--athlete .reason-media img{object-position:center 18%;filter:grayscale(1) contrast(1.1)}
   body#machoRecruit #reasons .reason--gear{background:#161616!important}
   #reasons .reason--gear .reason-media{order:-1}
   #reasons .reason--gear .reason-media img{object-position:center 48%;filter:saturate(.78) contrast(1.04)}
@@ -6943,7 +6943,7 @@
   body#machoRecruit #roadmap .road{
     position:relative!important;
     display:grid!important;
-    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) 1.22fr!important;
     grid-template-rows:1fr!important;
     gap:clamp(14px,1.8vw,28px)!important;
     margin-top:0!important;
@@ -6955,7 +6955,7 @@
     position:absolute;
     z-index:0;
     top:34px;
-    left:12.5%;
+    left:9%;
     right:8px;
     height:3px;
     background:linear-gradient(90deg,#8b0715 0%,#d20a1e 42%,#ff5968 100%);
@@ -7048,6 +7048,43 @@
   body#machoRecruit #roadmap .road-step:nth-child(4) .no{border-color:#fff!important;background:#d20a1e!important;box-shadow:inset 0 0 0 9px #d20a1e,inset 0 0 0 10px rgba(255,255,255,.42),0 0 0 7px #080809!important}
   body#machoRecruit #roadmap .road-step:nth-child(4) .road-summary{color:rgba(255,255,255,.82)!important}
 
+  /* 5つ目：04の次に置く最終目標。同じ並びのまま見た目だけ差別化する */
+  body#machoRecruit #roadmap .road-step.road-goal{
+    border-color:rgba(255,89,104,.7)!important;
+    background:linear-gradient(180deg,transparent 0 72px,#1a0509 72px,#0b0b0d 100%)!important;
+    box-shadow:0 0 0 1px rgba(255,89,104,.16),0 22px 60px rgba(210,10,30,.26)!important
+  }
+  body#machoRecruit #roadmap .road-step.road-goal .no{
+    width:76px!important;
+    height:76px!important;
+    border:0!important;
+    background:radial-gradient(circle at 38% 32%,#ff5968 0%,#d20a1e 48%,#8b0715 100%)!important;
+    font-size:14px!important;
+    letter-spacing:.14em!important;
+    box-shadow:0 0 0 8px #080809,0 0 46px rgba(210,10,30,.55)!important
+  }
+  body#machoRecruit #roadmap .road-step.road-goal .when{
+    justify-self:center!important;
+    margin:22px 0 0!important;
+    padding:5px 13px!important;
+    border:1px solid rgba(255,89,104,.55)!important;
+    color:#ff8b96!important;
+    font-size:10px!important;
+    letter-spacing:.26em!important
+  }
+  body#machoRecruit #roadmap .road-step.road-goal h4{
+    margin:12px 0 0!important;
+    font-size:clamp(22px,2.1vw,30px)!important;
+    line-height:1.24!important;
+    letter-spacing:-.02em!important
+  }
+  body#machoRecruit #roadmap .road-step.road-goal .road-goal-em{color:#ff5968!important}
+  body#machoRecruit #roadmap .road-step.road-goal .road-summary{
+    margin-top:16px!important;
+    color:#cfcfd4!important;
+    font-size:12.5px!important
+  }
+
   html.motion-enabled body#machoRecruit #roadmap .road::before{transform:scaleX(0)}
   html.motion-enabled body#machoRecruit #roadmap .road-step{opacity:0!important;transform:translateY(34px)!important}
   html.motion-enabled body#machoRecruit #roadmap.motion-in .road::before{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.16,1,.3,1)!important}
@@ -7055,6 +7092,7 @@
   html.motion-enabled body#machoRecruit #roadmap.motion-in .road-step:nth-child(2){transition-delay:.12s!important}
   html.motion-enabled body#machoRecruit #roadmap.motion-in .road-step:nth-child(3){transition-delay:.24s!important}
   html.motion-enabled body#machoRecruit #roadmap.motion-in .road-step:nth-child(4){transition-delay:.36s!important}
+  html.motion-enabled body#machoRecruit #roadmap.motion-in .road-step:nth-child(5){transition-delay:.48s!important}
 
   body#machoRecruit #news{
     padding:104px 0 112px!important;
@@ -7343,6 +7381,17 @@
     body#machoRecruit #roadmap .road-step h4{grid-column:1!important;grid-row:2!important;margin:8px 0 0!important;font-size:22px!important}
     body#machoRecruit #roadmap .road-step .road-summary{grid-column:1!important;grid-row:3!important;margin:12px 0 0!important;font-size:12px!important;line-height:1.75!important}
     body#machoRecruit #roadmap .road-step:nth-child(4){min-height:0!important;margin-top:0!important;padding:22px 22px 24px!important;background:linear-gradient(145deg,#d20a1e,#a80416)!important}
+    body#machoRecruit #roadmap .road-step.road-goal{
+      padding:22px 22px 24px!important;
+      background:radial-gradient(160px 160px at 92% 6%,rgba(210,10,30,.4),rgba(210,10,30,0) 72%),linear-gradient(150deg,#1a0509 0%,#0b0b0d 60%)!important
+    }
+    body#machoRecruit #roadmap .road-step.road-goal .no{
+      width:54px!important;height:54px!important;
+      font-size:11px!important;
+      box-shadow:0 0 34px rgba(210,10,30,.55)!important
+    }
+    body#machoRecruit #roadmap .road-step.road-goal .when{justify-self:start!important;margin:0!important}
+    body#machoRecruit #roadmap .road-step.road-goal h4{font-size:22px!important}
     html.motion-enabled body#machoRecruit #roadmap .road::before{transform:scaleY(0)}
     html.motion-enabled body#machoRecruit #roadmap.motion-in .road::before{transform:scaleY(1)}
   }
@@ -7916,6 +7965,84 @@
     filter:grayscale(.04) saturate(var(--hero-film-saturation)) contrast(1.12) brightness(var(--hero-film-brightness))!important;
     will-change:transform,clip-path,filter;
   }
+  body#machoRecruit .hero-photo-slider{
+    background:#000;
+    clip-path:none!important;
+    -webkit-mask-image:linear-gradient(90deg,
+      transparent calc(var(--hero-reveal-left) - 11%),
+      #000 calc(var(--hero-reveal-left) + 11%));
+    mask-image:linear-gradient(90deg,
+      transparent calc(var(--hero-reveal-left) - 11%),
+      #000 calc(var(--hero-reveal-left) + 11%));
+    -webkit-mask-repeat:no-repeat;
+    mask-repeat:no-repeat;
+    will-change:transform,filter,-webkit-mask-image,mask-image;
+  }
+  body#machoRecruit .hero-photo-slide{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    margin:0;
+    overflow:hidden;
+    opacity:0;
+    filter:blur(3px) brightness(.86);
+    pointer-events:none;
+    transition:
+      opacity 2.1s cubic-bezier(.4,0,.2,1),
+      filter 2.1s cubic-bezier(.4,0,.2,1);
+  }
+  body#machoRecruit .hero-photo-slide.is-leaving{z-index:1;opacity:0;filter:blur(2px) brightness(.9)}
+  body#machoRecruit .hero-photo-slide.is-active{z-index:2;opacity:1;filter:blur(0) brightness(1)}
+  body#machoRecruit .hero-photo-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scale(1.055);
+    transition:transform 7s cubic-bezier(.2,.65,.25,1);
+  }
+  body#machoRecruit .hero-photo-slide.is-active img{transform:scale(1)}
+  body#machoRecruit .hero-photo-slide.is-leaving img{transform:scale(1.018)}
+  body#machoRecruit .hero-photo-slide--front img{object-position:center 25%}
+  body#machoRecruit .hero-photo-slide--ceo img{object-position:center 24%}
+  body#machoRecruit .hero-photo-slide--side img{object-position:center 18%}
+  body#machoRecruit .hero-slider-nav{
+    position:absolute;
+    z-index:5;
+    top:34px;
+    right:5vw;
+    display:flex;
+    gap:9px;
+  }
+  body#machoRecruit .hero-slider-nav button{
+    position:relative;
+    width:48px;
+    height:22px;
+    padding:0;
+    overflow:hidden;
+    border:0;
+    background:transparent;
+    cursor:pointer;
+  }
+  body#machoRecruit .hero-slider-nav button::before,
+  body#machoRecruit .hero-slider-nav button::after{
+    content:"";
+    position:absolute;
+    top:10px;
+    right:0;
+    left:0;
+    height:2px;
+    background:rgba(255,255,255,.34);
+  }
+  body#machoRecruit .hero-slider-nav button::after{
+    background:#fff;
+    transform:scaleX(0);
+    transform-origin:left;
+  }
+  body#machoRecruit .hero-slider-nav button.is-active::after{animation:heroSlideProgress 5.8s linear forwards}
+  body#machoRecruit .hero-slider-nav button:hover::before,
+  body#machoRecruit .hero-slider-nav button:focus-visible::before{background:rgba(255,255,255,.72)}
+  body#machoRecruit .hero-slider-nav button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  @keyframes heroSlideProgress{to{transform:scaleX(1)}}
   body#machoRecruit .hero-cinematic-shade{
     position:absolute;
     inset:0;
@@ -8174,6 +8301,12 @@
     body#machoRecruit .hero .apple-hero-copy h1{
       font-size:clamp(58px,14.5vw,68px)!important
     }
+    body#machoRecruit .hero-photo-slide--front img{object-position:54% 22%}
+    body#machoRecruit .hero-photo-slide--ceo img{object-position:51% 18%}
+    body#machoRecruit .hero-photo-slide--side img{object-position:55% 16%}
+    body#machoRecruit .hero-photo-slider{-webkit-mask-image:none;mask-image:none}
+    body#machoRecruit .hero-slider-nav{top:22px;right:20px;gap:6px}
+    body#machoRecruit .hero-slider-nav button{width:34px}
     body#machoRecruit .hero-impact{padding:24px}
     body#machoRecruit .hero-impact p{margin-bottom:14px;font-size:10px;letter-spacing:.11em}
     body#machoRecruit .hero-impact strong{
@@ -8225,6 +8358,9 @@
     body#machoRecruit .hero-scroll-stage{height:auto}
     body#machoRecruit .hero-scroll-stage .hero{position:relative!important;top:0}
     body#machoRecruit .hero-film{transform:none!important;filter:none!important;will-change:auto}
+    body#machoRecruit .hero-photo-slide{transition:none!important}
+    body#machoRecruit .hero-photo-slide img{transform:none!important;transition:none!important}
+    body#machoRecruit .hero-slider-nav button.is-active::after{animation:none;transform:scaleX(1)}
     body#machoRecruit .hero-cinematic-shade{opacity:1;will-change:auto}
     body#machoRecruit .hero-impact,
     body#machoRecruit .hero-stage-flare{display:none}
@@ -8923,10 +9059,10 @@
 <body class="intro-active" id="machoRecruit">
 
 <!-- OPENING — screenshot-inspired cinematic first frame -->
-<div class="site-intro" id="siteIntro" role="dialog" aria-modal="true" aria-label="株式会社アクタル 採用サイト オープニング">
+<div class="site-intro" id="siteIntro" role="dialog" aria-modal="true" aria-label="株式会社ACT-R 採用サイト オープニング">
   <img class="site-intro__figure" src="assets/img/bbj1.jpg" alt="大会に出場する鍛え上げた社員">
   <div class="site-intro__copy">
-    <p class="site-intro__eyebrow">株式会社アクタル｜採用サイト</p>
+    <p class="site-intro__eyebrow">株式会社ACT-R｜採用サイト</p>
     <h1>鍛えた身体を、<br><em>稼ぐ力へ。</em></h1>
     <p class="site-intro__tagline">TRAIN. WORK. WIN.</p>
     <div class="site-intro__recruit"><strong>2026年度 採用受付中</strong><span>営業職</span><span>未経験可</span></div>
@@ -9116,14 +9252,27 @@
   </div>
 </header>
 
-<!-- HERO — full-bleed film with a red recruiting identity -->
+<!-- HERO — full-bleed photo story with a red recruiting identity -->
 <div class="hero-scroll-stage" id="top">
 <section class="hero">
-  <video class="hero-film" autoplay muted loop playsinline preload="metadata" poster="assets/img/bbj5.jpg">
-    <source src="assets/video/train-raw.mp4" type="video/mp4">
-  </video>
+  <div class="hero-film hero-photo-slider" id="heroPhotoSlider" aria-hidden="true">
+    <figure class="hero-photo-slide hero-photo-slide--front is-active">
+      <img src="assets/img/taisuke-kono-stage-front.jpg" alt="" fetchpriority="high" decoding="async">
+    </figure>
+    <figure class="hero-photo-slide hero-photo-slide--ceo">
+      <img src="assets/img/taisuke-kono-ceo.jpg" alt="" decoding="async">
+    </figure>
+    <figure class="hero-photo-slide hero-photo-slide--side">
+      <img src="assets/img/taisuke-kono-stage-side.jpg" alt="" decoding="async">
+    </figure>
+  </div>
   <div class="hero-cinematic-shade" aria-hidden="true"></div>
   <div class="hero-stage-flare" aria-hidden="true"></div>
+  <div class="hero-slider-nav" id="heroSliderNav" role="group" aria-label="トップ写真を切り替える">
+    <button class="is-active" type="button" aria-label="大会ステージの写真を表示" aria-pressed="true"></button>
+    <button type="button" aria-label="代表ポートレートを表示" aria-pressed="false"></button>
+    <button type="button" aria-label="大会ステージの別アングルを表示" aria-pressed="false"></button>
+  </div>
   <div class="hero-in wrap">
     <div class="apple-hero-copy">
       <h1 aria-label="鍛えた身体を、稼ぐ力へ。">
@@ -9140,6 +9289,60 @@
   </div>
 </section>
 </div>
+<script>
+  (function(){
+    const slider=document.getElementById('heroPhotoSlider');
+    const nav=document.getElementById('heroSliderNav');
+    if(!slider||!nav)return;
+    const slides=[...slider.querySelectorAll('.hero-photo-slide')];
+    const buttons=[...nav.querySelectorAll('button')];
+    const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let active=0,timer=0,started=false,inView=true;
+
+    function activate(index,userInitiated){
+      const previous=active;
+      active=(index+slides.length)%slides.length;
+      slides.forEach((slide,i)=>{
+        slide.classList.toggle('is-active',i===active);
+        slide.classList.toggle('is-leaving',i===previous&&i!==active);
+      });
+      buttons.forEach((button,i)=>{
+        const selected=i===active;
+        button.classList.toggle('is-active',selected);
+        button.setAttribute('aria-pressed',String(selected));
+      });
+      if(userInitiated)schedule();
+    }
+    function schedule(){
+      clearTimeout(timer);
+      if(reduce||document.hidden||!inView||!started)return;
+      timer=window.setTimeout(()=>{activate(active+1,false);schedule()},5800);
+    }
+    function start(){
+      if(started)return;
+      started=true;
+      schedule();
+    }
+
+    buttons.forEach((button,index)=>button.addEventListener('click',()=>activate(index,true)));
+    document.addEventListener('visibilitychange',schedule);
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(entries=>{
+        inView=entries[0].isIntersecting;
+        schedule();
+      },{threshold:.1}).observe(slider);
+    }
+    if(document.body.classList.contains('hero-ready'))start();
+    else{
+      const readyObserver=new MutationObserver(()=>{
+        if(!document.body.classList.contains('hero-ready'))return;
+        readyObserver.disconnect();
+        start();
+      });
+      readyObserver.observe(document.body,{attributes:true,attributeFilter:['class']});
+    }
+  })();
+</script>
 <div class="hero-energy-bridge" aria-hidden="true"><i></i></div>
 <aside class="apple-hero-offer hero-offer-fixed" id="heroOffer" aria-label="応募案内">
   <button class="hero-offer-toggle" id="heroOfferToggle" type="button" aria-expanded="true" aria-controls="heroOfferContent" aria-label="応募案内を収納">
@@ -9393,8 +9596,8 @@
     </div>
     <div class="phi">
       <figure class="phi-figure reveal">
-        <img src="assets/img/bbj4.jpg" alt="Best Body Japan 2025に出場した代表・河野泰佑">
-        <figcaption><b>TAISUKE KONO</b><span>代表取締役 / BEST BODY JAPAN 2025</span></figcaption>
+        <img src="assets/img/taisuke-kono-ceo.jpg" alt="株式会社ACT-R代表取締役・河野泰佑のポートレート" loading="lazy" decoding="async">
+        <figcaption><b>TAISUKE KONO</b><span>代表取締役 / CEO &amp; ATHLETE</span></figcaption>
       </figure>
       <div class="phi-content">
         <div class="phi-left reveal">
@@ -9475,7 +9678,7 @@
             <p>2025年、日本大会3位。誰かの成功談ではなく、代表・河野泰佑自身が競技を続けています。</p>
             <strong class="reason-fact"><span>BEST BODY JAPAN 2025</span>日本3位</strong>
           </div>
-          <figure class="reason-media"><img src="assets/img/bbj1.jpg" alt="Best Body Japan 2025に出場した代表・河野泰佑" loading="lazy"></figure>
+          <figure class="reason-media"><img src="assets/img/taisuke-kono-stage-side.jpg" alt="Best Body Japanのステージに立つ代表・河野泰佑" loading="lazy" decoding="async"></figure>
         </article>
         <article class="reason reason--gear">
           <div class="reason-copy">
@@ -9509,7 +9712,7 @@
 <!-- REPRESENTATIVE × 超人気ブランド AUTHORITY -->
 <section id="representative">
   <div class="rep-stage">
-    <img class="rep-photo" src="assets/img/bbj1.jpg" alt="Best Body Japan 2025のステージに立つ代表・河野泰佑" loading="lazy">
+    <img class="rep-photo" src="assets/img/taisuke-kono-stage-front.jpg" alt="Best Body Japanのステージで1位のバッジを着ける代表・河野泰佑" loading="lazy" decoding="async">
     <div class="rep-rank" aria-hidden="true"><span>THE</span><strong>REAL</strong><small>ONE</small></div>
     <div class="rep-copy reveal">
       <span class="rep-kicker">REPRESENTATIVE / TAISUKE KONO</span>
@@ -9538,7 +9741,7 @@
         <span class="real-kicker">BEST BODY JAPAN 2025 / THE PROOF</span>
         <h2 class="ui-nr__title" id="realTitle">これが、<br class="title-break"><span class="real-title-line"><span class="red">本物</span>の証明。</span></h2>
       </div>
-      <p class="ui-nr__caption">代表・河野泰佑。<b>MR.BEST BODY</b>に選出。鍛え抜いた身体を、6つの角度から。</p>
+      <p class="ui-nr__caption">代表・河野泰佑。<b>MR.BEST BODY JAPAN 日本3位獲得。</b>鍛え抜いた身体を、6つの角度から。</p>
     </div>
     <div class="ui-nr__scroll reveal" id="realScroller" tabindex="0" aria-label="大会写真6枚。横にスクロールできます">
       <article class="ui-nr__card is-active" tabindex="0" aria-label="1枚目 フロントポーズ" style="--i:0;--c1:#e94560;--c2:#0f3460">
@@ -9931,13 +10134,14 @@
     <div class="sec-head reveal">
       <span class="sec-tag">成長ロードマップ</span>
       <h2>成長<span class="red">ロードマップ。</span></h2>
-      <p>実績をつくる。発信する。仲間を増やす。2027年4月、150人の組織へ。</p>
+      <p>実績をつくる。発信する。仲間を増やす。2027年4月、150人の組織へ。そして、その先へ。</p>
     </div>
-    <div class="road" aria-label="2026年4月から2027年4月までの成長ロードマップ">
+    <div class="road" aria-label="2026年4月から2027年4月までの成長ロードマップと、その先の最終目標">
       <article class="road-step reveal"><div class="when">2026年 4〜6月</div><div class="no">01</div><h4>実績をつくる</h4><p class="road-summary">集客と広告を始め、合同トレーニングとイベントで実績を積み上げる。</p></article>
       <article class="road-step reveal"><div class="when">2026年 7〜9月</div><div class="no">02</div><h4>SNSで広げる</h4><p class="road-summary">Vlogや口コミで活動を発信し、認知とフォロワーを増やす。</p></article>
       <article class="road-step reveal"><div class="when">2026年 10〜12月</div><div class="no">03</div><h4>100人を採用する</h4><p class="road-summary">採用フローとチームの文化を固め、100人の組織へ成長する。</p></article>
       <article class="road-step reveal"><div class="when">2027年 4月</div><div class="no">04</div><h4>150人の組織へ</h4><p class="road-summary">YouTuberや地上波へ活動を広げ、日本一マッチョが多い営業会社を目指す。</p></article>
+      <article class="road-step road-goal reveal"><div class="when">BEYOND 2027</div><div class="no">GOAL</div><h4>筋肉 × 営業で、<span class="road-goal-em">日本の国力向上</span>へ。</h4><p class="road-summary">「筋肉 × 営業」を日本の当たり前に。働く人が強くなれば、企業も、この国も強くなる。</p></article>
     </div>
   </div>
 </section>
@@ -10070,7 +10274,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>NEWS<span class="red">.</span></h2>
-      <p>株式会社アクタルと、代表・河野泰佑の最新の挑戦。公式SNSと連動して更新しています。</p>
+      <p>株式会社ACT-Rと、代表・河野泰佑の最新の挑戦。公式SNSと連動して更新しています。</p>
     </div>
 
     <!-- 会社からの文章（act-r-inc.com の告知と連動） -->
@@ -10078,17 +10282,17 @@
       <div class="nf-top">
         <span class="nf-tag">NEWS</span>
         <span class="nf-date">2026.07.17</span>
-        <span class="nf-src">株式会社アクタル 公式発表</span>
+        <span class="nf-src">株式会社ACT-R 公式発表</span>
       </div>
       <h3><span class="apf">APF VISIONARY TRYOUT CUP 2026</span><br class="title-break keep-mobile">「ドラフトトライアウト」に、企業として<em>参画決定</em>。</h3>
       <p class="nf-body">
-        株式会社アクタルは、2026年8月15日に開催される「<span class="apf">APF VISIONARY TRYOUT CUP 2026</span> ドラフトトライアウト」に、企業として参画することが決定しました。
+        株式会社ACT-Rは、2026年8月15日に開催される「<span class="apf">APF VISIONARY TRYOUT CUP 2026</span> ドラフトトライアウト」に、企業として参画することが決定しました。
         鍛え抜かれた身体と成果でキャリアを切り拓く挑戦者たちの舞台へ——「筋肉 × 営業」で人生を変える私たちの想いを、この場からも発信していきます。
       </p>
       <div class="nf-meta">
         <span>大会：<b>APF VISIONARY TRYOUT CUP 2026</b></span>
         <span>開催：<b>2026.8.15</b></span>
-        <span>参画：<b>株式会社アクタル</b></span>
+        <span>参画：<b>株式会社ACT-R</b></span>
       </div>
       <a class="nf-link" href="https://act-r-inc.com/" target="_blank" rel="noopener">会社公式サイトで告知を見る →</a>
     </div>
@@ -10247,7 +10451,7 @@
         <p>筋肉が、稼ぐ力になる。科学的根拠に基づく、新しい採用革命。日本一マッチョが多い営業会社へ。</p>
       </div>
       <div class="foot-info">
-        <b><a class="xlink actr-link" style="color:inherit" href="#" target="_blank" rel="noopener">株式会社アクタル（ACT-R）</a></b><br>
+        <b><a class="xlink actr-link" style="color:inherit" href="#" target="_blank" rel="noopener">株式会社ACT-R</a></b><br>
         代表取締役：河野 泰佑<br>
         オフィシャルスポンサー：<a class="xlink" style="color:inherit" target="_blank" rel="noopener">超人気ブランド</a><br>
         ジム代：会社がサポート
@@ -10271,14 +10475,14 @@
      - RECRUIT_EMAIL : 任意。LINEが開けない端末向けの mailto フォールバック先。
      - TEL_NUMBER    : 任意。電話応募番号（無ければ空でボタン非表示）。
      ========================================================================= */
-  const LINE_URL      = "https://s.lmes.jp/landing-qr/2007637021-vnPn7KAp?uLand=heXWbj";  // ★公式LINE 友だち追加URL
+  const LINE_URL      = "https://s.lmes.jp/landing-qr/2007637021-vnPn7KAp?uLand=kb7B0B";  // ★公式LINE 友だち追加URL
   const FORM_ENDPOINT = "";                         // 任意：Formspree等のID。LINE_URL併用時はバックアップ保存に使われます
   const RECRUIT_EMAIL = "recruit@act-r.example";    // 任意：mailtoフォールバック先（LINEが開けない端末用）
   const TEL_NUMBER    = "";                         // 任意：電話応募番号（例 "03-1234-5678"）
-  const ACTR_URL      = "https://act-r-inc.com/";   // ★株式会社アクタル（ACT-R）の会社HP
+  const ACTR_URL      = "https://act-r-inc.com/";   // ★株式会社ACT-Rの会社HP
   const ANALYTICS_ID  = "G-R41E77ZRR8";             // GA4測定ID
 
-  // 「アクタル（ACT-R）」表記を会社HPへリンク（未設定ならクリックを無効化）
+  // 「株式会社ACT-R」表記を会社HPへリンク（未設定ならクリックを無効化）
   (function(){
     document.querySelectorAll('.actr-link').forEach(el=>{
       if(ACTR_URL){ el.href=ACTR_URL; }
