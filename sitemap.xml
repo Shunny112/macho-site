@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ★独自ドメイン https://macho-recruit.com/ に統一済み。
+    ドメインを変更する場合は index.html の canonical / og:url / JSON-LD、
+    robots.txt の Sitemap 行も同時に置換すること。
+  ★<lastmod> はページを更新するたびに手で書き換えます（YYYY-MM-DD）。
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://macho-recruit.com/</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
