@@ -7233,6 +7233,17 @@
     color:#111;font-size:13px;font-weight:700;text-decoration:none;border-bottom:1px solid #111;
     padding-bottom:2px;transition:.18s}
   .upd-link:hover{color:var(--red);border-bottom-color:var(--red)}
+  .upd-main.has-fig{display:grid;grid-template-columns:minmax(0,1fr) 264px;gap:0 30px;align-items:start}
+  .upd-main.has-fig>:not(.upd-figure){grid-column:1}
+  .upd-figure{grid-column:2;grid-row:1/span 99;margin:0}
+  .upd-figure img{display:block;width:100%;height:auto;border-radius:12px;
+    background:#ececeb;box-shadow:0 8px 24px rgba(0,0,0,.10)}
+  .upd-figure figcaption{margin-top:8px;color:#8a8d93;font-size:11px;line-height:1.6}
+  @media(max-width:900px){
+    .upd-main.has-fig{grid-template-columns:1fr;gap:0}
+    .upd-main.has-fig>:not(.upd-figure){grid-column:1}
+    .upd-figure{grid-column:1;grid-row:auto;margin:0 0 16px;max-width:420px}
+  }
   .upd-embed{position:relative;width:100%;max-width:680px;aspect-ratio:16/9;margin-top:18px;
     border-radius:14px;overflow:hidden;background:#000}
   .upd-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -10688,7 +10699,12 @@
             <span class="upd-date">2026.09.03</span>
             <span class="upd-src">株式会社ACT-R 公式サイト</span>
           </div>
-          <div class="upd-main">
+          <div class="upd-main has-fig">
+            <figure class="upd-figure">
+              <img src="assets/img/news-meguri.jpg" width="805" height="900" loading="lazy" decoding="async"
+                   alt="福利厚生「MEGURI」のリカバリーアイテムと、株式会社ACT-R代表・河野泰佑">
+              <figcaption>社員に支給するMEGURIのリカバリーアイテム</figcaption>
+            </figure>
             <h4 class="upd-title">健康を支える福利厚生<em>「MEGURI」</em>の提供を開始しました。</h4>
             <p class="upd-body">
               仕事で成果を出し続けるために欠かせないのは、日々のコンディションづくり。株式会社ACT-Rは、社員の健康とパフォーマンスを支える福利厚生として「MEGURI」の提供を開始しました。
@@ -10707,7 +10723,7 @@
             <span class="upd-src">Instagram ／ @japan_taisuke_tk</span>
           </div>
           <div class="upd-main">
-            <h4 class="upd-title">BEST BODY JAPAN 2026 <em>関東大会ファイナル</em>の公式フォトを公開。</h4>
+            <h4 class="upd-title">ベストボディ・ジャパン2026関東大会 ベストボディ部門ミドルクラスにて<br class="title-break">代表 河野泰佑が<em>優勝</em>しました。</h4>
             <p class="upd-body">
               代表・河野泰佑がベストボディ・ジャパン2026 関東大会ファイナルに出場。その公式フォトをInstagramで公開しました。
               「減量期に得た、食事・トレーニング・睡眠のルーティンは、オフ期も生活の仕方として活かせる。ただの大会に向けた減量期で終わらせない」——
@@ -10744,7 +10760,12 @@
             <span class="upd-date">2026.07.30</span>
             <span class="upd-src">PR TIMES 掲載</span>
           </div>
-          <div class="upd-main">
+          <div class="upd-main has-fig">
+            <figure class="upd-figure">
+              <img src="assets/img/news-prtimes.jpg" width="1000" height="666" loading="lazy" decoding="async"
+                   alt="ベストボディ・ジャパンの表彰ステージに立つ株式会社ACT-R代表・河野泰佑">
+              <figcaption>プレスリリース掲載写真（PR TIMES）</figcaption>
+            </figure>
             <h4 class="upd-title"><em>「マッチョ採用」</em>で年内100名採用へ。ジム・サプリ・ウェアを無償支給。</h4>
             <p class="upd-body">
               株式会社ACT-Rは、採用ブランディング「マッチョ採用（筋肉採用）」の本格開始をPR TIMESで発表しました。営業職を対象に、ジム利用料・トレーニングサプリメント・トレーニングウェアを段階的に無償提供。参画後は、実績や希望、適性に応じて正社員登用も行います。
