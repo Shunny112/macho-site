@@ -840,7 +840,8 @@
   .sns-head h3{font-family:"Anton";font-size:clamp(20px,3.4vw,30px);color:#16171b}
   .sns-head h3 .x{color:var(--red)}
   .sns-head p{color:#5e6168;font-size:14px}
-  .sns-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+  .sns-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;align-items:start}
+  @media(max-width:1080px){.sns-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .sns-col{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:18px;
     box-shadow:0 6px 22px rgba(0,0,0,.06);padding:20px 20px 16px;min-height:220px}
   .sns-col .sc-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
@@ -7195,6 +7196,58 @@
   body#machoRecruit #news .nf-link{width:max-content!important;margin-top:24px!important;color:#111!important;font-size:13px!important;border-bottom:1px solid #111!important}
   body#machoRecruit #news .nf-link:hover{color:#d20a1e!important;border-bottom-color:#d20a1e!important}
 
+  /* ===== UPDATES：X欄の下に置く「最新情報コラム」 ===== */
+  .updates{margin-top:66px}
+  .upd-head{display:flex;align-items:baseline;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+  .upd-head h3{font-family:"Anton";font-size:clamp(20px,3.4vw,30px);color:#16171b}
+  .upd-head h3 .red{color:var(--red)}
+  .upd-head p{color:#5e6168;font-size:14px}
+  .upd-follow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 26px}
+  .upd-follow .uf-label{color:#8a8d93;font-size:12px;font-weight:700;letter-spacing:.06em;margin-right:2px}
+  .upd-follow .uf-btn{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;
+    background:#fff;border:1px solid rgba(0,0,0,.16);color:#16171b;font-size:13px;font-weight:700;
+    text-decoration:none;transition:.18s}
+  .upd-follow .uf-btn:hover{transform:translateY(-2px);border-color:var(--red);color:var(--red);
+    box-shadow:0 6px 18px rgba(0,0,0,.08)}
+  .upd-follow .uf-ico{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;flex:none;
+    background:#111;color:#fff;font-family:"Anton",sans-serif;font-size:13px;line-height:1}
+  .upd-follow .uf-yt .uf-ico{background:#d20a1e;font-size:11px}
+  .upd-follow .uf-ig .uf-ico{background:linear-gradient(45deg,#f9a03f,#e1306c 55%,#8134af)}
+  .upd-head p b{color:var(--red);font-weight:800}
+  @media(max-width:760px){.upd-follow .uf-label{width:100%;margin-bottom:2px}}
+  .upd-list{border-top:2px solid #111}
+  .upd-item{display:grid;grid-template-columns:150px minmax(0,1fr);gap:0 40px;
+    padding:30px 0 32px;border-bottom:1px solid #d2d2ce}
+  .upd-item:last-child{border-bottom:1px solid #b9b9b5}
+  .upd-side{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .upd-tag{color:var(--red);font:800 11px/1 "Oswald",sans-serif;letter-spacing:.14em}
+  .upd-tag::before{content:"";display:inline-block;width:20px;height:3px;margin-right:9px;
+    background:var(--red);vertical-align:middle}
+  .upd-date{color:#111;font:700 20px/1.1 "Oswald",sans-serif;letter-spacing:-.01em}
+  .upd-src{color:#8a8d93;font-size:11px;line-height:1.6}
+  .upd-title{margin:0 0 10px;color:#16171b;font-size:clamp(17px,2.2vw,22px);
+    font-weight:800;line-height:1.45;letter-spacing:-.02em}
+  .upd-title em{font-style:normal;color:var(--red)}
+  .upd-body{color:#56565b;font-size:14px;line-height:1.95;font-weight:500;max-width:760px}
+  .upd-link{display:inline-flex;align-items:center;gap:8px;width:max-content;margin-top:16px;
+    color:#111;font-size:13px;font-weight:700;text-decoration:none;border-bottom:1px solid #111;
+    padding-bottom:2px;transition:.18s}
+  .upd-link:hover{color:var(--red);border-bottom-color:var(--red)}
+  .upd-embed{position:relative;width:100%;max-width:680px;aspect-ratio:16/9;margin-top:18px;
+    border-radius:14px;overflow:hidden;background:#000}
+  .upd-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  @media(max-width:760px){
+    .upd-item{grid-template-columns:1fr;gap:14px;padding:24px 0 26px}
+    .upd-side{flex-direction:row;align-items:center;gap:12px;flex-wrap:wrap}
+    .upd-src{width:100%}
+  }
+  /* machoRecruit テーマ側の !important 群に負けないよう同等の詳細度で固定 */
+  body#machoRecruit #news .upd-list{border-top:2px solid #111!important}
+  body#machoRecruit #news .upd-item{background:transparent!important;border-radius:0!important;
+    box-shadow:none!important;transform:none!important}
+  body#machoRecruit #news .upd-title{color:#111!important}
+  body#machoRecruit #news .upd-body{color:#56565b!important}
+
   @media(min-width:901px){
     body#machoRecruit #reasons{padding:92px 0 88px!important}
     body#machoRecruit #reasons>.wrap{max-width:none!important;padding-inline:0!important}
@@ -10543,7 +10596,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <h2>NEWS<span class="red">.</span></h2>
-      <p>株式会社ACT-Rと、代表・河野泰佑の最新の挑戦。公式SNSと連動して更新しています。</p>
+      <p>株式会社ACT-Rと、代表・河野泰佑の最新の挑戦。X・YouTube・Instagramで日々更新しています。</p>
     </div>
 
     <!-- 会社からの文章（act-r-inc.com の告知と連動） -->
@@ -10579,6 +10632,19 @@
             <div class="sc-name">河野 泰佑</div>
             <div class="sc-handle">@taisukessk_1125</div>
           </div>
+          <a class="sc-x" href="https://x.com/taisukessk_1125/status/2088842558990602696" target="_blank" rel="noopener" aria-label="河野泰佑のXを開く">X</a>
+        </div>
+        <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-align="center" data-width="100%">
+          <a class="tw-fallback" href="https://x.com/taisukessk_1125/status/2088842558990602696" target="_blank" rel="noopener"><b>河野泰佑の投稿を見る（X）</b><br>APF VISIONARY TRYOUT CUP 2026 ドラフトトライアウト 参加結果の報告 ▶</a>
+        </blockquote>
+      </div>
+      <div class="sns-col">
+        <div class="sc-head">
+          <div class="sc-ava">河</div>
+          <div>
+            <div class="sc-name">河野 泰佑</div>
+            <div class="sc-handle">@taisukessk_1125</div>
+          </div>
           <a class="sc-x" href="https://x.com/taisukessk_1125/status/2077955018024689905" target="_blank" rel="noopener" aria-label="河野泰佑のXを開く">X</a>
         </div>
         <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-align="center" data-width="100%">
@@ -10597,6 +10663,98 @@
         <blockquote class="twitter-tweet" data-theme="light" data-dnt="true" data-align="center" data-width="100%">
           <a class="tw-fallback" href="https://x.com/_visionary_2008/status/2077591956700766561" target="_blank" rel="noopener"><b>マッチョ介護の投稿を見る（X）</b><br>APF VISIONARY TRYOUT CUP 2026 関連の投稿 ▶</a>
         </blockquote>
+      </div>
+    </div>
+
+    <!-- ===== 最新情報コラム（プレス／SNS／動画の更新まとめ） ===== -->
+    <div class="updates reveal">
+      <div class="upd-head">
+        <h3>UPDATES<span class="red">.</span></h3>
+        <p>X・YouTube・Instagramで<b>日々更新中</b>。プレスリリース・動画・SNSでの発信を、新しい順にまとめています。</p>
+      </div>
+      <div class="upd-follow">
+        <span class="uf-label">日々の更新はこちら</span>
+        <a class="uf-btn uf-x" href="https://x.com/taisukessk_1125" target="_blank" rel="noopener"><span class="uf-ico">X</span>X（旧Twitter）</a>
+        <a class="uf-btn uf-yt" href="https://www.youtube.com/@actr0804channel" target="_blank" rel="noopener"><span class="uf-ico">▶</span>YouTube「ACT-Rの日常」</a>
+        <a class="uf-btn uf-ig" href="https://www.instagram.com/japan_taisuke_tk/" target="_blank" rel="noopener"><span class="uf-ico">◎</span>Instagram</a>
+      </div>
+
+      <div class="upd-list">
+
+        <!-- 2026.09.03 福利厚生 MEGURI -->
+        <article class="upd-item">
+          <div class="upd-side">
+            <span class="upd-tag">NEWS</span>
+            <span class="upd-date">2026.09.03</span>
+            <span class="upd-src">株式会社ACT-R 公式サイト</span>
+          </div>
+          <div class="upd-main">
+            <h4 class="upd-title">健康を支える福利厚生<em>「MEGURI」</em>の提供を開始しました。</h4>
+            <p class="upd-body">
+              仕事で成果を出し続けるために欠かせないのは、日々のコンディションづくり。株式会社ACT-Rは、社員の健康とパフォーマンスを支える福利厚生として「MEGURI」の提供を開始しました。
+              健康的な生活をサポートする商品を会社から支給することで、トレーニングと仕事を両立しながら、より長く活躍できる環境をつくっていきます。
+              社員の成長が、会社の成長につながる——職場環境だけでなく、一人ひとりの人生と健康まで応援できる会社を目指します。
+            </p>
+            <a class="upd-link" href="https://act-r-inc.com/%e5%81%a5%e5%ba%b7%e3%82%92%e6%94%af%e3%81%88%e3%82%8b%e7%a6%8f%e5%88%a9%e5%8e%9a%e7%94%9f%e3%80%8cmeguri%e3%80%8d%e6%8f%90%e4%be%9b%e9%96%8b%e5%a7%8b/" target="_blank" rel="noopener">会社公式サイトで詳しく見る →</a>
+          </div>
+        </article>
+
+        <!-- 2026.08.12 Instagram BBJ関東大会ファイナル -->
+        <article class="upd-item">
+          <div class="upd-side">
+            <span class="upd-tag">SNS</span>
+            <span class="upd-date">2026.08.12</span>
+            <span class="upd-src">Instagram ／ @japan_taisuke_tk</span>
+          </div>
+          <div class="upd-main">
+            <h4 class="upd-title">BEST BODY JAPAN 2026 <em>関東大会ファイナル</em>の公式フォトを公開。</h4>
+            <p class="upd-body">
+              代表・河野泰佑がベストボディ・ジャパン2026 関東大会ファイナルに出場。その公式フォトをInstagramで公開しました。
+              「減量期に得た、食事・トレーニング・睡眠のルーティンは、オフ期も生活の仕方として活かせる。ただの大会に向けた減量期で終わらせない」——
+              大会で終わらせず、日々の仕事のパフォーマンスに接続していく。私たちが「筋肉 × 営業」で伝えたい姿勢そのものです。
+            </p>
+            <a class="upd-link" href="https://www.instagram.com/p/Db9q-6ItEyO/" target="_blank" rel="noopener">Instagramで投稿を見る →</a>
+          </div>
+        </article>
+
+        <!-- 2026.08.06 YouTube 筋肉インターン生 -->
+        <article class="upd-item">
+          <div class="upd-side">
+            <span class="upd-tag">MOVIE</span>
+            <span class="upd-date">2026.08.06</span>
+            <span class="upd-src">YouTube ／ ACT-Rの日常</span>
+          </div>
+          <div class="upd-main">
+            <h4 class="upd-title">マッチョ採用<em>第一号</em>、筋肉インターン生のリアルを聞いてみた。</h4>
+            <p class="upd-body">
+              「マッチョ採用」第一号として参画した筋肉インターン生に、応募のきっかけ、実際の働き方、トレーニングとの両立について本人の言葉で語ってもらいました。
+              入る前に知っておきたいことが、そのまま映っています。
+            </p>
+            <div class="upd-embed">
+              <iframe src="https://www.youtube-nocookie.com/embed/4rayC_7xrjA" title="【マッチョ採用】マッチョ採用第一号筋肉インターン生のリアル聞いてみた！" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <a class="upd-link" href="https://youtu.be/4rayC_7xrjA" target="_blank" rel="noopener">YouTubeで見る →</a>
+          </div>
+        </article>
+
+        <!-- 2026.07.30 PR TIMES プレスリリース -->
+        <article class="upd-item">
+          <div class="upd-side">
+            <span class="upd-tag">PRESS</span>
+            <span class="upd-date">2026.07.30</span>
+            <span class="upd-src">PR TIMES 掲載</span>
+          </div>
+          <div class="upd-main">
+            <h4 class="upd-title"><em>「マッチョ採用」</em>で年内100名採用へ。ジム・サプリ・ウェアを無償支給。</h4>
+            <p class="upd-body">
+              株式会社ACT-Rは、採用ブランディング「マッチョ採用（筋肉採用）」の本格開始をPR TIMESで発表しました。営業職を対象に、ジム利用料・トレーニングサプリメント・トレーニングウェアを段階的に無償提供。参画後は、実績や希望、適性に応じて正社員登用も行います。
+              背景にあるのは、日本の就業世代が抱える深刻な健康課題です。男性の肥満率は約31.5%、40〜74歳男性の約50%がメタボリックシンドローム該当者またはその予備群とされています。
+              「心身を鍛え、自分を高め続けられるか」を評価軸に、営業職に必要な自己管理力・継続力・メンタルを、トレーニングを通じて育てていきます。
+            </p>
+            <a class="upd-link" href="https://prtimes.jp/main/html/rd/p/000000001.000187019.html" target="_blank" rel="noopener">PR TIMESでリリース全文を見る →</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </div>
